@@ -176,7 +176,10 @@ if __name__ == "__main__":
                             "--chat-template-kwargs", '{"enable_thinking":false}',
                             "--image-min-tokens", "1024", "--image-max-tokens", "2304"],
            8095, 240, env=dict(os.environ, CUDA_VISIBLE_DEVICES=""), uso=usa_holo)
-    misura("sintesi (TTS)", [str(voce / "pocket-tts.exe"), "serve", "--language", "italian", "--quantize",
+    # Si misura quello che l'avvio accende davvero: il lanciatore a 2 fili
+    # (voce/avvia_tts.py), non piu' pocket-tts.exe a filo singolo.
+    misura("sintesi (TTS)", [str(voce / "python.exe"), str(W / "voce" / "avvia_tts.py"),
+                             "--language", "italian", "--quantize",
                              "--host", "127.0.0.1", "--port", "8014"], 8014, 180, uso=usa_tts)
     misura("ponte voce", [str(voce / "python.exe"), str(W / "voce" / "ponte_voce.py")], 8013, 180)
     print(f"\nRAM libera alla fine: {libera()} MB")
