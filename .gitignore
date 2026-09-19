@@ -100,8 +100,6 @@ ANALISI*.md
 /chat*
 *.original.md
 
-# --- Sottoprogetti: entrano come submodule, non come cartelle -----------------
-# (odysseus/ e shadowbroker/ hanno il proprio .git; vedi .gitmodules)
 
 # --- Altri segreti trovati alla prima anteprima ---------------------------------
 scripts/odysseus-admin-password.txt

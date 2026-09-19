@@ -1,0 +1,8 @@
+[submodule "odysseus"]
+	path = odysseus
+	url = https://github.com/ArtyomITA/odysseus.git
+	branch = vergilius
+[submodule "shadowbroker"]
+	path = shadowbroker
+	url = https://github.com/ArtyomITA/Shadowbroker.git
+	branch = vergilius
