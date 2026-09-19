@@ -27,7 +27,10 @@ import asr_streaming
 
 POCKETTTS_URL = os.getenv("POCKETTTS_URL", "http://127.0.0.1:8014/tts")
 STT_MODEL_ID = os.getenv("STT_MODEL", "nemo-parakeet-tdt-0.6b-v3")
-DEFAULT_VOICE = os.getenv("TTS_VOICE", "estelle")
+# "estelle" e' la voce FRANCESE del catalogo Kyutai (developpeuse-3.wav) e per
+# mesi e' stata la predefinita sopra il modello italiano: accento e cadenza
+# sbagliati a ogni frase. Per l'italiano il pacchetto prevede "giovanni".
+DEFAULT_VOICE = os.getenv("TTS_VOICE", "giovanni")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("ponte-voce")
@@ -71,6 +74,43 @@ def scalda_asr():
         return
     import threading
     threading.Thread(target=asr_streaming.carica, daemon=True).start()
+
+
+@app.on_event("startup")
+def scalda_tts():
+    """Prima frase della sessione: la paga il banco di prova, non l'utente.
+
+    PocketTTS tiene l'incastro della voce in una cache di processo: alla prima
+    richiesta dopo l'avvio deve leggerlo (e la prima volta in assoluto anche
+    scaricarlo) e far girare il modello a freddo. Misurato: primo byte a 1,8 s
+    a freddo contro 0,65 s a caldo, e fino a 7 s se l'incastro non c'e' ancora
+    su disco. Sono esattamente i secondi di silenzio dopo la prima risposta.
+
+    PocketTTS ci mette ~8-13 s ad aprire la porta, quindi si riprova in
+    sottofondo finche' non risponde, senza bloccare l'avvio del ponte.
+    """
+    import threading
+
+    def riscalda():
+        import time
+        scadenza = time.monotonic() + 180
+        while time.monotonic() < scadenza:
+            try:
+                r = httpx.post(POCKETTTS_URL, timeout=httpx.Timeout(120.0, connect=2.0),
+                               data={"text": "Pronto.", "voice_url": DEFAULT_VOICE})
+                if r.status_code == 200:
+                    logger.info("sintesi scaldata con la voce %s", DEFAULT_VOICE)
+                    return
+                logger.warning("riscaldamento sintesi: PocketTTS ha risposto %s", r.status_code)
+                return
+            except httpx.ConnectError:
+                time.sleep(3)   # non e' ancora in piedi
+            except Exception as e:  # noqa: BLE001
+                logger.warning("riscaldamento sintesi fallito: %s", e)
+                return
+        logger.warning("riscaldamento sintesi: PocketTTS non si e' fatto vivo")
+
+    threading.Thread(target=riscalda, daemon=True).start()
 
 
 @app.get("/health")
