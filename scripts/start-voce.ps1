@@ -6,8 +6,10 @@
 $venv = 'd:\assistenteeee\tts-venv\Scripts'
 
 Write-Host "avvio PocketTTS su :8014 ..."
-Start-Process -FilePath "$venv\pocket-tts.exe" `
-  -ArgumentList 'serve', '--language', 'italian', '--quantize', '--host', '127.0.0.1', '--port', '8014' `
+# Via il lanciatore (voce\avvia_tts.py): il pacchetto fissa torch a un filo solo
+# e la sintesi va quasi al doppio con due. Stessi argomenti del comando originale.
+Start-Process -FilePath "$venv\python.exe" `
+  -ArgumentList 'd:\assistenteeee\voce\avvia_tts.py', '--language', 'italian', '--quantize', '--host', '127.0.0.1', '--port', '8014' `
   -RedirectStandardError d:\assistenteeee\voce\pockettts.log `
   -RedirectStandardOutput d:\assistenteeee\voce\pockettts.out.log `
   -WindowStyle Hidden

@@ -173,7 +173,14 @@ def _attiva(profilo: str) -> None:
             # volta con questa riga tolta).
             env_tts = os.environ.copy()
             env_tts["HF_HUB_OFFLINE"] = "1"
-            _spawn("pockettts", [str(voce / "pocket-tts.exe"), "serve", "--language", "italian",
+            # Non pocket-tts.exe ma il nostro lanciatore: il pacchetto fissa
+            # torch a un filo solo e su otto core la sintesi va a un quarto di
+            # quello che potrebbe. Misurato sulla stessa frase italiana a caldo:
+            # 1 filo fattore tempo reale 0,58 - 2 fili 0,44 - 3 e 4 fili niente
+            # di meglio. Stessi argomenti di prima, nessuna modifica a
+            # site-packages. Vedi voce/avvia_tts.py.
+            _spawn("pockettts", [str(voce / "python.exe"), str(WORKSPACE / "voce" / "avvia_tts.py"),
+                                 "--language", "italian",
                                  "--quantize", "--host", "127.0.0.1", "--port", "8014"],
                    cwd=WORKSPACE, porta=8014, env=env_tts)
             _spawn("voice-bridge", [str(voce / "python.exe"), str(WORKSPACE / "voce" / "ponte_voce.py")],

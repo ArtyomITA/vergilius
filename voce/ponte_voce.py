@@ -15,6 +15,7 @@ Avvio:  python ponte_voce.py       (porta 8013)
 import io
 import logging
 import os
+import re
 import tempfile
 
 import httpx
@@ -31,6 +32,17 @@ STT_MODEL_ID = os.getenv("STT_MODEL", "nemo-parakeet-tdt-0.6b-v3")
 # mesi e' stata la predefinita sopra il modello italiano: accento e cadenza
 # sbagliati a ogni frase. Per l'italiano il pacchetto prevede "giovanni".
 DEFAULT_VOICE = os.getenv("TTS_VOICE", "giovanni")
+
+# PocketTTS taglia il testo in pezzi da MAX_TOKEN_PER_CHUNK=50 token e oltre
+# quella soglia SALTA le parole in silenzio (nei log vecchi: "Chunk has 182
+# tokens (max 50), generation may skip words"). Il browser gia' spezzetta a 180
+# caratteri, ma chiunque altro chiami il ponte (il pulsante "leggi ad alta
+# voce", un banco di prova, un tool) perderebbe meta' paragrafo senza accorgersi
+# di niente. Qui c'e' la rete di sicurezza: nessuna richiesta a PocketTTS supera
+# questa lunghezza, ~45 token di italiano.
+LIMITE_PEZZO = 190
+# Intestazione WAV canonica scritta dal modulo `wave`: RIFF + fmt + data.
+INTESTAZIONE_WAV = 44
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("ponte-voce")
@@ -58,6 +70,9 @@ class SpeechRequest(BaseModel):
     input: str
     voice: str = DEFAULT_VOICE
     response_format: str = "wav"
+    # Accettata per compatibilita' con il formato OpenAI e basta: PocketTTS non
+    # ha nessun parametro di velocita'. Chi vuole l'effetto lo applica in
+    # riproduzione (static/js/tts-ai.js, _applicaVelocita).
     speed: float = 1.0
 
 
@@ -134,6 +149,102 @@ def list_models():
     }
 
 
+# -- preparazione del testo ---------------------------------------------
+
+# Emoji e pittogrammi. Niente \p{...}: il modulo `re` non li conosce, quindi si
+# elencano gli intervalli. I numeri e il cancelletto restano fuori di proposito:
+# toglierli vorrebbe dire perdere ogni cifra della risposta.
+_EMOJI = re.compile(
+    "[\U0001F000-\U0001FAFF☀-➿←-⇿⬀-⯿"
+    "︀-️‍⃣]"
+)
+_URL = re.compile(r"(?:https?://|www\.)\S+")
+
+
+def pulisci_per_voce(testo: str) -> str:
+    """Toglie quello che non si legge ad alta voce.
+
+    Rifa' lato server l'essenziale di quello che `forSpeech`/`extractPlainText`
+    gia' fanno nel browser (static/js/tts-ai.js): ragionamento, blocchi di
+    codice, indirizzi, markdown, emoji. Serve a chi arriva qui senza passare dal
+    browser — altrimenti il modello si mette a dire "asterisco asterisco" e a
+    scandire gli indirizzi carattere per carattere.
+    """
+    if not testo:
+        return ""
+    t = re.sub(r"<think(?:ing)?\b[^>]*>.*?</think(?:ing)?>", " ", testo,
+               flags=re.I | re.S)
+    t = re.sub(r"<think(?:ing)?\b[^>]*>.*$", " ", t, flags=re.I | re.S)
+    t = re.sub(r"```.*?```", " ", t, flags=re.S)      # blocchi di codice chiusi
+    t = re.sub(r"```.*$", " ", t, flags=re.S)         # e quello ancora aperto
+    t = _URL.sub(" ", t)
+    t = re.sub(r"\[(.+?)\]\(.+?\)", r"\1", t)         # link markdown: resta la scritta
+    t = _EMOJI.sub("", t)
+    t = re.sub(r"^[ \t]*[-*+•]\s+", "", t, flags=re.M)
+    t = re.sub(r"^#{1,6}\s+", "", t, flags=re.M)
+    t = re.sub(r"[()\[\]{}<>«»„“”\"']", " ", t)       # parentesi via, contenuto resta
+    t = re.sub(r"[|_*~`^]", " ", t)
+    t = re.sub(r"[ \t]+([,.;:!?])", r"\1", t)
+    t = re.sub(r"\s+", " ", t)
+    return t.strip()
+
+
+def spezza_per_sintesi(testo: str, limite: int = LIMITE_PEZZO) -> list[str]:
+    """Taglia il testo in pezzi che PocketTTS sa dire per intero.
+
+    Tre tagli in ordine: fine frase, poi virgola/punto e virgola/due punti, poi
+    a forza sullo spazio piu' vicino. I pezzi corti vengono riuniti finche' ci
+    stanno sotto il limite: una richiesta in meno e' mezzo secondo in meno.
+    """
+    if not testo:
+        return []
+
+    frasi = [f for f in re.split(r"(?<=[.!?…])\s+", testo) if f.strip()]
+
+    minuti: list[str] = []
+    for frase in frasi:
+        frase = frase.strip()
+        while len(frase) > limite:
+            # Ultima virgola utile dentro il limite, altrimenti ultimo spazio,
+            # altrimenti taglio netto: una parola spezzata si sente, una frase
+            # mangiata no ed e' molto peggio.
+            taglio = max(frase.rfind(c, 0, limite) for c in (",", ";", ":"))
+            if taglio < limite // 3:
+                taglio = frase.rfind(" ", 0, limite)
+            if taglio < limite // 3:
+                taglio = limite - 1
+            minuti.append(frase[:taglio + 1].strip())
+            frase = frase[taglio + 1:].strip()
+        if frase:
+            minuti.append(frase)
+
+    pezzi: list[str] = []
+    for m in minuti:
+        if pezzi and len(pezzi[-1]) + 1 + len(m) <= limite:
+            pezzi[-1] = pezzi[-1] + " " + m
+        else:
+            pezzi.append(m)
+    return pezzi
+
+
+def intestazione_in_streaming(testa: bytes) -> bytes:
+    """Rimette a posto le due lunghezze dell'intestazione WAV.
+
+    PocketTTS dichiara un miliardo di campioni (tts_model/audio.py: setnframes
+    1_000_000_000) e non ritocca mai l'intestazione, perche' il flusso non e'
+    riavvolgibile. Nel browser quel file dura undici ore: `duration` non serve a
+    niente e l'elemento continua ad aspettare byte che non arrivano piu'.
+    0xFFFFFFFF e' la convenzione dei flussi WAV di lunghezza ignota e i lettori
+    la trattano come tale: durata infinita, fine quando la connessione chiude.
+    Qui non si puo' scrivere la lunghezza vera: sarebbe nota solo alla fine, e
+    aspettare la fine costa tutta la sintesi (2 s) al posto dei 150 ms attuali.
+    """
+    if len(testa) < INTESTAZIONE_WAV or testa[:4] != b"RIFF" or testa[36:40] != b"data":
+        return testa
+    ignota = b"\xff\xff\xff\xff"
+    return testa[:4] + ignota + testa[8:40] + ignota + testa[44:]
+
+
 @app.post("/v1/audio/speech")
 async def speech(req: SpeechRequest):
     """Passa l'audio mentre arriva, non quando e' finito.
@@ -145,18 +256,25 @@ async def speech(req: SpeechRequest):
     file, e i ~200 ms di primo pezzo diventavano i 2-3 secondi della frase
     intera. Qui il flusso passa senza mai essere raccolto in memoria.
     """
-    text = (req.input or "").strip()
+    text = pulisci_per_voce(req.input or "")
     if not text:
         raise HTTPException(400, "input vuoto")
 
+    pezzi = spezza_per_sintesi(text)
+    voce = req.voice or DEFAULT_VOICE
     client = httpx.AsyncClient(timeout=httpx.Timeout(120.0, connect=5.0))
-    richiesta = client.build_request(
-        "POST", POCKETTTS_URL,
-        data={"text": text, "voice_url": req.voice or DEFAULT_VOICE},
-    )
 
+    async def apri(testo: str):
+        richiesta = client.build_request(
+            "POST", POCKETTTS_URL, data={"text": testo, "voice_url": voce},
+        )
+        return await client.send(richiesta, stream=True)
+
+    # La prima richiesta si fa qui, non dentro il generatore: e' l'unico punto
+    # in cui si puo' ancora rispondere con un codice di errore invece che con
+    # mezzo file WAV.
     try:
-        risposta = await client.send(richiesta, stream=True)
+        risposta = await apri(pezzi[0])
     except httpx.ConnectError:
         await client.aclose()
         raise HTTPException(503, f"PocketTTS non raggiungibile su {POCKETTTS_URL}")
@@ -173,11 +291,38 @@ async def speech(req: SpeechRequest):
     async def flusso():
         # Il client va chiuso qui dentro, non fuori: se lo si chiude prima che il
         # generatore finisca, la connessione muore a meta' frase.
+        #
+        # I pezzi escono in fila e diventano UN solo file: si tiene
+        # l'intestazione del primo (corretta nelle lunghezze) e si buttano le 44
+        # byte di quelle dei pezzi successivi, altrimenti in mezzo all'audio si
+        # sentirebbe il fruscio dell'intestazione letta come campioni.
+        corrente = risposta
         try:
-            async for pezzo in risposta.aiter_bytes():
-                yield pezzo
+            for indice, pezzo in enumerate(pezzi):
+                if indice:
+                    corrente = await apri(pezzo)
+                    if corrente.status_code != 200:
+                        logger.error("PocketTTS ha risposto %s sul pezzo %d/%d: "
+                                     "il resto della frase va perso",
+                                     corrente.status_code, indice + 1, len(pezzi))
+                        await corrente.aclose()
+                        return
+                avanzo = b""
+                tagliata = False
+                async for blocco in corrente.aiter_bytes():
+                    if not tagliata:
+                        avanzo += blocco
+                        if len(avanzo) < INTESTAZIONE_WAV:
+                            continue
+                        testa, blocco = avanzo[:INTESTAZIONE_WAV], avanzo[INTESTAZIONE_WAV:]
+                        tagliata = True
+                        if indice == 0:
+                            yield intestazione_in_streaming(testa)
+                        if not blocco:
+                            continue
+                    yield blocco
+                await corrente.aclose()
         finally:
-            await risposta.aclose()
             await client.aclose()
 
     return StreamingResponse(
