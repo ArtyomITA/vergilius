@@ -5,7 +5,6 @@ repository (pesano gigabyte) e non vengono mai caricati altrove. Questo script
 li prende da Hugging Face e li mette dove il programma li cerca.
 
     python scripts/scarica-modelli.py                 il necessario (~4,2 GB)
-    python scripts/scarica-modelli.py --con-ling      aggiunge Ling-3.0-tiny, il cervello alternativo
     python scripts/scarica-modelli.py --con-heretic   aggiunge il modello senza filtri (QwenPaw 9B)
     python scripts/scarica-modelli.py --con-lfm-uncensored   aggiunge LFM2.5-2.6B senza filtri
     python scripts/scarica-modelli.py --elenco        mostra cosa serve e cosa c'è già
@@ -23,9 +22,6 @@ Cosa scarica, e perché:
   occhi     Holo-3.1-0.8B Q6_K + proiettore (0,9 GB) — la vista. Gira sulla CPU,
             così non toglie memoria video al cervello. Serve a leggere lo schermo
             e le immagini.
-
-  ling      Ling-3.0-tiny Q6_K (6,4 GB) — facoltativo. Il cervello precedente,
-            MoE da 7,9 miliardi di parametri (1,3 attivi). Resta selezionabile.
 
   lfm-uncensored   LFM2.5-2.6B senza rifiuti (2,9 GB) — facoltativo, lo scegli tu.
             Stessa base del cervello predefinito, MODIFICATA DA TERZI (SC117, abliterazione):
@@ -63,15 +59,13 @@ CATALOGO = [
      VLM, "Holo-3.1-0.8B.Q6_K.gguf", 0.7, "la vista: legge schermo e immagini (CPU)"),
     ("occhi", "mradermacher/Holo-3.1-0.8B-GGUF", "Holo-3.1-0.8B.mmproj-f16.gguf",
      VLM, "Holo-3.1-0.8B.mmproj-f16.gguf", 0.2, "proiettore visivo, va con Holo"),
-    ("ling", "bartowski/inclusionAI_Ling-3.0-tiny-GGUF", "inclusionAI_Ling-3.0-tiny-Q6_K.gguf",
-     MODELLI, "Ling-3.0-tiny-Q6_K.gguf", 6.4, "cervello alternativo (facoltativo)"),
     ("lfm-uncensored", "SC117/LFM2.5-2.6B-Uncensored-GGUF", "LFM2.5-2.6B-Uncensored-Q8_0.gguf",
      MODELLI, "LFM2.5-2.6B-Uncensored-Q8_0.gguf", 2.9, "LFM senza rifiuti, modificato da terzi (facoltativo)"),
     ("heretic", "mradermacher/QwenPaw-Flash-9B-heretic-i1-GGUF", "QwenPaw-Flash-9B-heretic.i1-Q4_K_M.gguf",
      MODELLI, "QwenPaw-Flash-9B-heretic-Q4_K_M.gguf", 5.2, "alternativa senza filtri (facoltativo)"),
 ]
 
-FACOLTATIVI = {"ling", "heretic", "lfm-uncensored"}
+FACOLTATIVI = {"heretic", "lfm-uncensored"}
 
 
 def presenti() -> dict:
@@ -123,11 +117,10 @@ def _scarica_hf(repo: str, remoto: str, destinazione: Path) -> bool:
     return destinazione.exists()
 
 
-def scarica(con_heretic: bool, con_ling: bool = False, con_lfm_uncensored: bool = False) -> int:
+def scarica(con_heretic: bool, con_lfm_uncensored: bool = False) -> int:
     ci_sono = presenti()
     da_fare = [v for v in CATALOGO
                if v[4] not in ci_sono and (con_heretic or v[0] != "heretic")
-               and (con_ling or v[0] != "ling")
                and (con_lfm_uncensored or v[0] != "lfm-uncensored")]
     if not da_fare:
         print("Tutto già presente, niente da scaricare.")
@@ -158,8 +151,6 @@ def main() -> int:
     p = argparse.ArgumentParser(description="Scarica i modelli locali di Vergilius")
     p.add_argument("--con-heretic", action="store_true",
                    help="scarica anche il modello alternativo senza filtri (5,2 GB)")
-    p.add_argument("--con-ling", action="store_true",
-                   help="scarica anche Ling-3.0-tiny, il cervello alternativo (6,4 GB)")
     p.add_argument("--con-lfm-uncensored", action="store_true",
                    help="scarica anche LFM2.5-2.6B senza rifiuti, modificato da terzi (2,9 GB)")
     p.add_argument("--elenco", action="store_true", help="mostra cosa serve e cosa c'è già")
@@ -167,7 +158,7 @@ def main() -> int:
     if a.elenco:
         elenco()
         return 0
-    return scarica(a.con_heretic, a.con_ling, a.con_lfm_uncensored)
+    return scarica(a.con_heretic, a.con_lfm_uncensored)
 
 
 if __name__ == "__main__":
