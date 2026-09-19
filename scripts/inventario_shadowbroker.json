@@ -1,0 +1,541 @@
+{
+ "airports": {
+  "n": 1170,
+  "forma": "lista",
+  "campi": [
+   "iata",
+   "id",
+   "lat",
+   "lng",
+   "name",
+   "type"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "lat",
+   "lng",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "commercial_flights": {
+  "n": 5434,
+  "forma": "lista",
+  "campi": [
+   "_seen_at",
+   "aircraft_category",
+   "airline_code",
+   "alt",
+   "callsign",
+   "country",
+   "dest_loc",
+   "dest_name",
+   "emissions",
+   "heading",
+   "icao24",
+   "lat",
+   "lng",
+   "model",
+   "nac_p",
+   "origin_loc",
+   "origin_name",
+   "registration",
+   "source",
+   "speed_knots",
+   "squawk",
+   "trail",
+   "type"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "correlations": {
+  "n": 1,
+  "forma": "lista",
+  "campi": [
+   "cell_size",
+   "drivers",
+   "lat",
+   "lng",
+   "score",
+   "severity",
+   "type"
+  ],
+  "punteggi": [
+   "score",
+   "severity"
+  ],
+  "tempi": [],
+  "luoghi": [
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "cyber_threats": {
+  "n": 3,
+  "forma": "oggetto",
+  "campi": [
+   "stats",
+   "threats",
+   "timestamp"
+  ],
+  "punteggi": [],
+  "tempi": [
+   "timestamp"
+  ],
+  "luoghi": [],
+  "testi": []
+ },
+ "datacenters": {
+  "n": 4899,
+  "forma": "lista",
+  "campi": [
+   "city",
+   "company",
+   "country",
+   "lat",
+   "lng",
+   "name",
+   "street",
+   "zip"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "city",
+   "country",
+   "lat",
+   "lng",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "earthquakes": {
+  "n": 37,
+  "forma": "lista",
+  "campi": [
+   "id",
+   "lat",
+   "lng",
+   "mag",
+   "place"
+  ],
+  "punteggi": [
+   "mag"
+  ],
+  "tempi": [],
+  "luoghi": [
+   "lat",
+   "lng",
+   "place"
+  ],
+  "testi": [
+   "place"
+  ]
+ },
+ "firms_fires": {
+  "n": 5000,
+  "forma": "lista",
+  "campi": [
+   "acq_date",
+   "acq_time",
+   "brightness",
+   "confidence",
+   "daynight",
+   "frp",
+   "lat",
+   "lng"
+  ],
+  "punteggi": [
+   "confidence",
+   "frp"
+  ],
+  "tempi": [
+   "acq_date"
+  ],
+  "luoghi": [
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "flights": {
+  "n": 14,
+  "forma": "lista",
+  "campi": [
+   "aircraft_category",
+   "airline_code",
+   "alt",
+   "callsign",
+   "country",
+   "dest_loc",
+   "dest_name",
+   "emissions",
+   "heading",
+   "holding",
+   "icao24",
+   "lat",
+   "lng",
+   "model",
+   "nac_p",
+   "origin_loc",
+   "origin_name",
+   "registration",
+   "source",
+   "speed_knots",
+   "squawk",
+   "type"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "frontlines": {
+  "n": 1,
+  "forma": "featurecollection",
+  "campi": [
+   "name",
+   "zone_id"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "gdelt": {
+  "n": 1553,
+  "forma": "geojson",
+  "campi": [
+   "_headlines_list",
+   "_snippets_list",
+   "_urls_list",
+   "actor1",
+   "actor2",
+   "actors",
+   "avg_tone",
+   "count",
+   "event_code",
+   "event_date",
+   "goldstein",
+   "html",
+   "lat",
+   "lng",
+   "name",
+   "num_articles",
+   "num_mentions",
+   "num_sources",
+   "quad_class"
+  ],
+  "punteggi": [
+   "avg_tone",
+   "count",
+   "goldstein",
+   "num_articles",
+   "num_mentions",
+   "num_sources",
+   "quad_class"
+  ],
+  "tempi": [
+   "event_date"
+  ],
+  "luoghi": [
+   "lat",
+   "lng",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "gt_risk": {
+  "n": 5,
+  "forma": "oggetto",
+  "campi": [
+   "clusters",
+   "enabled",
+   "heatmap",
+   "processed",
+   "timestamp"
+  ],
+  "punteggi": [],
+  "tempi": [
+   "timestamp"
+  ],
+  "luoghi": [],
+  "testi": []
+ },
+ "internet_outages": {
+  "n": 9,
+  "forma": "lista",
+  "campi": [
+   "country_code",
+   "country_name",
+   "datasource",
+   "lat",
+   "level",
+   "lng",
+   "region_code",
+   "region_name",
+   "severity"
+  ],
+  "punteggi": [
+   "severity"
+  ],
+  "tempi": [],
+  "luoghi": [
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "kiwisdr": {
+  "n": 798,
+  "forma": "lista",
+  "campi": [
+   "antenna",
+   "bands",
+   "lat",
+   "location",
+   "lon",
+   "name",
+   "url",
+   "users",
+   "users_max"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "lat",
+   "location",
+   "lon",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "malware_threats": {
+  "n": 5,
+  "forma": "oggetto",
+  "campi": [
+   "source",
+   "threats",
+   "timestamp",
+   "total"
+  ],
+  "punteggi": [],
+  "tempi": [
+   "timestamp"
+  ],
+  "luoghi": [],
+  "testi": []
+ },
+ "meshtastic_map_nodes": {
+  "n": 12316,
+  "forma": "lista",
+  "campi": [
+   "altitude",
+   "battery_level",
+   "callsign",
+   "confidence",
+   "from_api",
+   "hardware",
+   "lat",
+   "lng",
+   "long_name",
+   "position_updated_at",
+   "role",
+   "short_name",
+   "source",
+   "timestamp",
+   "voltage"
+  ],
+  "punteggi": [
+   "confidence"
+  ],
+  "tempi": [
+   "timestamp"
+  ],
+  "luoghi": [
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "military_bases": {
+  "n": 646,
+  "forma": "lista",
+  "campi": [
+   "branch",
+   "country",
+   "lat",
+   "lng",
+   "name",
+   "operator"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "military_flights": {
+  "n": 18,
+  "forma": "lista",
+  "campi": [
+   "alt",
+   "callsign",
+   "country",
+   "dest_loc",
+   "dest_name",
+   "force",
+   "heading",
+   "holding",
+   "icao24",
+   "lat",
+   "lng",
+   "military_type",
+   "model",
+   "origin_loc",
+   "origin_name",
+   "registration",
+   "source",
+   "speed_knots",
+   "squawk",
+   "trail",
+   "type"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ },
+ "news": {
+  "n": 54,
+  "forma": "lista",
+  "campi": [
+   "articles",
+   "breaking",
+   "cluster_count",
+   "coords",
+   "link",
+   "machine_assessment",
+   "oracle_score",
+   "prediction_odds",
+   "published",
+   "risk_score",
+   "sentiment",
+   "source",
+   "title"
+  ],
+  "punteggi": [
+   "cluster_count",
+   "machine_assessment",
+   "oracle_score",
+   "prediction_odds",
+   "risk_score",
+   "sentiment"
+  ],
+  "tempi": [
+   "published"
+  ],
+  "luoghi": [
+   "coords"
+  ],
+  "testi": [
+   "title"
+  ]
+ },
+ "power_plants": {
+  "n": 34936,
+  "forma": "lista",
+  "campi": [
+   "capacity_mw",
+   "country",
+   "fuel_type",
+   "lat",
+   "lng",
+   "name",
+   "owner"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng",
+   "name"
+  ],
+  "testi": [
+   "name"
+  ]
+ },
+ "private_flights": {
+  "n": 1468,
+  "forma": "lista",
+  "campi": [
+   "_seen_at",
+   "aircraft_category",
+   "airline_code",
+   "alt",
+   "callsign",
+   "country",
+   "dest_loc",
+   "dest_name",
+   "emissions",
+   "heading",
+   "icao24",
+   "lat",
+   "lng",
+   "model",
+   "nac_p",
+   "origin_loc",
+   "origin_name",
+   "registration",
+   "source",
+   "speed_knots",
+   "squawk",
+   "trail",
+   "type"
+  ],
+  "punteggi": [],
+  "tempi": [],
+  "luoghi": [
+   "country",
+   "lat",
+   "lng"
+  ],
+  "testi": []
+ }
+}

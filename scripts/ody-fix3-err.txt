@@ -1,0 +1,602 @@
+2026-08-01 05:34:14,145 - core.auth - INFO - Auth config loaded
+2026-08-01 05:34:14,217 - core.auth - INFO - Loaded 2 session(s) from disk
+2026-08-01 05:34:14,232 - __main__ - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 05:34:16,950 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 05:34:24,766 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 05:34:27,682 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 05:34:27,790 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 05:34:27,795 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 05:34:27,797 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 05:34:32,328 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 05:34:34,653 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:34,659 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:34:34,659 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:34,660 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 05:34:34,816 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:34,820 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:34:34,861 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 05:34:34,866 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 05:34:34,872 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:34:34,873 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 05:34:34,874 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 05:34:34,875 - __main__ - INFO - Vector document RAG initialized
+2026-08-01 05:34:35,102 - core.session_manager - INFO - Loaded 6 session(s) (metadata only)
+2026-08-01 05:34:35,104 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 05:34:35,106 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 05:34:35,345 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:35,349 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:34:35,350 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:35,351 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 05:34:35,558 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:34:35,562 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:34:35,566 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 05:34:35,571 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 05:34:35,578 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:34:35,579 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=1)
+2026-08-01 05:34:35,610 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:34:35,611 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 05:34:35,613 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 05:34:35,620 - __main__ - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 05:34:36,826 - __main__ - INFO - STT service initialized (provider managed via settings)
+2026-08-01 05:34:37,379 - __main__ - INFO - MCP routes initialized
+2026-08-01 05:34:37,380 - __main__ - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 05:34:37,407 - __main__ - INFO - Webhook & API token routes initialized
+INFO:     Started server process [24200]
+INFO:     Waiting for application startup.
+2026-08-01 05:34:37,906 - __main__ - INFO - Application starting up...
+2026-08-01 05:34:37,913 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 05:34:37,914 - __main__ - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 05:34:38,142 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 05:34:38,191 - __main__ - INFO - Application startup complete
+2026-08-01 05:34:38,229 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 05:34:44,659 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+2026-08-01 05:34:46,260 - app.slow_request - WARNING - slow_request method=GET path=/api/tasks/notifications status=200 elapsed=1.493s
+2026-08-01 05:34:46,285 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:34:46,310 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:34:46,311 - app.slow_request - WARNING - slow_request method=GET path=/api/research/active status=200 elapsed=1.532s
+2026-08-01 05:34:46,411 - app.slow_request - WARNING - slow_request method=GET path=/api/email/urgency-state status=200 elapsed=1.636s
+2026-08-01 05:34:46,507 - app.slow_request - WARNING - slow_request method=GET path=/api/email/unread-state status=200 elapsed=1.728s
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 05:34:50,674 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 05:34:50,677 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 05:34:50,801 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 05:34:50,802 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 05:34:51,056 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 05:34:51,071 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 05:34:51,644 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 05:34:51,646 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 05:34:55,629 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 05:34:55,647 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+[08/01/26 05:35:01] INFO     Starting MCP server 'windows-mcp' transport.py:241
+                             with transport 'stdio'                            
+2026-08-01 05:35:02,083 - src.mcp_manager - WARNING - Timed out connecting to windows-mcp
+2026-08-01 05:35:10,809 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:10,809 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:10,810 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 05:35:10,878 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:10,879 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:11,021 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:35:11,051 - routes.email_pollers - INFO - Started scheduled email poller
+2026-08-01 05:35:11,057 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:11,057 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:11,471 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:35:12,006 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:35:12,459 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/props "HTTP/1.1 200 OK"
+2026-08-01 05:35:12,460 - src.llamaswap - INFO - [llama-swap] qwenpaw capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B.i1-Q4_K_M.gguf'}
+2026-08-01 05:35:12,462 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.952s
+2026-08-01 05:35:17,001 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:17,002 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:35:22,196 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:35:22,497 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:35:24,748 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:35:24,754 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:35:24,767 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:35:24,775 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:35:25,136 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:35:25,504 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:35:25,505 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:35:25,511 - routes.chat_routes - INFO - [doc-inject] no active doc for session f1b38b76-5e3f-463d-ab33-eb62c7b010b7
+2026-08-01 05:35:25,632 - routes.chat_routes - INFO - [osint-mode] 10 strumenti OSINT + 3 sempre disponibili; 31 disattivati
+2026-08-01 05:35:25,633 - core.auth - INFO - Auth config loaded
+2026-08-01 05:35:25,634 - core.auth - INFO - Loaded 2 session(s) from disk
+2026-08-01 05:35:25,640 - src.agent_loop - INFO - [agent-intent] latest='cosa sta succedendo ora a kyev?' continuation=False low_signal=True domains=[] active_doc_relevant=False retrieval_query='cosa sta succedendo ora a kyev?'
+2026-08-01 05:35:25,641 - src.agent_loop - INFO - [agent] keeping contextual path for low-signal turn in existing conversation latest='cosa sta succedendo ora a kyev?'
+2026-08-01 05:35:25,643 - src.agent_loop - INFO - [tool-rag] Low-signal query; will run RAG retrieval
+2026-08-01 05:35:25,644 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=3.494s
+2026-08-01 05:35:25,828 - app.client_perf - WARNING - client_perf type=chat_send total=3869ms pending_session_begin=8ms pending_session_done=332ms user_bubble_visible=9ms upload_begin=9ms upload_done=6ms chat_stream_post_begin=1ms chat_stream_headers=3504ms extra=headers_received
+2026-08-01 05:35:25,828 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:35:25,833 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:35:25,834 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:35:25,834 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_tool_index: HTTP embedding lane unavailable
+2026-08-01 05:35:26,043 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:35:26,048 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:35:26,053 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index_fastembed "HTTP/1.1 200 OK"
+2026-08-01 05:35:26,057 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index "HTTP/1.1 404 Not Found"
+2026-08-01 05:35:26,059 - src.tool_index - INFO - ToolIndex initialized (lanes=['fastembed'])
+2026-08-01 05:35:26,101 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get "HTTP/1.1 200 OK"
+2026-08-01 05:35:27,154 - src.agent_loop - WARNING - [tool-rag] Tool index init exceeded 1.5s; falling back to always-available tools
+2026-08-01 05:35:27,159 - src.agent_loop - INFO - [agent-intent] selected_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:35:27,850 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:35:27,876 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/pre-flight-checks "HTTP/1.1 200 OK"
+2026-08-01 05:35:28,282 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:35:28,284 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:35:28,284 - src.agent_loop - INFO - [agent-timing] prep_done model=qwenpaw prompt_tokens=4716 context_length=128000 prep={'request_setup': 0.008, 'tool_selection': 1.518, 'prompt_build': 0.01, 'context_trim': 1.114}
+2026-08-01 05:35:28,288 - src.agent_loop - INFO - [agent-debug] round=1 model=qwenpaw _is_api_model=True tools_sent=13 tool_names=['manage_memory', 'ask_user', 'update_plan', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:35:28,289 - src.agent_loop - INFO - [agent-timing] round_start round=1 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=4716 tools=13 native_tools=True timeout=300
+2026-08-01 05:35:28,633 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert "HTTP/1.1 200 OK"
+2026-08-01 05:35:28,635 - src.tool_index - INFO - Indexed 73 built-in tools
+2026-08-01 05:35:29,028 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:35:41,536 - src.agent_loop - INFO - [agent-timing] first_event round=1 elapsed=13.247s kind=data
+2026-08-01 05:35:41,537 - src.agent_loop - INFO - [agent-timing] first_visible_token round=1 elapsed=13.248s total_elapsed=13.251s thinking=True
+2026-08-01 05:35:45,489 - src.agent_loop - INFO - Agent round 1: received 1 native tool call(s)
+2026-08-01 05:35:45,494 - src.agent_loop - INFO - [agent-timing] round_stream_done round=1 elapsed=17.205s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:35:45,494 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:35:45,495 - src.agent_loop - INFO - Agent round 1 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:35:53,547 - httpx - INFO - HTTP Request: GET https://www.theguardian.com/world/2026/aug/01/ukraine-war-briefing-missile-attack-on-kyiv-kills-at-least-three-as-zelenskyy-pushes-to-use-starlink-for-attacks-in-russia "HTTP/1.1 200 OK"
+2026-08-01 05:35:54,508 - httpx - INFO - HTTP Request: GET https://www.thedailystar.net/news/bangladesh/news/theyre-alive-please-bring-them-home-4237336 "HTTP/1.1 200 OK"
+2026-08-01 05:35:55,449 - httpx - INFO - HTTP Request: GET https://www.rferl.org/a/ukraine-russia-kyiv-ballistic-missiles-trump-patriot-missiles/33819648.html "HTTP/1.1 200 OK"
+2026-08-01 05:35:55,538 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"luogo": "Kyiv", "giorni": 1, "quante": 10} -> exit_code=0
+2026-08-01 05:35:55,540 - src.agent_loop - INFO - [agent-debug] round=2 model=qwenpaw _is_api_model=True tools_sent=13 tool_names=['manage_memory', 'ask_user', 'update_plan', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:35:55,540 - src.agent_loop - INFO - [agent-timing] round_start round=2 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=7468 tools=13 native_tools=True timeout=300
+2026-08-01 05:35:55,741 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:36:03,338 - src.agent_loop - INFO - [agent-timing] first_event round=2 elapsed=7.798s kind=data
+2026-08-01 05:36:03,339 - src.agent_loop - INFO - [agent-timing] first_visible_token round=2 elapsed=7.799s total_elapsed=35.054s thinking=True
+2026-08-01 05:36:09,024 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:36:09,025 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:36:21,543 - src.agent_loop - INFO - [agent-timing] round_stream_done round=2 elapsed=26.002s text_chars=1318 tool_calls=0 first_event=True first_token=True
+2026-08-01 05:36:21,544 - src.agent_loop - INFO - Agent round 2 summary: 1318 chars, 0 native calls, 0 tool blocks. Preview: Situazione attuale a **Kyiv** (1° agosto 2026, ore 5:35 locali):\n\n## 🚨 Attacco missilistico in corso\n\nLa capitale ucraina è sotto attacco con **missili balistici russi** nelle prime ore di sabato.\n\n**
+2026-08-01 05:36:27,413 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:36:32,341 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:36:32,345 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 10.15s (attempt 1)
+2026-08-01 05:36:32,871 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=6.028s
+2026-08-01 05:36:45,450 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:36:45,454 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 23.25s (attempt 1)
+2026-08-01 05:36:45,675 - routes.chat_helpers - INFO - Auto-named session f1b38b76-5e3f-463d-ab33-eb62c7b010b7: Current Events in Kyiv
+2026-08-01 05:36:48,832 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:36:50,766 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:36:50,904 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.979s
+2026-08-01 05:37:06,565 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:37:06,817 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:37:09,056 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:37:09,064 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:37:09,081 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:37:09,091 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:37:09,497 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:37:09,856 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:37:09,857 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:37:09,860 - routes.chat_routes - INFO - [doc-inject] no active doc for session f1b38b76-5e3f-463d-ab33-eb62c7b010b7
+2026-08-01 05:37:09,991 - routes.chat_routes - INFO - [osint-mode] 10 strumenti OSINT + 3 sempre disponibili; 31 disattivati
+2026-08-01 05:37:09,992 - core.auth - INFO - Auth config loaded
+2026-08-01 05:37:09,993 - core.auth - INFO - Loaded 2 session(s) from disk
+2026-08-01 05:37:09,995 - src.agent_loop - INFO - [agent-intent] latest="indicami sulla mappa l'ultimo attaco a kyev" continuation=False low_signal=True domains=[] active_doc_relevant=False retrieval_query="indicami sulla mappa l'ultimo attaco a kyev"
+2026-08-01 05:37:09,995 - src.agent_loop - INFO - [agent] keeping contextual path for low-signal turn in existing conversation latest="indicami sulla mappa l'ultimo attaco a kyev"
+2026-08-01 05:37:09,997 - src.agent_loop - INFO - [tool-rag] Low-signal query; will run RAG retrieval
+2026-08-01 05:37:10,011 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=3.449s
+2026-08-01 05:37:10,036 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:37:10,038 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:37:10,041 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get "HTTP/1.1 200 OK"
+2026-08-01 05:37:10,060 - app.client_perf - WARNING - client_perf type=chat_send total=3492ms user_bubble_visible=10ms upload_begin=9ms upload_done=4ms chat_stream_post_begin=1ms chat_stream_headers=3467ms extra=headers_received
+2026-08-01 05:37:10,732 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/delete "HTTP/1.1 200 OK"
+2026-08-01 05:37:11,516 - src.agent_loop - WARNING - [tool-rag] MCP tool indexing exceeded 1.5s; continuing without reindex
+2026-08-01 05:37:11,720 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert "HTTP/1.1 200 OK"
+2026-08-01 05:37:11,722 - src.tool_index - INFO - Indexed 24 MCP tools
+2026-08-01 05:37:13,080 - src.agent_loop - WARNING - [tool-rag] Retrieval exceeded 1.5s; falling back to keyword tool selection
+2026-08-01 05:37:13,082 - src.agent_loop - INFO - [tool-rag] Keyword fallback selected: []
+2026-08-01 05:37:13,084 - src.agent_loop - INFO - [agent-intent] selected_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:37:13,496 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:37:13,609 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:37:13,701 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query "HTTP/1.1 200 OK"
+2026-08-01 05:37:13,878 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:37:13,880 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:37:13,881 - src.context_compactor - INFO - Trimming messages: 5131 tokens > 4976 budget (ctx=6000)
+2026-08-01 05:37:13,882 - src.agent_loop - INFO - [agent] soft-trimmed context: 5131 -> 4442 tokens (budget=6000, reserve=1024)
+2026-08-01 05:37:13,883 - src.agent_loop - INFO - [agent-timing] prep_done model=qwenpaw prompt_tokens=4442 context_length=128000 prep={'request_setup': 0.002, 'tool_selection': 3.089, 'prompt_build': 0.003, 'context_trim': 0.794}
+2026-08-01 05:37:13,884 - src.agent_loop - INFO - [agent-debug] round=1 model=qwenpaw _is_api_model=True tools_sent=13 tool_names=['manage_memory', 'ask_user', 'update_plan', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:37:13,885 - src.agent_loop - INFO - [agent-timing] round_start round=1 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=4442 tools=13 native_tools=True timeout=300
+2026-08-01 05:37:14,237 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:37:26,922 - src.agent_loop - INFO - [agent-timing] first_event round=1 elapsed=13.037s kind=data
+2026-08-01 05:37:26,923 - src.agent_loop - INFO - [agent-timing] first_visible_token round=1 elapsed=13.038s total_elapsed=13.039s thinking=True
+2026-08-01 05:37:38,175 - src.agent_loop - INFO - Agent round 1: received 2 native tool call(s)
+2026-08-01 05:37:38,180 - src.agent_loop - INFO - [agent-timing] round_stream_done round=1 elapsed=24.295s text_chars=0 tool_calls=2 first_event=True first_token=True
+2026-08-01 05:37:38,181 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:37:38,182 - src.agent_loop - INFO -   -> converted: osint_mappa -> osint_mappa
+2026-08-01 05:37:38,183 - src.agent_loop - INFO - Agent round 1 summary: 0 chars, 2 native calls, 2 tool blocks. Preview: (empty)
+2026-08-01 05:37:38,191 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"luogo": "Kyiv", "giorni": 1, "quante": 5} -> exit_code=0
+2026-08-01 05:37:38,209 - src.tool_execution - INFO - Tool executed: registry: osint_mappa {"azione": "centra", "luogo": "Kyiv", "zoom": 6} -> exit_code=0
+2026-08-01 05:37:38,210 - src.agent_loop - INFO - [agent-debug] round=2 model=qwenpaw _is_api_model=True tools_sent=13 tool_names=['manage_memory', 'ask_user', 'update_plan', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:37:38,211 - src.agent_loop - INFO - [agent-timing] round_start round=2 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=6923 tools=13 native_tools=True timeout=300
+2026-08-01 05:37:38,321 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:37:44,914 - src.agent_loop - INFO - [agent-timing] first_event round=2 elapsed=6.703s kind=data
+2026-08-01 05:37:44,915 - src.agent_loop - INFO - [agent-timing] first_visible_token round=2 elapsed=6.704s total_elapsed=31.031s thinking=True
+2026-08-01 05:37:57,002 - src.agent_loop - INFO - Agent round 2: received 1 native tool call(s)
+2026-08-01 05:37:57,007 - src.agent_loop - INFO - [agent-timing] round_stream_done round=2 elapsed=18.796s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:37:57,008 - src.agent_loop - INFO -   -> converted: osint_mappa -> osint_mappa
+2026-08-01 05:37:57,010 - src.agent_loop - INFO - Agent round 2 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:37:57,026 - src.tool_execution - INFO - Tool executed: registry: osint_mappa {"azione": "evidenzia", "ids": ["gdelt:4a9407"]} -> exit_code=0
+2026-08-01 05:37:57,028 - src.agent_loop - INFO - [agent-debug] round=3 model=qwenpaw _is_api_model=True tools_sent=13 tool_names=['manage_memory', 'ask_user', 'update_plan', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'manage_memory', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:37:57,029 - src.agent_loop - INFO - [agent-timing] round_start round=3 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=7003 tools=13 native_tools=True timeout=300
+2026-08-01 05:37:57,177 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:38:09,074 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:38:09,076 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:38:11,045 - src.agent_loop - INFO - [agent-timing] first_event round=3 elapsed=14.016s kind=data
+2026-08-01 05:38:11,046 - src.agent_loop - INFO - [agent-timing] first_visible_token round=3 elapsed=14.017s total_elapsed=57.163s thinking=True
+2026-08-01 05:38:13,728 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F4CD.svg "HTTP/1.1 200 OK"
+2026-08-01 05:38:13,812 - app.slow_request - WARNING - slow_request method=GET path=/api/emoji/1f4cd.svg status=200 elapsed=0.778s
+2026-08-01 05:38:16,415 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:38:16,908 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:38:16,913 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.135s
+2026-08-01 05:38:28,369 - src.agent_loop - INFO - [agent-timing] round_stream_done round=3 elapsed=31.340s text_chars=1241 tool_calls=0 first_event=True first_token=True
+2026-08-01 05:38:28,371 - src.agent_loop - INFO - Agent round 3 summary: 1241 chars, 0 native calls, 0 tool blocks. Preview: ## 📍 Situazione a **Kyiv** - Attacco Missilistico\n\n**Data:** Sabato 1° agosto 2026, ore 5:37 locali (Europe/Rome)\n\n### 🚨 Ultimo attacco (oggi)\n\nL'area è attualmente sotto attacco con **missili balisti
+2026-08-01 05:38:43,031 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:38:43,035 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 14.23s (attempt 1)
+2026-08-01 05:38:43,036 - services.memory.memory_extractor - INFO - Auto memory extraction ran: 0 candidates
+2026-08-01 05:38:47,336 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:38:48,204 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:38:48,223 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.714s
+2026-08-01 05:39:03,019 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:39:08,387 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:39:08,406 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=6.027s
+2026-08-01 05:39:09,092 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:39:09,093 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:39:12,195 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:39:12,199 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 29.16s (attempt 1)
+2026-08-01 05:39:58,281 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:39:58,817 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:39:58,821 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.223s
+2026-08-01 05:40:09,063 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:40:09,064 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:40:13,157 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:40:13,702 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:40:13,706 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.204s
+2026-08-01 05:40:28,068 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:40:28,608 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:40:28,613 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.112s
+2026-08-01 05:40:43,288 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:40:44,861 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:40:44,872 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.386s
+2026-08-01 05:40:58,410 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:40:58,997 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:40:59,002 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.379s
+2026-08-01 05:41:09,070 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:41:09,072 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:41:15,139 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:41:15,422 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:41:17,736 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:41:17,742 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:41:17,757 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:41:17,766 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:41:18,288 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:41:18,653 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:41:18,654 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:41:18,657 - routes.chat_routes - INFO - [doc-inject] no active doc for session f1b38b76-5e3f-463d-ab33-eb62c7b010b7
+2026-08-01 05:41:18,787 - routes.chat_routes - INFO - [osint-mode] 10 strumenti OSINT + 3 sempre disponibili; 31 disattivati
+2026-08-01 05:41:18,788 - core.auth - INFO - Auth config loaded
+2026-08-01 05:41:18,790 - core.auth - INFO - Loaded 2 session(s) from disk
+2026-08-01 05:41:18,791 - src.agent_loop - INFO - [agent-intent] latest='quali sono stati gli ultimi movimenti di grandi armate nellultimo giorno' continuation=False low_signal=True domains=[] active_doc_relevant=False retrieval_query='quali sono stati gli ultimi movimenti di grandi armate nellultimo giorno'
+2026-08-01 05:41:18,792 - src.agent_loop - INFO - [agent] keeping contextual path for low-signal turn in existing conversation latest='quali sono stati gli ultimi movimenti di grandi armate nellultimo giorno'
+2026-08-01 05:41:18,793 - src.agent_loop - INFO - [tool-rag] Low-signal query; will run RAG retrieval
+2026-08-01 05:41:18,800 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=3.664s
+2026-08-01 05:41:18,804 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:41:18,836 - app.client_perf - WARNING - client_perf type=chat_send total=3711ms user_bubble_visible=13ms upload_begin=13ms upload_done=5ms chat_stream_post_begin=1ms chat_stream_headers=3678ms extra=headers_received
+2026-08-01 05:41:18,850 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query "HTTP/1.1 200 OK"
+2026-08-01 05:41:18,855 - src.agent_loop - INFO - [tool-rag] Retrieved tools for query: ['edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'mcp__builtin_browser__browser_take_screenshot', 'python', 'read_file']
+2026-08-01 05:41:19,316 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:41:19,317 - src.agent_loop - INFO - [vision-gate] qwenpaw has no vision; dropped ['mcp__builtin_browser__browser_take_screenshot']
+2026-08-01 05:41:19,318 - src.agent_loop - INFO - [agent-intent] selected_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form', 'mcp__builtin_browser__browser_find', 'mcp__builtin_browser__browser_handle_dialog', 'mcp__builtin_browser__browser_hover', 'mcp__builtin_browser__browser_navigate', 'mcp__builtin_browser__browser_navigate_back', 'mcp__builtin_browser__browser_network_request', 'mcp__builtin_browser__browser_network_requests', 'mcp__builtin_browser__browser_press_key', 'mcp__builtin_browser__browser_resize', 'mcp__builtin_browser__browser_run_code_unsafe', 'mcp__builtin_browser__browser_select_option', 'mcp__builtin_browser__browser_snapshot', 'mcp__builtin_browser__browser_tabs', 'mcp__builtin_browser__browser_type', 'mcp__builtin_browser__browser_wait_for', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'python', 'read_file', 'update_plan']
+2026-08-01 05:41:19,667 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:41:20,023 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:41:20,024 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:41:20,025 - src.context_compactor - INFO - Trimming messages: 5824 tokens > 4976 budget (ctx=6000)
+2026-08-01 05:41:20,026 - src.agent_loop - INFO - [agent] soft-trimmed context: 5824 -> 4843 tokens (budget=6000, reserve=1024)
+2026-08-01 05:41:20,027 - src.agent_loop - INFO - [agent-timing] prep_done model=qwenpaw prompt_tokens=4843 context_length=128000 prep={'request_setup': 0.003, 'tool_selection': 0.526, 'prompt_build': 0.002, 'context_trim': 0.706}
+2026-08-01 05:41:20,028 - src.agent_loop - INFO - [agent-debug] round=1 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:41:20,029 - src.agent_loop - INFO - [agent-timing] round_start round=1 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=4843 tools=38 native_tools=True timeout=300
+2026-08-01 05:41:20,276 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:41:37,480 - src.agent_loop - INFO - [agent-timing] first_event round=1 elapsed=17.451s kind=data
+2026-08-01 05:41:37,481 - src.agent_loop - INFO - [agent-timing] first_visible_token round=1 elapsed=17.452s total_elapsed=17.453s thinking=True
+2026-08-01 05:41:43,810 - src.agent_loop - INFO - Agent round 1: received 1 native tool call(s)
+2026-08-01 05:41:43,815 - src.agent_loop - INFO - [agent-timing] round_stream_done round=1 elapsed=23.786s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:41:43,835 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:41:43,835 - src.agent_loop - INFO - Agent round 1 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:41:44,162 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"tema": "military movements armies", "giorni": 1, "quante": 10} -> exit_code=0
+2026-08-01 05:41:44,163 - src.agent_loop - INFO - [agent-debug] round=2 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:41:44,164 - src.agent_loop - INFO - [agent-timing] round_start round=2 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=5005 tools=38 native_tools=True timeout=300
+2026-08-01 05:41:44,732 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:41:45,538 - src.agent_loop - INFO - [agent-timing] first_event round=2 elapsed=1.374s kind=data
+2026-08-01 05:41:45,539 - src.agent_loop - INFO - [agent-timing] first_visible_token round=2 elapsed=1.375s total_elapsed=25.511s thinking=True
+2026-08-01 05:41:51,144 - src.agent_loop - INFO - Agent round 2: received 2 native tool call(s)
+2026-08-01 05:41:51,150 - src.agent_loop - INFO - [agent-timing] round_stream_done round=2 elapsed=6.985s text_chars=0 tool_calls=2 first_event=True first_token=True
+2026-08-01 05:41:51,151 - src.agent_loop - INFO -   -> converted: osint_situazione -> osint_situazione
+2026-08-01 05:41:51,152 - src.agent_loop - INFO -   -> converted: osint_militare -> osint_militare
+2026-08-01 05:41:51,153 - src.agent_loop - INFO - Agent round 2 summary: 0 chars, 2 native calls, 2 tool blocks. Preview: (empty)
+2026-08-01 05:41:53,262 - httpx - INFO - HTTP Request: GET https://www.wsws.org/en/articles/2026/08/01/gjao-a01.html "HTTP/1.1 200 OK"
+2026-08-01 05:41:53,556 - httpx - INFO - HTTP Request: GET https://www.ynetnews.com/article/bj00vypcbge "HTTP/1.1 200 OK"
+2026-08-01 05:41:55,480 - httpx - INFO - HTTP Request: GET https://tribune.com.pk/story/2621420/police-probe-palestinian-flag-display-at-concert "HTTP/1.1 200 OK"
+2026-08-01 05:41:55,523 - src.shadowbroker.geo - INFO - [shadowbroker] reverse_geocoder assente: i posti restano coordinate
+2026-08-01 05:41:55,546 - src.tool_execution - INFO - Tool executed: registry: osint_situazione {"quanti": 10, "con_testo": true} -> exit_code=0
+2026-08-01 05:41:57,368 - src.tool_execution - INFO - Tool executed: registry: osint_militare {"quanti": 20} -> exit_code=0
+2026-08-01 05:41:57,370 - src.agent_loop - INFO - [agent-debug] round=3 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:41:57,371 - src.agent_loop - INFO - [agent-timing] round_start round=3 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=13141 tools=38 native_tools=True timeout=300
+2026-08-01 05:41:57,687 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:42:09,038 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:42:09,039 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:42:35,594 - src.agent_loop - INFO - [agent-timing] first_event round=3 elapsed=38.223s kind=data
+2026-08-01 05:42:35,595 - src.agent_loop - INFO - [agent-timing] first_visible_token round=3 elapsed=38.224s total_elapsed=75.567s thinking=True
+2026-08-01 05:42:44,293 - src.agent_loop - INFO - Agent round 3: received 1 native tool call(s)
+2026-08-01 05:42:44,298 - src.agent_loop - INFO - [agent-timing] round_stream_done round=3 elapsed=46.927s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:42:44,304 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:42:44,306 - src.agent_loop - INFO - Agent round 3 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:42:44,322 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"tema": "army troop movement battlefield", "giorni": 1, "quante": 15} -> exit_code=0
+2026-08-01 05:42:44,328 - src.agent_loop - INFO - [agent-debug] round=4 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:42:44,329 - src.agent_loop - INFO - [agent-timing] round_start round=4 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=13308 tools=38 native_tools=True timeout=300
+2026-08-01 05:42:45,125 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:43:09,008 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:43:09,010 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:43:25,938 - src.agent_loop - INFO - [agent-timing] first_event round=4 elapsed=41.609s kind=data
+2026-08-01 05:43:25,939 - src.agent_loop - INFO - [agent-timing] first_visible_token round=4 elapsed=41.611s total_elapsed=125.911s thinking=True
+2026-08-01 05:43:40,862 - src.agent_loop - INFO - Agent round 4: received 2 native tool call(s)
+2026-08-01 05:43:40,868 - src.agent_loop - INFO - [agent-timing] round_stream_done round=4 elapsed=56.539s text_chars=0 tool_calls=2 first_event=True first_token=True
+2026-08-01 05:43:40,869 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:43:40,871 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:43:40,872 - src.agent_loop - INFO - Agent round 4 summary: 0 chars, 2 native calls, 2 tool blocks. Preview: (empty)
+2026-08-01 05:43:40,879 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"luogo": "Ucraina", "tema": "fronte battaglia truppe", "giorni": 1, "quante": 1 -> exit_code=0
+2026-08-01 05:43:40,885 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"luogo": "Iran", "tema": "military movement", "giorni": 1, "quante": 10} -> exit_code=0
+2026-08-01 05:43:40,887 - src.agent_loop - INFO - [agent-debug] round=5 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:43:40,888 - src.agent_loop - INFO - [agent-timing] round_start round=5 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=13661 tools=38 native_tools=True timeout=300
+2026-08-01 05:43:41,111 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:43:45,236 - src.agent_loop - INFO - [agent-timing] first_event round=5 elapsed=4.347s kind=data
+2026-08-01 05:43:45,238 - src.agent_loop - INFO - [agent-timing] first_visible_token round=5 elapsed=4.350s total_elapsed=145.210s thinking=True
+2026-08-01 05:43:49,749 - src.agent_loop - INFO - Agent round 5: received 1 native tool call(s)
+2026-08-01 05:43:49,755 - src.agent_loop - INFO - [agent-timing] round_stream_done round=5 elapsed=8.867s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:43:49,756 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:43:49,757 - src.agent_loop - INFO - Agent round 5 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:43:49,768 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"tema": "troop deployment military offensive", "giorni": 1, "quante": 15} -> exit_code=0
+2026-08-01 05:43:49,771 - src.agent_loop - INFO - [agent-debug] round=6 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:43:49,772 - src.agent_loop - INFO - [agent-timing] round_start round=6 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=13832 tools=38 native_tools=True timeout=300
+2026-08-01 05:43:50,023 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:43:54,609 - src.agent_loop - INFO - [agent-timing] first_event round=6 elapsed=4.837s kind=data
+2026-08-01 05:43:54,610 - src.agent_loop - INFO - [agent-timing] first_visible_token round=6 elapsed=4.838s total_elapsed=154.582s thinking=True
+2026-08-01 05:43:57,959 - src.agent_loop - INFO - Agent round 6: received 1 native tool call(s)
+2026-08-01 05:43:57,967 - src.agent_loop - INFO - [agent-timing] round_stream_done round=6 elapsed=8.195s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:43:57,968 - src.agent_loop - INFO -   -> converted: osint_cerca -> osint_cerca
+2026-08-01 05:43:57,969 - src.agent_loop - INFO - Agent round 6 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:44:09,016 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:44:09,017 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:44:14,498 - src.tool_execution - INFO - Tool executed: registry: osint_cerca {"query": "troop movements armies last 24 hours"} -> exit_code=0
+2026-08-01 05:44:14,499 - src.agent_loop - INFO - [agent-debug] round=7 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:44:14,500 - src.agent_loop - INFO - [agent-timing] round_start round=7 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=14047 tools=38 native_tools=True timeout=300
+2026-08-01 05:44:14,744 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:44:17,544 - src.agent_loop - INFO - [agent-timing] first_event round=7 elapsed=3.044s kind=data
+2026-08-01 05:44:17,545 - src.agent_loop - INFO - [agent-timing] first_visible_token round=7 elapsed=3.045s total_elapsed=177.517s thinking=True
+2026-08-01 05:44:22,396 - src.agent_loop - INFO - Agent round 7: received 1 native tool call(s)
+2026-08-01 05:44:22,402 - src.agent_loop - INFO - [agent-timing] round_stream_done round=7 elapsed=7.902s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:44:22,403 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:44:22,404 - src.agent_loop - INFO - Agent round 7 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:44:22,411 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"luogo": "Russia", "tema": "troops army", "giorni": 1, "quante": 10} -> exit_code=0
+2026-08-01 05:44:22,414 - src.agent_loop - INFO - [agent-debug] round=8 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:44:22,415 - src.agent_loop - INFO - [agent-timing] round_start round=8 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=14219 tools=38 native_tools=True timeout=300
+2026-08-01 05:44:22,658 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:44:25,459 - src.agent_loop - INFO - [agent-timing] first_event round=8 elapsed=3.044s kind=data
+2026-08-01 05:44:25,460 - src.agent_loop - INFO - [agent-timing] first_visible_token round=8 elapsed=3.045s total_elapsed=185.432s thinking=True
+2026-08-01 05:44:29,048 - src.agent_loop - INFO - Agent round 8: received 1 native tool call(s)
+2026-08-01 05:44:29,054 - src.agent_loop - INFO - [agent-timing] round_stream_done round=8 elapsed=6.639s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:44:29,055 - src.agent_loop - INFO -   -> converted: osint_notizie -> osint_notizie
+2026-08-01 05:44:29,056 - src.agent_loop - INFO - Agent round 8 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:44:29,064 - src.tool_execution - INFO - Tool executed: registry: osint_notizie {"tema": "Russia Ukraine war front", "giorni": 1, "quante": 15} -> exit_code=0
+2026-08-01 05:44:29,066 - src.agent_loop - INFO - [agent-debug] round=9 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:44:29,067 - src.agent_loop - INFO - [agent-timing] round_start round=9 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=14380 tools=38 native_tools=True timeout=300
+2026-08-01 05:44:29,273 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:44:31,934 - src.agent_loop - INFO - [agent-timing] first_event round=9 elapsed=2.867s kind=data
+2026-08-01 05:44:31,935 - src.agent_loop - INFO - [agent-timing] first_visible_token round=9 elapsed=2.868s total_elapsed=191.907s thinking=True
+2026-08-01 05:44:36,051 - src.agent_loop - INFO - Agent round 9: received 2 native tool call(s)
+2026-08-01 05:44:36,059 - src.agent_loop - INFO - [agent-timing] round_stream_done round=9 elapsed=6.992s text_chars=0 tool_calls=2 first_event=True first_token=True
+2026-08-01 05:44:36,060 - src.agent_loop - INFO -   -> converted: osint_testo -> osint_testo
+2026-08-01 05:44:36,061 - src.agent_loop - INFO -   -> converted: osint_testo -> osint_testo
+2026-08-01 05:44:36,063 - src.agent_loop - INFO - Agent round 9 summary: 0 chars, 2 native calls, 2 tool blocks. Preview: (empty)
+2026-08-01 05:44:36,803 - httpx - INFO - HTTP Request: GET https://www.scmp.com/news/world/europe/article/3362622/4-killed-russian-strikes-ukraine-zelensky-pushes-trump-patriot-missiles?utm_source=rss_feed "HTTP/1.1 200 OK"
+2026-08-01 05:44:36,870 - src.tool_execution - INFO - Tool executed: registry: osint_testo {"id": "news:e66617"} -> exit_code=0
+2026-08-01 05:44:38,124 - httpx - INFO - HTTP Request: GET https://www.dw.com/en/sudan-civil-war-when-drones-strike-the-classroom/a-78089487?maca=en-rss-en-world-4025-xml-mrss "HTTP/1.1 200 OK"
+2026-08-01 05:44:38,213 - src.tool_execution - INFO - Tool executed: registry: osint_testo {"id": "news:3b18b7"} -> exit_code=0
+2026-08-01 05:44:38,215 - src.agent_loop - INFO - [agent-debug] round=10 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'manage_contact', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'edit_image', 'glob', 'grep', 'manage_contact', 'manage_documents', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form']
+2026-08-01 05:44:38,216 - src.agent_loop - INFO - [agent-timing] round_start round=10 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=15551 tools=38 native_tools=True timeout=300
+2026-08-01 05:44:38,585 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:44:43,799 - src.agent_loop - INFO - [agent-timing] first_event round=10 elapsed=5.582s kind=data
+2026-08-01 05:44:43,823 - src.agent_loop - INFO - [agent-timing] first_visible_token round=10 elapsed=5.607s total_elapsed=203.795s thinking=True
+2026-08-01 05:44:45,651 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F30D.svg "HTTP/1.1 200 OK"
+2026-08-01 05:44:45,686 - app.slow_request - WARNING - slow_request method=GET path=/api/emoji/1f30d.svg status=200 elapsed=0.832s
+2026-08-01 05:45:09,170 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:45:09,205 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:45:11,725 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F4CA.svg "HTTP/1.1 200 OK"
+2026-08-01 05:45:21,865 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F6A2.svg "HTTP/1.1 200 OK"
+2026-08-01 05:45:35,078 - src.agent_loop - INFO - [agent-timing] round_stream_done round=10 elapsed=56.862s text_chars=3249 tool_calls=0 first_event=True first_token=True
+2026-08-01 05:45:35,080 - src.agent_loop - INFO - Agent round 10 summary: 3249 chars, 0 native calls, 0 tool blocks. Preview: ## 🌍 **Movimenti di Grandi Armate - Ultimi 24 Ore**\n\n### ⚠️ **SITUAZIONE ATTUALE (1° agosto 2026, 5:42 AM Roma)**\n\n---\n\n## 🇺🇦 **UCRAINA - Fronte Principale**\n\n### Kyiv sotto attacco missilistico (oggi
+2026-08-01 05:46:02,298 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:46:02,301 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 26.72s (attempt 1)
+2026-08-01 05:46:09,072 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:46:09,073 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:46:21,875 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:46:22,112 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:46:24,400 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:46:24,409 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:46:24,479 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:46:24,490 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:46:25,067 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:46:25,465 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:46:25,466 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:46:25,469 - routes.chat_routes - INFO - [doc-inject] no active doc for session f1b38b76-5e3f-463d-ab33-eb62c7b010b7
+2026-08-01 05:46:25,597 - routes.chat_routes - INFO - [osint-mode] 10 strumenti OSINT + 3 sempre disponibili; 31 disattivati
+2026-08-01 05:46:25,598 - core.auth - INFO - Auth config loaded
+2026-08-01 05:46:25,599 - core.auth - INFO - Loaded 2 session(s) from disk
+2026-08-01 05:46:25,601 - src.agent_loop - INFO - [agent-intent] latest='indicami sulla mappa le truppe militari che attualmente si stanno muovendo' continuation=False low_signal=True domains=[] active_doc_relevant=False retrieval_query='indicami sulla mappa le truppe militari che attualmente si stanno muovendo'
+2026-08-01 05:46:25,601 - src.agent_loop - INFO - [agent] keeping contextual path for low-signal turn in existing conversation latest='indicami sulla mappa le truppe militari che attualmente si stanno muovendo'
+2026-08-01 05:46:25,603 - src.agent_loop - INFO - [tool-rag] Low-signal query; will run RAG retrieval
+2026-08-01 05:46:25,607 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=3.735s
+2026-08-01 05:46:25,614 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:46:25,632 - app.client_perf - WARNING - client_perf type=chat_send total=3791ms user_bubble_visible=13ms upload_begin=20ms upload_done=7ms chat_stream_post_begin=1ms chat_stream_headers=3750ms extra=headers_received
+2026-08-01 05:46:25,660 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query "HTTP/1.1 200 OK"
+2026-08-01 05:46:25,664 - src.agent_loop - INFO - [tool-rag] Retrieved tools for query: ['create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'mcp__builtin_browser__browser_take_screenshot']
+2026-08-01 05:46:26,064 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:46:26,066 - src.agent_loop - INFO - [vision-gate] qwenpaw has no vision; dropped ['mcp__builtin_browser__browser_take_screenshot']
+2026-08-01 05:46:26,067 - src.agent_loop - INFO - [agent-intent] selected_tools=['ask_user', 'create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate', 'mcp__builtin_browser__browser_file_upload', 'mcp__builtin_browser__browser_fill_form', 'mcp__builtin_browser__browser_find', 'mcp__builtin_browser__browser_handle_dialog', 'mcp__builtin_browser__browser_hover', 'mcp__builtin_browser__browser_navigate', 'mcp__builtin_browser__browser_navigate_back', 'mcp__builtin_browser__browser_network_request', 'mcp__builtin_browser__browser_network_requests', 'mcp__builtin_browser__browser_press_key', 'mcp__builtin_browser__browser_resize', 'mcp__builtin_browser__browser_run_code_unsafe', 'mcp__builtin_browser__browser_select_option', 'mcp__builtin_browser__browser_snapshot', 'mcp__builtin_browser__browser_tabs', 'mcp__builtin_browser__browser_type', 'mcp__builtin_browser__browser_wait_for', 'osint_allerte', 'osint_cerca', 'osint_dettaglio', 'osint_mappa', 'osint_militare', 'osint_notizie', 'osint_recon', 'osint_situazione', 'osint_testo', 'osint_zona', 'update_plan']
+2026-08-01 05:46:26,482 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:46:26,822 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:46:26,823 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:46:26,824 - src.context_compactor - INFO - Trimming messages: 6881 tokens > 4976 budget (ctx=6000)
+2026-08-01 05:46:26,825 - src.context_compactor - INFO - Trimmed to 5652 tokens (11 messages)
+2026-08-01 05:46:26,826 - src.agent_loop - INFO - [agent] soft-trimmed context: 6881 -> 5652 tokens (budget=6000, reserve=1024)
+2026-08-01 05:46:26,827 - src.agent_loop - INFO - [agent-timing] prep_done model=qwenpaw prompt_tokens=5652 context_length=128000 prep={'request_setup': 0.003, 'tool_selection': 0.465, 'prompt_build': 0.003, 'context_trim': 0.756}
+2026-08-01 05:46:26,828 - src.agent_loop - INFO - [agent-debug] round=1 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'list_email_accounts', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate']
+2026-08-01 05:46:26,828 - src.agent_loop - INFO - [agent-timing] round_start round=1 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=5652 tools=38 native_tools=True timeout=300
+2026-08-01 05:46:27,140 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:46:46,582 - src.agent_loop - INFO - [agent-timing] first_event round=1 elapsed=19.754s kind=data
+2026-08-01 05:46:46,584 - src.agent_loop - INFO - [agent-timing] first_visible_token round=1 elapsed=19.755s total_elapsed=19.756s thinking=True
+2026-08-01 05:46:51,183 - src.agent_loop - INFO - Agent round 1: received 1 native tool call(s)
+2026-08-01 05:46:51,188 - src.agent_loop - INFO - [agent-timing] round_stream_done round=1 elapsed=24.360s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:46:51,189 - src.agent_loop - INFO -   -> converted: osint_militare -> osint_militare
+2026-08-01 05:46:51,190 - src.agent_loop - INFO - Agent round 1 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:47:01,794 - src.tool_execution - INFO - Tool executed: registry: osint_militare {"quanti": 20} -> exit_code=0
+2026-08-01 05:47:01,795 - src.agent_loop - INFO - [agent-debug] round=2 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'list_email_accounts', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate']
+2026-08-01 05:47:01,796 - src.agent_loop - INFO - [agent-timing] round_start round=2 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=8429 tools=38 native_tools=True timeout=300
+2026-08-01 05:47:02,108 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:47:09,139 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:47:09,140 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:47:13,338 - src.agent_loop - INFO - [agent-timing] first_event round=2 elapsed=11.542s kind=data
+2026-08-01 05:47:13,340 - src.agent_loop - INFO - [agent-timing] first_visible_token round=2 elapsed=11.543s total_elapsed=46.512s thinking=True
+2026-08-01 05:47:19,081 - src.agent_loop - INFO - Agent round 2: received 1 native tool call(s)
+2026-08-01 05:47:19,087 - src.agent_loop - INFO - [agent-timing] round_stream_done round=2 elapsed=17.291s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:47:19,089 - src.agent_loop - INFO -   -> converted: osint_mappa -> osint_mappa
+2026-08-01 05:47:19,090 - src.agent_loop - INFO - Agent round 2 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:47:19,109 - src.tool_execution - INFO - Tool executed: registry: osint_mappa {"azione": "livelli", "accendi": ["military_flights", "ships"]} -> exit_code=0
+2026-08-01 05:47:19,111 - src.agent_loop - INFO - [agent-debug] round=3 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'list_email_accounts', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate']
+2026-08-01 05:47:19,112 - src.agent_loop - INFO - [agent-timing] round_start round=3 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=8552 tools=38 native_tools=True timeout=300
+2026-08-01 05:47:19,315 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:47:37,433 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:47:37,936 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:47:37,938 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.169s
+2026-08-01 05:47:41,662 - src.agent_loop - INFO - [agent-timing] first_event round=3 elapsed=22.550s kind=data
+2026-08-01 05:47:41,664 - src.agent_loop - INFO - [agent-timing] first_visible_token round=3 elapsed=22.552s total_elapsed=74.836s thinking=True
+2026-08-01 05:47:50,916 - src.agent_loop - INFO - Agent round 3: received 1 native tool call(s)
+2026-08-01 05:47:50,923 - src.agent_loop - INFO - [agent-timing] round_stream_done round=3 elapsed=31.811s text_chars=0 tool_calls=1 first_event=True first_token=True
+2026-08-01 05:47:50,924 - src.agent_loop - INFO -   -> converted: osint_mappa -> osint_mappa
+2026-08-01 05:47:50,925 - src.agent_loop - INFO - Agent round 3 summary: 0 chars, 1 native calls, 1 tool blocks. Preview: (empty)
+2026-08-01 05:47:50,953 - src.tool_execution - INFO - Tool executed: registry: osint_mappa {"azione": "evidenzia", "ids": ["tracked_flights:483c07", "tracked_flights:a118c -> exit_code=0
+2026-08-01 05:47:50,955 - src.agent_loop - INFO - [agent-debug] round=4 model=qwenpaw _is_api_model=True tools_sent=38 tool_names=['manage_memory', 'ask_user', 'update_plan', 'edit_image', 'list_email_accounts', 'osint_situazione', 'osint_notizie', 'osint_militare', 'osint_allerte', 'osint_zona', 'osint_dettaglio', 'osint_testo', 'osint_cerca', 'osint_recon', 'osint_mappa'] relevant_tools=['ask_user', 'create_document', 'edit_image', 'generate_image', 'get_workspace', 'grep', 'list_email_accounts', 'manage_mcp', 'manage_memory', 'mcp__builtin_browser__browser_click', 'mcp__builtin_browser__browser_close', 'mcp__builtin_browser__browser_console_messages', 'mcp__builtin_browser__browser_drag', 'mcp__builtin_browser__browser_drop', 'mcp__builtin_browser__browser_evaluate']
+2026-08-01 05:47:50,956 - src.agent_loop - INFO - [agent-timing] round_start round=4 model=qwenpaw endpoint=http://127.0.0.1:8012/v1/chat/completions prompt_tokens=8698 tools=38 native_tools=True timeout=300
+2026-08-01 05:47:51,157 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:47:53,583 - src.agent_loop - INFO - [agent-timing] first_event round=4 elapsed=2.627s kind=data
+2026-08-01 05:47:53,584 - src.agent_loop - INFO - [agent-timing] first_visible_token round=4 elapsed=2.629s total_elapsed=86.757s thinking=True
+2026-08-01 05:47:58,696 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/2708.svg "HTTP/1.1 200 OK"
+2026-08-01 05:48:03,609 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:48:04,229 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:48:04,244 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.314s
+2026-08-01 05:48:09,094 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:48:09,094 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:48:18,626 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:48:19,275 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:48:19,278 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.383s
+2026-08-01 05:48:33,645 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:48:34,206 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:48:34,209 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.265s
+2026-08-01 05:48:38,349 - src.agent_loop - INFO - [agent-timing] round_stream_done round=4 elapsed=47.393s text_chars=2133 tool_calls=0 first_event=True first_token=True
+2026-08-01 05:48:38,350 - src.agent_loop - INFO - Agent round 4 summary: 2133 chars, 0 native calls, 0 tool blocks. Preview: ## 🌍 **MOVIMENTI MILITARI ATTUALI - 1° agosto 2026, 5:48 AM Roma**\n\nLa mappa mostra ora i velivoli militari e le navi in movimento. Ecco i principali:\n\n---\n\n### ✈️ **VELIVOLI MILITARI ATTIVI**\n\n#### *
+2026-08-01 05:48:48,648 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:48:49,350 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:48:49,358 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.451s
+2026-08-01 05:48:55,109 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:48:55,112 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 16.02s (attempt 1)
+2026-08-01 05:48:55,114 - services.memory.memory_extractor - INFO - Auto memory extraction ran: 0 candidates
+2026-08-01 05:49:03,597 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:49:04,180 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:49:04,183 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.314s
+2026-08-01 05:49:09,051 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:49:09,052 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:49:17,518 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:49:17,522 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 22.41s (attempt 1)
+2026-08-01 05:49:18,505 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:49:18,976 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:49:18,979 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.109s
+2026-08-01 05:49:33,370 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:49:34,073 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:49:34,077 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.211s
+2026-08-01 05:49:48,482 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:49:49,029 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:49:49,031 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.162s
+2026-08-01 05:50:03,523 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:50:04,036 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:50:04,040 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.150s
+2026-08-01 05:50:09,044 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:50:09,045 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:51:09,043 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:51:09,044 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:52:09,023 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:52:09,024 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:53:09,079 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:53:09,081 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:53:10,945 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:53:11,345 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:53:11,348 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.944s
+2026-08-01 05:53:25,898 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:53:26,384 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:53:26,387 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.004s
+2026-08-01 05:53:40,996 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:53:41,449 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:53:41,453 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.070s
+2026-08-01 05:53:55,966 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:53:56,525 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:53:56,528 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.136s
+2026-08-01 05:54:09,105 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:54:09,110 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:54:11,070 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:54:11,545 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:54:11,551 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.114s
+2026-08-01 05:54:25,956 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:54:26,432 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:54:26,436 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.010s
+2026-08-01 05:54:40,923 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:54:41,418 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:54:41,422 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.034s
+2026-08-01 05:54:55,943 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:54:56,424 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:54:56,427 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.036s
+2026-08-01 05:55:09,081 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:55:09,082 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:55:10,886 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:55:11,334 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:55:11,337 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.964s
+2026-08-01 05:55:25,924 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:55:26,318 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:55:26,321 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.923s
+2026-08-01 05:55:41,041 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:55:41,505 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:55:41,508 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.127s
+2026-08-01 05:56:09,009 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:56:09,010 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:57:09,019 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:57:09,020 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:58:09,007 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:58:09,008 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:59:08,992 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:59:09,023 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 06:00:09,017 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 06:00:09,018 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars

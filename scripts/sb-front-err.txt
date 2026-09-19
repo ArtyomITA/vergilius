@@ -1,0 +1,7 @@
+⚠ Slow filesystem detected. The benchmark took 566ms. If D:\assistenteeee\shadowbroker\frontend\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+[browser] Image with src "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-155.13034028277568,19.231521523072523,-154.65034028277566,19.591521523072522&bboxSR=4326&imageSR=4326&size=1600,900&format=png32&f=image" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-2-l2a&item=S2B_MSIL2A_20260730T205939_R014_T05QKB_20260730T224406&assets=visual&asset_bidx=visual%7C1%2C2%2C3&nodata=0&format=png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+⚠ Slow filesystem detected. The benchmark took 478ms. If D:\assistenteeee\shadowbroker\frontend\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development

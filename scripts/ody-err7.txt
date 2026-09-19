@@ -1,0 +1,835 @@
+2026-08-01 01:26:15,647 - core.auth - INFO - Auth config loaded
+2026-08-01 01:26:15,670 - core.auth - INFO - Loaded 1 session(s) from disk
+2026-08-01 01:26:15,675 - __main__ - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 01:26:18,574 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 01:26:25,763 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 01:26:28,211 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 01:26:28,219 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 01:26:28,223 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 01:26:28,224 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 01:26:32,661 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 01:26:34,758 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:34,764 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 01:26:34,765 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:34,766 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 01:26:34,973 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:34,978 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 01:26:34,982 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 01:26:34,987 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 01:26:34,993 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:26:34,994 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 01:26:34,995 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 01:26:34,996 - __main__ - INFO - Vector document RAG initialized
+2026-08-01 01:26:35,441 - core.session_manager - INFO - Loaded 3 session(s) (metadata only)
+2026-08-01 01:26:35,445 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 01:26:35,446 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 01:26:35,670 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:35,675 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 01:26:35,676 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:35,677 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 01:26:35,860 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 01:26:35,865 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 01:26:35,869 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 01:26:35,873 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 01:26:35,878 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:26:35,879 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=0)
+2026-08-01 01:26:35,885 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:26:35,886 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 01:26:35,888 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 01:26:35,941 - __main__ - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 01:26:36,680 - __main__ - INFO - STT service initialized (provider managed via settings)
+2026-08-01 01:26:37,047 - __main__ - INFO - MCP routes initialized
+2026-08-01 01:26:37,048 - __main__ - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 01:26:37,062 - __main__ - INFO - Webhook & API token routes initialized
+INFO:     Started server process [28620]
+INFO:     Waiting for application startup.
+2026-08-01 01:26:37,392 - __main__ - INFO - Application starting up...
+2026-08-01 01:26:37,443 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 01:26:37,444 - __main__ - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 01:26:37,602 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 01:26:37,634 - __main__ - INFO - Application startup complete
+2026-08-01 01:26:37,671 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 01:26:41,230 - app.slow_request - WARNING - slow_request method=GET path=/api/tasks/notifications status=200 elapsed=1.201s
+2026-08-01 01:26:42,018 - app.slow_request - WARNING - slow_request method=GET path=/api/research/active status=200 elapsed=0.790s
+2026-08-01 01:26:42,024 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:26:42,027 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:26:42,050 - app.slow_request - WARNING - slow_request method=GET path=/api/email/urgency-state status=200 elapsed=0.824s
+2026-08-01 01:26:42,107 - app.slow_request - WARNING - slow_request method=GET path=/api/email/unread-state status=200 elapsed=0.884s
+2026-08-01 01:26:43,088 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 01:26:46,561 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 01:26:46,562 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+2026-08-01 01:26:46,664 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 01:26:46,665 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 01:26:46,684 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 01:26:46,685 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 01:26:46,729 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 01:26:46,730 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 01:26:49,420 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 01:26:49,421 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+[08/01/26 01:26:51] INFO     Starting MCP server 'windows-mcp' transport.py:241
+                             with transport 'stdio'                            
+2026-08-01 01:26:51,575 - src.mcp_manager - INFO - MCP server connected: windows-mcp (075fe6c2) - 13 tools via stdio
+2026-08-01 01:27:39,061 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:27:39,062 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:27:47,272 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:27:47,276 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,959 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,959 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,961 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 01:28:17,975 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,976 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,988 - routes.email_pollers - INFO - Started scheduled email poller
+2026-08-01 01:28:17,991 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:17,992 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:18,308 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:28:18,647 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:28:18,983 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:28:18,985 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.059s
+2026-08-01 01:28:25,263 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:25,264 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:28:58,875 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:28:58,896 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:01,823 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:02,166 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:02,552 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:02,972 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:02,974 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.797s
+2026-08-01 01:29:06,634 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:06,978 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:09,569 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:10,021 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:10,033 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.878s
+2026-08-01 01:29:12,624 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:12,985 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:13,008 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.750s
+2026-08-01 01:29:15,544 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:15,880 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:16,012 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:29:16,015 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:29:18,397 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:18,765 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:21,429 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:21,775 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:21,802 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.828s
+2026-08-01 01:29:24,344 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:24,709 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:27,393 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:27,757 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:30,408 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:30,775 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:33,332 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:33,750 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:33,758 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.804s
+2026-08-01 01:29:36,298 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:36,645 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:39,191 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:39,559 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:42,125 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:42,493 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:45,807 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:46,697 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:46,699 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.570s
+2026-08-01 01:29:49,196 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:29:49,427 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/heretic/health "HTTP/1.1 200 OK"
+2026-08-01 01:29:49,526 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:29:49,926 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/heretic/props "HTTP/1.1 200 OK"
+2026-08-01 01:29:49,927 - src.llamaswap - INFO - [llama-swap] heretic capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B-heretic-Q4_K_M.gguf'}
+2026-08-01 01:29:49,929 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.075s
+2026-08-01 01:30:16,016 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:30:16,017 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:31:03,995 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:31:04,228 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:31:04,817 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:31:05,144 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:31:05,145 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:31:05,153 - routes.chat_routes - INFO - [doc-inject] no active doc for session 9b0ba821-235b-4a3f-923a-6fcae76a89bb
+2026-08-01 01:31:05,681 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=1.723s
+2026-08-01 01:31:05,701 - app.client_perf - WARNING - client_perf type=chat_send total=2358ms pending_session_begin=6ms pending_session_done=580ms user_bubble_visible=18ms upload_begin=13ms upload_done=7ms chat_stream_post_begin=2ms chat_stream_headers=1732ms extra=headers_received
+2026-08-01 01:31:06,023 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:31:16,017 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:31:16,018 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:31:57,362 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=504 elapsed=45.004s
+2026-08-01 01:32:12,387 - src.llm_core - WARNING - LLM async call attempt 1 failed after 60.04s: 
+2026-08-01 01:32:12,821 - services.tts.tts_service - ERROR - API TTS synthesis failed: timed out
+2026-08-01 01:32:17,004 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:32:17,005 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:32:17,079 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:32:17,081 - services.tts.tts_service - INFO - API TTS: 147884 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:32:17,096 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=19.723s
+2026-08-01 01:32:17,143 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:32:17,146 - services.tts.tts_service - INFO - API TTS: 167084 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:32:17,286 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=5.509s
+2026-08-01 01:33:12,917 - src.llm_core - WARNING - LLM async call attempt 2 failed after 60.02s: 
+2026-08-01 01:33:16,934 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:33:16,939 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:34:13,627 - src.llm_core - WARNING - LLM async call attempt 3 failed after 60.02s: 
+2026-08-01 01:34:13,942 - routes.chat_helpers - ERROR - Auto-name failed for 9b0ba821-235b-4a3f-923a-6fcae76a89bb: 502: POST http://127.0.0.1:8012/v1/chat/completions failed after 3 attempts: 
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 2078, in llm_call_async
+    r = await httpx_post_kimi_aware_async(client, target_url, h, json=payload, timeout=call_timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 834, in httpx_post_kimi_aware_async
+    return await client.post(url, headers=h, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\routes\chat_helpers.py", line 263, in auto_name_session
+    title = await llm_call_async(
+            ^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 2117, in llm_call_async
+    raise HTTPException(502, f"POST {target_url} failed after {max_retries} attempts: {e}")
+fastapi.exceptions.HTTPException: 502: POST http://127.0.0.1:8012/v1/chat/completions failed after 3 attempts: 
+
+2026-08-01 01:34:16,929 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:34:16,931 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:35:39,286 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:35:39,340 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:36:37,346 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:36:37,347 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:37:16,012 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:37:16,014 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:38:16,007 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:38:16,007 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:39:16,928 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:39:16,929 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:38,989 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:38,996 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,611 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,634 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,641 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 01:40:57,662 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,663 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,683 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:57,684 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:40:58,227 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:40:58,704 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:40:59,051 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:00,500 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/props "HTTP/1.1 200 OK"
+2026-08-01 01:41:00,523 - src.llamaswap - INFO - [llama-swap] qwenpaw capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B.i1-Q4_K_M.gguf'}
+2026-08-01 01:41:00,528 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=3.219s
+2026-08-01 01:41:03,029 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:41:03,406 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:03,423 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:41:03,490 - app.slow_request - WARNING - slow_request method=GET path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb/context status=200 elapsed=1.382s
+2026-08-01 01:41:03,900 - app.slow_request - WARNING - slow_request method=GET path=/api/history/9b0ba821-235b-4a3f-923a-6fcae76a89bb status=200 elapsed=1.790s
+2026-08-01 01:41:03,914 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:41:03,933 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:41:07,638 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:07,973 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:08,002 - app.slow_request - WARNING - slow_request method=POST path=/api/model-runtime/warmup status=200 elapsed=0.756s
+2026-08-01 01:41:08,411 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:08,904 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:08,909 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.868s
+2026-08-01 01:41:13,552 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:13,971 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:13,976 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.820s
+2026-08-01 01:41:17,246 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:17,579 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:20,305 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:20,676 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:20,681 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.754s
+2026-08-01 01:41:23,249 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:23,586 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:26,271 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:26,664 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:29,272 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:29,619 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:32,255 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:32,645 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:32,762 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.832s
+2026-08-01 01:41:35,149 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:35,863 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:35,865 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.105s
+2026-08-01 01:41:38,262 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:38,577 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:41,422 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:41,733 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:41,735 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.804s
+2026-08-01 01:41:44,257 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:44,612 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:47,248 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:47,598 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:47,609 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.808s
+2026-08-01 01:41:50,146 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:50,494 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:53,155 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:53,482 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:55,796 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:41:55,803 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:41:56,132 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:56,492 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:41:59,100 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:41:59,452 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:02,050 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:02,453 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:02,461 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.770s
+2026-08-01 01:42:05,114 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:05,476 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:05,503 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.769s
+2026-08-01 01:42:08,034 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:08,376 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:11,184 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:11,522 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:14,050 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:14,419 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:16,984 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:17,464 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:17,467 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.835s
+2026-08-01 01:42:20,005 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:20,350 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:22,920 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:23,588 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:23,590 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.004s
+2026-08-01 01:42:26,453 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:27,212 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:27,214 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.537s
+2026-08-01 01:42:29,732 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:30,065 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:30,745 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/heretic/health "HTTP/1.1 200 OK"
+2026-08-01 01:42:32,549 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:42:32,874 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:42:55,827 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:42:55,828 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:43:03,172 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:43:03,494 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:43:03,495 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:43:03,497 - app.slow_request - WARNING - slow_request method=GET path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb/context status=200 elapsed=0.789s
+2026-08-01 01:43:03,498 - app.slow_request - WARNING - slow_request method=GET path=/api/history/9b0ba821-235b-4a3f-923a-6fcae76a89bb status=200 elapsed=0.791s
+2026-08-01 01:43:03,701 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:43:03,881 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:43:04,441 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:43:04,799 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:43:04,800 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:43:04,803 - routes.chat_routes - INFO - [doc-inject] no active doc for session 9b0ba821-235b-4a3f-923a-6fcae76a89bb
+2026-08-01 01:43:04,981 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=1.284s
+2026-08-01 01:43:05,001 - app.client_perf - WARNING - client_perf type=chat_send total=2322ms user_bubble_visible=1013ms upload_begin=8ms upload_done=3ms chat_stream_post_begin=1ms chat_stream_headers=1296ms extra=headers_received
+2026-08-01 01:43:05,211 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:43:11,282 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F914.svg "HTTP/1.1 200 OK"
+2026-08-01 01:43:13,601 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:43:13,603 - services.tts.tts_service - INFO - API TTS: 90284 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:43:13,653 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=2.465s
+2026-08-01 01:43:16,299 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:43:16,818 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:43:16,819 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:43:16,825 - app.slow_request - WARNING - slow_request method=GET path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb/context status=200 elapsed=0.991s
+2026-08-01 01:43:32,727 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:43:32,734 - services.tts.tts_service - INFO - API TTS: 915884 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:43:32,781 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=15.958s
+2026-08-01 01:43:55,832 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:43:55,898 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:44:11,759 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:44:12,028 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:44:12,672 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:44:13,145 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:44:13,146 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:44:13,149 - routes.chat_routes - INFO - [doc-inject] no active doc for session 9b0ba821-235b-4a3f-923a-6fcae76a89bb
+2026-08-01 01:44:13,253 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=1.499s
+2026-08-01 01:44:13,585 - app.client_perf - WARNING - client_perf type=chat_send total=1537ms user_bubble_visible=11ms upload_begin=9ms upload_done=4ms chat_stream_post_begin=1ms chat_stream_headers=1513ms extra=headers_received
+2026-08-01 01:44:15,835 - src.llm_core - WARNING - LLM async call attempt 1 failed after 60.02s: 
+2026-08-01 01:44:35,448 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:44:35,480 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:44:36,701 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:44:36,704 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 79.88s (attempt 1)
+2026-08-01 01:44:38,854 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:44:39,137 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/get "HTTP/1.1 200 OK"
+2026-08-01 01:44:39,233 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/pre-flight-checks "HTTP/1.1 200 OK"
+2026-08-01 01:44:40,326 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/add "HTTP/1.1 201 Created"
+2026-08-01 01:44:40,330 - services.memory.memory_extractor - INFO - Auto-extracted 1 memories from session
+2026-08-01 01:44:55,836 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:44:55,837 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:45:25,737 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:45:28,710 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:45:31,003 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:45:31,023 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:45:31,033 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:45:31,150 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 01:45:31,513 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:45:31,899 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:31,900 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:45:31,903 - routes.chat_routes - INFO - [doc-inject] no active doc for session 9b0ba821-235b-4a3f-923a-6fcae76a89bb
+2026-08-01 01:45:32,084 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=6.349s
+2026-08-01 01:45:32,104 - app.client_perf - WARNING - client_perf type=chat_send total=6387ms user_bubble_visible=9ms upload_begin=9ms upload_done=6ms chat_stream_post_begin=1ms chat_stream_headers=6363ms extra=headers_received
+2026-08-01 01:45:49,365 - app.slow_request - WARNING - slow_request method=POST path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb/inject_messages status=200 elapsed=1.085s
+2026-08-01 01:45:49,894 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:49,894 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:50,368 - app.slow_request - WARNING - slow_request method=PATCH path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb status=200 elapsed=0.841s
+2026-08-01 01:45:51,134 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:45:51,537 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:51,538 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:45:51,543 - app.slow_request - WARNING - slow_request method=GET path=/api/session/9b0ba821-235b-4a3f-923a-6fcae76a89bb/context status=200 elapsed=1.164s
+2026-08-01 01:45:51,979 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:51,983 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:51,988 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:52,369 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:45:52,372 - app.slow_request - WARNING - slow_request method=POST path=/api/model-runtime/warmup status=200 elapsed=1.993s
+2026-08-01 01:45:52,806 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:53,230 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:45:53,233 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.851s
+2026-08-01 01:45:55,981 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:45:55,995 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:45:56,305 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:45:56,657 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:45:56,683 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.761s
+2026-08-01 01:45:59,267 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:45:59,635 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:00,069 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:00,096 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.178s
+2026-08-01 01:46:03,299 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:03,693 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:03,701 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.783s
+2026-08-01 01:46:06,238 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:06,551 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:09,254 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:09,625 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:12,255 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:12,607 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:15,636 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:16,252 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:16,255 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.973s
+2026-08-01 01:46:19,196 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:19,541 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:19,543 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.814s
+2026-08-01 01:46:22,106 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:22,389 - src.llm_core - WARNING - LLM async call attempt 2 failed after 126.04s: 
+2026-08-01 01:46:22,490 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:26,375 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:26,722 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:29,233 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:29,614 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:32,158 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:32,577 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:32,585 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.768s
+2026-08-01 01:46:35,089 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:35,463 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:35,490 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.757s
+2026-08-01 01:46:38,023 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:38,407 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:38,434 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.784s
+2026-08-01 01:46:40,980 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:41,362 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:41,384 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.784s
+2026-08-01 01:46:43,971 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:44,305 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:44,311 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.769s
+2026-08-01 01:46:46,798 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:47,186 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:49,754 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:50,102 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:52,682 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:53,040 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:55,592 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:55,955 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:46:56,033 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:46:56,034 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:46:58,498 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:46:58,858 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:47:01,428 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:47:01,835 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:47:01,838 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.787s
+2026-08-01 01:47:04,539 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:47:04,990 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:47:04,993 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.950s
+2026-08-01 01:47:08,236 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:47:08,526 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/heretic/health "HTTP/1.1 200 OK"
+2026-08-01 01:47:08,547 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:47:22,924 - src.llm_core - WARNING - LLM async call attempt 3 failed after 60.02s: 
+2026-08-01 01:47:23,196 - routes.chat_helpers - ERROR - Auto-name failed for 9b0ba821-235b-4a3f-923a-6fcae76a89bb: 502: POST http://127.0.0.1:8012/v1/chat/completions failed after 3 attempts: 
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\connection.py", line 103, in handle_async_request
+    return await self._connection.handle_async_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 136, in handle_async_request
+    raise exc
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 106, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 177, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_async\http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 2078, in llm_call_async
+    r = await httpx_post_kimi_aware_async(client, target_url, h, json=payload, timeout=call_timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 834, in httpx_post_kimi_aware_async
+    return await client.post(url, headers=h, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1859, in post
+    return await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\assistenteeee\odysseus\venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\routes\chat_helpers.py", line 263, in auto_name_session
+    title = await llm_call_async(
+            ^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "D:\assistenteeee\odysseus\src\llm_core.py", line 2117, in llm_call_async
+    raise HTTPException(502, f"POST {target_url} failed after {max_retries} attempts: {e}")
+fastapi.exceptions.HTTPException: 502: POST http://127.0.0.1:8012/v1/chat/completions failed after 3 attempts: 
+
+2026-08-01 01:47:56,264 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:47:56,296 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:49:38,948 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:49:38,949 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:49:59,675 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:49:59,676 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:50:04,321 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:04,652 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:09,033 - core.session_manager - INFO - Deleted session 9b0ba821-235b-4a3f-923a-6fcae76a89bb
+2026-08-01 01:50:10,414 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:50:10,415 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:50:13,440 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:13,800 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:13,802 - app.slow_request - WARNING - slow_request method=POST path=/api/model-runtime/warmup status=200 elapsed=0.795s
+2026-08-01 01:50:14,177 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:14,533 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:18,027 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:18,363 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:20,892 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:21,261 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:23,819 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:24,189 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:24,216 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.760s
+2026-08-01 01:50:26,737 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:27,132 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:29,690 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:30,089 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:30,094 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.807s
+2026-08-01 01:50:33,308 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:33,656 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:36,370 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:36,717 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:36,742 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.781s
+2026-08-01 01:50:39,253 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:39,587 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:42,267 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:42,621 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:45,252 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:45,594 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:48,289 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:48,651 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:51,269 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:51,630 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:51,758 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.839s
+2026-08-01 01:50:54,256 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:54,639 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:50:58,249 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:50:58,583 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:51:00,259 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:51:00,406 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/heretic/health "HTTP/1.1 200 OK"
+2026-08-01 01:51:02,251 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:51:02,570 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:51:02,965 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:51:02,966 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:51:27,913 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:51:28,102 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:51:30,287 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:51:30,291 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:51:30,323 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:51:30,328 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 01:51:30,667 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:51:30,993 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:51:30,994 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:51:30,996 - routes.chat_routes - INFO - [doc-inject] no active doc for session 0dea6106-586c-42f7-b3d6-b93d034bf0ed
+2026-08-01 01:51:31,150 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=3.239s
+2026-08-01 01:51:31,329 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:51:31,476 - app.client_perf - WARNING - client_perf type=chat_send total=3551ms pending_session_begin=8ms pending_session_done=261ms user_bubble_visible=13ms upload_begin=9ms upload_done=10ms chat_stream_post_begin=2ms chat_stream_headers=3248ms extra=headers_received
+2026-08-01 01:51:45,848 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:51:45,850 - services.tts.tts_service - INFO - API TTS: 132524 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:51:45,858 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=2.938s
+2026-08-01 01:52:02,690 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:52:02,701 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:52:05,041 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:52:05,968 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:52:06,395 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:52:06,403 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:52:06,420 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:52:06,430 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 01:52:06,859 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:52:07,295 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:52:07,296 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:52:07,301 - routes.chat_routes - INFO - [doc-inject] no active doc for session 0dea6106-586c-42f7-b3d6-b93d034bf0ed
+2026-08-01 01:52:07,626 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=2.589s
+2026-08-01 01:52:07,675 - app.client_perf - WARNING - client_perf type=chat_send total=2646ms user_bubble_visible=12ms upload_begin=13ms upload_done=7ms chat_stream_post_begin=1ms chat_stream_headers=2613ms extra=headers_received
+2026-08-01 01:52:09,905 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:52:09,931 - services.tts.tts_service - INFO - API TTS: 1192364 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:52:09,987 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=21.081s
+2026-08-01 01:52:47,548 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:52:47,573 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 58.67s (attempt 1)
+2026-08-01 01:52:47,752 - routes.chat_helpers - INFO - Auto-named session 0dea6106-586c-42f7-b3d6-b93d034bf0ed: Testing AI Capabilities
+2026-08-01 01:53:03,285 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:53:03,316 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:53:36,063 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:53:38,584 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/2705.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:48,030 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F4DD.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:49,465 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:53:49,467 - services.tts.tts_service - INFO - API TTS: 90284 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:53:49,476 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=2.449s
+2026-08-01 01:53:50,186 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F9EE.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:51,623 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F4C5.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:53,241 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F4BB.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:54,658 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F3A8.svg "HTTP/1.1 200 OK"
+2026-08-01 01:53:55,880 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/1F310.svg "HTTP/1.1 200 OK"
+2026-08-01 01:54:02,425 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:54:02,426 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:54:09,251 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 01:54:09,805 - src.chat_handler - INFO - Preset None: temp=1.0, max_tokens=0
+2026-08-01 01:54:12,240 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:54:12,372 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:54:12,385 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 01:54:12,406 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 01:54:12,829 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 01:54:13,279 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:54:13,281 - src.model_context - INFO - Context length for heretic: 128000
+2026-08-01 01:54:13,286 - routes.chat_routes - INFO - [doc-inject] no active doc for session 0dea6106-586c-42f7-b3d6-b93d034bf0ed
+2026-08-01 01:54:13,571 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=4.326s
+2026-08-01 01:54:13,596 - app.client_perf - WARNING - client_perf type=chat_send total=4374ms user_bubble_visible=13ms upload_begin=13ms upload_done=6ms chat_stream_post_begin=1ms chat_stream_headers=4340ms extra=headers_received
+2026-08-01 01:54:15,924 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:54:15,930 - services.tts.tts_service - INFO - API TTS: 1123244 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:54:15,987 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=19.122s
+2026-08-01 01:54:57,465 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:54:57,484 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 58.67s (attempt 1)
+2026-08-01 01:54:57,485 - services.memory.memory_extractor - INFO - Auto memory extraction ran: 0 candidates
+2026-08-01 01:55:02,897 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:55:02,898 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:55:51,010 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 01:56:02,487 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:56:02,488 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:56:14,492 - httpx - INFO - HTTP Request: GET https://cdn.jsdelivr.net/npm/openmoji@15.0.0/black/svg/26A0.svg "HTTP/1.1 200 OK"
+2026-08-01 01:56:55,334 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8013/v1/audio/speech "HTTP/1.1 200 OK"
+2026-08-01 01:56:55,361 - services.tts.tts_service - INFO - API TTS: 2513324 bytes from http://127.0.0.1:8013/v1
+2026-08-01 01:56:55,476 - app.slow_request - WARNING - slow_request method=POST path=/api/tts/synthesize status=200 elapsed=37.115s
+2026-08-01 01:57:02,430 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:57:02,431 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:57:43,969 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:43,993 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:44,033 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1 "HTTP/1.1 404 Not Found"
+2026-08-01 01:57:44,045 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1 "HTTP/1.1 404 Not Found"
+2026-08-01 01:57:44,421 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:44,434 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:44,435 - app.slow_request - WARNING - slow_request method=GET path=/api/model-endpoints/probe-local status=200 elapsed=0.966s
+2026-08-01 01:57:45,171 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:45,511 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:45,873 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:45,875 - app.slow_request - WARNING - slow_request method=POST path=/api/model-runtime/warmup status=200 elapsed=1.077s
+2026-08-01 01:57:46,272 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:46,692 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:46,695 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.810s
+2026-08-01 01:57:50,430 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:50,820 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:50,823 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.780s
+2026-08-01 01:57:53,334 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:53,661 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:56,163 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:56,525 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:57:59,103 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:57:59,439 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:01,954 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:02,300 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:02,411 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:58:02,412 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:58:04,790 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:05,102 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:07,591 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:07,932 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:10,512 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:10,885 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:10,911 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.794s
+2026-08-01 01:58:13,257 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:13,584 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:16,261 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:16,611 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:19,270 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:19,604 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:22,242 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:22,593 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:25,033 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:25,387 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:25,410 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=0.760s
+2026-08-01 01:58:27,935 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:28,287 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:31,107 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:31,578 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:31,581 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.084s
+2026-08-01 01:58:34,507 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:34,854 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 01:58:36,667 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/health "HTTP/1.1 200 OK"
+2026-08-01 01:58:37,357 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:58:37,727 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"

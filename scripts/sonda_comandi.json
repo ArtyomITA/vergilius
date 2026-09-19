@@ -1,0 +1,423 @@
+{
+ "add_watch": {
+  "saltato": true
+ },
+ "brief_area": {
+  "token": 3476,
+  "forma": "{center, context_layers, nearby, radius_km, topic_news}",
+  "chiavi": [
+   "center",
+   "context_layers",
+   "nearby",
+   "radius_km",
+   "topic_news"
+  ],
+  "campione": "{\"center\": {\"lat\": 50.45, \"lng\": 30.52}, \"radius_km\": 300.0, \"nearby\": {\"results\": [], \"version\": 301, \"truncated\": false}, \"topic_news\": {\"results\": [], \"truncated\": false}, \"context_layers\": {\"version\": 301, \"layer_versions\": {\"weather_alerts\": 5, \"earthquakes\": 5, \"internet_outages\": 10, \"sar_anomalies\": 0}, \"changed\": true, \"layers\": {\"weather_alerts\": [{\"id\": \"urn:oid:2.49.0.1.840.0.6f4a8dc2e12a16729cbe8e9045f7240032e44382.001.1\", \"event\": \"Flood Advisory\", \"severity\": \"Minor\", \"certainty\": \"Likely\", \"urgency\": \"Expected\", \"headline\": \"Flood Advisory issued July 31 at 8:56PM CDT until Aug"
+ },
+ "channel_status": {
+  "token": 133,
+  "forma": "{completed_commands, forward_secrecy, mls_upgrade_available, ok, pending_commands, pending_tasks, reason, sealed_sender, stats, tier, transport}",
+  "chiavi": [
+   "completed_commands",
+   "forward_secrecy",
+   "mls_upgrade_available",
+   "ok",
+   "pending_commands",
+   "pending_tasks",
+   "reason",
+   "sealed_sender",
+   "stats",
+   "tier",
+   "transport"
+  ],
+  "campione": "{\"ok\": true, \"tier\": 1, \"reason\": \"HMAC-authenticated HTTP — commands are signed but not end-to-end encrypted\", \"transport\": \"public_degraded\", \"forward_secrecy\": false, \"sealed_sender\": false, \"mls_upgrade_available\": false, \"pending_commands\": 1, \"completed_commands\": 9, \"pending_tasks\": 0, \"stats\": {\"commands_received\": 22, \"commands_executed\": 21, \"commands_failed\": 0, \"tasks_pushed\": 0, \"tasks_picked_up\": 0}}"
+ },
+ "clear_analysis_zones": {
+  "saltato": true
+ },
+ "clear_watches": {
+  "saltato": true
+ },
+ "correlate_entity": {
+  "token": 1690,
+  "forma": "{center, claim_level, entity, evidence, lookup, movement, radius_km, recommended_next, signals, status, version}",
+  "chiavi": [
+   "center",
+   "claim_level",
+   "entity",
+   "evidence",
+   "lookup",
+   "movement",
+   "radius_km",
+   "recommended_next",
+   "signals",
+   "status",
+   "version"
+  ],
+  "campione": "{\"status\": \"context_found\", \"claim_level\": \"evidence_pack_not_verdict\", \"lookup\": {\"query\": \"RCH462\", \"entity_type\": \"\", \"best_match\": {\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7179\", \"icao24\": \"ae1471\", \"owner\": \"USAF\", \"type\": \"tracked_flight\", \"lat\": 45.206, \"lng\": -98.819, \"altitude\": 11582.400000000001, \"heading\": 258.53, \"alert_category\": \"USAF\", \"alert_operator\": \"USAF\", \"group\": \"aircraft\", \"label\": \"RCH462\", \"id\": \"ae1471\", \"score\": 1000, \"confidence\": 0.99}, \"results\": [{\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7"
+ },
+ "create_layer": {
+  "saltato": true
+ },
+ "delete_analysis_zone": {
+  "saltato": true
+ },
+ "delete_layer": {
+  "saltato": true
+ },
+ "delete_pin": {
+  "saltato": true
+ },
+ "entities_near": {
+  "token": 51,
+  "forma": "{results, truncated, version}",
+  "chiavi": [
+   "results",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"results\": [], \"version\": 301, \"truncated\": false}"
+ },
+ "entity_expand": {
+  "token": 273,
+  "forma": "{links, nodes}",
+  "chiavi": [
+   "links",
+   "nodes"
+  ],
+  "campione": "{\"nodes\": [{\"id\": \"country:Ukraine\", \"label\": \"Ukraine\", \"type\": \"country\", \"properties\": {}}, {\"id\": \"sanction:NK-6EGnXTZMMAf8fSa5PH7McD\", \"label\": \"BelKazTrans Ukraine\", \"type\": \"sanction\", \"properties\": {\"programs\": [\"US-BRUS\"], \"source\": \"OFAC SDN\"}}, {\"id\": \"sanction:NK-BRudJnmnpNvLrjjgKxbC4r\", \"label\": \"SALVATION COMMITTEE OF UKRAINE\", \"type\": \"sanction\", \"properties\": {\"programs\": [\"US-UKRRUS-REL\"], \"source\": \"OFAC SDN\"}}, {\"id\": \"sanction:NK-FgWEjm5xg2rozDdi6BccLK\", \"label\": \"GK Imperativ Ukraina LLC\", \"type\": \"sanction\", \"properties\": {\"programs\": [\"US-IRAN\"], \"source\": \"OFAC SDN\"}}],"
+ },
+ "find_entity": {
+  "token": 79,
+  "forma": "{best_match, entity_type, query, results, searched_layers, strategy, truncated, version}",
+  "chiavi": [
+   "best_match",
+   "entity_type",
+   "query",
+   "results",
+   "searched_layers",
+   "strategy",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"query\": \"air force one\", \"entity_type\": \"\", \"best_match\": null, \"results\": [], \"version\": 301, \"truncated\": false, \"searched_layers\": [], \"strategy\": \"no_match\"}"
+ },
+ "find_flights": {
+  "token": 536,
+  "forma": "{results, truncated, version}",
+  "chiavi": [
+   "results",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"results\": [{\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7179\", \"icao24\": \"ae1471\", \"owner\": \"USAF\", \"type\": \"tracked_flight\", \"lat\": 45.206, \"lng\": -98.819, \"altitude\": 11582.400000000001, \"heading\": 258.53, \"alert_category\": \"USAF\", \"alert_operator\": \"USAF\"}, {\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH653\", \"registration\": \"03-3115\", \"icao24\": \"ae1198\", \"owner\": \"USAF\", \"type\": \"tracked_flight\", \"lat\": 35.499, \"lng\": -89.391, \"altitude\": 3032.76, \"heading\": 231.96, \"alert_category\": \"USAF\", \"alert_operator\": \"USAF\"}, {\"source_layer\": \"tracked_flight"
+ },
+ "find_ships": {
+  "token": 785,
+  "forma": "{results, truncated, version}",
+  "chiavi": [
+   "results",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"results\": [{\"name\": \"USS Nimitz (CVN-68)\", \"type\": \"carrier\", \"lat\": 47.553, \"lng\": -122.64, \"speed\": 0}, {\"name\": \"USS Ronald Reagan (CVN-76)\", \"type\": \"carrier\", \"lat\": 47.558, \"lng\": -122.636, \"speed\": 0}, {\"name\": \"USS Dwight D. Eisenhower (CVN-69)\", \"type\": \"carrier\", \"lat\": 36.95, \"lng\": -76.33, \"speed\": 0}, {\"name\": \"USS Gerald R. Ford (CVN-78)\", \"type\": \"carrier\", \"lat\": 18.0, \"lng\": 39.5, \"speed\": 0}, {\"name\": \"USS John C. Stennis (CVN-74)\", \"type\": \"carrier\", \"lat\": 36.98, \"lng\": -76.43, \"speed\": 0}, {\"name\": \"USS Harry S. Truman (CVN-75)\", \"type\": \"carrier\", \"lat\": 36.0, \"lng\": 15"
+ },
+ "get_ai_pins": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "get_correlations": {
+  "token": 77,
+  "forma": "[1 x {cell_size, drivers, lat, lng, score, severity, type}]",
+  "chiavi": null,
+  "campione": "[{\"lat\": 51.5, \"lng\": -0.5, \"type\": \"infra_cascade\", \"severity\": \"medium\", \"score\": 60, \"drivers\": [\"Internet outage 24%\", \"KiwiSDR receivers in affected zone\"], \"cell_size\": 1}]"
+ },
+ "get_entity_profile": {
+  "token": 1182,
+  "forma": "{aircraft_state, datalink, entity_kind, identity, lookup, movement, nearby_context, notes, position, recommended_next, related_news, route…}",
+  "chiavi": [
+   "aircraft_state",
+   "datalink",
+   "entity_kind",
+   "identity",
+   "lookup",
+   "movement",
+   "nearby_context",
+   "notes",
+   "position",
+   "recommended_next",
+   "related_news",
+   "route",
+   "status",
+   "trail"
+  ],
+  "campione": "{\"status\": \"trail_available\", \"entity_kind\": \"aircraft\", \"lookup\": {\"query\": \"RCH462\", \"entity_type\": \"\", \"best_match\": {\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7179\", \"icao24\": \"ae1471\", \"owner\": \"USAF\", \"type\": \"tracked_flight\", \"lat\": 45.20632, \"lng\": -98.819208, \"altitude\": 11582.400000000001, \"speed\": null, \"heading\": 258.53, \"alert_category\": \"USAF\", \"alert_operator\": \"USAF\", \"group\": \"aircraft\", \"label\": \"RCH462\", \"id\": \"ae1471\", \"score\": 1000, \"confidence\": 0.99}, \"results\": [{\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": "
+ },
+ "get_entity_trail": {
+  "token": 1012,
+  "forma": "{datalink_hints, entity, entity_id, entity_kind, lookup, movement, notes, route, status, trail}",
+  "chiavi": [
+   "datalink_hints",
+   "entity",
+   "entity_id",
+   "entity_kind",
+   "lookup",
+   "movement",
+   "notes",
+   "route",
+   "status",
+   "trail"
+  ],
+  "campione": "{\"status\": \"trail_available\", \"lookup\": {\"query\": \"RCH462\", \"entity_type\": \"\", \"best_match\": {\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7179\", \"icao24\": \"ae1471\", \"owner\": \"USAF\", \"type\": \"tracked_flight\", \"lat\": 45.182785, \"lng\": -98.982239, \"altitude\": 11582.400000000001, \"speed\": null, \"heading\": 258.38, \"alert_category\": \"USAF\", \"alert_operator\": \"USAF\", \"group\": \"aircraft\", \"label\": \"RCH462\", \"id\": \"ae1471\", \"score\": 1000, \"confidence\": 0.99}, \"results\": [{\"source_layer\": \"tracked_flights\", \"callsign\": \"RCH462\", \"registration\": \"07-7179\", \"icao24\": \"ae14"
+ },
+ "get_fetch_health": {
+  "token": 2306,
+  "forma": "{observed_only, persistent, scope, semantics, tasks}",
+  "chiavi": [
+   "observed_only",
+   "persistent",
+   "scope",
+   "semantics",
+   "tasks"
+  ],
+  "campione": "{\"scope\": \"process\", \"persistent\": false, \"observed_only\": true, \"semantics\": \"latest_recorded_task_outcome\", \"tasks\": {\"fetch_prediction_markets\": {\"condition\": \"healthy\", \"ok_count\": 3, \"error_count\": 0, \"last_ok\": \"2026-08-01T01:56:27.961643\", \"last_error\": null, \"last_duration_ms\": 0.2}, \"fetch_financial_markets\": {\"condition\": \"healthy\", \"ok_count\": 1, \"error_count\": 0, \"last_ok\": \"2026-08-01T01:37:19.347803\", \"last_error\": null, \"last_duration_ms\": 0.1}, \"fetch_flights\": {\"condition\": \"healthy\", \"ok_count\": 23, \"error_count\": 0, \"last_ok\": \"2026-08-01T01:59:20.523932\", \"last_error\": null"
+ },
+ "get_layer_slice": {
+  "token": 1600,
+  "forma": "{available_layers, changed, layer_versions, layers, missing_layers, requested_layers, truncated, version}",
+  "chiavi": [
+   "available_layers",
+   "changed",
+   "layer_versions",
+   "layers",
+   "missing_layers",
+   "requested_layers",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"version\": 308, \"layer_versions\": {\"news\": 6}, \"changed\": true, \"layers\": {\"news\": [{\"title\": \"Sudan civil war: When drones strike the classroom\", \"link\": \"https://www.dw.com/en/sudan-civil-war-when-drones-strike-the-classroom/a-78089487?maca=en-rss-en-world-4025-xml-mrss\", \"published\": \"Fri, 31 Jul 2026 14:38:00 GMT\", \"source\": \"DW\", \"risk_score\": 10, \"coords\": [12.862, 30.217], \"cluster_count\": 1, \"articles\": [{\"title\": \"Sudan civil war: When drones strike the classroom\", \"link\": \"https://www.dw.com/en/sudan-civil-war-when-drones-strike-the-classroom/a-78089487?maca=en-rss-en-world-4025-xml"
+ },
+ "get_layers": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "get_prediction_markets": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "get_report": {
+  "saltato": true
+ },
+ "get_sigint_totals": {
+  "token": 42,
+  "forma": "{detail, ok}",
+  "chiavi": [
+   "detail",
+   "ok"
+  ],
+  "campione": "{\"ok\": false, \"detail\": \"'list' object has no attribute 'get'\"}"
+ },
+ "get_slow_telemetry": {
+  "saltato": true
+ },
+ "get_summary": {
+  "token": 953,
+  "forma": "{available_layers, counts, last_updated, layer_aliases, non_empty_layers, version}",
+  "chiavi": [
+   "available_layers",
+   "counts",
+   "last_updated",
+   "layer_aliases",
+   "non_empty_layers",
+   "version"
+  ],
+  "campione": "{\"counts\": {\"news\": 54, \"stocks\": 0, \"oil\": 0, \"flights\": 8477, \"ships\": 29539, \"military_flights\": 28, \"tracked_flights\": 174, \"cctv\": 0, \"weather\": 2, \"earthquakes\": 40, \"uavs\": 0, \"frontlines\": 1, \"gdelt\": 1550, \"liveuamap\": 0, \"kiwisdr\": 798, \"space_weather\": 3, \"internet_outages\": 9, \"firms_fires\": 0, \"datacenters\": 4899, \"military_bases\": 646, \"prediction_markets\": 0, \"sigint\": 12672, \"sigint_totals\": 12672, \"mesh_channel_stats\": 8, \"meshtastic_map_nodes\": 12186, \"meshtastic_map_fetched_at\": 1, \"weather_alerts\": 28, \"air_quality\": 0, \"volcanoes\": 0, \"fishing_activity\": 0, \"satnogs_statio"
+ },
+ "get_telemetry": {
+  "saltato": true
+ },
+ "inject_data": {
+  "saltato": true
+ },
+ "list_analysis_zones": {
+  "token": 34,
+  "forma": "{zones}",
+  "chiavi": [
+   "zones"
+  ],
+  "campione": "{\"zones\": []}"
+ },
+ "list_watches": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "osint_lookup": {
+  "token": 52,
+  "forma": "{ip, timestamp}",
+  "chiavi": [
+   "ip",
+   "timestamp"
+  ],
+  "campione": "{\"ip\": \"8.8.8.8\", \"timestamp\": \"2026-08-01T01:59:34.687816+00:00\"}"
+ },
+ "osint_sweep": {
+  "saltato": true
+ },
+ "osint_tools": {
+  "token": 189,
+  "forma": "{entity_types, notes, sanctions_schemas, tools}",
+  "chiavi": [
+   "entity_types",
+   "notes",
+   "sanctions_schemas",
+   "tools"
+  ],
+  "campione": "{\"tools\": [\"bgp\", \"certs\", \"cve\", \"dns\", \"github\", \"ip\", \"leaks\", \"mac\", \"sanctions\", \"sweep_init\", \"threats\", \"whois\"], \"entity_types\": [\"aircraft\", \"company\", \"country\", \"ip\", \"person\", \"vessel\"], \"sanctions_schemas\": [\"Airplane\", \"Company\", \"LegalEntity\", \"Organization\", \"Person\", \"Vessel\"], \"notes\": {\"osint_lookup\": \"Passive lookups — same data as the Recon panel /api/osint/* routes.\", \"osint_sweep\": \"Active subnet scan via Shodan InternetDB — requires full OpenClaw access tier.\", \"entity_expand\": \"Build a relationship graph around aircraft, vessels, IPs, companies, people, or countries.\"}"
+ },
+ "place_analysis_zone": {
+  "saltato": true
+ },
+ "place_pin": {
+  "saltato": true
+ },
+ "refresh_feed": {
+  "saltato": true
+ },
+ "remove_watch": {
+  "saltato": true
+ },
+ "sar_anomalies_near": {
+  "saltato": true
+ },
+ "sar_anomalies_recent": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "sar_aoi_add": {
+  "saltato": true
+ },
+ "sar_aoi_list": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "sar_aoi_remove": {
+  "saltato": true
+ },
+ "sar_coverage_for_aoi": {
+  "saltato": true
+ },
+ "sar_focus_aoi": {
+  "saltato": true
+ },
+ "sar_pin_click": {
+  "saltato": true
+ },
+ "sar_pin_from_anomaly": {
+  "saltato": true
+ },
+ "sar_scene_search": {
+  "token": 32,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "sar_status": {
+  "token": 628,
+  "forma": "{catalog_enabled, products, require_private_tier}",
+  "chiavi": [
+   "catalog_enabled",
+   "products",
+   "require_private_tier"
+  ],
+  "campione": "{\"catalog_enabled\": true, \"products\": {\"enabled\": false, \"fully_configured\": false, \"fetch_flag_set\": false, \"acknowledge_flag_set\": false, \"earthdata_token_set\": false, \"earthdata_user_set\": false, \"runtime_store_exists\": false, \"runtime_store_path\": \"D:\\\\assistenteeee\\\\shadowbroker\\\\backend\\\\data\\\\sar_runtime.json\", \"missing\": [\"MESH_SAR_PRODUCTS_FETCH=allow\", \"MESH_SAR_PRODUCTS_FETCH_ACKNOWLEDGE=true\", \"MESH_SAR_EARTHDATA_TOKEN (free from urs.earthdata.nasa.gov)\"], \"help\": {\"summary\": \"SAR ground-change alerts (Mode B) need two opt-in flags and a free NASA Earthdata Login.  Everything is fr"
+ },
+ "sar_watch_anomaly": {
+  "saltato": true
+ },
+ "search_news": {
+  "token": 520,
+  "forma": "{results, truncated, version}",
+  "chiavi": [
+   "results",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"results\": [{\"source_layer\": \"telegram_osint\", \"title\": \"#Egypt #Iran\", \"summary\": \"#Egypt #Iran \\n\\nThe attack on the American gas tanker in Egypt was intended to showcase Iran's capability to disrupt global shipping and energy supplies if the conflict escalates.\\n\\nSubscribe to @OSINTdefender Chat room\", \"source\": \"t.me/osintdefender\", \"link\": \"https://t.me/OSINTdefender/19654\", \"lat\": 26.82, \"lng\": 30.802, \"risk_score\": 5, \"source_lang\": \"en\", \"source_lang_label\": \"English\"}, {\"source_layer\": \"telegram_osint\", \"title\": \"#USA #Russia\", \"summary\": \"#USA #Russia \\n\\nRussia is providing crucia"
+ },
+ "search_telemetry": {
+  "token": 6977,
+  "forma": "{groups, results, searched_layers, truncated, version}",
+  "chiavi": [
+   "groups",
+   "results",
+   "searched_layers",
+   "truncated",
+   "version"
+  ],
+  "campione": "{\"results\": [{\"source_layer\": \"datacenters\", \"group\": \"infrastructure\", \"label\": \"Tehran\", \"summary\": \"Iran\", \"type\": \"AtenaHost\", \"score\": 320, \"matched_tokens\": [\"iran\"], \"confidence\": 0.99, \"lat\": 32.648, \"lng\": 54.564}, {\"source_layer\": \"datacenters\", \"group\": \"infrastructure\", \"label\": \"Iran Data Center\", \"summary\": \"Iran\", \"type\": \"KEYANA IT Co. Ltd.\", \"score\": 320, \"matched_tokens\": [\"iran\"], \"confidence\": 0.99, \"lat\": 32.648, \"lng\": 54.564}, {\"source_layer\": \"power_plants\", \"group\": \"infrastructure\", \"label\": \"Upper Gotvand\", \"summary\": \"Iran Water and Power Resources Development Compa"
+ },
+ "show_satellite": {
+  "saltato": true
+ },
+ "show_sentinel": {
+  "saltato": true
+ },
+ "take_snapshot": {
+  "saltato": true
+ },
+ "timemachine_config": {
+  "token": 257,
+  "forma": "{enabled, preset, presets, profiles, storage_notice}",
+  "chiavi": [
+   "enabled",
+   "preset",
+   "presets",
+   "profiles",
+   "storage_notice"
+  ],
+  "campione": "{\"profiles\": {\"high_freq\": {\"interval_minutes\": 15, \"layers\": [\"military_flights\", \"ships\", \"satellites\", \"tracked_flights\", \"private_jets\"], \"max_snapshots\": 672}, \"standard\": {\"interval_minutes\": 120, \"layers\": [\"gdelt\", \"news\", \"earthquakes\", \"weather_alerts\", \"sigint\", \"gps_jamming\", \"correlations\", \"liveuamap\", \"firms_fires\"], \"max_snapshots\": 84}}, \"preset\": \"active\", \"presets\": {\"paranoid\": {\"high_freq\": 5, \"standard\": 30}, \"active\": {\"high_freq\": 15, \"standard\": 120}, \"casual\": {\"high_freq\": 60, \"standard\": 360}, \"minimal\": {\"high_freq\": 360, \"standard\": 0}}, \"enabled\": false, \"storage"
+ },
+ "timemachine_list": {
+  "token": 82,
+  "forma": "[]",
+  "chiavi": null,
+  "campione": "[]"
+ },
+ "timemachine_playback": {
+  "saltato": true
+ },
+ "track_entity": {
+  "saltato": true
+ },
+ "update_layer": {
+  "saltato": true
+ },
+ "watch_area": {
+  "saltato": true
+ },
+ "what_changed": {
+  "token": 949,
+  "forma": "{available_layers, counts, last_updated, layer_aliases, non_empty_layers, version}",
+  "chiavi": [
+   "available_layers",
+   "counts",
+   "last_updated",
+   "layer_aliases",
+   "non_empty_layers",
+   "version"
+  ],
+  "campione": "{\"counts\": {\"news\": 54, \"stocks\": 0, \"oil\": 0, \"flights\": 8477, \"ships\": 29539, \"military_flights\": 28, \"tracked_flights\": 174, \"cctv\": 0, \"weather\": 2, \"earthquakes\": 40, \"uavs\": 0, \"frontlines\": 1, \"gdelt\": 1550, \"liveuamap\": 0, \"kiwisdr\": 798, \"space_weather\": 3, \"internet_outages\": 9, \"firms_fires\": 0, \"datacenters\": 4899, \"military_bases\": 646, \"prediction_markets\": 0, \"sigint\": 12672, \"sigint_totals\": 12672, \"mesh_channel_stats\": 8, \"meshtastic_map_nodes\": 12186, \"meshtastic_map_fetched_at\": 1, \"weather_alerts\": 28, \"air_quality\": 0, \"volcanoes\": 0, \"fishing_activity\": 0, \"satnogs_statio"
+ }
+}

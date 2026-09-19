@@ -1,0 +1,333 @@
+⚠ Slow filesystem detected. The benchmark took 457ms. If D:\assistenteeee\shadowbroker\frontend\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/pins/geojson',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/sar/aois',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/agent-actions',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/pins/geojson',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/mesh/infonet/status',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/health',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/wormhole/status',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/agent-actions',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/layers',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/pins?limit=500',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/agent-actions',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/pins/geojson',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/settings/wormhole',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/wormhole/status',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+api proxy upstream fetch failed {
+  method: 'GET',
+  target: 'http://127.0.0.1:8000/api/ai/agent-actions',
+  error: TypeError: fetch failed
+      at async proxy (src\app\api\[...path]\route.ts:362:20)
+    360 |     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    361 |       try {
+  > 362 |         upstream = await fetch(targetUrl.toString(), requestInit);
+        |                    ^
+    363 |         fetchError = null;
+    364 |         break;
+    365 |       } catch (error) { {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:8000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:8000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 8000
+    }
+  }
+}
+⨯ Failed to generate static paths for /api/[...path]:

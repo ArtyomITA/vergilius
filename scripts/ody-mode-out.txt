@@ -1,0 +1,694 @@
+INFO:     127.0.0.1:64512 - "GET / HTTP/1.1" 302 Found
+INFO:     127.0.0.1:65073 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61287 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52737 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59653 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60962 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62736 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53294 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET / HTTP/1.1" 302 Found
+INFO:     127.0.0.1:53294 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /api/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51815 - "GET /api/auth/policy HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:60997 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57052 - "GET /static/js/theme.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57052 - "GET /static/js/storage.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51815 - "GET /static/js/colorPicker.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60997 - "GET /static/js/ui.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52926 - "GET /static/js/color/hex.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /static/fonts/FiraCode-Regular.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57052 - "GET /static/js/windowDrag.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51815 - "GET /static/js/tileManager.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53515 - "GET /static/fonts/FiraCode-SemiBold.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60997 - "GET /static/js/modalManager.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /static/js/escMenuStack.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52926 - "GET /static/js/spinner.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57052 - "GET /static/js/toolWindowZOrder.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62998 - "GET /static/manifest.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51815 - "GET /static/js/modalSnap.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /static/js/windowResize.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57529 - "GET /api/prefs/theme HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57529 - "GET /api/prefs/custom-themes HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:51815 - "GET /static/icons/icon-192.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/features HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/style.css?v=20260723tasksbulkfeedback1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/chat.js?v=20260722ctxheader4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/app.js?v=20260723tasksbulkfeedback1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/lib/highlight.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/sessions.js?v=20260722ctxheader4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/markdown.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/lib/live2d-cubism4.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/lib/pixi-unsafe-eval.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/audioDevices.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/avatarCore.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/lib/live2dcubismcore.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/lib/pixi.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/avatarDock.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/avatarPersona.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/ui.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60898 - "GET /static/js/storage.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53139 - "GET /static/js/shadowbrokerBoot.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/dragSort.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/memory.js?v=20260722memoryloading1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/skills.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/fileHandler.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/models.js?v=20260715startupcalm2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/presets.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/search.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/tts-ai.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/rag.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/tourAutoplay.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/tourHints.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/voiceRecorder.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/spinner.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53139 - "GET /static/js/chatRenderer.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/gallery.js?v=20260708match1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/chatStream.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/codeRunner.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/cookbook.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/theme.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60898 - "GET /static/js/document.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/settings.js?v=20260723compareicon1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/search-chat.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/cookbookSchedule.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/censor.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/assistant.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/init.js?v=20260715freshroot3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/default-chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/shadowbroker.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/markdown/tableRow.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/chatRenderer.js?v=20260722ctxheader1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/emojiShortcodes.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/a11y.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/providers.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/avatarRenderer.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/modelPicker.js?v=20260722ctxheader1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/sessions.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/chatStream.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/emailInbox.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/slashCommands.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/researchSynapse.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/streamingRenderer.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/escMenuStack.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58831 - "GET /static/js/modalManager.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60988 - "GET /static/js/toolWindowZOrder.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53139 - "GET /static/js/composerArrowUpRecall.js?v=20260714promptrecall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/windowDrag.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60965 - "GET /static/js/tileManager.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58831 - "GET /static/js/chatRenderer.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/modelSort.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/slashCommands.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/galleryEditor.js?v=20260708match1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/model/matchKey.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/settings.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/colorPicker.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60988 - "GET /static/js/color/hex.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60898 - "GET /static/js/cookbook-diagnosis.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/cookbookRunning.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/cookbook-hwfit.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/cookbook-deps-recipes.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/cookbookDownload.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/cookbookServe.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/workspace.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/compare/index.js?v=20260723compareicon2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/gallery.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/tasks.js?v=20260723tasksbulkfeedback1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/calendar.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/notes.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/settings.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/modalManager.js?v=20260723compareicon2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/research/panel.js?v=20260630researchthumb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/admin.js?v=20260716openrouter3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/emojiPicker.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/section-management.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/keyboard-shortcuts.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/group.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/sidebar-layout.js?v=20260715startupclean HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/presets HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/modalSnap.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58831 - "GET /static/js/langIcons.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/platform.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/documentLibrary.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/streamingSegmenter.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/models.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/compare/index.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/providerDeviceFlow.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/windowResize.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/canvas-coords.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/signature.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/emailLibrary.js?v=20260722emailfastindex1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/emailShared.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/emailLibrary/replyRecipients.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/modelLoading.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/tools/flood-fill.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/fx/histogram.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/mask-utils.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/checkerboard.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/fx/pixel-pass.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/tools/lasso-mask.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/filters/blur.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/harmonize-masks.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/layer-helpers.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/fx/filter-string.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/snap.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/filters/edge-feather.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/composite-helpers.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/build/topbar.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/build/transform-popup.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/build/popups.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/build/toolbar.js?v=20260708sam3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/build/controls.js?v=20260708match1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/tools/lasso.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/tools/move.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/state.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/tools/clone.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/tools/wand.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/tools/crop.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/tools/stroke.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/tools/transform-drag.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/fx/adj-popup.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/layer-panel.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/tools/transform-session.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/history-panel.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/stroke-pipeline.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/canvas-transforms.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/ai-tool-runner.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/tools/transform-handles.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/build/right-panel.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/canvas-events.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/keyboard-shortcuts.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/shortcuts-popover.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/slider-ux.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/clipboard-and-drop.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/stroke-tool-sliders.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/wire-import.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/ai-tools-misc.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/ai-rembg.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/ai-inpaint.js?v=20260708match1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/ai-models.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/editor/wire-topbar-menus.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/editor/wire-merge-buttons.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/editor/wire-inpaint-controls.js?v=20260708match1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/editor/wire-selection-controls.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/editor/wire-topbar.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/editor/wire-topbar-overflow.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/compare/icons.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/cookbookProgressSignal.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/cookbookPorts.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/compare/models.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/compare/state.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/compare/selector.js?v=20260723compareicon2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/util/ordinal.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/compare/probe.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/compare/scoreboard.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/compare/stream.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/compare/vote.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/prefs/theme HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/compare/panes.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/prefs/custom-themes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/cookbook/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/research/jobs.js?v=20260630researchthumb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/calendar/utils.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/tts/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/fonts/custom HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/emailLibrary/signatureFold.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/emailLibrary/state.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/js/emailLibrary/utils.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/calendar/calendars HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/notes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/default-chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/presets/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/sw.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/presets HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/stt/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/auth/features HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/slashAutocomplete.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/skills HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "POST /api/calendar/sync HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/research/library?sort=recent&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/email/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/notes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/fonts/Inter-Medium.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/fonts/Inter-Regular.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/fonts/Inter-SemiBold.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/skills/audit-all/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/skills/slash-catalog HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/auth/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/2fa/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/email/style HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/integrations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/email/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/calendar/config/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/storage.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/contacts/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/contacts/list HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/vault/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/mcp/servers HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/calendar/calendars HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/tokens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/auth/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/diagnostics/logs?limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/email/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/email/folders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/contacts/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/ui.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/markdown.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/dragSort.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/live2d/mao_pro/runtime/mao_pro.model3.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/js/sessions.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/memory.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/skills.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/live2d/mao_pro/runtime/mao_pro.moc3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/email/list?folder=INBOX&limit=100&offset=0&filter=all HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/model-runtime/status?endpoint_url=http%3A%2F%2F127.0.0.1%3A8012%2Fv1%2Fchat%2Fcompletions&model=qwenpaw HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/tourHints.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /api/email/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "POST /api/presets/custom HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/voiceRecorder.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/integrations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/models?background=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/model-endpoints HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/fileHandler.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/rag.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/models.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /api/memory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/js/spinner.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/prefs/memory_enabled HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/integrations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/skills_enabled HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/auto_memory HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/auto_skills HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/auto_approve_skills HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58831 - "GET /static/live2d/mao_pro/runtime/motions/mtn_01.motion3.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/live2d/mao_pro/runtime/mao_pro.4096/texture_00.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/skill_min_confidence HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/prefs/skill_max_injected HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/search.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/presets.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/tts-ai.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/gallery.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/document.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/chatRenderer.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/chatStream.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/codeRunner.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/chat.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/search-chat.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/cookbook.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/compare/index.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/censor.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/settings.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/theme.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/init.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60898 - "GET /static/live2d/mao_pro/runtime/mao_pro.pose3.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/admin.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60988 - "GET /static/live2d/mao_pro/runtime/mao_pro.physics3.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/emailInbox.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/emailLibrary/utils.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/emailLibrary/signatureFold.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/slashCommands.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/emailLibrary/state.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/calendar.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/tasks.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/notes.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/calendar/utils.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/calendar/reminders.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/group.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/js/keyboard-shortcuts.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49532 - "GET /static/js/sidebar-layout.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53139 - "GET /static/js/section-management.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /static/lib/highlight.min.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/shadowbroker/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61883 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62667 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60965 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58351 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50520 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50520 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57230 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57230 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61922 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /static/js/search-chat.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/style.css?v=20260723tasksbulkfeedback1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/ui.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/app.js?v=20260723tasksbulkfeedback1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/assistant.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/sessions.js?v=20260722ctxheader4 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/lib/live2d-cubism4.min.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/markdown.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/lib/pixi.min.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/lib/pixi-unsafe-eval.min.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/chat.js?v=20260722ctxheader4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /static/lib/live2dcubismcore.min.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/storage.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/audioDevices.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/avatarCore.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/shadowbrokerBoot.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/dragSort.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/avatarPersona.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/memory.js?v=20260722memoryloading1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/search.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/skills.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/presets.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/tourHints.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/fileHandler.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/voiceRecorder.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/avatarDock.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/spinner.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/tourAutoplay.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/rag.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/chatStream.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/codeRunner.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/tts-ai.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/chatRenderer.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/cookbook.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/models.js?v=20260715startupcalm2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/gallery.js?v=20260708match1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/document.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/censor.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/theme.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/settings.js?v=20260723compareicon1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/cookbookSchedule.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/init.js?v=20260715freshroot3 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/a11y.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /api/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /static/lib/highlight.min.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/modalManager.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/escMenuStack.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/toolWindowZOrder.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/chatRenderer.js?v=20260722ctxheader1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/markdown/tableRow.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/emojiShortcodes.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/providers.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/sessions.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/chatStream.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/emailInbox.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/slashCommands.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/researchSynapse.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/streamingRenderer.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/modelPicker.js?v=20260722ctxheader1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/composerArrowUpRecall.js?v=20260714promptrecall HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/windowDrag.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/avatarRenderer.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/tileManager.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/slashCommands.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/shadowbroker.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/presets HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59836 - "GET /static/js/settings.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/cookbook-diagnosis.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/model/matchKey.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/cookbook-hwfit.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/cookbook-deps-recipes.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/cookbookRunning.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/cookbookDownload.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/cookbookServe.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/chatRenderer.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/modelSort.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/galleryEditor.js?v=20260708match1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/emojiPicker.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/langIcons.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/documentLibrary.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/colorPicker.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/color/hex.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/modalSnap.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/platform.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/workspace.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/signature.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/compare/index.js?v=20260723compareicon2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/tasks.js?v=20260723tasksbulkfeedback1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/gallery.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/calendar.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/notes.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/admin.js?v=20260716openrouter3 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/settings.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/modalManager.js?v=20260723compareicon2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/group.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/keyboard-shortcuts.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/sidebar-layout.js?v=20260715startupclean HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/section-management.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/emailLibrary.js?v=20260722emailfastindex1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/research/panel.js?v=20260630researchthumb HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/emailLibrary/replyRecipients.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/emailShared.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/compare/index.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/models.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/providerDeviceFlow.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/streamingSegmenter.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/windowResize.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/modelLoading.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/cookbookProgressSignal.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /api/prefs/custom-themes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /static/js/cookbookPorts.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/canvas-coords.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/tools/flood-fill.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/checkerboard.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/tools/lasso-mask.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/mask-utils.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/filters/edge-feather.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/fx/filter-string.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/filters/blur.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/fx/pixel-pass.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/composite-helpers.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/fx/histogram.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/build/controls.js?v=20260708match1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/build/topbar.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/build/toolbar.js?v=20260708sam3 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/harmonize-masks.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/snap.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/layer-helpers.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/state.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/tools/crop.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/build/popups.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/tools/move.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/build/transform-popup.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/tools/lasso.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/layer-panel.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/tools/wand.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/tools/transform-handles.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/tools/transform-drag.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/tools/stroke.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/tools/clone.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/ai-tool-runner.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/fx/adj-popup.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/canvas-transforms.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/tools/transform-session.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/build/right-panel.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/stroke-pipeline.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60432 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60941 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51923 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54072 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/slider-ux.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/keyboard-shortcuts.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/history-panel.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/shortcuts-popover.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/canvas-events.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/clipboard-and-drop.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/ai-inpaint.js?v=20260708match1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/ai-tools-misc.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/wire-import.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/ai-models.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/stroke-tool-sliders.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/ai-rembg.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/editor/wire-inpaint-controls.js?v=20260708match1 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/editor/wire-topbar.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/editor/wire-selection-controls.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/editor/wire-topbar-menus.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/editor/wire-merge-buttons.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/editor/wire-topbar-overflow.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/compare/icons.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/compare/state.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/compare/selector.js?v=20260723compareicon2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/compare/probe.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/compare/models.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/compare/stream.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/compare/scoreboard.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/compare/vote.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/compare/panes.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /static/js/research/jobs.js?v=20260630researchthumb HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50386 - "GET /static/js/util/ordinal.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49877 - "GET /static/js/calendar/utils.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:60984 - "GET /static/js/emailLibrary/signatureFold.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56458 - "GET /static/js/emailLibrary/utils.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /static/js/emailLibrary/state.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59836 - "GET /api/fonts/custom HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/tts/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /api/cookbook/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/calendar/calendars HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59836 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/default-chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /api/auth/features HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/notes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/presets/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59836 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60984 - "GET /api/presets HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /static/js/slashAutocomplete.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49204 - "GET /api/stt/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/auth/features HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59836 - "GET /api/auth/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /api/auth/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/skills HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "POST /api/calendar/sync HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/research/library?sort=recent&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/prefs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/skills/audit-all/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/skills/slash-catalog HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/email/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/email/folders HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/email/list?folder=INBOX&limit=100&offset=0&filter=all HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/shadowbroker/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /api/notes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54072 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50386 - "GET /api/model-runtime/status?endpoint_url=http%3A%2F%2F127.0.0.1%3A8012%2Fv1%2Fchat%2Fcompletions&model=qwenpaw HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56458 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54072 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59150 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56102 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56102 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56102 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53356 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53356 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53356 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52941 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65332 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59073 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58871 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51770 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51770 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60794 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52548 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51621 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51621 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51621 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63453 - "GET /api/calendar/events?start=2026-07-27&end=2026-09-07 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58916 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/shadowbroker/probe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56036 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56036 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60355 - "POST /api/session HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60355 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60355 - "POST /api/chat_stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64705 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64727 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64635 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51826 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64705 - "POST /api/client-perf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60355 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60355 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "POST /api/chat_stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "POST /api/client-perf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "POST /api/chat_stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "POST /api/client-perf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "POST /api/chat_stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62732 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /api/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62244 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50093 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52391 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59101 - "POST /api/activity/heartbeat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59101 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62037 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55166 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58845 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62943 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57234 - "GET /api/notes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53778 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50742 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58050 - "GET /api/research/active HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50770 - "GET /api/email/urgency-state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55123 - "GET /api/email/unread-state?folder=INBOX HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65061 - "GET /api/tasks/notifications HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65061 - "GET /api/research/active HTTP/1.1" 200 OK
