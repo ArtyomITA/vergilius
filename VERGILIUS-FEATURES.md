@@ -2,11 +2,17 @@
 
 Inventario completo di cosa fa Vergilius: assistente locale che unisce
 **Odysseus** (workspace, riscritto), **ShadowBroker** (intelligence OSINT,
-innestata) e cervello **QwenPaw 9B** (anche uncensored), orchestrati su misura.
+innestata) e un cervello locale, orchestrati su misura.
 Gira per intero su una macchina sola: **nessun dato esce, nessuna chiave a pagamento,
 nessun contenitore, nessun servizio esterno da cui dipendere.**
 
-> Aggiornato: 20 ago 2026. Per gap ancora da integrare vedi
+> Aggiornato: 20 ago 2026, cervello descritto sotto era **QwenPaw 9B**, superato
+> prima da **Ling-3.0-tiny** (22 ago) poi dal predefinito attuale
+> **LFM2.5-2.6B** (19 set 2026, vedi
+> `odysseus/website/knowledge/02-modello-e-hardware.md` e
+> `odysseus/website/knowledge/10-decisioni-e-alternative-scartate.md`). Resto
+> della pagina non riscritto: descrive l'architettura al 20 ago. Per gap
+> ancora da integrare vedi
 > `ricerche/gap-shadowbroker-capacita-non-considerate.md`. Per ciclo agente
 > `odysseus/docs/knowledge/19-loop-agente.md`.
 
@@ -18,6 +24,8 @@ nessun contenitore, nessun servizio esterno da cui dipendere.**
 Vergilius = Odysseus (riscritto)  +  ShadowBroker (innestato)  +  QwenPaw 9B  +  Orchestrazione
 ```
 
+(cervello nella formula era QwenPaw 9B al 20 ago; predefinito attuale è LFM2.5-2.6B, vedi nota in cima)
+
 - **Odysseus**: workspace open da cui partiamo — interfaccia, ciclo agente, memoria, competenze, strumenti. Riscritto nel profondo (loop, profili, ponte).
 - **ShadowBroker**: piattaforma intelligence OSINT con 60+ feed. Innestata: mappa non si guarda, si interroga a voce.
 - **QwenPaw 9B**: cervello locale, in due anime (standard + uncensored).
@@ -25,7 +33,7 @@ Vergilius = Odysseus (riscritto)  +  ShadowBroker (innestato)  +  QwenPaw 9B  + 
 
 ---
 
-## 1. Il cervello — QwenPaw 9B
+## 1. Il cervello — QwenPaw 9B (superato, vedi nota in cima: predefinito ora LFM2.5-2.6B)
 
 - **Modello principale**: `QwenPaw-Flash-9B.i1-Q4_K_M.gguf` (5,24 GiB, Apache 2.0). Finetune di Qwen3.5-9B addestrato da AgentScope **per gli agenti** (strumenti, terminale, filesystem, ricerca multi-passo).
 - **Anima uncensored**: `QwenPaw-Flash-9B-heretic-Q4_K_M.gguf` (ablazione livelli 13-16). Per compiti dove un falso allarme fermerebbe l'agente. Si sceglie dal menu.
