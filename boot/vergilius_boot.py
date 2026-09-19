@@ -163,8 +163,19 @@ def _attiva(profilo: str) -> None:
         _attendi_porta(8100, 90)
         if profilo == P_FULL:
             voce = WORKSPACE / "tts-venv" / "Scripts"
+            # PocketTTS chiede a HuggingFace i pesi con clonazione voce (repo
+            # riservato: il permesso non ce l'abbiamo), si prende un errore e
+            # solo allora ripiega su quelli in cache. Quel giro di rete e' il
+            # grosso dell'attesa all'avvio: misurato 12,9 s online contro 7,8 s
+            # offline, e molto peggio quando la rete e' lenta.
+            # Condizione: pesi italiani e incastro della voce gia' in
+            # ~/.cache/huggingface (ci sono; una voce nuova va scaricata una
+            # volta con questa riga tolta).
+            env_tts = os.environ.copy()
+            env_tts["HF_HUB_OFFLINE"] = "1"
             _spawn("pockettts", [str(voce / "pocket-tts.exe"), "serve", "--language", "italian",
-                                 "--quantize", "--host", "127.0.0.1", "--port", "8014"], cwd=WORKSPACE, porta=8014)
+                                 "--quantize", "--host", "127.0.0.1", "--port", "8014"],
+                   cwd=WORKSPACE, porta=8014, env=env_tts)
             _spawn("voice-bridge", [str(voce / "python.exe"), str(WORKSPACE / "voce" / "ponte_voce.py")],
                    cwd=WORKSPACE, porta=8013)
         ody = WORKSPACE / "odysseus"

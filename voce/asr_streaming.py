@@ -35,11 +35,26 @@ LINGUA_PREDEFINITA = os.getenv("ASR_LINGUA", "it")
 # 2 thread bastano: misurato RTF 0.5, cioe' meta' del tempo reale. Alzarlo
 # ruberebbe core a llama.cpp senza servire.
 THREAD = int(os.getenv("ASR_THREAD", "2"))
-# Silenzio dopo il quale il turno si considera finito. 0.5 -> ~800 ms reali,
-# contando il pezzo da 320 ms del modello.
-SILENZIO_FINE_TURNO = float(os.getenv("ASR_SILENZIO", "0.5"))
+# Fine turno a due soglie. La soglia unica non puo' funzionare: 0.5 s taglia la
+# frase al primo respiro (misurato: con pause da 0.7 s a meta' frase il turno si
+# chiudeva 3 volte su una frase sola, perdendo parole a ogni taglio), e alzarla a
+# 1.2 s per tutti aggiunge mezzo secondo di attesa anche quando hai chiaramente
+# finito.
+#
+#   corta  -> si chiude subito se il parziale FINISCE come finisce una frase
+#             (punto, punto di domanda, esclamativo)
+#   lunga  -> in tutti gli altri casi si aspetta ancora un po', perche' quella
+#             e' quasi sempre una pausa, non la fine
+#
+# Il valore e' il silenzio che sherpa conta; sul filo escono ~390 ms in piu' per
+# via del pezzo da 320 ms del modello.
+SILENZIO_FINE_TURNO = float(os.getenv("ASR_SILENZIO", "0.45"))
+SILENZIO_FINE_TURNO_LUNGO = float(os.getenv("ASR_SILENZIO_LUNGO", "1.2"))  # scelta del proprietario: meno tagli, +250 ms
 
 FREQUENZA = 16000
+
+# Un parziale che finisce con una di queste e' una frase finita.
+FINE_FRASE = (".", "?", "!", "…")
 
 _riconoscitore = None
 _lucchetto = threading.Lock()
@@ -77,6 +92,8 @@ def carica():
             model_type="nemo_transducer",
             enable_endpoint_detection=True,
             rule1_min_trailing_silence=2.4,
+            # La regola 2 sta sulla soglia CORTA: e' il campanello, non la
+            # decisione. La conferma (o l'attesa supplementare) la fa Sessione.
             rule2_min_trailing_silence=SILENZIO_FINE_TURNO,
             rule3_min_utterance_length=30.0,
         )
@@ -98,6 +115,10 @@ class Sessione:
         except Exception as e:
             logger.warning("lingua non impostabile (%s), resta automatica", e)
         self._ultimo = ""
+        # Fine turno in sospeso: testo al momento del campanello e silenzio
+        # accumulato da allora, in secondi.
+        self._candidato = None
+        self._silenzio_dopo = 0.0
 
     def aggiungi(self, campioni: np.ndarray):
         """Restituisce (testo, cambiato, fine_turno)."""
@@ -109,8 +130,43 @@ class Sessione:
         cambiato = testo != self._ultimo
         self._ultimo = testo
 
-        fine = self.rec.is_endpoint(self.stream)
-        return testo, cambiato, fine
+        return testo, cambiato, self._fine_turno(testo, len(campioni) / FREQUENZA)
+
+    def _fine_turno(self, testo: str, durata_pezzo: float) -> bool:
+        """Il campanello di sherpa suonato, ma non preso in parola subito.
+
+        `is_endpoint()` dice solo "silenzio da almeno SILENZIO_FINE_TURNO". Se il
+        parziale finisce come finisce una frase, e' davvero finita e si chiude
+        li'. Altrimenti si aspetta fino alla soglia lunga: se nel frattempo
+        riparla, il testo cambia e il conto si azzera da solo."""
+        if not self.rec.is_endpoint(self.stream):
+            self._candidato = None
+            self._silenzio_dopo = 0.0
+            return False
+
+        if not testo.strip():
+            # Silenzio puro (regola 1): nessuno sta parlando, si chiude e basta.
+            self._candidato = None
+            self._silenzio_dopo = 0.0
+            return True
+
+        if testo.rstrip().endswith(FINE_FRASE):
+            self._candidato = None
+            self._silenzio_dopo = 0.0
+            return True
+
+        if self._candidato != testo:
+            # Nuovo campanello (o ha ripreso a parlare): il conto riparte.
+            self._candidato = testo
+            self._silenzio_dopo = 0.0
+            return False
+
+        self._silenzio_dopo += durata_pezzo
+        if self._silenzio_dopo >= (SILENZIO_FINE_TURNO_LUNGO - SILENZIO_FINE_TURNO):
+            self._candidato = None
+            self._silenzio_dopo = 0.0
+            return True
+        return False
 
     def chiudi_turno(self) -> str:
         """Chiude l'enunciato corrente e prepara il flusso per il prossimo,
@@ -119,6 +175,8 @@ class Sessione:
         testo = self.rec.get_result(self.stream)
         self.rec.reset(self.stream)
         self._ultimo = ""
+        self._candidato = None
+        self._silenzio_dopo = 0.0
         return testo
 
     def finito(self) -> str:
