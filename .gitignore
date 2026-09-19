@@ -1,0 +1,110 @@
+# Vergilius — cosa non finisce nel repository
+# ============================================================================
+# Regola: il repository contiene il PROGRAMMA. Modelli, dati dell'utente,
+# binari e misure restano sul disco di chi lo usa.
+
+# --- Modelli (gigabyte: si scaricano con scripts/scarica-modelli.py) ---------
+models/
+*.gguf
+*.safetensors
+*.bin
+asr-models/
+tts-venv/
+tts_cache/
+
+# --- Binari di llama.cpp (si scaricano dal progetto llama.cpp) ---------------
+llama/
+llama-*/
+llama-swap/*.exe
+llama-swap/slotsave/
+llama-swap/*.log
+llama-swap/config.yaml
+!llama-swap/config.example.yaml
+llama-swap/config.yaml.bak*
+
+# --- Dati dell'utente: chat, memorie, documenti, indici -----------------------
+odysseus/data/
+chroma-data/
+chroma-venv/
+*.db
+*.db-journal
+*.sqlite3
+*.pst
+
+# --- Segreti ------------------------------------------------------------------
+.env
+*/.env
+**/.env
+!**/.env.example
+scripts/.credenziali*
+secrets.env
+*.key
+*.pem
+auth.json
+
+# --- Log e roba temporanea ----------------------------------------------------
+logs/
+**/logs/
+*.log
+*.out.log
+*.err.log
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# --- Ambienti e dipendenze ----------------------------------------------------
+venv/
+.venv/
+node_modules/
+.next/
+dist/
+build/
+!odysseus/static/js/editor/build/
+
+# --- Laboratorio: misure, ricerche, banchi (1,4 GB, non servono al programma) --
+ricerche/
+misure/
+backup-*/
+backup-vergilius-*/
+scratchpad/
+
+# --- Sistema ------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+*.bak-*
+
+# --- Progetti di terzi clonati accanto (hanno il loro repository) -------------
+Open-LLM-VTuber/
+Windows-MCP/
+llama.cpp-*/
+skills-src/
+architecture-map/
+
+# --- Materiale personale o con licenza propria --------------------------------
+voice-samples/
+tts-models/
+mao_en/
+tools/
+llm-dump/
+agent/
+.claude/
+skills-lock.json
+PROMTREALE.MD
+risposta_finance*.txt
+ANALISI*.md
+*.jpg
+/chat*
+*.original.md
+
+# --- Sottoprogetti: entrano come submodule, non come cartelle -----------------
+# (odysseus/ e shadowbroker/ hanno il proprio .git; vedi .gitmodules)
+
+# --- Altri segreti trovati alla prima anteprima ---------------------------------
+scripts/odysseus-admin-password.txt
+scripts/*password*
+scripts/*credenzial*
+.agents/

@@ -1,0 +1,989 @@
+
+
+                [38;5;069m(((((((((    [38;5;203m((((([38;5;220m####
+             [38;5;069m((((((((((((([38;5;203m((((((((([38;5;220m#########
+           [38;5;069m((((((((((((([38;5;203m((((((((((([38;5;220m###########
+         [38;5;069m(((((((((((((([38;5;203m(((((((((((([38;5;220m############
+        [38;5;069m((((((((((((([38;5;203m(((((((((((((([38;5;220m#############
+        [38;5;069m((((((((((((([38;5;203m(((((((((((((([38;5;220m#############
+         [38;5;069m(((((((((((([38;5;203m((((((((((((([38;5;220m##############
+         [38;5;069m(((((((((((([38;5;203m(((((((((((([38;5;220m##############
+           [38;5;069m(((((((((([38;5;203m((((((((((([38;5;220m#############
+             [38;5;069m(((((((([38;5;203m(((((((([38;5;220m##############
+                [38;5;069m((((([38;5;203m((((    [38;5;220m#########[0m
+
+Saving data to: d:\assistenteeee\chroma-data
+Connect to Chroma at: http://localhost:8100
+Getting started guide: https://docs.trychroma.com/docs/overview/getting-started
+
+☁️ To deploy your DB - try Chroma Cloud!
+- Sign up: https://trychroma.com/signup
+- Copy your data to Cloud: chroma copy --to-cloud --all
+
+  2026-08-01T00:42:38.891704Z  INFO  Global tracing subscriber set
+    at rust\tracing\src\init_tracer.rs:370
+
+  2026-08-01T00:42:39.955366Z  INFO  Frontend server listening on address, addr: 127.0.0.1:8100
+    at rust\frontend\src\server.rs:416
+
+  2026-08-01T02:20:15.936049Z  INFO  tenant_name: default_tenant
+    at rust\frontend\src\server.rs:757
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant, http.route: "/api/v2/tenants/{tenant_name}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant_name}"
+
+  2026-08-01T02:20:16.974453Z  INFO  tenant_name: default_tenant, database_name: default_database
+    at rust\frontend\src\server.rs:1015
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database, http.route: "/api/v2/tenants/{tenant}/databases/{database}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}"
+
+  2026-08-01T02:20:26.830973Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:20:27.135270Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:20:27.194857Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "0c6f66dc-71a9-4831-b88e-aea13ab57b60"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:27.207693Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:27.323975Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.111115Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:20:28.164171Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:20:28.169792Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.170429Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.200245Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.463345Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.464237Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:20:28.465232Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:35.645447Z  INFO  tenant_name: default_tenant
+    at rust\frontend\src\server.rs:757
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant, http.route: "/api/v2/tenants/{tenant_name}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant_name}"
+
+  2026-08-01T02:57:36.117265Z  INFO  tenant_name: default_tenant, database_name: default_database
+    at rust\frontend\src\server.rs:1015
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database, http.route: "/api/v2/tenants/{tenant}/databases/{database}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}"
+
+  2026-08-01T02:57:45.231587Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:57:45.452359Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:57:45.490638Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "0c6f66dc-71a9-4831-b88e-aea13ab57b60"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:45.500295Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:45.556708Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.732249Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:57:46.739591Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T02:57:46.745401Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.746103Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.768149Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.787661Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.788260Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T02:57:46.789498Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:26.571266Z  INFO  tenant_name: default_tenant
+    at rust\frontend\src\server.rs:757
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant, http.route: "/api/v2/tenants/{tenant_name}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant_name}"
+
+  2026-08-01T03:21:26.829061Z  INFO  tenant_name: default_tenant, database_name: default_database
+    at rust\frontend\src\server.rs:1015
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database, http.route: "/api/v2/tenants/{tenant}/databases/{database}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}"
+
+  2026-08-01T03:21:35.716406Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:21:35.886121Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:21:35.908360Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "0c6f66dc-71a9-4831-b88e-aea13ab57b60"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:35.918362Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:35.932156Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.874589Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:21:36.881575Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:21:36.885865Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.886662Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.888356Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.895049Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.895674Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:21:36.898160Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.236051Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.260718Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.263715Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.292247Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.292892Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.316711Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.401946Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.402415Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.403510Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:09.618942Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:09.640886Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:09.660714Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:09.662039Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:34.986094Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:34.987237Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:34.989869Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.000352Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.001331Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.005873Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.042872Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.043511Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.047813Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:35.060094Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:35.064562Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:35.067631Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:35.071477Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:52.519349Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:52.519946Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:52.522095Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.184147Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.185023Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.187465Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.208828Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.209538Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.210978Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:27:53.224532Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:53.226705Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:53.227349Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:27:53.228929Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:28:02.334084Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.334584Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.359618Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.364898Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.365675Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.367934Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.385287Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.385959Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.388291Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:28:02.394756Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:28:02.397207Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:28:02.397947Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:28:02.399588Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:31:18.042940Z  INFO  tenant_name: default_tenant
+    at rust\frontend\src\server.rs:757
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant, http.route: "/api/v2/tenants/{tenant_name}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant_name}"
+
+  2026-08-01T03:31:18.096683Z  INFO  tenant_name: default_tenant, database_name: default_database
+    at rust\frontend\src\server.rs:1015
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database, http.route: "/api/v2/tenants/{tenant}/databases/{database}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}"
+
+  2026-08-01T03:31:25.054787Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:31:25.061404Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:31:25.066568Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "0c6f66dc-71a9-4831-b88e-aea13ab57b60"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:25.067047Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:25.068015Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:25.986011Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:31:25.990003Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:31:25.994740Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:25.995226Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:25.996220Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:26.001673Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:26.002210Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:31:26.003266Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.184919Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.186264Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.188402Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.195958Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.196614Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.198022Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.209948Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.210455Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.211713Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:32:59.231136Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:32:59.234337Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:32:59.235130Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:32:59.236977Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:33:01.437119Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_tool_index_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:33:01.460462Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_tool_index
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:33:01.502060Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:33:01.509736Z  INFO  num_ids: 0, include: IncludeList([Metadata, Document]), has_where: true
+    at rust\frontend\src\server.rs:2860
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:33:01.523388Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:33:04.575791Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:33:04.623015Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_id: 8595608a-2e4f-4d74-a11a-31ac61d62795, num_ids: 73
+    at rust\frontend\src\server.rs:2323
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:33:04.631711Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:34:27.474499Z  INFO  tenant_name: default_tenant
+    at rust\frontend\src\server.rs:757
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant, http.route: "/api/v2/tenants/{tenant_name}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant_name}"
+
+  2026-08-01T03:34:27.775850Z  INFO  tenant_name: default_tenant, database_name: default_database
+    at rust\frontend\src\server.rs:1015
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database, http.route: "/api/v2/tenants/{tenant}/databases/{database}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}"
+
+  2026-08-01T03:34:34.822106Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:34:34.864366Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_rag
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:34:34.868981Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "0c6f66dc-71a9-4831-b88e-aea13ab57b60"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:34.869505Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:34.870478Z  INFO  Cache miss for collection 0c6f66dc-71a9-4831-b88e-aea13ab57b60
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.564638Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:34:35.569605Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_memories
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:34:35.574016Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.574529Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.576312Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.581622Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.582082Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:34:35.583004Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.743269Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.743682Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.745034Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.750699Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.751181Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.752579Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.763011Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.763509Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.764578Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:35:24.770346Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:35:24.771676Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:35:24.772297Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:35:24.773341Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:35:26.051118Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_tool_index_fastembed
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index_fastembed, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:35:26.055562Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_name: odysseus_tool_index
+    at rust\frontend\src\server.rs:1422
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_tool_index, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}"
+
+  2026-08-01T03:35:26.062261Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:35:26.063461Z  INFO  num_ids: 0, include: IncludeList([Metadata, Document]), has_where: true
+    at rust\frontend\src\server.rs:2860
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:35:26.064021Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:35:27.902416Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:35:27.904307Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_id: 8595608a-2e4f-4d74-a11a-31ac61d62795, num_ids: 73
+    at rust\frontend\src\server.rs:2323
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:35:27.904859Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:37:09.049584Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.050697Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.052793Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.059667Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.060340Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.061996Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.077024Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.077664Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.078891Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:09.084863Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:09.086136Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:09.086776Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:09.088151Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:10.007526Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:37:10.009077Z  INFO  num_ids: 0, include: IncludeList([Metadata, Document]), has_where: true
+    at rust\frontend\src\server.rs:2860
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:37:10.009876Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/get, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/get"
+
+  2026-08-01T03:37:10.135951Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/delete, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete"
+
+  2026-08-01T03:37:10.136992Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_id: 8595608a-2e4f-4d74-a11a-31ac61d62795, num_ids: 50, has_where: false
+    at rust\frontend\src\server.rs:2458
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/delete, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete"
+
+  2026-08-01T03:37:10.238732Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/delete, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/delete"
+
+  2026-08-01T03:37:11.190034Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:37:11.192231Z  INFO  tenant_name: default_tenant, database_name: default_database, collection_id: 8595608a-2e4f-4d74-a11a-31ac61d62795, num_ids: 24
+    at rust\frontend\src\server.rs:2323
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:37:11.192871Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in collection_upsert
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/upsert, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/upsert"
+
+  2026-08-01T03:37:13.604948Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "8595608a-2e4f-4d74-a11a-31ac61d62795"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:13.605428Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:13.607146Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:37:13.618844Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:13.620159Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Metadata, Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:13.620748Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:37:13.622001Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:17.714166Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.731962Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.733023Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.738709Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.739198Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.740576Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.753334Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.753984Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.755436Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:17.760845Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:17.762097Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:17.762619Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:17.763650Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:18.799154Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "8595608a-2e4f-4d74-a11a-31ac61d62795"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:18.799851Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:18.801509Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:41:18.837329Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:18.839404Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Metadata, Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:18.840766Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:41:18.842537Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:24.373112Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.395070Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.396739Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.404038Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.404824Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.406537Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.474749Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "d543def6-edd6-4740-aee5-51f1c32dba91"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.475230Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.476691Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:24.483310Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:24.484903Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:24.485853Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:24.487611Z  INFO  Cache miss for collection d543def6-edd6-4740-aee5-51f1c32dba91
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:25.608822Z  INFO  tenant: "default_tenant", database: "default_database", collection_id: "8595608a-2e4f-4d74-a11a-31ac61d62795"
+    at rust\frontend\src\server.rs:2535
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:25.609274Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:25.611596Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: GET, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/count?read_level=index_and_wal, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "GET /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/count"
+
+  2026-08-01T03:46:25.650450Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:25.651888Z  INFO  num_ids: 0, num_embeddings: 1, include: IncludeList([Metadata, Distance]), has_where: false
+    at rust\frontend\src\server.rs:3037
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:25.652616Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+
+  2026-08-01T03:46:25.653947Z  INFO  Cache miss for collection 8595608a-2e4f-4d74-a11a-31ac61d62795
+    at rust\frontend\src\get_collection_with_segments_provider.rs:182
+    in HTTP request with http.method: POST, http.uri: /api/v2/tenants/default_tenant/databases/default_database/collections/8595608a-2e4f-4d74-a11a-31ac61d62795/query, http.route: "/api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query", http.version: HTTP/1.1, http.host: localhost:8100, http.user_agent: Chroma Python Client v1.5.9 (https://github.com/chroma-core/chroma), otel.name: "POST /api/v2/tenants/{tenant}/databases/{database}/collections/{collection_id}/query"
+

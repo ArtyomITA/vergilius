@@ -1,0 +1,209 @@
+2026-08-01 04:57:21,036 - core.auth - INFO - Auth config loaded
+2026-08-01 04:57:21,056 - core.auth - INFO - Loaded 1 session(s) from disk
+2026-08-01 04:57:21,104 - __main__ - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 04:57:24,606 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 04:57:33,232 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 04:57:35,943 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 04:57:36,136 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 04:57:36,168 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 04:57:36,169 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 04:57:40,661 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 04:57:44,826 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:44,924 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:57:44,925 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:44,926 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 04:57:45,221 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:45,228 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:57:45,438 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 04:57:45,471 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 04:57:45,626 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:57:45,627 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 04:57:45,628 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 04:57:45,629 - __main__ - INFO - Vector document RAG initialized
+2026-08-01 04:57:46,113 - core.session_manager - INFO - Loaded 4 session(s) (metadata only)
+2026-08-01 04:57:46,116 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 04:57:46,117 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 04:57:46,469 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:46,475 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:57:46,476 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:46,477 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 04:57:46,726 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:57:46,730 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:57:46,737 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 04:57:46,741 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 04:57:46,783 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:57:46,785 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=1)
+2026-08-01 04:57:46,791 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:57:46,792 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 04:57:46,795 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 04:57:46,829 - __main__ - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 04:57:48,295 - __main__ - INFO - STT service initialized (provider managed via settings)
+2026-08-01 04:57:48,769 - __main__ - INFO - MCP routes initialized
+2026-08-01 04:57:48,769 - __main__ - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 04:57:48,790 - __main__ - INFO - Webhook & API token routes initialized
+INFO:     Started server process [22816]
+INFO:     Waiting for application startup.
+2026-08-01 04:57:49,131 - __main__ - INFO - Application starting up...
+2026-08-01 04:57:49,164 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 04:57:49,165 - __main__ - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 04:57:49,339 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 04:57:49,388 - __main__ - INFO - Application startup complete
+2026-08-01 04:57:49,437 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 04:57:55,031 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 04:57:56,322 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 04:57:56,324 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 04:57:56,326 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 04:57:56,327 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+2026-08-01 04:57:56,407 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 04:57:56,408 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 04:57:56,562 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 04:57:56,564 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 04:57:59,220 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 04:57:59,226 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+2026-08-01 04:58:13,900 - src.mcp_manager - WARNING - Timed out connecting to windows-mcp
+2026-08-01 05:00:15,246 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,247 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,248 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 05:00:15,267 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,268 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,285 - routes.email_pollers - INFO - Started scheduled email poller
+2026-08-01 05:00:15,289 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,290 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:15,373 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:00:15,755 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:00:16,185 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:00:16,810 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/props "HTTP/1.1 200 OK"
+2026-08-01 05:00:16,812 - src.llamaswap - INFO - [llama-swap] qwenpaw capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B.i1-Q4_K_M.gguf'}
+2026-08-01 05:00:16,813 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.890s
+2026-08-01 05:00:18,569 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:00:20,489 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.153s
+2026-08-01 05:00:21,512 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:21,513 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:00:36,393 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:00:36,764 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:00:36,766 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.834s
+2026-08-01 05:00:51,336 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:00:53,174 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.240s
+2026-08-01 05:01:07,070 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:01:07,829 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:01:07,837 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.595s
+2026-08-01 05:01:13,965 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:01:13,975 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:01:21,423 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:01:23,328 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.394s
+2026-08-01 05:01:36,326 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:01:36,710 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:01:36,719 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.787s
+2026-08-01 05:01:51,544 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:01:53,612 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.678s
+2026-08-01 05:02:06,776 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:02:08,250 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:02:08,261 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.016s
+2026-08-01 05:02:14,185 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:02:14,186 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:02:21,671 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:02:23,895 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.921s
+2026-08-01 05:02:37,324 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:02:40,174 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=4.247s
+2026-08-01 05:02:56,018 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=5.099s
+2026-08-01 05:03:06,680 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:03:08,551 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.305s
+2026-08-01 05:03:14,012 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:03:14,022 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:03:21,462 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:03:21,909 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:03:21,918 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.987s
+2026-08-01 05:03:36,560 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:03:38,521 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.592s
+2026-08-01 05:03:52,552 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:03:53,256 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:03:53,269 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.151s
+2026-08-01 05:04:06,936 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:04:09,071 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.495s
+2026-08-01 05:04:13,451 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:04:13,555 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:04:22,159 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:04:24,289 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.736s
+2026-08-01 05:04:36,778 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:04:39,411 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.867s
+2026-08-01 05:04:51,329 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:04:53,347 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:04:53,358 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.828s
+2026-08-01 05:05:06,529 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:05:07,640 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:05:07,647 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.118s
+2026-08-01 05:05:14,281 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:05:14,600 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:05:21,395 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:05:21,959 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:05:21,969 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.038s
+2026-08-01 05:05:36,657 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:05:38,839 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:05:38,847 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.303s
+2026-08-01 05:06:14,270 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:06:14,463 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:07:13,581 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:07:13,616 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:07:28,846 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:07:31,232 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.913s
+2026-08-01 05:07:31,571 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:07:31,573 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:07:32,668 - app.slow_request - WARNING - slow_request method=GET path=/api/tokens status=200 elapsed=0.754s
+2026-08-01 05:08:14,010 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:08:14,012 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:09:14,267 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:09:14,359 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:14:15,383 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:14:15,406 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:35,473 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:35,476 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,584 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,585 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,587 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 05:16:39,615 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,616 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,647 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,648 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:39,918 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:16:40,416 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:16:40,888 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:16:40,892 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=1.572s
+2026-08-01 05:16:45,772 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:16:45,773 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:17:09,289 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:17:09,292 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:17:37,807 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:17:37,810 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:11,032 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:11,035 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:18,087 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:19:19,064 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:19:19,067 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=2.662s
+2026-08-01 05:19:22,525 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:22,526 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:23,523 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:19:23,524 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:20:14,953 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:20:14,955 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars

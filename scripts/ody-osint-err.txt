@@ -1,0 +1,159 @@
+2026-08-01 04:20:03,591 - core.auth - INFO - Auth config loaded
+2026-08-01 04:20:03,631 - core.auth - INFO - Loaded 1 session(s) from disk
+2026-08-01 04:20:03,670 - __main__ - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 04:20:05,041 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 04:20:13,408 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 04:20:16,883 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 04:20:17,024 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 04:20:17,050 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 04:20:17,051 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 04:20:21,467 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 04:20:26,466 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:26,647 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:20:26,647 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:26,648 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 04:20:26,825 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:26,828 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:20:27,099 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 04:20:27,162 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 04:20:27,466 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:20:27,467 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 04:20:27,467 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 04:20:27,468 - __main__ - INFO - Vector document RAG initialized
+2026-08-01 04:20:27,724 - core.session_manager - INFO - Loaded 4 session(s) (metadata only)
+2026-08-01 04:20:27,726 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 04:20:27,727 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 04:20:27,911 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:27,916 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:20:27,916 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:27,917 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 04:20:28,105 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 04:20:28,108 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 04:20:28,118 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 04:20:28,166 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 04:20:28,459 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:20:28,460 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=1)
+2026-08-01 04:20:28,467 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 04:20:28,467 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 04:20:28,469 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 04:20:28,521 - __main__ - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 04:20:29,286 - __main__ - INFO - STT service initialized (provider managed via settings)
+2026-08-01 04:20:29,667 - __main__ - INFO - MCP routes initialized
+2026-08-01 04:20:29,668 - __main__ - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 04:20:29,687 - __main__ - INFO - Webhook & API token routes initialized
+INFO:     Started server process [11320]
+INFO:     Waiting for application startup.
+2026-08-01 04:20:30,104 - __main__ - INFO - Application starting up...
+2026-08-01 04:20:30,110 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 04:20:30,111 - __main__ - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 04:20:30,341 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 04:20:30,361 - __main__ - INFO - Application startup complete
+2026-08-01 04:20:30,398 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 04:20:36,134 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 04:20:36,719 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 04:20:36,720 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 04:20:36,746 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 04:20:36,747 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 04:20:36,749 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 04:20:36,750 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+2026-08-01 04:20:36,850 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 04:20:36,852 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 04:20:39,800 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 04:20:39,801 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+[08/01/26 04:20:50] INFO     Starting MCP server 'windows-mcp' transport.py:241
+                             with transport 'stdio'                            
+2026-08-01 04:20:51,035 - src.mcp_manager - INFO - MCP server connected: windows-mcp (075fe6c2) - 13 tools via stdio
+2026-08-01 04:49:10,091 - app.slow_request - WARNING - slow_request method=GET path=/ status=200 elapsed=0.928s
+2026-08-01 04:49:15,132 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 04:49:15,233 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,234 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,236 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 04:49:15,293 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,294 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,317 - routes.email_pollers - INFO - Started scheduled email poller
+2026-08-01 04:49:15,322 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,323 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:15,726 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:49:16,200 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 04:49:16,861 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/props "HTTP/1.1 200 OK"
+2026-08-01 04:49:16,865 - src.llamaswap - INFO - [llama-swap] qwenpaw capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B.i1-Q4_K_M.gguf'}
+2026-08-01 04:49:16,867 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=2.519s
+2026-08-01 04:49:20,819 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:20,820 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:49:26,989 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:49:28,907 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.432s
+2026-08-01 04:49:39,821 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:49:40,089 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1 "HTTP/1.1 404 Not Found"
+2026-08-01 04:49:40,555 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:49:41,851 - routes.model_routes - WARNING - Failed to probe http://127.0.0.1:8013/v1/models: [WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione
+2026-08-01 04:49:41,991 - app.slow_request - WARNING - slow_request method=GET path=/api/model-endpoints/probe-local status=200 elapsed=2.705s
+2026-08-01 04:49:44,905 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:49:45,711 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 04:49:45,721 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.777s
+2026-08-01 04:49:59,409 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:50:01,388 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.457s
+2026-08-01 04:50:07,587 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 04:50:08,010 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:50:08,011 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 04:50:08,745 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 04:50:09,138 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:50:09,140 - src.model_context - INFO - Context length for D:\assistenteeee\scripts\..\models\QwenPaw-Flash-9B.i1-Q4_K_M.gguf: 128000
+2026-08-01 04:50:09,141 - app.slow_request - WARNING - slow_request method=GET path=/api/session/0dea6106-586c-42f7-b3d6-b93d034bf0ed/context status=200 elapsed=3.650s
+2026-08-01 04:50:09,156 - app.slow_request - WARNING - slow_request method=GET path=/api/session/31c77f90-6deb-4fd4-9ee4-8bf39b95b24a/context status=200 elapsed=1.107s
+2026-08-01 04:50:09,912 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 04:50:10,660 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:50:10,662 - src.model_context - INFO - Context length for D:\assistenteeee\scripts\..\models\QwenPaw-Flash-9B.i1-Q4_K_M.gguf: 128000
+2026-08-01 04:50:10,667 - app.slow_request - WARNING - slow_request method=GET path=/api/history/0dea6106-586c-42f7-b3d6-b93d034bf0ed status=200 elapsed=2.620s
+2026-08-01 04:50:11,826 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 04:50:12,695 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:50:12,697 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 04:50:12,699 - app.slow_request - WARNING - slow_request method=GET path=/api/session/742c4198-e20a-4e6c-9b11-5da9472dad2e/context status=200 elapsed=3.546s
+2026-08-01 04:50:12,711 - app.slow_request - WARNING - slow_request method=GET path=/api/history/31c77f90-6deb-4fd4-9ee4-8bf39b95b24a status=200 elapsed=4.662s
+2026-08-01 04:50:14,056 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 04:50:14,921 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 04:50:14,925 - src.model_context - INFO - Context length for D:\assistenteeee\scripts\..\models\QwenPaw-Flash-9B.i1-Q4_K_M.gguf: 128000
+2026-08-01 04:50:14,929 - app.slow_request - WARNING - slow_request method=GET path=/api/session/0dea6106-586c-42f7-b3d6-b93d034bf0ed/context status=200 elapsed=4.241s
+2026-08-01 04:50:14,960 - app.slow_request - WARNING - slow_request method=GET path=/api/history/742c4198-e20a-4e6c-9b11-5da9472dad2e status=200 elapsed=5.805s
+2026-08-01 04:50:15,113 - app.slow_request - WARNING - slow_request method=GET path=/api/session/31c77f90-6deb-4fd4-9ee4-8bf39b95b24a/context status=200 elapsed=2.410s
+2026-08-01 04:50:15,180 - app.slow_request - WARNING - slow_request method=GET path=/api/history/0dea6106-586c-42f7-b3d6-b93d034bf0ed status=200 elapsed=2.460s
+2026-08-01 04:50:15,421 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:50:15,423 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:50:17,062 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:50:18,602 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 04:50:18,714 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.298s
+2026-08-01 04:50:30,685 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:50:32,590 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.356s
+2026-08-01 04:50:45,459 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:50:45,877 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 04:50:45,879 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.949s
+2026-08-01 04:51:00,412 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:51:00,787 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 04:51:00,789 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.861s
+2026-08-01 04:51:13,250 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:51:13,251 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 04:51:14,391 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 04:51:16,221 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.288s
+2026-08-01 04:51:38,224 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 04:51:38,227 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.295s

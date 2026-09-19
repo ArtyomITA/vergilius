@@ -1,0 +1,876 @@
+INFO:services.data_fetcher:Plane-Alert DB loaded: 16077 aircraft
+INFO:services.data_fetcher:Tracked Names DB loaded: 2308 registrations
+INFO:services.mesh_hashchain:Loaded Infonet: 0 events, head=0000000000000000...
+WARNING:__main__:Skipping router routers.agent_shell during startup: ModuleNotFoundError
+INFO:__main__:Dev server binding 127.0.0.1:8000 (loopback). Set SHADOWBROKER_DEV_BIND_ALL=true for 0.0.0.0.
+INFO:     Will watch for changes in these directories: ['D:\\assistenteeee\\shadowbroker\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [14608] using StatReload
+INFO:services.data_fetcher:Plane-Alert DB loaded: 16077 aircraft
+INFO:services.data_fetcher:Tracked Names DB loaded: 2308 registrations
+INFO:services.mesh_hashchain:Loaded Infonet: 0 events, head=0000000000000000...
+WARNING:__mp_main__:Skipping router routers.agent_shell during startup: ModuleNotFoundError
+WARNING:main:Skipping router routers.agent_shell during startup: ModuleNotFoundError
+INFO:     Started server process [19896]
+INFO:     Waiting for application startup.
+WARNING:auth:ADMIN_KEY is not set. Local-operator/admin endpoints will reject remote callers until ADMIN_KEY is configured.
+WARNING:auth:MESH_PEER_PUSH_SECRET is not set — peer push authentication is disabled. Set MESH_PEER_PUSH_SECRET in your .env file for production use.
+WARNING:services.env_check:⚠️  ADMIN_KEY is not set — Authentication for /api/settings and /api/system/update — endpoints are UNPROTECTED without it!
+WARNING:services.env_check:⚠️  Optional env var GFW_API_TOKEN is not set — Global Fishing Watch fishing-vessel activity (fishing_activity layer)
+WARNING:services.env_check:⚠️  Optional env var LTA_ACCOUNT_KEY is not set — Singapore LTA traffic cameras (CCTV layer)
+WARNING:services.env_check:⚠️  Optional env var PUBLIC_API_KEY is not set — Optional client auth for public endpoints (recommended for exposed deployments)
+INFO:services.env_check:Loaded persisted DM token pepper from dm_token_pepper.key
+WARNING:services.env_check:âš ï¸  RELEASE: No file-based Sprint 8 release attestation is staged (D:\assistenteeee\shadowbroker\backend\data\release_attestation.json) — authenticated release_gate will stay blocked until CI/release evidence is present.
+INFO:services.env_check:✅ Environment validation passed.
+INFO:services.ais_stream:AIS cache loaded: 30569 vessels from disk
+INFO:services.ais_stream:Starting Node.js AIS Stream Proxy...
+INFO:services.ais_stream:AIS Stream background thread started
+INFO:services.carrier_tracker:Carrier tracker started
+INFO:services.ais_stream:AIS Stream proxy started — receiving vessel data
+INFO:services.carrier_tracker:Carrier cache loaded: 11 carriers from D:\assistenteeee\shadowbroker\backend\data\carrier_cache.json
+INFO:services.carrier_tracker:Carrier tracker: 11 carriers loaded from cache (USNI + GDELT enrichment starting...)
+INFO:services.sigint:APRS-IS bridge started
+INFO:services.sigint:Meshtastic MQTT bridge disabled (set MESH_MQTT_ENABLED=true to enable)
+INFO:services.sigint:JS8Call bridge started (will check for local instance)
+INFO:services.sigint:SIGINT Grid started (APRS + JS8Call)
+INFO:main:Infonet private transport warmup starting (startup)
+INFO:main:Infonet sync kick starting (startup)
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+INFO:services.sigint:APRS-IS: # aprsc 2.1.20-gdaa359f
+INFO:services.data_fetcher:Meshtastic map cache loaded: 12194 fresh / 12316 total
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+INFO:services.data_fetcher:Meshtastic map: preloaded 12194 nodes from cache
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.sigint:JS8Call not running locally — bridge inactive (will retry)
+WARNING:services.data_fetcher:Fast startup cache load failed (non-fatal): Extra data: line 1 column 16489310 (char 16489309)
+INFO:services.data_fetcher:Loaded intel startup cache for 6 layers (age 41.1s) so Global Threat Intercept can paint early
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>._recompute_gt_clusters" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>._freeze_gt_weekly_snapshot" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>._fetch_financial" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>._auto_snapshot_high_freq" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>._auto_snapshot_standard" to job store "default"
+INFO:apscheduler.scheduler:Added job "start_scheduler.<locals>.<lambda>" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:services.data_fetcher:Scheduler started.
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 03:30:42 CEST)" was missed by 0:59:15.075260
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[0:15:00], next run at: 2026-08-01 03:31:27 CEST)" was missed by 0:13:30.035125
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[0:07:00], next run at: 2026-08-01 03:31:11 CEST)" was missed by 0:07:29.799251
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>._auto_snapshot_high_freq (trigger: interval[0:15:00], next run at: 2026-08-01 03:31:57 CEST)" was missed by 0:13:00.039142
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>._recompute_gt_clusters (trigger: interval[0:30:00], next run at: 2026-08-01 03:32:57 CEST)" was missed by 0:27:00.066234
+INFO:services.feed_ingester:Feed ingester daemon started (check interval=30s)
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[0:10:00], next run at: 2026-08-01 03:32:57 CEST)" was missed by 0:07:00.055681
+INFO:     Application startup complete.
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 03:32:57 CEST)" was missed by 0:57:00.045148
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>.<lambda> (trigger: interval[0:30:00], next run at: 2026-08-01 03:34:57 CEST)" was missed by 0:25:00.044145
+WARNING:apscheduler.executors.default:Run time of job "start_scheduler.<locals>._auto_snapshot_standard (trigger: interval[2:00:00], next run at: 2026-08-01 03:34:57 CEST)" was missed by 1:55:00.043142
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>._fetch_financial (trigger: interval[0:30:00], next run at: 2026-08-01 03:59:57 CEST)" (scheduled at 2026-08-01 03:29:57.728920+02:00)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>._fetch_financial (trigger: interval[0:30:00], next run at: 2026-08-01 03:59:57 CEST)" executed successfully
+INFO:services.transport_lane_isolation:Disabling public Mesh lane: wormhole_privacy_prewarm:scheduled_prewarm
+INFO:services.transport_lane_isolation:Disabling public Mesh lane: wormhole_privacy_prewarm:startup_resume
+ERROR:services.mesh.mesh_dm_mls:dm mls key package export failed for alias#5efd8dee44bc0c2e
+Traceback (most recent call last):
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 718, in export_dm_key_package_for_alias
+    identity_handle = _identity_handle_for_alias(alias_key)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 679, in _identity_handle_for_alias
+    handle = _privacy_client().create_identity()
+             ^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 221, in _privacy_client
+    _PRIVACY_CLIENT = PrivacyCoreClient.load()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 84, in load
+    resolved = cls._resolve_library_path(library_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 124, in _resolve_library_path
+    raise PrivacyCoreUnavailable(
+services.privacy_core_client.PrivacyCoreUnavailable: privacy-core shared library not found. Looked in:
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.dylib
+D:\assistenteeee\shadowbroker\privacy-core\target\release\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.dylib
+ERROR:services.mesh.mesh_dm_mls:dm mls key package export failed for alias#5efd8dee44bc0c2e
+Traceback (most recent call last):
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 718, in export_dm_key_package_for_alias
+    identity_handle = _identity_handle_for_alias(alias_key)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 679, in _identity_handle_for_alias
+    handle = _privacy_client().create_identity()
+             ^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 221, in _privacy_client
+    _PRIVACY_CLIENT = PrivacyCoreClient.load()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 84, in load
+    resolved = cls._resolve_library_path(library_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 124, in _resolve_library_path
+    raise PrivacyCoreUnavailable(
+services.privacy_core_client.PrivacyCoreUnavailable: privacy-core shared library not found. Looked in:
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.dylib
+D:\assistenteeee\shadowbroker\privacy-core\target\release\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.dylib
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (startup): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+INFO:services.fetchers.usni_fleet_tracker:USNI fleet-tracker: parsed 3/11 carrier positions from https://news.usni.org/2026/07/27/usni-news-fleet-and-marine-tracker-july-27-2026
+INFO:services.carrier_tracker:Carrier USNI update: USS Dwight D. Eisenhower (CVN-69) → Norfolk, Va (USNI Jul 27, 2026)
+INFO:services.carrier_tracker:Carrier USNI update: USS George H.W. Bush (CVN-77) → Arabian Sea (USNI Jul 27, 2026)
+INFO:services.carrier_tracker:Carrier USNI update: USS Abraham Lincoln (CVN-72) → Arabian Sea (USNI Jul 27, 2026)
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+INFO:main:=== PRELOADING DATA (background â€” server already accepting requests) ===
+INFO:services.data_fetcher:Full data update starting (parallel)...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (startup): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.data_fetcher:Meshtastic map cache loaded: 12194 fresh / 12316 total
+INFO:services.data_fetcher:Meshtastic map: preloaded 12194 nodes from cache
+WARNING:services.data_fetcher:Fast startup cache load failed (non-fatal): Extra data: line 1 column 16489310 (char 16489309)
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.data_fetcher:Loaded intel startup cache for 6 layers (age 45.2s) so Global Threat Intercept can paint early
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+INFO:services.fetchers.infrastructure:Data centers: 4899 geocoded locations loaded
+INFO:services.fetchers.infrastructure:Military bases: 646 locations loaded
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.infrastructure:Power plants: 34936 facilities loaded
+INFO:services.data_fetcher:Startup preload: Meshtastic cache already loaded, deferring remote map refresh to scheduled cadence
+INFO:services.data_fetcher:Startup priority preload starting (7 tasks)...
+INFO:services.fetchers.geo:Downloading global airports database from ourairports.com...
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:services.geopolitics:Fetching GDELT events via export CDN (multi-file)...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+INFO:services.ais_stream:AIS pruned 505 stale vessels
+INFO:services.data_fetcher:Satellites: Loaded TLE history for 492 objects
+INFO:services.data_fetcher:Satellites: Loaded 492 records from disk cache (1.4h old)
+INFO:services.data_fetcher:Satellites: Bootstrapped from disk cache (492 records, 1.4h old)
+INFO:services.data_fetcher:Satellites: 492 intel-classified, 0 Starlink (summarized), out of 492 total in catalog
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (startup): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+WARNING:main:Infonet private transport warmup incomplete (startup)
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+INFO:services.data_fetcher:SIGINT: 12639 signals (APRS:478 MESH:0 JS8:0 MAP:12194)
+INFO:services.data_fetcher:Yacht-Alert DB loaded: 12 vessels
+INFO:services.data_fetcher:PLAN/CCG vessel DB loaded: 92 vessels
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=3)")': /api/v2/doc/doc?query=aircraft+carrier+deployed&mode=artlist&maxrecords=5&format=json&timespan=14d
+INFO:services.fetchers.geo:Ships: 11 carriers + 29649 AIS vessels
+INFO:services.geopolitics:Downloading 48 GDELT export files...
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/50.0/lon/15.0/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/-15.0/lon/-60.0/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/0.0/lon/20.0/dist/2500; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/mil; not bypassing with curl.
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='www.aljazeera.com', port=443): Read timed out. (read timeout=3)")': /xml/rss/all.xml
+INFO:services.data_fetcher:airplanes.live mil: +106 raw, 106 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 42 total (42 from military, 0 stale dropped)
+INFO:services.fetchers.earth_observation:Weather alerts: 33 active (with polygons)
+WARNING:services.network_utils:Python requests failed for https://api.gdeltproject.org/api/v2/doc/doc?query=aircraft+carrier+deployed&mode=artlist&maxrecords=5&format=json&timespan=14d (HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Max retries exceeded with url: /api/v2/doc/doc?query=aircraft+carrier+deployed&mode=artlist&maxrecords=5&format=json&timespan=14d (Caused by ReadTimeoutError("HTTPSConnectionPool(host='api.gdeltproject.org', port=443): Read timed out. (read timeout=3)"))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.gdeltproject.org; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+INFO:services.carrier_tracker:Carrier OSINT: found 0 GDELT articles
+INFO:services.carrier_tracker:Carrier cache saved: 11 carriers
+INFO:services.carrier_tracker:Carrier tracker: 11 carriers updated. Confidence: {'seed': 8, 'recent': 3}
+INFO:services.carrier_tracker:Carrier tracker: next update at 2026-08-01T12:00:00+00:00 (10.5h)
+INFO:services.data_fetcher:adsb.lol: 6591 aircraft — publishing immediately
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.trains:Trains: 249 total (amtrak:212, digitraffic:37)
+INFO:services.data_fetcher:Tracked flights: 132 total (120 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 6614 active trails, 0 pruned, 6599 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+WARNING:services.data_fetcher:fast-tier task slow: fetch_flights took 14.92s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_military_flights took 14.89s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_ships took 14.86s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_satellites took 14.87s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_sigint took 14.89s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_trains took 14.89s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:OpenSky OAuth2 token refreshed.
+INFO:services.data_fetcher:Startup priority task still warming after 18.2s: fetch_airports
+INFO:services.data_fetcher:Startup priority budget reached; update_fast_data will continue in background
+INFO:services.data_fetcher:Startup priority budget reached; fetch_news will continue in background
+INFO:services.data_fetcher:Startup priority budget reached; fetch_gdelt will continue in background
+INFO:services.data_fetcher:Startup priority budget reached; fetch_crowdthreat will continue in background
+INFO:services.data_fetcher:Startup priority budget reached; fetch_firms_fires will continue in background
+INFO:services.data_fetcher:Startup priority budget reached; fetch_weather_alerts will continue in background
+INFO:services.data_fetcher:Startup preload: deferring Playwright Liveuamap scraper to scheduled cadence
+INFO:services.geopolitics:Downloaded 48/48 GDELT exports
+WARNING:services.network_utils:Python requests failed for https://www.csmonitor.com/rss/world (404 Client Error: Not Found for url: https://www.csmonitor.com/rss/world), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for www.csmonitor.com; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.route_database:route database refreshed in 32.0s: 617976 routes, 34114 airports
+INFO:services.data_fetcher:OpenSky: fetched 8127 global states (credits remaining: 3900)
+INFO:services.data_fetcher:OpenSky merge: 2424 additional aircraft, publishing before supplemental gap-fill
+INFO:services.data_fetcher:Tracked flights: 158 total (149 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Startup heavy synthesis delayed 90s so the dashboard can finish first paint
+INFO:services.data_fetcher:Startup priority preload complete; slow synthesis is warming in background.
+INFO:main:=== PRELOAD COMPLETE ===
+INFO:services.data_fetcher:Trail accumulation: 9035 active trails, 0 pruned, 9020 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Fast-tier update complete.
+INFO:services.geopolitics:GDELT parsed: 1549 conflict locations from 48 files (titles enriching in background)
+INFO:services.geopolitics:[BG] Fetching real article titles for 2442 URLs...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.geo:Loaded 1170 large airports into cache.
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 04:30:42 CEST)" (scheduled at 2026-08-01 03:30:42.703328+02:00)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Supplemental: +9 new aircraft from blind-spot hotspots (airplanes.live: 9, adsb.fi: 0)
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 2433 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:Tracked flights: 158 total (149 fresh from civilian, 0 stale dropped)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:31:57 CEST)" (scheduled at 2026-08-01 03:30:57.701321+02:00)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+INFO:services.data_fetcher:Fast-tier data update starting...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+INFO:services.ais_stream:AIS pruned 683 stale vessels
+INFO:services.data_fetcher:Trail accumulation: 9044 active trails, 0 pruned, 9029 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+INFO:services.data_fetcher:SIGINT: 12659 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.fetchers.geo:Ships: 11 carriers + 28977 AIS vessels
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/35.0/lon/105.0/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/-15.0/lon/-60.0/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/39.8/lon/-98.5/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/mil; not bypassing with curl.
+INFO:services.data_fetcher:airplanes.live mil: +105 raw, 105 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 158 total (40 from military, 0 stale dropped)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/0.0/lon/20.0/dist/2500; not bypassing with curl.
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:adsb.lol: 1023 aircraft — publishing immediately
+WARNING:services.data_fetcher:Flight count dropped from 8867 to 943 (>50% loss). Keeping previous data to prevent flicker.
+INFO:services.data_fetcher:Tracked flights: 158 total (14 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9043 active trails, 0 pruned, 9030 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+WARNING:services.data_fetcher:fast-tier task slow: fetch_flights took 7.47s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_military_flights took 7.47s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_ships took 7.47s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_satellites took 7.47s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_sigint took 7.47s
+INFO:services.data_fetcher:OpenSky merge: 7245 additional aircraft, publishing before supplemental gap-fill
+INFO:services.data_fetcher:Tracked flights: 158 total (116 fresh from civilian, 0 stale dropped)
+INFO:services.fetchers.trains:Trains: 249 total (amtrak:212, digitraffic:37)
+INFO:services.data_fetcher:Trail accumulation: 9305 active trails, 0 pruned, 9106 total
+WARNING:services.data_fetcher:fast-tier task slow: fetch_trains took 10.37s
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 7254 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:Tracked flights: 158 total (116 fresh from civilian, 0 stale dropped)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:07:00], next run at: 2026-08-01 03:39:29 CEST)" (scheduled at 2026-08-01 03:31:11.969675+02:00)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:07:00], next run at: 2026-08-01 03:39:29 CEST)" executed successfully
+INFO:services.data_fetcher:Trail accumulation: 9305 active trails, 0 pruned, 9106 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 22.26s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:31:57 CEST)" executed successfully
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:15:00], next run at: 2026-08-01 03:46:27 CEST)" (scheduled at 2026-08-01 03:31:27.744464+02:00)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:15:00], next run at: 2026-08-01 03:46:27 CEST)" executed successfully
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:32:57 CEST)" (scheduled at 2026-08-01 03:31:57.701321+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:33:57 CEST)" (scheduled at 2026-08-01 03:31:57.706832+02:00)
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:33:57 CEST)" executed successfully
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.data_fetcher:SIGINT: 12664 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+INFO:services.ais_stream:AIS pruned 696 stale vessels
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>._auto_snapshot_high_freq (trigger: interval[0:15:00], next run at: 2026-08-01 03:46:57 CEST)" (scheduled at 2026-08-01 03:31:57.742450+02:00)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>._auto_snapshot_high_freq (trigger: interval[0:15:00], next run at: 2026-08-01 03:46:57 CEST)" executed successfully
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/35.0/lon/105.0/dist/2000; not bypassing with curl.
+INFO:services.data_fetcher:airplanes.live mil: +98 raw, 114 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 158 total (37 from military, 0 stale dropped)
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/-25.0/lon/133.0/dist/2000; not bypassing with curl.
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/-15.0/lon/-60.0/dist/2000; not bypassing with curl.
+INFO:services.fetchers.geo:Ships: 11 carriers + 28300 AIS vessels
+WARNING:services.network_utils:Upstream rate limit hit for https://api.adsb.lol/v2/lat/0.0/lon/20.0/dist/2500; not bypassing with curl.
+INFO:services.data_fetcher:adsb.lol: 5864 aircraft — publishing immediately
+INFO:services.fetchers.trains:Trains: 243 total (amtrak:206, digitraffic:37)
+INFO:services.data_fetcher:Startup heavy synthesis beginning (slow feeds, enrichment, daily products)...
+INFO:services.data_fetcher:Slow-tier data update starting...
+INFO:main:Infonet private transport warmup starting (sync)
+INFO:services.data_fetcher:Tracked flights: 162 total (117 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9523 active trails, 0 pruned, 9279 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+INFO:services.data_fetcher:OpenSky merge: 3014 additional aircraft, publishing before supplemental gap-fill
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Tracked flights: 162 total (147 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9527 active trails, 0 pruned, 9279 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 3023 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:Tracked flights: 162 total (147 fresh from civilian, 0 stale dropped)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Trail accumulation: 9527 active trails, 0 pruned, 9279 total
+INFO:services.data_fetcher:GPS Jamming: 3 interference zones detected
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+WARNING:main:Infonet private transport warmup incomplete (sync)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 17.98s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:32:57 CEST)" executed successfully
+INFO:services.fetchers.aircraft_database:aircraft database refreshed in 141.5s from metadata/aircraft-database-complete-2025-08.csv: 579658 aircraft
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.telegram_osint:Telegram OSINT: +113 new, 113 retained (55 geolocated)
+INFO:analytics.integration:Strategic Risk Analytics engine initialized
+INFO:analytics.gt_early_warning:GT update region=global domains=conflict,unrest composite=0.296 signals=1 deviation=2.62
+INFO:analytics.gt_early_warning:GT update region=55.76,37.62 domains=conflict,unrest composite=0.296 signals=1 deviation=2.62
+INFO:analytics.gt_early_warning:GT update region=32.09,34.78 domains=financial,unrest composite=0.203 signals=1 deviation=1.57
+INFO:analytics.gt_early_warning:GT update region=12.86,30.22 domains=conflict,unrest composite=0.287 signals=1 deviation=2.50
+INFO:analytics.integration:GT refresh processed 1755 items
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:33:57 CEST)" (scheduled at 2026-08-01 03:32:57.701321+02:00)
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>._recompute_gt_clusters (trigger: interval[0:30:00], next run at: 2026-08-01 04:02:57 CEST)" (scheduled at 2026-08-01 03:32:57.716360+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:10:00], next run at: 2026-08-01 03:42:57 CEST)" (scheduled at 2026-08-01 03:32:57.727910+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 04:32:57 CEST)" (scheduled at 2026-08-01 03:32:57.739449+02:00)
+WARNING:services.sar.sar_aoi:SAR AOI file missing: D:\assistenteeee\shadowbroker\backend\data\sar_aois.json
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 04:32:57 CEST)" executed successfully
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.data_fetcher:SIGINT: 12669 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+INFO:analytics.integration:GT Louvain recompute: 3 clusters
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>._recompute_gt_clusters (trigger: interval[0:30:00], next run at: 2026-08-01 04:02:57 CEST)" executed successfully
+WARNING:services.data_fetcher:task slow: fetch_telegram_osint took 136.82s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[1:00:00], next run at: 2026-08-01 04:30:42 CEST)" executed successfully
+INFO:services.fetchers.telegram_osint:Telegram OSINT: +113 new, 113 retained (56 geolocated)
+INFO:services.fetchers.trains:Trains: 248 total (amtrak:211, digitraffic:37)
+INFO:services.ais_stream:AIS pruned 841 stale vessels
+INFO:services.fetchers.geo:Ships: 11 carriers + 27474 AIS vessels
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.adsb.lol', port=443): Read timed out. (read timeout=10)")': /v2/mil
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.adsb.lol', port=443): Read timed out. (read timeout=10)")': /v2/lat/39.8/lon/-98.5/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /feed
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.adsb.lol', port=443): Read timed out. (read timeout=10)")': /v2/lat/50.0/lon/15.0/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='api.adsb.lol', port=443): Read timed out. (read timeout=10)")': /v2/lat/35.0/lon/105.0/dist/2000
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8fceff50>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/-25.0/lon/133.0/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8faeb170>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/0.0/lon/20.0/dist/2500
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='feeds.bbci.co.uk', port=443): Read timed out. (read timeout=10)")': /news/world/rss.xml
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8fafbf80>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/-15.0/lon/-60.0/dist/2000
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.network_utils:External curl fallback disabled on Windows for www.csmonitor.com; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+INFO:services.sigint:APRS-IS: # aprsc 2.1.20-gdaa359f
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/mil (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/mil (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8c6d7980>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/39.8/lon/-98.5/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/39.8/lon/-98.5/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25db39414c0>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/50.0/lon/15.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/50.0/lon/15.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25db39cad20>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/35.0/lon/105.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/35.0/lon/105.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8ff8b170>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+INFO:services.data_fetcher:airplanes.live mil: +99 raw, 99 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 162 total (35 from military, 0 stale dropped)
+WARNING:services.data_fetcher:slow-tier task slow: fetch_news took 87.44s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:adsb.lol: 787 aircraft — publishing immediately
+WARNING:services.data_fetcher:Flight count dropped from 9346 to 775 (>50% loss). Keeping previous data to prevent flicker.
+INFO:services.data_fetcher:Tracked flights: 163 total (4 fresh from civilian, 0 stale dropped)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.data_fetcher:task slow: cctv_ingest_cycle took 34.97s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:10:00], next run at: 2026-08-01 03:42:57 CEST)" executed successfully
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.data_fetcher:slow-tier task slow: fetch_earthquakes took 94.17s
+INFO:services.data_fetcher:Trail accumulation: 9528 active trails, 0 pruned, 9280 total
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:GPS Jamming: 1 interference zones detected
+INFO:services.data_fetcher:OpenSky merge: 7454 additional aircraft, publishing before supplemental gap-fill
+WARNING:services.data_fetcher:fast-tier task slow: fetch_flights took 35.33s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_military_flights took 35.51s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_ships took 35.52s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_satellites took 35.53s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_sigint took 35.57s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_trains took 35.58s
+INFO:services.data_fetcher:Tracked flights: 163 total (112 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9153 active trails, 0 pruned, 9369 total
+INFO:services.data_fetcher:GPS Jamming: 1 interference zones detected
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 7463 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:Tracked flights: 163 total (112 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9153 active trails, 0 pruned, 9369 total
+INFO:services.data_fetcher:GPS Jamming: 1 interference zones detected
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 42.40s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:33:57 CEST)" executed successfully
+INFO:services.fetchers.earth_observation:Space weather: Kp=1.0 (QUIET), 10 events
+WARNING:services.data_fetcher:slow-tier task slow: fetch_space_weather took 7.64s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.infrastructure:Internet outages: 9 regions affected
+WARNING:services.data_fetcher:slow-tier task slow: fetch_internet_outages took 8.44s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.fetchers.infrastructure:RIPE Atlas: 35 countries with probe disconnections (from 500 disconnected / ~14399 connected probes)
+WARNING:services.data_fetcher:slow-tier task slow: fetch_ripe_atlas_probes took 12.46s
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='rx.linkfanel.net', port=443) at 0x25db28a6c30>, 'Connection to rx.linkfanel.net timed out. (connect timeout=3)')': /kiwisdr_com.js
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:34:57 CEST)" (scheduled at 2026-08-01 03:33:57.701321+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:35:57 CEST)" (scheduled at 2026-08-01 03:33:57.706832+02:00)
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:35:57 CEST)" executed successfully
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+INFO:services.data_fetcher:SIGINT: 12668 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.ais_stream:AIS pruned 908 stale vessels
+INFO:services.fetchers.geo:Ships: 11 carriers + 26588 AIS vessels
+ERROR:services.data_fetcher:startup-heavy task timed out: update_slow_data (120.11s)
+WARNING:services.data_fetcher:startup-heavy task slow: fetch_telegram_osint took 120.01s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.network_utils:Python requests failed for https://rx.linkfanel.net/kiwisdr_com.js (HTTPSConnectionPool(host='rx.linkfanel.net', port=443): Max retries exceeded with url: /kiwisdr_com.js (Caused by NewConnectionError("HTTPSConnection(host='rx.linkfanel.net', port=443): Failed to establish a new connection: [WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione"))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for rx.linkfanel.net; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.kiwisdr_fetcher:KiwiSDR mirror fetch failed: Circuit breaker open for rx.linkfanel.net (failed <120s ago)
+WARNING:services.kiwisdr_fetcher:KiwiSDR fetch returned no usable mirror payload
+INFO:services.kiwisdr_fetcher:KiwiSDR: serving 798 receivers from bundled fallback (no fresh fetch + no disk cache available)
+WARNING:services.data_fetcher:slow-tier task slow: fetch_kiwisdr took 6.13s
+INFO:services.fetchers.trains:Trains: 249 total (amtrak:211, digitraffic:38)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+ERROR:services.data_fetcher:startup-heavy task failed: fetch_volcanoes
+Traceback (most recent call last):
+  File "D:\assistenteeee\shadowbroker\backend\services\data_fetcher.py", line 400, in _drain_task_futures
+    future.result(timeout=_TASK_HARD_TIMEOUT_S)
+  File "C:\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\fetchers\retry.py", line 50, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\fetchers\earth_observation.py", line 422, in fetch_volcanoes
+    coords = geom.get("coordinates", [None, None])
+             ^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+WARNING:services.data_fetcher:startup-heavy task slow: fetch_viirs_change_nodes took 9.34s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8fdf5010>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/mil
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d8ffa8710>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/39.8/lon/-98.5/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25db3d69220>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/50.0/lon/15.0/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25df95bc0b0>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/35.0/lon/105.0/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25df96e9c10>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/0.0/lon/20.0/dist/2500
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25df95bf9e0>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/-15.0/lon/-60.0/dist/2000
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25da1874140>, 'Connection to api.adsb.lol timed out. (connect timeout=3)')': /v2/lat/-25.0/lon/133.0/dist/2000
+INFO:services.satnogs_fetcher:SatNOGS: fetched 322 online stations
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.satnogs_fetcher:SatNOGS: fetched 25 recent observations
+WARNING:services.data_fetcher:slow-tier task slow: fetch_satnogs took 20.07s
+INFO:services.tinygs_fetcher:TinyGS TLE: loaded 158 elements from disk cache
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.tinygs_fetcher:TinyGS TLE: fetched amateur group (93 sats)
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/mil (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/mil (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d81f71fd0>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/39.8/lon/-98.5/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/39.8/lon/-98.5/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d821f1d00>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/50.0/lon/15.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/50.0/lon/15.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d85f60d70>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+INFO:services.tinygs_fetcher:TinyGS TLE: fetched cubesat group (85 sats)
+INFO:services.tinygs_fetcher:TinyGS TLE: cached 158 total orbital elements
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/35.0/lon/105.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/35.0/lon/105.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25df8a273e0>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/0.0/lon/20.0/dist/2500 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/0.0/lon/20.0/dist/2500 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d81f71f10>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/-15.0/lon/-60.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/-15.0/lon/-60.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d81f73290>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.network_utils:Python requests failed for https://api.adsb.lol/v2/lat/-25.0/lon/133.0/dist/2000 (HTTPSConnectionPool(host='api.adsb.lol', port=443): Max retries exceeded with url: /v2/lat/-25.0/lon/133.0/dist/2000 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.adsb.lol', port=443) at 0x25d81f71580>, 'Connection to api.adsb.lol timed out. (connect timeout=3)'))), skipping external curl...
+WARNING:services.network_utils:External curl fallback disabled on Windows for api.adsb.lol; set SHADOWBROKER_ENABLE_WINDOWS_CURL_FALLBACK=1 to opt in.
+WARNING:services.data_fetcher:adsb.lol returned 0 aircraft — relying on OpenSky/supplemental sources
+INFO:services.data_fetcher:OpenSky merge: 8032 additional aircraft, publishing before supplemental gap-fill
+WARNING:services.data_fetcher:fast-tier task slow: fetch_flights took 31.13s
+INFO:services.data_fetcher:Tracked flights: 163 total (110 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 8340 active trails, 0 pruned, 9369 total
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 8041 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:airplanes.live mil: +102 raw, 102 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 163 total (35 from military, 0 stale dropped)
+WARNING:services.data_fetcher:fast-tier task slow: fetch_military_flights took 34.54s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_ships took 34.55s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_satellites took 34.58s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_sigint took 34.60s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_trains took 34.60s
+INFO:services.data_fetcher:Tracked flights: 163 total (110 fresh from civilian, 0 stale dropped)
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Trail accumulation: 8341 active trails, 0 pruned, 9369 total
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 45.75s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:34:57 CEST)" executed successfully
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+WARNING:services.tinygs_fetcher:TinyGS telemetry fetch failed (SGP4 still active): HTTPSConnectionPool(host='api.tinygs.com', port=443): Read timed out. (read timeout=15)
+INFO:services.tinygs_fetcher:TinyGS: 158 satellites (SGP4 propagated, 0 TinyGS confirmed)
+WARNING:services.data_fetcher:slow-tier task slow: fetch_tinygs took 47.48s
+WARNING:services.data_fetcher:startup-heavy task slow: fetch_unusual_whales took 38.75s
+INFO:services.geopolitics:Fetching DeepStateMap from GitHub mirror (cyterat/deepstate-map-data @ main)...
+WARNING:services.data_fetcher:startup-heavy task slow: fetch_fimi took 38.75s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.geopolitics:Downloading DeepStateMap: https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/deepstatemap_data_20260731.geojson
+WARNING:services.data_fetcher:slow-tier task slow: fetch_frontlines took 6.91s
+INFO:services.fetchers.infrastructure:Data centers: 4899 geocoded locations loaded
+WARNING:services.data_fetcher:slow-tier task slow: fetch_datacenters took 7.22s
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+ERROR:main:swarm manifest pull loop error
+Traceback (most recent call last):
+  File "D:\assistenteeee\shadowbroker\backend\main.py", line 2255, in _swarm_manifest_pull_loop
+    result = refresh_swarm_manifest_from_seeds()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_swarm_runtime.py", line 307, in refresh_swarm_manifest_from_seeds
+    manifest = fetch_remote_bootstrap_manifest(seed_url, now=timestamp)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_swarm_runtime.py", line 263, in fetch_remote_bootstrap_manifest
+    proxies = _infonet_peer_requests_proxies(normalized)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\main.py", line 1273, in _infonet_peer_requests_proxies
+    raise RuntimeError("onion peer requests require Arti to be enabled")
+RuntimeError: onion peer requests require Arti to be enabled
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:35:57 CEST)" (scheduled at 2026-08-01 03:34:57.701321+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" (scheduled at 2026-08-01 03:34:57.702320+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" (scheduled at 2026-08-01 03:34:57.705326+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" (scheduled at 2026-08-01 03:34:57.707842+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" (scheduled at 2026-08-01 03:34:57.708840+02:00)
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:services.data_fetcher:Slow-tier data update starting...
+INFO:services.ais_stream:AIS pruned 907 stale vessels
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" executed successfully
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:30:00], next run at: 2026-08-01 04:04:57 CEST)" (scheduled at 2026-08-01 03:34:57.741449+02:00)
+WARNING:services.data_fetcher:adsb.lol mil fetch failed: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" executed successfully
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>._auto_snapshot_standard (trigger: interval[2:00:00], next run at: 2026-08-01 05:34:57 CEST)" (scheduled at 2026-08-01 03:34:57.743451+02:00)
+INFO:services.fetchers.sar_products:SAR Mode B (ground-change alerts) is disabled. Missing: MESH_SAR_PRODUCTS_FETCH=allow, MESH_SAR_PRODUCTS_FETCH_ACKNOWLEDGE=true, MESH_SAR_EARTHDATA_TOKEN (free from urs.earthdata.nasa.gov). Enable in Settings → SAR or set the env vars listed in .env.example. Free signup: https://urs.earthdata.nasa.gov/users/new
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:30:00], next run at: 2026-08-01 04:04:57 CEST)" executed successfully
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+WARNING:services.data_fetcher:Region fetch failed for lat=39.8: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>._auto_snapshot_standard (trigger: interval[2:00:00], next run at: 2026-08-01 05:34:57 CEST)" executed successfully
+INFO:services.data_fetcher:SIGINT: 12661 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+INFO:services.ais_stream:AIS pruned 1 stale vessels
+WARNING:services.data_fetcher:Region fetch failed for lat=50.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=35.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=-15.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+WARNING:services.data_fetcher:Region fetch failed for lat=0.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=-25.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:airplanes.live mil: +103 raw, 103 total unique
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 165 total (36 from military, 0 stale dropped)
+WARNING:services.data_fetcher:adsb.lol returned 0 aircraft — relying on OpenSky/supplemental sources
+INFO:services.data_fetcher:OpenSky merge: 8032 additional aircraft, publishing before supplemental gap-fill
+INFO:services.fetchers.geo:Ships: 11 carriers + 25698 AIS vessels
+WARNING:services.fetchers.earth_observation:NUFORC live (requests): index HTTP 403 for 202608
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Error: Unexpected server response: 429
+WARNING:services.ais_stream:AIS proxy stderr: WebSocket Proxy Closed. Reconnecting in 5s...
+INFO:services.data_fetcher:Tracked flights: 165 total (110 fresh from civilian, 0 stale dropped)
+INFO:services.fetchers.earth_observation:Weather alerts: 34 active (with polygons)
+INFO:services.fetchers.trains:Trains: 245 total (amtrak:207, digitraffic:38)
+WARNING:services.data_fetcher:task slow: fetch_weather_alerts took 5.89s
+WARNING:services.data_fetcher:fast-tier task slow: fetch_trains took 5.88s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:05:00], next run at: 2026-08-01 03:39:57 CEST)" executed successfully
+INFO:services.data_fetcher:Trail accumulation: 8342 active trails, 0 pruned, 9371 total
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 8041 additional aircraft from OpenSky + supplemental
+WARNING:services.fetchers.earth_observation:NUFORC live (requests): index HTTP 403 for 202607
+INFO:services.data_fetcher:Tracked flights: 165 total (110 fresh from civilian, 0 stale dropped)
+INFO:services.transport_lane_isolation:Disabling public Mesh lane: wormhole_privacy_prewarm:scheduled_prewarm
+INFO:services.ais_stream:AIS Stream: processed 1 messages, tracking 26028 vessels
+WARNING:services.fetchers.earth_observation:NUFORC live (requests): index HTTP 403 for 202606
+INFO:services.data_fetcher:Trail accumulation: 8342 active trails, 0 pruned, 9371 total
+ERROR:services.slo:SLO CANARY TRIPPED: uap_sightings pulled 0 rows, expected >= 50 — upstream likely broken, check NUFORC rolling 60-day window (weekly refresh)
+WARNING:services.fetchers.earth_observation:UAP sightings: live NUFORC rebuild failed, using fallback: NUFORC live: zero rows pulled across 3 months (months_with_data=0)
+INFO:services.ais_stream:AIS cache saved: 26028 vessels
+ERROR:services.mesh.mesh_dm_mls:dm mls key package export failed for alias#5efd8dee44bc0c2e
+Traceback (most recent call last):
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 718, in export_dm_key_package_for_alias
+    identity_handle = _identity_handle_for_alias(alias_key)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 679, in _identity_handle_for_alias
+    handle = _privacy_client().create_identity()
+             ^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\mesh\mesh_dm_mls.py", line 221, in _privacy_client
+    _PRIVACY_CLIENT = PrivacyCoreClient.load()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 84, in load
+    resolved = cls._resolve_library_path(library_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\assistenteeee\shadowbroker\backend\services\privacy_core_client.py", line 124, in _resolve_library_path
+    raise PrivacyCoreUnavailable(
+services.privacy_core_client.PrivacyCoreUnavailable: privacy-core shared library not found. Looked in:
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\debug\libprivacy_core.dylib
+D:\assistenteeee\shadowbroker\privacy-core\target\release\privacy_core.dll
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.so
+D:\assistenteeee\shadowbroker\privacy-core\target\release\libprivacy_core.dylib
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 17.41s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:35:57 CEST)" executed successfully
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:36:57 CEST)" (scheduled at 2026-08-01 03:35:57.701321+02:00)
+INFO:apscheduler.executors.default:Running job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:37:57 CEST)" (scheduled at 2026-08-01 03:35:57.706832+02:00)
+INFO:services.data_fetcher:Fast-tier data update starting...
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:02:00], next run at: 2026-08-01 03:37:57 CEST)" executed successfully
+WARNING:services.data_fetcher:adsb.lol mil fetch failed: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=39.8: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: Using cached classification (492 sats, TLEs unchanged)
+WARNING:services.data_fetcher:Region fetch failed for lat=50.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=35.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: Maneuver scan — 0 detections from 492 objects
+WARNING:services.data_fetcher:Region fetch failed for lat=-25.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: Decay scan — 0 anomalies detected
+WARNING:services.data_fetcher:Region fetch failed for lat=0.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+WARNING:services.data_fetcher:Region fetch failed for lat=-15.0: Circuit breaker open for api.adsb.lol (failed <120s ago)
+INFO:services.data_fetcher:Satellites: 492 classified, 492 positioned
+WARNING:services.data_fetcher:adsb.lol returned 0 aircraft — relying on OpenSky/supplemental sources
+INFO:services.ais_stream:AIS pruned 909 stale vessels
+INFO:services.data_fetcher:airplanes.live mil: +99 raw, 99 total unique
+INFO:services.data_fetcher:SIGINT: 12668 signals (APRS:500 MESH:0 JS8:0 MAP:12194)
+INFO:services.data_fetcher:UAVs: 0 real drones detected via ADS-B
+INFO:services.data_fetcher:Tracked flights: 159 total (33 from military, 6 stale dropped)
+INFO:services.fetchers.geo:Ships: 11 carriers + 25556 AIS vessels
+ERROR:services.fetchers.earth_observation:UAP sightings: HF fallback yielded 0 rows within last 60 days (dropped 147591 stale rows). HF mirror is likely stale; the layer will be empty until the live NUFORC path recovers.
+ERROR:services.slo:SLO CANARY TRIPPED: uap_sightings pulled 0 rows, expected >= 50 — upstream likely broken, check NUFORC rolling 60-day window (weekly refresh)
+ERROR:services.fetchers.earth_observation:UAP sightings: both live NUFORC and HF fallback produced 0 rows; layer is unavailable. Live error: NUFORC live: zero rows pulled across 3 months (months_with_data=0)
+WARNING:services.data_fetcher:startup-heavy task slow: fetch_uap_sightings took 73.18s
+INFO:services.fetchers.trains:Trains: 247 total (amtrak:208, digitraffic:39)
+INFO:services.data_fetcher:OpenSky: fetched 8106 global states (credits remaining: 3884)
+INFO:services.data_fetcher:OpenSky merge: 8003 additional aircraft, publishing before supplemental gap-fill
+INFO:services.data_fetcher:Tracked flights: 171 total (110 fresh from civilian, 0 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9013 active trails, 0 pruned, 9899 total
+INFO:services.data_fetcher:Gap-fill: added 9 aircraft to pipeline
+INFO:services.data_fetcher:Enrichment: 8012 additional aircraft from OpenSky + supplemental
+INFO:services.data_fetcher:Tracked flights: 170 total (110 fresh from civilian, 1 stale dropped)
+INFO:services.data_fetcher:Trail accumulation: 9012 active trails, 0 pruned, 9899 total
+INFO:services.ais_stream:AIS Stream: processed 6455 messages, tracking 26059 vessels
+INFO:services.fetchers.wastewater:WastewaterSCAN: cached 196 plant locations
+INFO:services.ais_stream:AIS cache saved: 26059 vessels
+INFO:services.data_fetcher:Fast-tier update complete.
+WARNING:services.data_fetcher:task slow: update_fast_data took 16.07s
+INFO:apscheduler.executors.default:Job "start_scheduler.<locals>.<lambda> (trigger: interval[0:01:00], next run at: 2026-08-01 03:36:57 CEST)" executed successfully
+INFO:main:Infonet private transport warmup starting (sync)
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+INFO:services.tor_hidden_service:Tor not found, attempting bootstrap...
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.11/tor-expert-bundle-windows-x86_64-15.0.11.tar.gz: HTTP Error 404: Not Found
+INFO:services.tor_hidden_service:Downloading Tor Expert Bundle over HTTPS from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz...
+ERROR:services.tor_hidden_service:Failed to download/extract Tor from https://dist.torproject.org/torbrowser/15.0.8/tor-expert-bundle-windows-x86_64-15.0.8.tar.gz: HTTP Error 404: Not Found
+WARNING:main:Infonet private transport warmup incomplete (sync): {'ok': False, 'detail': 'Could not prepare Tor automatically. Check network access to dist.torproject.org or install Tor, then try again.'}
+WARNING:main:Infonet private transport warmup incomplete (sync)

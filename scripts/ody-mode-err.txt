@@ -1,0 +1,288 @@
+2026-08-01 05:21:08,678 - core.auth - INFO - Auth config loaded
+2026-08-01 05:21:08,723 - core.auth - INFO - Loaded 1 session(s) from disk
+2026-08-01 05:21:08,739 - __main__ - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 05:21:13,194 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 05:21:24,063 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 05:21:26,728 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 05:21:26,831 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 05:21:26,844 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 05:21:26,845 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 05:21:31,374 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 05:21:35,344 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:35,432 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:21:35,433 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:35,433 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 05:21:35,710 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:35,713 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:21:35,859 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 05:21:35,898 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 05:21:35,962 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:21:35,963 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 05:21:35,964 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 05:21:35,965 - __main__ - INFO - Vector document RAG initialized
+2026-08-01 05:21:36,385 - core.session_manager - INFO - Loaded 4 session(s) (metadata only)
+2026-08-01 05:21:36,390 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 05:21:36,391 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 05:21:36,616 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:36,621 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:21:36,622 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:36,622 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 05:21:36,865 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 05:21:36,871 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 05:21:36,879 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 05:21:36,883 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 05:21:36,891 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:21:36,892 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=1)
+2026-08-01 05:21:36,900 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:21:36,901 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 05:21:36,903 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 05:21:36,930 - __main__ - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 05:21:38,398 - __main__ - INFO - STT service initialized (provider managed via settings)
+2026-08-01 05:21:38,904 - __main__ - INFO - MCP routes initialized
+2026-08-01 05:21:38,904 - __main__ - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 05:21:38,926 - __main__ - INFO - Webhook & API token routes initialized
+INFO:     Started server process [10776]
+INFO:     Waiting for application startup.
+2026-08-01 05:21:39,280 - __main__ - INFO - Application starting up...
+2026-08-01 05:21:39,314 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 05:21:39,315 - __main__ - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 05:21:39,366 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 05:21:39,414 - __main__ - INFO - Application startup complete
+2026-08-01 05:21:39,465 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 05:21:45,302 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 05:21:47,984 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 05:21:47,985 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 05:21:48,122 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 05:21:48,123 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 05:21:48,247 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 05:21:48,248 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 05:21:48,450 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 05:21:48,451 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 05:21:51,246 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 05:21:51,248 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+[08/01/26 05:21:59] INFO     Starting MCP server 'windows-mcp' transport.py:241
+                             with transport 'stdio'                            
+2026-08-01 05:21:59,945 - src.mcp_manager - INFO - MCP server connected: windows-mcp (075fe6c2) - 13 tools via stdio
+2026-08-01 05:22:25,975 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:22:25,986 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:23:50,776 - app.slow_request - WARNING - slow_request method=POST path=/api/auth/login status=200 elapsed=1.024s
+2026-08-01 05:23:58,049 - app.slow_request - WARNING - slow_request method=GET path=/static/js/settings.js status=200 elapsed=0.766s
+2026-08-01 05:24:01,819 - app.slow_request - WARNING - slow_request method=GET path=/static/js/editor/mask-utils.js status=200 elapsed=0.835s
+2026-08-01 05:24:01,941 - app.slow_request - WARNING - slow_request method=GET path=/static/js/editor/checkerboard.js status=200 elapsed=0.967s
+2026-08-01 05:24:08,362 - app.slow_request - WARNING - slow_request method=GET path=/api/prefs/theme status=200 elapsed=1.002s
+2026-08-01 05:24:08,651 - app.slow_request - WARNING - slow_request method=GET path=/api/auth/settings status=200 elapsed=1.290s
+2026-08-01 05:24:08,685 - app.slow_request - WARNING - slow_request method=GET path=/static/js/compare/panes.js status=200 elapsed=2.211s
+2026-08-01 05:24:08,750 - app.slow_request - WARNING - slow_request method=GET path=/api/tools status=200 elapsed=1.388s
+2026-08-01 05:24:09,224 - app.slow_request - WARNING - slow_request method=GET path=/static/js/research/jobs.js status=200 elapsed=1.865s
+2026-08-01 05:24:09,366 - app.slow_request - WARNING - slow_request method=GET path=/static/js/calendar/utils.js status=200 elapsed=2.453s
+2026-08-01 05:24:10,175 - app.slow_request - WARNING - slow_request method=GET path=/api/tts/stats status=200 elapsed=0.768s
+2026-08-01 05:24:10,398 - app.slow_request - WARNING - slow_request method=GET path=/api/fonts/custom status=200 elapsed=0.816s
+2026-08-01 05:24:10,406 - app.slow_request - WARNING - slow_request method=GET path=/api/tools status=200 elapsed=0.997s
+2026-08-01 05:24:10,424 - app.slow_request - WARNING - slow_request method=GET path=/static/js/emailLibrary/signatureFold.js status=200 elapsed=1.662s
+2026-08-01 05:24:10,436 - app.slow_request - WARNING - slow_request method=GET path=/static/js/emailLibrary/state.js status=200 elapsed=1.661s
+2026-08-01 05:24:10,470 - app.slow_request - WARNING - slow_request method=GET path=/static/js/emailLibrary/utils.js status=200 elapsed=1.709s
+2026-08-01 05:24:11,652 - app.slow_request - WARNING - slow_request method=GET path=/static/sw.js status=200 elapsed=0.879s
+2026-08-01 05:24:14,148 - app.slow_request - WARNING - slow_request method=GET path=/api/stt/stats status=200 elapsed=2.422s
+2026-08-01 05:24:14,152 - app.slow_request - WARNING - slow_request method=GET path=/api/auth/features status=200 elapsed=2.425s
+2026-08-01 05:24:14,156 - app.slow_request - WARNING - slow_request method=GET path=/static/js/slashAutocomplete.js status=200 elapsed=2.558s
+2026-08-01 05:24:14,210 - app.slow_request - WARNING - slow_request method=GET path=/api/skills status=200 elapsed=2.480s
+2026-08-01 05:24:14,900 - app.slow_request - WARNING - slow_request method=POST path=/api/calendar/sync status=200 elapsed=0.752s
+2026-08-01 05:24:14,903 - app.slow_request - WARNING - slow_request method=GET path=/api/calendar/events status=200 elapsed=0.755s
+2026-08-01 05:24:16,145 - app.slow_request - WARNING - slow_request method=GET path=/static/style.css status=200 elapsed=1.220s
+2026-08-01 05:24:16,407 - app.slow_request - WARNING - slow_request method=GET path=/static/app.js status=200 elapsed=0.944s
+2026-08-01 05:24:17,176 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:17,179 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:17,607 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:24:18,232 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:24:18,234 - app.slow_request - WARNING - slow_request method=GET path=/api/mcp/servers status=200 elapsed=0.795s
+2026-08-01 05:24:18,351 - app.slow_request - WARNING - slow_request method=GET path=/api/tokens status=200 elapsed=0.877s
+2026-08-01 05:24:18,937 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:24:19,997 - app.slow_request - WARNING - slow_request method=GET path=/api/auth/users status=200 elapsed=1.075s
+2026-08-01 05:24:20,386 - app.slow_request - WARNING - slow_request method=GET path=/api/diagnostics/logs status=200 elapsed=1.457s
+2026-08-01 05:24:20,529 - app.slow_request - WARNING - slow_request method=GET path=/api/tools status=200 elapsed=1.604s
+2026-08-01 05:24:20,564 - app.slow_request - WARNING - slow_request method=GET path=/api/email/accounts status=200 elapsed=1.631s
+2026-08-01 05:24:20,625 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:20,653 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:20,660 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 05:24:21,184 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:21,447 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:21,517 - app.slow_request - WARNING - slow_request method=GET path=/api/email/unread-state status=200 elapsed=0.785s
+2026-08-01 05:24:21,792 - app.slow_request - WARNING - slow_request method=GET path=/static/js/markdown.js status=200 elapsed=1.084s
+2026-08-01 05:24:22,239 - app.slow_request - WARNING - slow_request method=GET path=/static/js/dragSort.js status=200 elapsed=1.053s
+2026-08-01 05:24:22,339 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:22,350 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:23,089 - app.slow_request - WARNING - slow_request method=GET path=/static/live2d/mao_pro/runtime/mao_pro.model3.json status=200 elapsed=1.089s
+2026-08-01 05:24:23,203 - app.slow_request - WARNING - slow_request method=GET path=/static/js/sessions.js status=200 elapsed=1.408s
+2026-08-01 05:24:23,386 - routes.email_pollers - INFO - Started scheduled email poller
+2026-08-01 05:24:23,443 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:23,612 - app.slow_request - WARNING - slow_request method=GET path=/static/js/memory.js status=200 elapsed=1.373s
+2026-08-01 05:24:23,934 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:24:24,219 - app.slow_request - WARNING - slow_request method=GET path=/static/js/skills.js status=200 elapsed=0.912s
+2026-08-01 05:24:24,233 - app.slow_request - WARNING - slow_request method=GET path=/static/live2d/mao_pro/runtime/mao_pro.moc3 status=200 elapsed=0.852s
+2026-08-01 05:24:24,263 - app.slow_request - WARNING - slow_request method=GET path=/api/email/list status=200 elapsed=0.892s
+2026-08-01 05:24:24,824 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=9.252s
+2026-08-01 05:24:24,975 - app.slow_request - WARNING - slow_request method=GET path=/static/js/tourHints.js status=200 elapsed=1.591s
+2026-08-01 05:24:27,327 - app.slow_request - WARNING - slow_request method=POST path=/api/presets/custom status=200 elapsed=2.140s
+2026-08-01 05:24:27,415 - app.slow_request - WARNING - slow_request method=GET path=/static/js/voiceRecorder.js status=200 elapsed=2.227s
+2026-08-01 05:24:27,690 - app.slow_request - WARNING - slow_request method=GET path=/static/js/fileHandler.js status=200 elapsed=2.504s
+2026-08-01 05:24:28,758 - app.slow_request - WARNING - slow_request method=GET path=/static/js/presets.js status=200 elapsed=1.042s
+2026-08-01 05:24:32,367 - app.slow_request - WARNING - slow_request method=GET path=/static/js/slashCommands.js status=200 elapsed=0.861s
+2026-08-01 05:24:41,235 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.836s
+2026-08-01 05:24:57,361 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:24:57,943 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:24:57,948 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.027s
+2026-08-01 05:25:07,843 - app.slow_request - WARNING - slow_request method=GET path=/static/lib/live2d-cubism4.min.js status=304 elapsed=1.277s
+2026-08-01 05:25:07,847 - app.slow_request - WARNING - slow_request method=GET path=/static/js/markdown.js status=304 elapsed=1.283s
+2026-08-01 05:25:07,859 - app.slow_request - WARNING - slow_request method=GET path=/static/lib/pixi.min.js status=304 elapsed=1.289s
+2026-08-01 05:25:07,886 - app.slow_request - WARNING - slow_request method=GET path=/static/lib/pixi-unsafe-eval.min.js status=304 elapsed=1.320s
+2026-08-01 05:25:08,262 - app.slow_request - WARNING - slow_request method=GET path=/static/js/chat.js status=200 elapsed=1.701s
+2026-08-01 05:25:10,979 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:10,984 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:12,758 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:13,200 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,201 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,203 - routes.email_routes - ERROR - list_folders failed: IMAP is not configured for account 'legacy'
+2026-08-01 05:25:13,247 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,249 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,286 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,287 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:25:13,478 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:25:13,958 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/running "HTTP/1.1 200 OK"
+2026-08-01 05:25:14,781 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:14,824 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.900s
+2026-08-01 05:25:15,019 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/upstream/qwenpaw/props "HTTP/1.1 200 OK"
+2026-08-01 05:25:15,030 - src.llamaswap - INFO - [llama-swap] qwenpaw capabilities: {'vision': False, 'audio': False, 'context_tokens': 49152, 'model_path': 'd:/assistenteeee/models/QwenPaw-Flash-9B.i1-Q4_K_M.gguf'}
+2026-08-01 05:25:15,033 - app.slow_request - WARNING - slow_request method=GET path=/api/model-runtime/status status=200 elapsed=2.097s
+2026-08-01 05:25:16,755 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=2.749s
+2026-08-01 05:25:26,582 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:26,996 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:25:26,999 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=0.876s
+2026-08-01 05:25:27,835 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:28,946 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:25:28,964 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.958s
+2026-08-01 05:25:43,541 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:45,691 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=3.397s
+2026-08-01 05:25:57,229 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:25:57,939 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:25:57,943 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.572s
+2026-08-01 05:26:10,933 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:26:10,939 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:26:12,073 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:26:12,660 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:26:12,670 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.304s
+2026-08-01 05:26:27,664 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:26:28,218 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:26:28,222 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.130s
+2026-08-01 05:26:41,942 - httpx - INFO - HTTP Request: GET http://127.0.0.1:3000/ "HTTP/1.1 200 OK"
+2026-08-01 05:26:42,493 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8000/api/ai/status "HTTP/1.1 200 OK"
+2026-08-01 05:26:42,496 - app.slow_request - WARNING - slow_request method=GET path=/api/shadowbroker/probe status=200 elapsed=1.185s
+2026-08-01 05:27:05,992 - src.event_bus - INFO - Event 'session_created' triggered task 'Chat Sessions Tidy' (every 5)
+2026-08-01 05:27:06,593 - app.slow_request - WARNING - slow_request method=POST path=/api/session status=200 elapsed=0.954s
+2026-08-01 05:27:06,665 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 05:27:06,959 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:27:09,288 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:09,320 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:09,407 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:09,839 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:27:10,332 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:27:10,663 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:27:10,664 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:27:10,709 - routes.chat_routes - INFO - [doc-inject] no active doc for session c9bed6c1-a0f4-485d-99e6-565cb08104ba
+2026-08-01 05:27:11,264 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=4.617s
+2026-08-01 05:27:11,288 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:27:11,289 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:27:11,320 - app.client_perf - WARNING - client_perf type=chat_send total=5657ms pending_session_begin=8ms pending_session_done=970ms user_bubble_visible=21ms upload_begin=12ms upload_done=7ms chat_stream_post_begin=2ms chat_stream_headers=4637ms extra=headers_received
+2026-08-01 05:27:14,013 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:27:34,458 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:27:34,768 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:27:34,995 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:35,011 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:35,052 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:35,076 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:27:35,846 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:27:36,286 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:27:36,287 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:27:36,291 - routes.chat_routes - INFO - [doc-inject] no active doc for session c9bed6c1-a0f4-485d-99e6-565cb08104ba
+2026-08-01 05:27:36,490 - routes.chat_routes - WARNING - [osint-mode] non applicabile: cannot access local variable 'disabled_tools' where it is not associated with a value
+2026-08-01 05:27:36,495 - src.agent_runs - ERROR - [agent-run] c9bed6c1-a0f4-485d-99e6-565cb08104ba failed: cannot access local variable 'disabled_tools' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\src\agent_runs.py", line 107, in _drain
+    async for ev in agen:
+        _publish(run, ev)
+  File "D:\assistenteeee\odysseus\routes\chat_routes.py", line 1873, in _safe_stream
+    async for chunk in stream_with_save():
+        yield chunk
+  File "D:\assistenteeee\odysseus\routes\chat_routes.py", line 1742, in stream_with_save
+    disabled_tools=disabled_tools if disabled_tools else None,
+                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'disabled_tools' where it is not associated with a value
+2026-08-01 05:27:36,552 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=2.100s
+2026-08-01 05:27:36,578 - app.client_perf - WARNING - client_perf type=chat_send total=2146ms user_bubble_visible=12ms upload_begin=12ms upload_done=6ms chat_stream_post_begin=1ms chat_stream_headers=2115ms extra=headers_received
+2026-08-01 05:27:49,743 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:27:49,748 - src.llm_core - INFO - LLM async call to http://127.0.0.1:8012/v1/chat/completions succeeded in 28.32s (attempt 1)
+2026-08-01 05:27:50,131 - routes.chat_helpers - INFO - Auto-named session c9bed6c1-a0f4-485d-99e6-565cb08104ba: Eventi in corso a Kyiv
+2026-08-01 05:27:52,037 - routes.chat_routes - INFO - [doc-inject] chat_mode=agent, active_doc_id=''
+2026-08-01 05:27:52,330 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:27:53,180 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:53,191 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:53,219 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:27:53,231 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:27:53,664 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:27:54,074 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:27:54,076 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:27:54,079 - routes.chat_routes - INFO - [doc-inject] no active doc for session c9bed6c1-a0f4-485d-99e6-565cb08104ba
+2026-08-01 05:27:54,267 - routes.chat_routes - WARNING - [osint-mode] non applicabile: cannot access local variable 'disabled_tools' where it is not associated with a value
+2026-08-01 05:27:54,267 - src.agent_runs - ERROR - [agent-run] c9bed6c1-a0f4-485d-99e6-565cb08104ba failed: cannot access local variable 'disabled_tools' where it is not associated with a value
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\src\agent_runs.py", line 107, in _drain
+    async for ev in agen:
+        _publish(run, ev)
+  File "D:\assistenteeee\odysseus\routes\chat_routes.py", line 1873, in _safe_stream
+    async for chunk in stream_with_save():
+        yield chunk
+  File "D:\assistenteeee\odysseus\routes\chat_routes.py", line 1742, in stream_with_save
+    disabled_tools=disabled_tools if disabled_tools else None,
+                                     ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'disabled_tools' where it is not associated with a value
+2026-08-01 05:27:54,273 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=2.239s
+2026-08-01 05:27:54,288 - app.client_perf - WARNING - client_perf type=chat_send total=2276ms user_bubble_visible=11ms upload_begin=11ms upload_done=5ms chat_stream_post_begin=1ms chat_stream_headers=2248ms extra=headers_received
+2026-08-01 05:28:01,849 - routes.chat_routes - INFO - [doc-inject] chat_mode=chat, active_doc_id=''
+2026-08-01 05:28:02,129 - src.chat_handler - INFO - Preset custom: temp=0.8, max_tokens=0
+2026-08-01 05:28:02,362 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:28:02,371 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:28:02,390 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 05:28:02,402 - httpx - INFO - HTTP Request: POST http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/query "HTTP/1.1 200 OK"
+2026-08-01 05:28:02,784 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/slots "HTTP/1.1 404 Not Found"
+2026-08-01 05:28:03,172 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 05:28:03,173 - src.model_context - INFO - Context length for qwenpaw: 128000
+2026-08-01 05:28:03,176 - routes.chat_routes - INFO - [doc-inject] no active doc for session c9bed6c1-a0f4-485d-99e6-565cb08104ba
+2026-08-01 05:28:03,307 - app.slow_request - WARNING - slow_request method=POST path=/api/chat_stream status=200 elapsed=1.461s
+2026-08-01 05:28:03,550 - httpx - INFO - HTTP Request: POST http://127.0.0.1:8012/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-01 05:28:10,849 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:28:10,850 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:29:10,973 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:29:10,974 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:30:10,942 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 05:30:10,943 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars

@@ -1,0 +1,131 @@
+2026-08-01 00:57:07,983 - core.auth - INFO - Auth config loaded
+2026-08-01 00:57:08,045 - core.auth - INFO - Loaded 1 session(s) from disk
+2026-08-01 00:57:08,088 - app - INFO - Auth middleware enabled (AUTH_ENABLED=true)
+2026-08-01 00:57:11,597 - services.youtube.youtube_handler - INFO - YouTube transcript API available
+2026-08-01 00:57:20,053 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/auth/identity "HTTP/1.1 200 OK"
+2026-08-01 00:57:23,293 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2026-08-01 00:57:23,409 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2026-08-01 00:57:23,435 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/heartbeat "HTTP/1.1 200 OK"
+2026-08-01 00:57:23,436 - src.chroma_client - INFO - ChromaDB connected: localhost:8100
+2026-08-01 00:57:27,823 - src.embeddings - WARNING - HTTP embedding API unavailable ([WinError 10061] Impossibile stabilire la connessione. Rifiuto persistente del computer di destinazione); using local FastEmbed for the rest of this process
+2026-08-01 00:57:31,679 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:31,857 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 00:57:31,857 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:31,858 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_rag: HTTP embedding lane unavailable
+2026-08-01 00:57:32,097 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:32,102 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 00:57:32,352 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag_fastembed "HTTP/1.1 200 OK"
+2026-08-01 00:57:32,422 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_rag "HTTP/1.1 404 Not Found"
+2026-08-01 00:57:32,618 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/0c6f66dc-71a9-4831-b88e-aea13ab57b60/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 00:57:32,619 - src.rag_vector - INFO - VectorRAG ready (lanes=['fastembed'] docs=0)
+2026-08-01 00:57:32,619 - src.rag_singleton - INFO - Initialized VectorRAG with ChromaDB
+2026-08-01 00:57:32,620 - app - INFO - Vector document RAG initialized
+2026-08-01 00:57:32,898 - core.session_manager - INFO - Loaded 5 session(s) (metadata only)
+2026-08-01 00:57:32,899 - src.upload_handler - WARNING - python-magic not available, falling back to basic detection
+2026-08-01 00:57:32,900 - src.personal_docs - INFO - Refreshed index: 0 documents from 1 directories
+2026-08-01 00:57:33,041 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:33,045 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 00:57:33,045 - src.embeddings - INFO - Using local FastEmbed: model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:33,046 - src.embedding_lanes - WARNING - Custom embedding lane unavailable for odysseus_memories: HTTP embedding lane unavailable
+2026-08-01 00:57:33,220 - src.embeddings - INFO - FastEmbed loaded model=sentence-transformers/all-MiniLM-L6-v2
+2026-08-01 00:57:33,223 - src.embeddings - INFO - Embedding dimension: 384 (model=sentence-transformers/all-MiniLM-L6-v2)
+2026-08-01 00:57:33,228 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories_fastembed "HTTP/1.1 200 OK"
+2026-08-01 00:57:33,233 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/odysseus_memories "HTTP/1.1 404 Not Found"
+2026-08-01 00:57:33,258 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 00:57:33,259 - src.memory_vector - INFO - MemoryVectorStore ready (lanes=['fastembed'] entries=0)
+2026-08-01 00:57:33,263 - httpx - INFO - HTTP Request: GET http://localhost:8100/api/v2/tenants/default_tenant/databases/default_database/collections/d543def6-edd6-4740-aee5-51f1c32dba91/count?read_level=index_and_wal "HTTP/1.1 200 OK"
+2026-08-01 00:57:33,265 - src.app_initializer - INFO - MemoryVectorStore initialized
+2026-08-01 00:57:33,306 - src.research_handler - INFO - Legacy research_engine.py not found — DeepResearcher only
+2026-08-01 00:57:33,313 - app - INFO - TTS service initialized (provider managed via admin settings)
+2026-08-01 00:57:33,805 - app - INFO - STT service initialized (provider managed via settings)
+2026-08-01 00:57:34,156 - app - INFO - MCP routes initialized
+2026-08-01 00:57:34,157 - app - INFO - AI interaction tools initialized (session, memory, RAG, UI control)
+2026-08-01 00:57:34,223 - app - INFO - Webhook & API token routes initialized
+INFO:     Started server process [24712]
+INFO:     Waiting for application startup.
+2026-08-01 00:57:34,452 - app - INFO - Application starting up...
+2026-08-01 00:57:34,458 - src.bg_monitor - INFO - Background-job monitor started (poll 5s)
+2026-08-01 00:57:34,458 - app - INFO - Startup warmups disabled (set ODYSSEUS_STARTUP_WARMUPS=1 to enable)
+2026-08-01 00:57:34,658 - src.task_scheduler - INFO - Task scheduler started (concurrency cap: 1)
+2026-08-01 00:57:34,672 - app - INFO - Application startup complete
+2026-08-01 00:57:34,727 - src.builtin_mcp - INFO - NPX binary resolved to: C:\Program Files\nodejs\npx.CMD
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:7000 (Press CTRL+C to quit)
+2026-08-01 00:57:41,240 - src.builtin_mcp - INFO - Starting NPX server: Built-in: Browser (C:\Program Files\nodejs\npx.CMD -y @playwright/mcp@latest --headless --isolated --snapshot-mode none --output-mode file --image-responses omit --no-sandbox)
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/rag_server.py", line 46, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/memory_server.py", line 97, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/image_gen_server.py", line 24, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+Traceback (most recent call last):
+  File "D:\assistenteeee\odysseus\mcp_servers/email_server.py", line 2096, in <module>
+    @server.list_tools()
+     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Server' object has no attribute 'list_tools'
+2026-08-01 00:57:41,599 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: RAG (rag): Connection closed
+2026-08-01 00:57:41,600 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: RAG
+2026-08-01 00:57:41,642 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Image Generation (image_gen): Connection closed
+2026-08-01 00:57:41,643 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Image Generation
+2026-08-01 00:57:41,646 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Memory (memory): Connection closed
+2026-08-01 00:57:41,647 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Memory
+2026-08-01 00:57:41,726 - src.mcp_manager - ERROR - Failed to connect MCP server Built-in: Email (email): Connection closed
+2026-08-01 00:57:41,727 - src.builtin_mcp - WARNING - Built-in MCP server failed to connect: Built-in: Email
+2026-08-01 00:57:46,019 - src.mcp_manager - INFO - MCP server connected: Built-in: Browser (builtin_browser) - 24 tools via stdio
+2026-08-01 00:57:46,020 - src.builtin_mcp - INFO - Built-in NPX server registered: Built-in: Browser
+2026-08-01 00:57:53,037 - core.session_manager - INFO - Deleted session 0295b098-344f-41b1-a448-576b292bfe41
+2026-08-01 00:57:53,052 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 00:57:53,053 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+[08/01/26 00:57:54] INFO     Starting MCP server 'windows-mcp' transport.py:241
+                             with transport 'stdio'                            
+2026-08-01 00:57:54,497 - src.mcp_manager - INFO - MCP server connected: windows-mcp (075fe6c2) - 13 tools via stdio
+2026-08-01 00:58:09,544 - core.session_manager - INFO - Deleted session da78ec83-b90f-45ce-9a3a-522ca76b15ea
+2026-08-01 00:58:46,257 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 00:58:46,258 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 00:59:45,940 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 00:59:45,941 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:00:45,942 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:00:45,943 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:01:46,243 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:01:46,244 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:02:45,960 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:02:45,961 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:03:45,289 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:03:45,307 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:04:45,013 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:04:45,014 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:04:46,531 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:04:46,578 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:04:48,422 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:04:48,426 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:04:51,557 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8012/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:04:51,567 - httpx - INFO - HTTP Request: GET http://127.0.0.1:8013/v1/models "HTTP/1.1 200 OK"
+2026-08-01 01:05:46,501 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:05:46,560 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:07:39,322 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:07:39,335 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:08:39,254 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:08:39,254 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:09:03,635 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:09:03,636 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:09:45,948 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:09:45,948 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:10:45,991 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:10:45,992 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:12:39,254 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:12:39,255 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:12:50,979 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:12:50,980 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:13:46,256 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:13:46,257 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:15:30,976 - routes.email_helpers - WARNING - SMTP not configured — add an Email Account in Settings or set env vars
+2026-08-01 01:15:30,977 - routes.email_helpers - WARNING - IMAP not configured — add an Email Account in Settings or set env vars
