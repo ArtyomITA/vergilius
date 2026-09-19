@@ -40,11 +40,17 @@ Serve Windows con Python 3.12, Node.js, e una GPU NVIDIA con almeno 8 GB (funzio
 solo su CPU, più lentamente).
 
 ```
-git clone <questo repository> vergilius
+git clone --recursive https://github.com/ArtyomITA/vergilius.git
 cd vergilius
-python scripts/scarica-modelli.py      # ~4,2 GB, una volta sola (--con-ling per il modello alternativo)
+python scripts/scarica-modelli.py      # ~4,2 GB, una volta sola
+copy llama-swap\config.example.yaml llama-swap\config.yaml
 AVVIA-VERGILIUS.bat                    # doppio click
 ```
+
+`--recursive` serve perché Odysseus e ShadowBroker sono due progetti a parte, collegati come
+submodule (se l'hai dimenticato: `git submodule update --init`). In `llama-swap\config.yaml`
+sostituisci `<VERGILIUS>` con la cartella in cui hai clonato il progetto, e metti in
+`llama\` la release di llama.cpp per la tua scheda (su GPU NVIDIA vecchie: CUDA 12.4).
 
 Si apre una pagina con quattro profili — scegli quello che ti serve:
 
