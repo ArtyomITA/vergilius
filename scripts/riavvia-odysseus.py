@@ -48,6 +48,14 @@ for _ in range(20):
     time.sleep(1)
 print("porta 7000 libera:", not porta(7000), flush=True)
 
+# Se la dashboard e' giu' (qualcuno la sta ricompilando) il boot ne farebbe partire una seconda
+# build in gara con la prima: si aspetta che la 3000 torni su.
+if profilo in ("shadowbroker", "vergilius-lite", "full"):
+    for _ in range(150):
+        if porta(3000):
+            break
+        time.sleep(2)
+
 # Stesso profilo: il boot riattiva solo cio' che manca (le porte gia' aperte le salta).
 leggi(f"{BOOT}/api/profile", {"profile": profilo})
 t0 = time.time()
