@@ -134,8 +134,11 @@ def _attiva(profilo: str) -> None:
         fe = sb / "frontend"
         # build production solo se i sorgenti sono piu' recenti di .next/BUILD_ID
         build_id = fe / ".next" / "BUILD_ID"
-        scaduta = not build_id.exists()
-        if not scaduta:
+        # Dashboard gia' in ascolto (boot riavviato a stack acceso): non si ricompila
+        # sotto i piedi di un `next start` vivo, e comunque non ci sarebbe nulla da avviare.
+        gia_su = _porta_aperta(3000)
+        scaduta = not gia_su and not build_id.exists()
+        if not scaduta and not gia_su:
             t_build = build_id.stat().st_mtime
             fonti = [fe / "package.json", fe / "package-lock.json", fe / "next.config.ts"]
             for p in (fe / "src").rglob("*"):
@@ -432,6 +435,50 @@ def stato() -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# Istantanea dello stato. Misurato 20 set 2026: `stato()` di solito risponde in
+# 40 ms, ma ogni tanto una delle sue sonde si pianta per 7-8 s. Chi interroga
+# (pagina del boot, gate di ShadowBroker con timeout corto) leggeva quel buco come
+# "nessun profilo scelto" e riproponeva la scelta. Ora lo stato lo calcola un filo
+# a parte e la rotta risponde SEMPRE subito con l'ultima istantanea.
+# ---------------------------------------------------------------------------
+_ISTANTANEA: dict | None = None
+_STATO_OGNI_S = 1.0
+
+
+def _registra_lentezza(durata: float) -> None:
+    try:
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        with open(LOG_DIR / "boot-stato-lento.log", "a", encoding="utf-8") as f:
+            f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} stato() ha impiegato {durata:.1f}s\n")
+    except Exception:
+        pass
+
+
+def _ciclo_stato() -> None:
+    global _ISTANTANEA
+    while True:
+        t0 = time.monotonic()
+        try:
+            _ISTANTANEA = stato()
+        except Exception:
+            pass
+        durata = time.monotonic() - t0
+        if durata > 1.0:
+            _registra_lentezza(durata)
+        time.sleep(_STATO_OGNI_S)
+
+
+def stato_rapido() -> dict:
+    """Ultima istantanea con il profilo SEMPRE aggiornato (e' una lettura in memoria)."""
+    s = _ISTANTANEA
+    with _LOCK:
+        p = _PROFILO
+    if s is None or s.get("profile") != p:
+        return stato()
+    return s
+
+
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a):  # silenzio
         pass
@@ -447,7 +494,7 @@ class H(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path.startswith("/api/status"):
-            return self._json(200, stato())
+            return self._json(200, stato_rapido())
         if self.path in ("/", "/index.html"):
             b = PAGINA.read_bytes()
             self.send_response(200)
@@ -474,6 +521,7 @@ class H(BaseHTTPRequestHandler):
 
 def main() -> int:
     avvia_trim_ram()
+    threading.Thread(target=_ciclo_stato, name="boot-stato", daemon=True).start()
     if "--profilo" in sys.argv:
         scegli(sys.argv[sys.argv.index("--profilo") + 1])
     srv = ThreadingHTTPServer(("127.0.0.1", PORTA), H)
