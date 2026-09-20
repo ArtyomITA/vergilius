@@ -17,7 +17,7 @@
     --brand: #c678dd; --accent: #22d3ee; --dim: color-mix(in srgb, var(--fg) 55%, transparent);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
+  html, body { min-height: 100%; }
   body {
     font-family: 'Fira Code', ui-monospace, Consolas, monospace;
     background: var(--bg); color: var(--fg);
@@ -25,8 +25,10 @@
       linear-gradient(color-mix(in srgb, var(--fg) 3.5%, transparent) 1px, transparent 1px),
       linear-gradient(90deg, color-mix(in srgb, var(--fg) 3.5%, transparent) 1px, transparent 1px);
     background-size: 24px 24px; background-attachment: fixed;
-    display: grid; place-items: center; min-height: 100dvh; padding: 24px;
-    overflow: hidden;
+    /* La PAGINA scorre, mai la scheda: con "safe center" il contenuto piu' alto
+       della finestra parte dall'alto invece di essere tagliato in cima. */
+    display: grid; justify-items: center; align-content: safe center;
+    min-height: 100dvh; padding: 24px;
   }
   /* scintille come nello sfondo di Odysseus */
   .sparks { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
@@ -36,9 +38,9 @@
 
   .card {
     position: relative; z-index: 1;
-    width: min(940px, 100%); max-height: calc(100dvh - 48px); overflow: auto;
+    width: min(940px, 100%);
     background: var(--panel); border: 1px solid var(--brand); border-radius: 14px;
-    padding: 36px 40px 32px;
+    padding: 28px 34px 26px;
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--brand) 25%, transparent), 0 0 60px color-mix(in srgb, var(--brand) 18%, transparent), 0 30px 90px rgba(0,0,0,.7);
   }
   .brand { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 6px; }
@@ -48,8 +50,9 @@
     background: linear-gradient(135deg, var(--brand), color-mix(in srgb, var(--brand) 60%, var(--fg)));
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
-  .sub { text-align: center; color: var(--dim); font-size: .9rem; margin-bottom: 28px; }
+  .sub { text-align: center; color: var(--dim); font-size: .9rem; margin-bottom: 20px; }
 
+  [hidden] { display: none !important; }   /* serve: .profili ha un display esplicito */
   .profili { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .p {
     text-align: left; cursor: pointer; background: var(--bg); color: var(--fg);
@@ -68,6 +71,7 @@
   /* loader: stesso dial del gate ShadowBroker (conic-gradient + anello che gira), palette Odysseus */
   .loader { display: none; grid-template-columns: 190px 1fr; gap: 34px; align-items: center; }
   .loader.on { display: grid; }
+  .profili:not([hidden]) + .loader.on { margin-top: 22px; }
   .dial { position: relative; width: 170px; height: 170px; display: grid; place-items: center; border-radius: 50%;
     background: conic-gradient(var(--brand) var(--p, 0deg), color-mix(in srgb, var(--brand) 14%, transparent) 0);
     box-shadow: 0 0 48px color-mix(in srgb, var(--brand) 22%, transparent); }
@@ -77,24 +81,43 @@
   .dial b { position: relative; font-size: 2rem; font-weight: 600; color: var(--fg); }
   .dial small { position: absolute; bottom: 38px; font-size: .62rem; color: var(--dim); letter-spacing: .08em; text-transform: uppercase; }
   @keyframes spin { to { transform: rotate(360deg) } }
-  .comp { list-style: none; display: grid; gap: 7px; }
-  .comp li { display: flex; align-items: center; gap: 10px; font-size: .84rem; padding: 7px 10px;
+  /* Righe compatte e, sugli schermi larghi, due colonne: cosi' anche il profilo
+     "full" (14 componenti) sta nella finestra senza barra di scorrimento. */
+  .comp { list-style: none; display: grid; gap: 6px; }
+  @media (min-width: 900px) { .comp { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 10px; } }
+  .comp li { display: flex; align-items: center; gap: 8px; font-size: .78rem; padding: 5px 9px;
     border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); border-radius: 7px; background: var(--bg); }
   .comp .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; background: var(--dim); }
   .comp li.loading .dot { background: var(--accent); animation: pulse 1.2s ease-in-out infinite; }
   .comp li.ready .dot { background: #50fa7b; box-shadow: 0 0 8px #50fa7b; }
   .comp li.error .dot { background: #ff5370; box-shadow: 0 0 8px #ff5370; }
   .comp li.ready { color: var(--dim); }
-  .comp .lb { flex: 1 1 auto; }
-  .comp .dt { font-size: .7rem; color: var(--dim); }
+  .comp .lb { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .comp .dt { font-size: .68rem; color: var(--dim); white-space: nowrap; }
   @keyframes pulse { 50% { opacity: .35; transform: scale(.7) } }
   .fase { margin-top: 14px; font-size: .78rem; color: var(--dim); }
   .err { display: none; margin-top: 16px; padding: 10px 12px; border: 1px solid #ff5370; border-radius: 7px; color: #ff8aa0; font-size: .82rem; }
   .err.on { display: block; }
-  .apri { display: none; margin-top: 18px; text-align: center; }
-  .apri.on { display: block; }
-  .apri a { color: var(--brand); text-decoration: none; border: 1px solid var(--brand); border-radius: 8px; padding: 10px 18px; font-weight: 600; }
-  .apri a:hover { background: color-mix(in srgb, var(--brand) 15%, transparent); }
+  /* riga di suggerimento per un componente lento (feed esterni) */
+  .hint { display: none; margin-top: 8px; font-size: .74rem; line-height: 1.45; color: var(--accent); }
+  .hint.on { display: block; }
+  /* stato "pronto": conto alla rovescia e scelta, invece del salto automatico */
+  .apri { display: none; margin-top: 14px; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .apri.on { display: flex; }
+  .b {
+    font-family: inherit; font-size: .8rem; font-weight: 600; cursor: pointer;
+    color: var(--brand); background: transparent; text-decoration: none;
+    border: 1px solid var(--brand); border-radius: 8px; padding: 9px 16px;
+  }
+  .b:hover, .b:focus-visible { background: color-mix(in srgb, var(--brand) 15%, transparent); outline: none; }
+  .b.quieto { color: var(--dim); border-color: var(--border); }
+  .b.quieto:hover, .b.quieto:focus-visible { background: color-mix(in srgb, var(--fg) 8%, transparent); color: var(--fg); }
+  .b:disabled { opacity: .5; cursor: wait; }
+  /* avviso sopra la scelta profilo quando si torna indietro da uno stack acceso */
+  .avviso { display: none; margin-bottom: 14px; padding: 10px 12px; font-size: .78rem; line-height: 1.5;
+    border: 1px solid var(--accent); border-radius: 7px; color: var(--fg);
+    background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .avviso.on { display: block; }
   .foot { margin-top: 22px; text-align: center; font-size: .7rem; color: var(--dim); }
   @media (max-width: 640px) { .loader { grid-template-columns: 1fr; justify-items: center; } .card { padding: 26px 20px; } }
 </style>
@@ -106,9 +129,13 @@
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4L16 22L6 22Z" fill="#c678dd"/><path d="M16 8L16 22L24 22Z" fill="#c678dd" opacity="0.6"/><path d="M4 24Q10 20 16 24Q22 28 28 24" stroke="#c678dd" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
     <b>Vergilius</b>
   </div>
-  <div class="sub" id="sub">Scegli cosa avviare. Finché non scegli, non parte nulla.</div>
+  <div class="sub" id="sub">Controllo lo stato…</div>
 
-  <div class="profili" id="profili">
+  <div class="avviso" id="avviso"></div>
+
+  <!-- Nascosta all'avvio: si mostra solo quando /api/status dice phase=choose,
+       cosi' non si puo' cliccare un profilo su uno stack gia' acceso. -->
+  <div class="profili" id="profili" hidden>
     <button class="p" data-p="shadowbroker">
       <span class="k">solo intelligence</span>
       <span class="n">ShadowBroker</span>
@@ -118,8 +145,8 @@
     <button class="p" data-p="vergilius-chat">
       <span class="k">solo cervello</span>
       <span class="n">Vergilius Chat</span>
-      <span class="d">Ling + memoria e RAG. La chat completa, senza ShadowBroker.</span>
-      <span class="i">llama-swap, ChromaDB, Odysseus. Niente Intelligence/Financial.</span>
+      <span class="d">Modello locale + memoria e RAG. La chat completa, senza ShadowBroker.</span>
+      <span class="i">Router modelli, memoria vettoriale, assistente. Niente Intelligence/Financial.</span>
     </button>
     <button class="p" data-p="vergilius-lite">
       <span class="k">consigliato</span>
@@ -140,7 +167,12 @@
     <div>
       <ul class="comp" id="comp"></ul>
       <div class="fase" id="fase"></div>
-      <div class="apri" id="apri"><a id="apri-a" href="#">Apri Vergilius →</a></div>
+      <div class="hint" id="hint"></div>
+      <div class="apri" id="apri">
+        <a class="b" id="apri-a" href="#">Apri Vergilius ora</a>
+        <button class="b quieto" id="resta" type="button">Resta qui</button>
+        <button class="b quieto" id="cambia" type="button">Cambia profilo</button>
+      </div>
     </div>
   </div>
   <div class="err" id="err"></div>
@@ -161,31 +193,112 @@
   var dial = document.getElementById('dial'), pct = document.getElementById('pct'), pname = document.getElementById('pname');
   var comp = document.getElementById('comp'), fase = document.getElementById('fase'), err = document.getElementById('err');
   var apri = document.getElementById('apri'), apriA = document.getElementById('apri-a'), sub = document.getElementById('sub');
+  var hint = document.getElementById('hint'), avviso = document.getElementById('avviso');
+  var resta = document.getElementById('resta'), cambia = document.getElementById('cambia');
+
+  var profiloAttivo = null;   // profilo gia' scelto, secondo il server
+  var inVolo = false;         // c'e' una POST /api/profile in corso
+  var modoCambio = false;     // il proprietario sta scegliendo un profilo diverso
+  var restaQui = false;       // ha chiesto di non essere portato via
+  var confermaP = null, confermaT = 0;   // doppio clic di conferma per il cambio
   var redirectFatto = false;
+  var dalLoad = {};           // id componente -> istante in cui lo vediamo "in caricamento"
+  var timerConto = null, restano = 0, urlConto = '';
+  var SECONDI_CONTO = 5;
+
+  function abilitaProfili(vero) {
+    Array.prototype.forEach.call(profili.querySelectorAll('.p'), function (x) { x.disabled = !vero; });
+  }
+
+  function avvisoTesto(html) {
+    avviso.innerHTML = html;
+    avviso.classList.add('on');
+    var a = avviso.querySelector('[data-annulla]');
+    if (a) a.addEventListener('click', annullaCambio);
+  }
+
+  function annullaCambio() {
+    modoCambio = false; confermaP = null;
+    profili.hidden = true;
+    avviso.classList.remove('on'); avviso.innerHTML = '';
+  }
+
+  // Conto alla rovescia invece del salto immediato: il proprietario deve poter
+  // leggere l'elenco dei componenti e decidere.
+  function testoConto() {
+    fase.textContent = 'Tutto pronto. Apro fra ' + restano + ' s: "Resta qui" ferma il conto.';
+  }
+  function avviaConto(url) {
+    if (timerConto) return;
+    urlConto = url; restano = SECONDI_CONTO; testoConto();
+    timerConto = setInterval(function () {
+      restano -= 1;
+      if (restano <= 0) { fermaConto(); redirectFatto = true; window.location.replace(urlConto); return; }
+      testoConto();
+    }, 1000);
+  }
+  function fermaConto() {
+    if (timerConto) { clearInterval(timerConto); timerConto = null; }
+  }
 
   function render(s) {
-    if (!s.profile) { profili.style.display = ''; loader.classList.remove('on'); return; }
-    profili.style.display = 'none'; loader.classList.add('on');
+    profiloAttivo = s.profile || null;
+
+    if (s.phase === 'choose' && !modoCambio) {
+      profili.hidden = false; abilitaProfili(!inVolo);
+      loader.classList.remove('on'); apri.classList.remove('on');
+      avviso.classList.remove('on');
+      sub.textContent = 'Scegli cosa avviare. Finche\' non scegli, non parte nulla.';
+      return;
+    }
+
+    profili.hidden = !modoCambio;
+    loader.classList.add('on');
     sub.textContent = s.ready ? 'Pronto.' : 'Sto avviando ' + (NOMI[s.profile] || s.profile) + '…';
     pname.textContent = NOMI[s.profile] || s.profile;
     pct.textContent = s.progress + '%';
     dial.style.setProperty('--p', (s.progress * 3.6) + 'deg');
+
+    var ora = Date.now(), lento = null;
     comp.innerHTML = '';
     (s.components || []).forEach(function (c) {
       var li = document.createElement('li'); li.className = c.status;
       li.innerHTML = '<span class="dot"></span><span class="lb"></span><span class="dt"></span>';
       li.querySelector('.lb').textContent = c.label;
-      li.querySelector('.dt').textContent = c.status === 'error' ? (c.detail || 'errore') : (c.detail || (c.status === 'ready' ? 'pronto' : 'caricamento…'));
+      li.title = c.label;   // le etichette lunghe sono tagliate: il titolo le mostra intere
+      var dt;
+      if (c.status === 'error') { delete dalLoad[c.id]; dt = c.detail || 'errore'; }
+      else if (c.status === 'ready') { delete dalLoad[c.id]; dt = c.detail || 'pronto'; }
+      else {
+        if (!dalLoad[c.id]) dalLoad[c.id] = ora;
+        var sec = Math.round((ora - dalLoad[c.id]) / 1000);
+        dt = (c.detail || 'caricamento…') + ' ' + sec + ' s';
+        if (sec >= 60 && !lento) lento = c;
+      }
+      li.querySelector('.dt').textContent = dt;
       comp.appendChild(li);
     });
+
+    if (lento) {
+      hint.textContent = lento.blocking === false
+        ? lento.label + ': questo feed dipende dalla rete esterna, Vergilius e\' gia\' utilizzabile e si completa da solo.'
+        : lento.label + ': ci sta mettendo piu\' del solito, di norma si sblocca da solo.';
+      hint.classList.add('on');
+    } else hint.classList.remove('on');
+
     var errori = (s.components || []).filter(function (c) { return c.status === 'error'; });
     if (errori.length) { err.textContent = errori.map(function (c) { return c.label + ': ' + c.detail; }).join(' · '); err.classList.add('on'); }
     else err.classList.remove('on');
+
     if (s.ready) {
-      fase.textContent = 'Tutto pronto.';
-      apriA.href = s.target_url; apri.classList.add('on');
-      if (!redirectFatto) { redirectFatto = true; setTimeout(function () { window.location.replace(s.target_url); }, 900); }
+      apriA.href = s.target_url;
+      apriA.textContent = 'Apri ' + (s.profile === 'shadowbroker' ? 'ShadowBroker' : 'Vergilius') + ' ora';
+      apri.classList.add('on');
+      if (!redirectFatto && !restaQui && !modoCambio) avviaConto(s.target_url);
+      else if (!timerConto) fase.textContent = 'Tutto pronto. Il conto e\' fermo: apri quando vuoi.';
     } else {
+      fermaConto();
+      apri.classList.remove('on');
       fase.textContent = 'Il loader aspetta che ogni componente risponda davvero, non solo che la porta sia aperta.';
     }
   }
@@ -193,20 +306,60 @@
   function poll() {
     fetch('/api/status', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (s) {
       render(s);
-      if (!s.ready) setTimeout(poll, s.profile ? 800 : 1600);
+      setTimeout(poll, s.ready ? 5000 : (s.profile ? 800 : 1600));
     }).catch(function () { setTimeout(poll, 1800); });
+  }
+
+  function manda(p, cambiando) {
+    inVolo = true; abilitaProfili(false); confermaP = null;
+    var corpo = cambiando ? { profile: p, change: true } : { profile: p };
+    fetch('/api/profile', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.detail || r.status); return j; }); })
+      .then(function (s) {
+        inVolo = false; modoCambio = false; restaQui = false; redirectFatto = false;
+        dalLoad = {}; fermaConto();
+        avviso.classList.remove('on'); avviso.innerHTML = '';
+        abilitaProfili(true);
+        render(s);
+      })
+      .catch(function (e) {
+        inVolo = false; abilitaProfili(true);
+        err.textContent = 'Avvio non riuscito: ' + e.message; err.classList.add('on');
+      });
   }
 
   profili.addEventListener('click', function (ev) {
     var b = ev.target.closest('.p'); if (!b) return;
+    if (inVolo) return;                               // una richiesta per volta
+    if (profiloAttivo && !modoCambio) return;         // stack gia' avviato: il clic non fa nulla
     var p = b.getAttribute('data-p');
-    Array.prototype.forEach.call(profili.querySelectorAll('.p'), function (x) { x.disabled = true; });
-    fetch('/api/profile', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ profile: p }) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.detail || r.status); return j; }); })
-      .then(function (s) { render(s); poll(); })
-      .catch(function (e) { err.textContent = 'Avvio non riuscito: ' + e.message; err.classList.add('on');
-        Array.prototype.forEach.call(profili.querySelectorAll('.p'), function (x) { x.disabled = false; }); });
+    if (modoCambio) {
+      if (p === profiloAttivo) { annullaCambio(); return; }
+      if (confermaP !== p || (Date.now() - confermaT) > 8000) {
+        confermaP = p; confermaT = Date.now();
+        avvisoTesto('Passare a <b>' + (NOMI[p] || p) + '</b> riavvia i servizi: le schede gia\' ' +
+          'aperte su Vergilius si interrompono. Clicca di nuovo sulla stessa scheda per confermare, ' +
+          'oppure <a href="#" data-annulla>annulla</a>.');
+        return;
+      }
+    }
+    manda(p, modoCambio);
   });
+
+  resta.addEventListener('click', function () {
+    restaQui = true; fermaConto();
+    fase.textContent = 'Tutto pronto. Il conto e\' fermo: apri quando vuoi.';
+  });
+
+  cambia.addEventListener('click', function () {
+    restaQui = true; fermaConto();
+    modoCambio = true; confermaP = null;
+    profili.hidden = false; abilitaProfili(true);
+    avvisoTesto('Cambio profilo: scegli qui sotto. Il boot spegne i servizi che il nuovo profilo non usa e ' +
+      'riavvia l\'assistente, quindi le chat aperte si interrompono. ' +
+      '<a href="#" data-annulla>Annulla</a>.');
+  });
+
   poll();
 })();
 </script>

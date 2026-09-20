@@ -293,6 +293,13 @@ def _odysseus_pronto() -> bool:
     return bool(d and d.get("ready"))
 
 
+# Feed che vivono di servizi altrui (rete esterna): se sono lenti NON devono
+# tenere in ostaggio il "pronto", l'assistente e' gia' utilizzabile. Restano
+# visibili come in caricamento e si completano da soli.
+_FEED_ESTERNI = {"fast-intelligence", "news-intelligence", "tinygs", "telegram-osint", "wastewater"}
+_ATTESA_FEED_S = 90.0
+
+
 def _c(cid: str, label: str, pronto: bool, detail: str = "") -> dict:
     err = _ERRORI.get(cid, "")
     return {"id": cid, "label": label, "status": "error" if err else ("ready" if pronto else "loading"),
@@ -405,9 +412,18 @@ def stato() -> dict:
             _c("voice-bridge", "Voce e trascrizione live", _porta_aperta(8013)),
             _c("avatar2d", "Avatar 2D", _porta_aperta(7000)),
         ]
-    n_ok = sum(c["status"] == "ready" for c in comp)
+    # Dopo _ATTESA_FEED_S dalla scelta i feed esterni ancora in caricamento
+    # smettono di bloccare: "blocking" false li marca per la pagina, che mostra
+    # la riga di spiegazione al posto dell'attesa muta.
+    trascorso = (time.time() - a) if a else 0.0
+    for c in comp:
+        c["blocking"] = not (c["id"] in _FEED_ESTERNI and trascorso > _ATTESA_FEED_S)
+    # Nel conteggio un feed diventato non bloccante vale come fatto, altrimenti
+    # la percentuale resterebbe a meta' con la pagina che dice "tutto pronto".
+    fatti = [c["status"] == "ready" or not c["blocking"] for c in comp]
+    n_ok = sum(fatti)
     tot = len(comp)
-    pronto = bool(p) and n_ok == tot and not errori
+    pronto = bool(p) and tot > 0 and not errori and all(fatti)
     return {
         "ok": True, "boot_id": _BOOT_ID, "profile": p, "selected_at": a,
         "phase": "choose" if not p else ("ready" if pronto else "loading"),
