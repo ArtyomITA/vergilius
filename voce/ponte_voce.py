@@ -34,13 +34,24 @@ STT_MODEL_ID = os.getenv("STT_MODEL", "nemo-parakeet-tdt-0.6b-v3")
 DEFAULT_VOICE = os.getenv("TTS_VOICE", "giovanni")
 
 # PocketTTS taglia il testo in pezzi da MAX_TOKEN_PER_CHUNK=50 token e oltre
-# quella soglia SALTA le parole in silenzio (nei log vecchi: "Chunk has 182
-# tokens (max 50), generation may skip words"). Il browser gia' spezzetta a 180
-# caratteri, ma chiunque altro chiami il ponte (il pulsante "leggi ad alta
-# voce", un banco di prova, un tool) perderebbe meta' paragrafo senza accorgersi
-# di niente. Qui c'e' la rete di sicurezza: nessuna richiesta a PocketTTS supera
-# questa lunghezza, ~45 token di italiano.
-LIMITE_PEZZO = 190
+# quella soglia SALTA le parole in silenzio ("Chunk has 182 tokens (max 50),
+# generation may skip words" in voce/pockettts.log). Il suo spezzatore interno
+# (pocket_tts/models/tts_model.py, split_into_best_sentences) sa dividere solo
+# su ".!?" e poi su ",;:": un elenco senza punteggiatura resta un pezzo solo,
+# lungo quanto arriva.
+#
+# Misurato col suo stesso tokenizer sentencepiece su italiano: 0,46 token per
+# carattere, quindi 50 token sono ~108 caratteri, non 190. Il vecchio valore
+# (e il suo commento "~45 token") sbagliava di un fattore due, e siccome era
+# sopra i 180 del browser non proteggeva niente.
+LIMITE_PEZZO = 105
+# Il PRIMO pezzo e' l'unico la cui attesa si sente come silenzio dopo la
+# risposta: si chiude alla prima clausola utile (tipicamente 15-60 caratteri),
+# cosi' la voce parte prima. Sotto MIN_PRIMO_PEZZO il taglio non vale la
+# richiesta in piu' e la voce suona mozzata. Se in testa non c'e' nessun taglio
+# naturale si torna al limite normale invece di spezzare a caso.
+LIMITE_PRIMO_PEZZO = 60
+MIN_PRIMO_PEZZO = 12
 # Intestazione WAV canonica scritta dal modulo `wave`: RIFF + fmt + data.
 INTESTAZIONE_WAV = 44
 
@@ -159,6 +170,17 @@ _EMOJI = re.compile(
     "︀-️‍⃣]"
 )
 _URL = re.compile(r"(?:https?://|www\.)\S+")
+# Marcature fra parentesi quadre che NON si leggono: `[joy]`, `[sad]`,
+# `[emotion:happy]`, `[pausa]`, `[TOOL_CALL]`. `avatarPersona.js` chiede al
+# modello di metterle in testa a ogni risposta; la regola generica che
+# trasforma le parentesi in spazi lasciava dentro la parola, e l'assistente
+# diceva "joy" prima di ogni frase. Si tolgono solo le etichette corte e senza
+# spazi interni: "[vedi la nota in fondo]" resta una frase. E si accettano solo
+# le forme che un tag ha davvero (tutto minuscolo, tutto maiuscolo, oppure con
+# i due punti), cosi' "[Milano]" o "[2024]" restano quello che sono.
+_TAG_QUADRE = re.compile(
+    r"\[\s*(?:[a-z][a-z0-9_.\-]{0,20}|[A-Z][A-Z0-9_.\-]{0,20})"
+    r"(?:\s*[:=]\s*[A-Za-z0-9_.\- ]{0,20})?\s*\]")
 
 
 def pulisci_per_voce(testo: str) -> str:
@@ -179,6 +201,7 @@ def pulisci_per_voce(testo: str) -> str:
     t = re.sub(r"```.*$", " ", t, flags=re.S)         # e quello ancora aperto
     t = _URL.sub(" ", t)
     t = re.sub(r"\[(.+?)\]\(.+?\)", r"\1", t)         # link markdown: resta la scritta
+    t = _TAG_QUADRE.sub(" ", t)                       # [joy], [emotion:happy], [1]
     t = _EMOJI.sub("", t)
     t = re.sub(r"^[ \t]*[-*+•]\s+", "", t, flags=re.M)
     t = re.sub(r"^#{1,6}\s+", "", t, flags=re.M)
@@ -189,42 +212,106 @@ def pulisci_per_voce(testo: str) -> str:
     return t.strip()
 
 
-def spezza_per_sintesi(testo: str, limite: int = LIMITE_PEZZO) -> list[str]:
+# Punteggiatura buona per tagliare SOLO quando e' seguita da spazio o da fine
+# testo. E' la regola che tiene insieme "1.541,19", "3,5%" e "LDO.MI": li'
+# dopo il punto e dopo la virgola c'e' una cifra o una lettera, non uno spazio.
+_FINE_FRASE = re.compile(r"[.!?…]+(?=\s|$)")
+_PAUSA_FORTE = re.compile(r"[;:](?=\s|$)")
+_VIRGOLA = re.compile(r",(?=\s|$)")
+# Prima di una congiunzione si respira senza che si senta il taglio. Si taglia
+# PRIMA della parola, non dopo.
+_CONGIUNZIONE = re.compile(
+    r"\s+(?=(?:e|ed|o|oppure|ma|pero'|però|mentre|quindi|percio'|perciò|"
+    r"perche'|perché|poi|che|se|con|per|anche|dove|quando|come)\s)")
+
+
+def _dicibile(pezzo: str) -> bool:
+    """Un pezzo senza lettere ne' cifre e' solo punteggiatura: mandarlo alla
+    sintesi vuol dire pagare una richiesta per un silenzio."""
+    return any(c.isalnum() for c in pezzo)
+
+
+def _taglio_naturale(testo: str, tetto: int, minimo: int) -> int:
+    """Dove tagliare `testo` (estremo escluso) restando entro `tetto`.
+
+    Ordine di preferenza: fine frase, punto e virgola/due punti, virgola,
+    congiunzione. Restituisce 0 se nessun taglio naturale cade nella finestra.
+    """
+    for rx, dopo in ((_FINE_FRASE, True), (_PAUSA_FORTE, True),
+                     (_VIRGOLA, True), (_CONGIUNZIONE, False)):
+        migliore = 0
+        for m in rx.finditer(testo):
+            pos = m.end() if dopo else m.start()
+            if pos > tetto:
+                break
+            if minimo <= pos < len(testo):
+                migliore = pos
+        if migliore:
+            return migliore
+    return 0
+
+
+def _taglio_su_spazio(testo: str, tetto: int) -> int:
+    """Ultimo spazio dentro il tetto. Mai a meta' parola: se la prima parola e'
+    gia' piu' lunga del tetto la si lascia intera e si sfora."""
+    pos = testo.rfind(" ", 0, tetto + 1)
+    if pos > 0:
+        return pos
+    pos = testo.find(" ")
+    return pos if pos > 0 else len(testo)
+
+
+def spezza_per_sintesi(testo: str, limite: int = LIMITE_PEZZO,
+                       limite_primo: int = LIMITE_PRIMO_PEZZO) -> list[str]:
     """Taglia il testo in pezzi che PocketTTS sa dire per intero.
 
-    Tre tagli in ordine: fine frase, poi virgola/punto e virgola/due punti, poi
-    a forza sullo spazio piu' vicino. I pezzi corti vengono riuniti finche' ci
-    stanno sotto il limite: una richiesta in meno e' mezzo secondo in meno.
+    Quattro tagli in ordine di preferenza (fine frase, punto e virgola/due
+    punti, virgola, congiunzione) e in ultima istanza lo spazio piu' vicino.
+    Mai a meta' parola, mai un pezzo vuoto o di sola punteggiatura, mai dentro
+    un numero o una sigla. Il primo pezzo si chiude prima degli altri: e'
+    l'unico la cui attesa l'utente sente come silenzio.
     """
     if not testo:
         return []
 
-    frasi = [f for f in re.split(r"(?<=[.!?…])\s+", testo) if f.strip()]
-
-    minuti: list[str] = []
-    for frase in frasi:
-        frase = frase.strip()
-        while len(frase) > limite:
-            # Ultima virgola utile dentro il limite, altrimenti ultimo spazio,
-            # altrimenti taglio netto: una parola spezzata si sente, una frase
-            # mangiata no ed e' molto peggio.
-            taglio = max(frase.rfind(c, 0, limite) for c in (",", ";", ":"))
-            if taglio < limite // 3:
-                taglio = frase.rfind(" ", 0, limite)
-            if taglio < limite // 3:
-                taglio = limite - 1
-            minuti.append(frase[:taglio + 1].strip())
-            frase = frase[taglio + 1:].strip()
-        if frase:
-            minuti.append(frase)
-
+    resto = " ".join(testo.split())
     pezzi: list[str] = []
-    for m in minuti:
-        if pezzi and len(pezzi[-1]) + 1 + len(m) <= limite:
-            pezzi[-1] = pezzi[-1] + " " + m
+    while resto:
+        primo = not pezzi
+        tetto = limite_primo if primo else limite
+        if len(resto) <= tetto:
+            pezzi.append(resto)
+            break
+
+        taglio = _taglio_naturale(
+            resto, tetto, MIN_PRIMO_PEZZO if primo else max(1, limite // 3))
+        if primo and not taglio:
+            # Nessuna clausola breve in testa: si riprova col limite normale
+            # invece di spezzare a caso la prima frase.
+            tetto = limite
+            if len(resto) <= tetto:
+                pezzi.append(resto)
+                break
+            taglio = _taglio_naturale(resto, tetto, max(1, limite // 3))
+        if not taglio:
+            taglio = _taglio_su_spazio(resto, tetto)
+
+        pezzo, resto = resto[:taglio].strip(), resto[taglio:].strip()
+        if _dicibile(pezzo):
+            pezzi.append(pezzo)
+        elif pezzi:
+            # Punteggiatura orfana: si attacca al pezzo precedente, non si manda.
+            pezzi[-1] = (pezzi[-1] + pezzo).strip()
+
+    # Riunione dei pezzi troppo corti: una richiesta in meno e' mezzo secondo
+    # in meno. Il primo resta com'e', altrimenti si perde l'anticipo.
+    uniti: list[str] = []
+    for p in pezzi:
+        if len(uniti) > 1 and len(uniti[-1]) + 1 + len(p) <= limite:
+            uniti[-1] = uniti[-1] + " " + p
         else:
-            pezzi.append(m)
-    return pezzi
+            uniti.append(p)
+    return [p for p in uniti if _dicibile(p)]
 
 
 def intestazione_in_streaming(testa: bytes) -> bytes:
@@ -261,10 +348,22 @@ async def speech(req: SpeechRequest):
         raise HTTPException(400, "input vuoto")
 
     pezzi = spezza_per_sintesi(text)
+    if not pezzi:
+        # Testo fatto solo di punteggiatura, tag o emoji: dopo la pulizia non
+        # resta niente da dire e PocketTTS risponderebbe 4xx a meta' coda.
+        raise HTTPException(400, "input senza niente da dire")
     voce = req.voice or DEFAULT_VOICE
     client = httpx.AsyncClient(timeout=httpx.Timeout(120.0, connect=5.0))
 
     async def apri(testo: str):
+        # Unico punto del ponte da cui parte del testo per PocketTTS (l'altro
+        # e' il riscaldamento, che manda una parola sola). Se un pezzo arriva
+        # qui piu' lungo del limite, lo spezzatore e' stato aggirato: si scrive
+        # nel log, altrimenti le parole saltate restano invisibili.
+        if len(testo) > LIMITE_PEZZO:
+            logger.warning("pezzo di %d caratteri verso PocketTTS (limite %d): "
+                           "spezzatore aggirato, PocketTTS saltera' parole",
+                           len(testo), LIMITE_PEZZO)
         richiesta = client.build_request(
             "POST", POCKETTTS_URL, data={"text": testo, "voice_url": voce},
         )
