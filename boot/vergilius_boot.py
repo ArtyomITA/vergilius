@@ -304,7 +304,10 @@ _ATTESA_FEED_S = 90.0
 
 
 def _c(cid: str, label: str, pronto: bool, detail: str = "") -> dict:
-    err = _ERRORI.get(cid, "")
+    # Un errore registrato vale finche' il componente non e' su: se intanto la porta risponde
+    # (es. build fallita per una gara con un'altra ricompilazione, poi dashboard ripartita)
+    # l'errore vecchio non deve tenere in ostaggio il "pronto" per sempre.
+    err = "" if pronto else _ERRORI.get(cid, "")
     return {"id": cid, "label": label, "status": "error" if err else ("ready" if pronto else "loading"),
             "detail": err or detail}
 
@@ -426,7 +429,7 @@ def stato() -> dict:
     fatti = [c["status"] == "ready" or not c["blocking"] for c in comp]
     n_ok = sum(fatti)
     tot = len(comp)
-    pronto = bool(p) and tot > 0 and not errori and all(fatti)
+    pronto = bool(p) and tot > 0 and all(fatti) and not any(c["status"] == "error" for c in comp)
     return {
         "ok": True, "boot_id": _BOOT_ID, "profile": p, "selected_at": a,
         "phase": "choose" if not p else ("ready" if pronto else "loading"),
