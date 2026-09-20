@@ -283,8 +283,13 @@ def _feed_sb(*chiavi: str) -> bool:
     now = time.monotonic()
     if now - _FEED_CACHE["t"] > 1.0:
         d = _json_url("http://127.0.0.1:8000/api/startup/feeds", 1.5)
-        _FEED_CACHE["v"] = (d or {}).get("fresh") or {}
-        _FEED_CACHE["t"] = now
+        # Misurato 20 set 2026: quando il backend e' occupato (giro dei feed ogni 30 s) questa
+        # lettura scade; con l'orologio preso PRIMA della richiesta la cache risultava gia'
+        # vecchia e le 5 sonde di uno stesso stato() riprovavano tutte: 5 x 1,5 s = i 7 s di
+        # stallo. Orologio preso DOPO, e una lettura fallita tiene l'ultimo valore buono.
+        if d is not None:
+            _FEED_CACHE["v"] = d.get("fresh") or {}
+        _FEED_CACHE["t"] = time.monotonic()
     fresh = _FEED_CACHE["v"]
     return any(bool(fresh.get(k)) for k in chiavi)
 
@@ -446,7 +451,7 @@ def stato() -> dict:
 # a parte e la rotta risponde SEMPRE subito con l'ultima istantanea.
 # ---------------------------------------------------------------------------
 _ISTANTANEA: dict | None = None
-_STATO_OGNI_S = 1.0
+_STATO_OGNI_S = 2.0
 
 
 def _registra_lentezza(durata: float) -> None:
