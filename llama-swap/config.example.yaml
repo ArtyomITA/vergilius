@@ -1,0 +1,138 @@
+# ESEMPIO: copia questo file in `config.yaml` e sostituisci <VERGILIUS> con la cartella in cui hai
+# clonato il progetto (barre in avanti anche su Windows, es. C:/vergilius).
+#   - `<VERGILIUS>/llama/llama-server.exe` e' la release ufficiale di llama.cpp (CUDA 12.4 su GPU Pascal).
+#   - i modelli si scaricano con `python scripts/scarica-modelli.py` in `<VERGILIUS>/models`.
+# I numeri nei commenti (VRAM, velocita') sono misurati su una GTX 1080 8 GB: su un'altra scheda
+# ricalcola --ctx-size e --ubatch-size sulla VRAM che hai.
+
+# llama-swap â€” un solo indirizzo (127.0.0.1:8012), piÃ¹ configurazioni.
+# Odysseus vede questi nomi nel menu dei modelli; scegliendone uno, llama-swap
+# spegne quello caricato e accende il richiesto (10-30 secondi).
+#
+# Le configurazioni sono le nostre, giÃ  tarate sulla GTX 1080:
+#   flash attention attiva (kernel vec Pascal, +10% e sblocca la cache q8_0)
+#   cache KV q8_0 (contesto doppio a paritÃ  di VRAM, nessuna perdita misurata)
+#   tutti i layer in GPU, niente offload (modello denso: l'offload lo ucciderebbe)
+#
+# Le varianti "vista" tengono il proiettore visivo sulla RAM di sistema
+# (--no-mmproj-offload): libera ~900MB di VRAM, cosÃ¬ il contesto resta alto.
+#
+# Binario: release ufficiale llama.cpp b10549 (21 ago 2026), CUDA 12.4 Windows.
+# Non Ã¨ il binario custom SM61 (quello girava su b10091, 22 lug â€” il toolchain
+# di build locale non c'Ã¨ piÃ¹, pulizia disco). CUDA 12.4 e' comunque il tetto
+# massimo reale sulla 1080: CUDA 13 ha rimosso Pascal dal compilatore nvcc
+# stesso (verificato su release notes NVIDIA), quindi non e' un downgrade.
+# La versione precedente e' salvata in <VERGILIUS>/llama-backup-b10091-22lug.
+
+healthCheckTimeout: 300     # il caricamento da disco puÃ² richiedere un minuto
+# Gli alias compaiono in /v1/models: Odysseus deve vedere `lfm-vista` nel menu
+# e leggerne lo stato (`_states()` in src/llamaswap.py) per il loader degli occhi.
+includeAliasesInList: true
+
+macros:
+  # Modificare qui cambia TUTTE le configurazioni in un colpo solo.
+  server: "<VERGILIUS>/llama/llama-server.exe --host 127.0.0.1 --port ${PORT}"
+  # mmap evita il commit/RAM duplicato del precedente caricamento non-mappato;
+  # il blocco delle pagine in RAM e' stato
+  # tolto perche' VirtualLock falliva a 0 byte su Windows. --cache-ram 0 spegne
+  # solo le copie host degli slot inattivi: il prefix reuse dello slot vivo
+  # resta attivo (cache_prompt=true da Odysseus).
+  # --metrics: espone prompt_tokens_seconds, kv_cache_usage_ratio, n_busy_slots_per_decode.
+  # Costo misurato: zero (onda 1). Senza, si misura alla cieca.
+  # --slot-save-path: NON serve a salvare su disco, e' il prerequisito di
+  # POST /slots/{id}?action=erase (senza da 501 Not Implemented). Serve a
+  # ripulire la KV degli slot morti: con la KV unificata ogni sequenza morta
+  # allarga la scansione per TUTTE le richieste dopo (misurato: tre prefill
+  # identici da 13k token danno 850 -> 361 -> 229 tok/s; con erase restano 905/847/841).
+  comune: "--n-gpu-layers 999 -fa on --cache-type-k q8_0 --cache-type-v q8_0 --cache-ram 0 --load-mode mmap --metrics --slot-save-path <VERGILIUS>/llama-swap/slotsave"
+  campionamento: "--temp 1.0 --top-p 0.95 --top-k 20 --presence-penalty 1.5"
+
+models:
+  # PREDEFINITO dal 19 set 2026: LFM2.5-2.6B (Liquid AI), denso ibrido conv+attenzione.
+  # Misurato sulla 1080: prefill 1940 tok/s (il modello precedente ~850), decode 64 tok/s, con DSpark 78-100.
+  # Suite allucinazioni: 48/48 con lo strumento giusto, 0 invenzioni; turno mediano 30-45 s
+  # contro i 47 del modello precedente. Obbedisce alla lettera: le leve per lui stanno in vergilius-lfm.env.
+  # Campionamento dalla scheda ufficiale: temp 0.1, top-k 50, repetition penalty 1.1.
+  # DSpark (drafter ufficiale, Q8_0 obbligatorio su Pascal: F16 dimezza la velocita'):
+  # bozza 3, NON 10 come consiglia Liquid: sulla 1080 bozza 10 rallenta la prosa del 23%.
+  # Pensa sempre: il tetto al ragionamento lo mette Odysseus (reasoning budget nei giri con strumenti).
+  lfm:
+    name: "LFM2.5-2.6B Q8_0"
+    description: "Predefinito. Veloce, preciso con gli strumenti. Testo, 48K."
+    cmd: |
+      ${server}
+      -m <VERGILIUS>/models/LFM2.5-2.6B-Q8_0.gguf
+      --ctx-size 49152
+      --temp 0.1 --top-k 50 --repeat-penalty 1.1
+      -md <VERGILIUS>/models/LFM2.5-2.6B-DSpark-Q8_0.gguf -ngld 999
+      --spec-type draft-dspark --spec-draft-n-max 3 --spec-draft-n-min 0
+      --batch-size 2048 --ubatch-size 1024
+      ${comune}
+    ttl: 3600
+    # `lfm-vista` e' un ALIAS (stesso processo, due nomi): il suffisso -vista serve solo a
+    # Odysseus per avviare gli OCCHI (Holo-3.1-0.8B su CPU, porta 8095).
+    aliases:
+      - "lfm-vista"
+
+  # FACOLTATIVO, lo sceglie l'utente: LFM2.5-2.6B senza rifiuti (SC117, abliterazione con
+  # abliterix sulla STESSA base del predefinito). Modificato da terzi, NON di Liquid AI, non
+  # revisionato. Licenza LFM Open License v1.0. Si scarica con
+  #   python scripts/scarica-modelli.py --con-lfm-uncensored
+  # Finche' il file non c'e', la voce compare nel menu ma non parte.
+  # Stesso campionamento e stesso drafter del predefinito (vocabolario identico: il DSpark
+  # prende embeddings e testa dal modello). NON usare ${campionamento}: e' tarato su QwenPaw.
+  # ATTENZIONE: togliere i rifiuti toglie anche parte della disponibilita' ad astenersi.
+  # Il profilo vergilius-lfm.env tiene spenti regole di grounding e rilancio perche' il
+  # modello base non inventa: su questa variante NON e' misurato. Vedi ricerche/opt-1080/43.
+  lfm-uncensored:
+    name: "LFM2.5-2.6B senza filtri (SC117)"
+    description: "Facoltativo. Modificato da terzi, senza rifiuti. Testo, 48K."
+    cmd: |
+      ${server}
+      -m <VERGILIUS>/models/LFM2.5-2.6B-Uncensored-Q8_0.gguf
+      --ctx-size 49152
+      --temp 0.1 --top-k 50 --repeat-penalty 1.1
+      -md <VERGILIUS>/models/LFM2.5-2.6B-DSpark-Q8_0.gguf -ngld 999
+      --spec-type draft-dspark --spec-draft-n-max 3 --spec-draft-n-min 0
+      --batch-size 2048 --ubatch-size 1024
+      ${comune}
+    ttl: 3600
+    aliases:
+      - "lfm-uncensored-vista"
+
+  heretic:
+    name: "QwenPaw 9B heretic"
+    description: "Senza rifiuti, per i compiti agentici. Testo, 48K."
+    cmd: |
+      ${server}
+      -m <VERGILIUS>/models/QwenPaw-Flash-9B-heretic-Q4_K_M.gguf
+      --ctx-size 49152
+      ${comune} ${campionamento}
+    ttl: 3600
+
+  heretic-vista:
+    name: "QwenPaw 9B heretic (vista)"
+    description: "Heretic + analisi immagini. Proiettore BF16 su RAM, 32K."
+    cmd: |
+      ${server}
+      -m <VERGILIUS>/models/QwenPaw-Flash-9B-heretic-Q4_K_M.gguf
+      --mmproj <VERGILIUS>/models/mmproj-heretic-BF16.gguf
+      --no-mmproj-offload
+      --ctx-size 32768
+      ${comune} ${campionamento}
+    ttl: 3600
+
+# Q5 (i1-Q5_K_M) disponibile in models/ ma non in elenco: a parita' di VRAM
+# costringe il contesto a 8K, e il guadagno di qualita' sul Q4 imatrix non lo
+# giustifica. Per riattivarlo basta togliere il commento.
+#
+#  qwenpaw-q5:
+#    name: "QwenPaw 9B Q5 (qualita')"
+#    description: "Quantizzazione piu' fine, contesto ridotto a 8K."
+#    cmd: |
+#      ${server}
+#      -m <VERGILIUS>/models/QwenPaw-Flash-9B.i1-Q5_K_M.gguf
+#      --ctx-size 8192
+#      ${comune}
+#    ttl: 3600
+
