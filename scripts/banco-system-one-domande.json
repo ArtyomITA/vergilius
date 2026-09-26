@@ -1,0 +1,1691 @@
+{
+ "versione": 1,
+ "descrizione": "Banco System One su LFM (fase 2 piano riflessi): 100 domande chiuse in italiano. giusta = lettera dell'opzione (A = prima). Le righe dei casi elemento_ui sono copiate dalle fixture in fonte.",
+ "domande": [
+  {
+   "id": "S01",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Come sta Leonardo in borsa adesso?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Quotazione live di un titolo nominato: fin_mercati con titolo."
+  },
+  {
+   "id": "S02",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Come vanno i mercati stamattina?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Quadro dei mercati adesso, caso d'uso citato nella descrizione di fin_mercati."
+  },
+  {
+   "id": "S03",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Quanto sta AAPL in questo momento?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Prezzo attuale di un ticker: dato live di mercato, lo strumento dedicato vince sul web."
+  },
+  {
+   "id": "S04",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Il settore difesa oggi sale o scende?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Watchlist difesa adesso ('come sta la difesa')."
+  },
+  {
+   "id": "S05",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Il bitcoin quanto vale adesso?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Prezzo cripto attuale, la watchlist di fin_mercati include le cripto."
+  },
+  {
+   "id": "S06",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Ci sono titoli che oggi si muovono contro il loro settore?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Anomalia 'chi si muove contro il proprio settore' e' gia' calcolata da fin_mercati."
+  },
+  {
+   "id": "S07",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Novità finanziarie di oggi?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "A",
+   "perche": "Notiziario finanziario generico di oggi: la descrizione di fin_mercati lo nomina ('notiziario finanziario', esempio 'novita' finanziarie' nello schema reale). Nessun luogo ne' soggetto, e la finanza in generale e' proprio quel notiziario: osint_notizie non aggiunge nulla (contrasto voluto con S13: luogo + tema preciso = B)."
+  },
+  {
+   "id": "S08",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Ultime notizie sull'Ucraina?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un luogo: esempio letterale della descrizione di osint_notizie."
+  },
+  {
+   "id": "S09",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Cercami news su Boeing.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un'azienda: osint_notizie con soggetto (regola del profilo)."
+  },
+  {
+   "id": "S10",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Cosa è successo a Gaza negli ultimi tre giorni?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Luogo preciso con finestra di giorni: notizie, non quadro globale."
+  },
+  {
+   "id": "S11",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Leggimi cosa dice quell'articolo sul porto di Odessa.\"\nRisultati di strumenti in questo turno: osint_situazione ha elencato l'evento id gdelt:7f21ab \"Esplosione al porto di Odessa\" (solo titolo e fonte, senza testo).",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Leggere il corpo di un articolo gia' visto: osint_notizie con l'id."
+  },
+  {
+   "id": "S12",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Che notizie ci sono sull'OPEC questa settimana?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Organizzazione come soggetto, finestra di una settimana."
+  },
+  {
+   "id": "S13",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Novità sulle proteste in Georgia?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un luogo e un tema."
+  },
+  {
+   "id": "S14",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Mi trovi le ultime notizie su Elon Musk?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "B",
+   "perche": "Persona come soggetto: osint_notizie con soggetto."
+  },
+  {
+   "id": "S15",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Mostrami il Mar Rosso sulla mappa.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "C",
+   "perche": "Richiesta esplicita di vedere un luogo sulla mappa: centra."
+  },
+  {
+   "id": "S16",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Centra la mappa su Taiwan.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "C",
+   "perche": "Centratura esplicita."
+  },
+  {
+   "id": "S17",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Porta la mappa su Kyiv e zooma sulla città.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "C",
+   "perche": "Centra con zoom su una citta'."
+  },
+  {
+   "id": "S18",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Fammi vedere dove si trova lo stretto di Hormuz.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "C",
+   "perche": "'Fammi vedere dove' su un luogo: la mappa, non le notizie."
+  },
+  {
+   "id": "S19",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Sposta la vista sul canale di Suez.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "C",
+   "perche": "Spostare la vista della mappa su un luogo."
+  },
+  {
+   "id": "S20",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Cosa succede nel mondo in questo momento?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "D",
+   "perche": "'Cosa succede' globale: esempio letterale di osint_situazione."
+  },
+  {
+   "id": "S21",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Fammi una classifica delle crisi più gravi di oggi.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "D",
+   "perche": "Classifica globale: 'fammi una classifica'."
+  },
+  {
+   "id": "S22",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Quanto è grave la situazione globale stamattina?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "D",
+   "perche": "'Quanto e' grave la situazione': livello di minaccia globale."
+  },
+  {
+   "id": "S23",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Intelligence\nMessaggio dell'utente: \"Dammi il quadro generale: cosa conta di più oggi nel mondo?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "D",
+   "perche": "Quadro globale in ordine di importanza."
+  },
+  {
+   "id": "S24",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Briefing veloce: quali sono gli eventi più seguiti delle ultime ore nel mondo?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "D",
+   "perche": "Eventi piu' coperti a livello mondiale, senza un luogo o un soggetto."
+  },
+  {
+   "id": "S25",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Chi ha vinto il Gran Premio d'Italia di Formula 1 domenica scorsa?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "E",
+   "perche": "Fatto sportivo recente: i feed OSINT e finanziari non lo coprono, basta una ricerca rapida."
+  },
+  {
+   "id": "S26",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"A che ora apre oggi il Museo Egizio di Torino?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "E",
+   "perche": "Fatto pratico da cercare sul web."
+  },
+  {
+   "id": "S27",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Qual è il numero di telefono della farmacia comunale di Lodi?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "E",
+   "perche": "Dato di contatto: ricerca web."
+  },
+  {
+   "id": "S28",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Qual è il sito ufficiale del Comune di Bergamo?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "E",
+   "perche": "Trovare un sito: ricerca web."
+  },
+  {
+   "id": "S29",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Qual è l'ultima versione stabile di Python uscita?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "E",
+   "perche": "Fatto attuale fuori dai feed della piattaforma."
+  },
+  {
+   "id": "S30",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Ho 37 azioni a 184,23 euro l'una: quanto valgono in totale?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "F",
+   "perche": "Numeri tutti dati dall'utente, moltiplicazione a piu' cifre."
+  },
+  {
+   "id": "S31",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Quanto fa il 17% di 2.348,50?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "F",
+   "perche": "Percentuale su numeri dati."
+  },
+  {
+   "id": "S32",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Di quanto è salita in percentuale rispetto a ieri?\"\nRisultati di strumenti in questo turno: fin_mercati ha restituito Leonardo prezzo 41,20 EUR, chiusura precedente 39,87 EUR.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "F",
+   "perche": "I prezzi sono gia' nel contesto: serve solo la variazione percentuale esatta."
+  },
+  {
+   "id": "S33",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Converti 1.250 dollari in euro al cambio 0,9213.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "F",
+   "perche": "Conversione con un cambio dato dall'utente."
+  },
+  {
+   "id": "S34",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Fammi la media di questi tempi: 14,7 18,2 21,9 16,4 e 19,3 secondi.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "F",
+   "perche": "Media di numeri dati."
+  },
+  {
+   "id": "S35",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Ciao! Come stai?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Saluto: nessun dato da prendere."
+  },
+  {
+   "id": "S36",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Cos'è un ETF, in parole semplici?\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Spiegare un termine: fin_mercati non serve a questo, nessun dato live richiesto."
+  },
+  {
+   "id": "S37",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Grazie, perfetto così!\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Ringraziamento: nessuno strumento."
+  },
+  {
+   "id": "S38",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Financial\nMessaggio dell'utente: \"Quindi oggi NVIDIA è in calo?\"\nRisultati di strumenti in questo turno: fin_mercati ha restituito NVDA 131,40 USD, -2,1% oggi.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Il dato e' gia' nel contesto e non serve aritmetica: si risponde."
+  },
+  {
+   "id": "S39",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Scrivimi una breve poesia sull'autunno.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Scrittura creativa: nessun dato esterno."
+  },
+  {
+   "id": "S40",
+   "categoria": "strumento",
+   "stato": "Profilo attivo: Generale\nMessaggio dell'utente: \"Riassumimi in due righe quello che mi hai appena spiegato.\"\nRisultati di strumenti in questo turno: nessuno.",
+   "domanda": "Quale strumento in sola lettura va chiamato ORA, prima di rispondere all'utente?",
+   "opzioni": [
+    "fin_mercati: mercati adesso: prezzi della watchlist (difesa, big tech, cripto), notiziario finanziario, anomalie; quotazione live di UN titolo nominato. Solo dati di mercato ATTUALI, mai per spiegare un termine.",
+    "osint_notizie: notizie su un luogo, un soggetto (azienda, persona, organizzazione) o un tema in una finestra di giorni; legge il testo intero di un articolo dato il suo url o l'id di un evento già visto.",
+    "osint_mappa (azione centra): sposta la mappa che l'utente sta guardando su un luogo, con lo zoom. Solo vista.",
+    "osint_situazione: quadro globale di ciò che conta nel mondo adesso, in classifica: livello di minaccia, eventi più coperti, anomalie, regioni a rischio.",
+    "web_search: ricerca web rapida di un fatto o di un evento attuale che i feed della piattaforma non hanno.",
+    "calcola: aritmetica esatta a più cifre (totali, differenze, percentuali, conversioni con un cambio dato, medie) su numeri già dati dall'utente o da un risultato.",
+    "nessuno: nessuno strumento dell'elenco serve adesso, si risponde direttamente."
+   ],
+   "giusta": "G",
+   "perche": "Riassunto della conversazione gia' presente."
+  },
+  {
+   "id": "U01",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"salvami questo testo come spesa.txt\"\nPasso da fare adesso: confermare il salvataggio: il nome spesa.txt è già scritto nel campo Nome file",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(150,130) pulsante \"Nuova cartella\"",
+    "(60,890) pulsante \"Nascondi cartelle\"",
+    "(700,890) casella combinata \"Codifica:\"",
+    "(60,130) pulsante \"Organizza\"",
+    "(880,890) pulsante \"Salva\"",
+    "(970,890) pulsante \"Annulla\"",
+    "nessuno adatto"
+   ],
+   "giusta": "E",
+   "perche": "Il passo e' confermare: pulsante Salva.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U02",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"salva il file nella cartella Download\"\nPasso da fare adesso: aprire la cartella Download dal riquadro di navigazione a sinistra",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(80,262) elemento albero \"Download (elemento aggiunto)\"",
+    "(80,598) elemento albero \"Musica\"",
+    "(80,234) elemento albero \"Desktop (elemento aggiunto)\"",
+    "(880,890) pulsante \"Salva\"",
+    "(80,318) elemento albero \"Immagini (elemento aggiunto)\"",
+    "(80,290) elemento albero \"Documenti (elemento aggiunto)\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "Unica voce Download fra le opzioni.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U03",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"lascia perdere, non salvare\"\nPasso da fare adesso: chiudere la finestra Salva con nome senza salvare, con il pulsante Annulla",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(970,890) pulsante \"Annulla\"",
+    "(60,130) pulsante \"Organizza\"",
+    "(880,890) pulsante \"Salva\"",
+    "(60,890) pulsante \"Nascondi cartelle\"",
+    "(150,130) pulsante \"Nuova cartella\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "Il passo nomina Annulla.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U04",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"crea una cartella per le ricevute e salvaci il file\"\nPasso da fare adesso: creare una nuova cartella nella posizione attuale",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(150,130) pulsante \"Nuova cartella\"",
+    "(60,890) pulsante \"Nascondi cartelle\"",
+    "(60,130) pulsante \"Organizza\"",
+    "(130,60) voce di menu \"Visualizza\"",
+    "(880,890) pulsante \"Salva\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "Pulsante Nuova cartella.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U05",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"salvalo con codifica ANSI invece di UTF-8\"\nPasso da fare adesso: aprire l'elenco della codifica per sceglierne un'altra",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1890,60) pulsante \"Impostazioni\"",
+    "(500,820) modifica \"Nome file:\"",
+    "(500,850) casella combinata \"Salva come:\"",
+    "(880,890) pulsante \"Salva\"",
+    "(700,890) casella combinata \"Codifica:\"",
+    "nessuno adatto"
+   ],
+   "giusta": "E",
+   "perche": "La casella combinata Codifica.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U06",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"sovrascrivi il file elenco spesa che c'è già\"\nPasso da fare adesso: selezionare nell'elenco il file esistente \"elenco spesa\"",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(560,460) voce di elenco \"promemoria\"",
+    "(880,890) pulsante \"Salva\"",
+    "(560,544) voce di elenco \"spese mese\"",
+    "(560,516) voce di elenco \"scadenze\"",
+    "(500,820) modifica \"Nome file:\"",
+    "(560,264) voce di elenco \"elenco spesa\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "La voce di elenco con quel nome.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U07",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"cerca tra i documenti un file che si chiama ricette\"\nPasso da fare adesso: scrivere il nome nella casella di ricerca della cartella",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(500,820) modifica \"Nome file:\"",
+    "(150,130) pulsante \"Nuova cartella\"",
+    "(60,130) pulsante \"Organizza\"",
+    "(1000,90) modifica \"Cerca in Documenti\"",
+    "(500,90) modifica \"Barra degli indirizzi\"",
+    "nessuno adatto"
+   ],
+   "giusta": "D",
+   "perche": "La casella di ricerca e' 'Cerca in Documenti'; la barra degli indirizzi naviga, non cerca.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U08",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"*Senza titolo - Blocco note\", con aperta la finestra \"Salva con nome\" (cartella attuale: Documenti)\nRichiesta dell'utente: \"stampa questo documento\"\nPasso da fare adesso: premere un pulsante \"Stampa\"",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(970,890) pulsante \"Annulla\"",
+    "(700,890) casella combinata \"Codifica:\"",
+    "(150,130) pulsante \"Nuova cartella\"",
+    "(880,890) pulsante \"Salva\"",
+    "(60,130) pulsante \"Organizza\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Stampa fra le opzioni.",
+   "fonte": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U09",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"apri la cartella Download\"\nPasso da fare adesso: aprire Download dal riquadro di navigazione a sinistra",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(79,158) elemento albero \"Home\"",
+    "(90,318) elemento albero \"Download (elemento aggiunto)\"",
+    "(92,350) elemento albero \"Documenti (elemento aggiunto)\"",
+    "(88,382) elemento albero \"Immagini (elemento aggiunto)\"",
+    "(82,190) elemento albero \"Galleria\"",
+    "(92,510) elemento albero \"Screenshot\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Voce Download del riquadro.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U10",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"torna alla cartella di prima\"\nPasso da fare adesso: tornare alla cartella precedente nella cronologia",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(279,25) pulsante \"Aggiungi nuova scheda\"",
+    "(235,24) pulsante \"Chiudi scheda\"",
+    "(35,64) pulsante della barra dell'app \"Indietro\"",
+    "(179,64) pulsante della barra dell'app \"Aggiorna \"progetto-lab\" (F5)\"",
+    "(131,64) pulsante della barra dell'app \"Fino a \"Disco locale (D:)\" (ALT + FRECCIA SU)\"",
+    "nessuno adatto"
+   ],
+   "giusta": "C",
+   "perche": "Indietro = cartella precedente nella cronologia; 'Fino a' sale al livello superiore.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U11",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"trova il file servizio.err in questa cartella\"\nPasso da fare adesso: scrivere il nome del file nella casella di ricerca della cartella",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(804,64) modifica \"Barra degli indirizzi\"",
+    "(63,112) pulsante della barra dell'app \"Nuovo\"",
+    "(1654,64) modifica \"Cerca in progetto-lab\"",
+    "(573,112) pulsante della barra dell'app \"Visualizza\"",
+    "(463,112) pulsante della barra dell'app \"Ordina\"",
+    "nessuno adatto"
+   ],
+   "giusta": "C",
+   "perche": "La casella di ricerca della cartella.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U12",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"aprimi il file registro\"\nPasso da fare adesso: aprire il documento di testo \"registro\" dall'elenco dei file",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(537,963) voce di elenco \"registro\"",
+    "(537,879) voce di elenco \"avvia\"",
+    "(537,823) voce di elenco \"tools\"",
+    "(537,935) voce di elenco \"servizio.out\"",
+    "(537,991) voce di elenco \"note-1\"",
+    "(537,907) voce di elenco \"servizio.err\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "La voce di elenco 'registro'.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U13",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"ordina i file dal più recente\"\nPasso da fare adesso: cliccare l'intestazione della colonna della data di modifica",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(360,148) pulsante dividi \"Nome\"",
+    "(568,148) pulsante dividi \"Ultima modifica\"",
+    "(800,148) pulsante dividi \"Dimensione\"",
+    "(700,148) pulsante dividi \"Tipo\"",
+    "(573,112) pulsante della barra dell'app \"Visualizza\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Intestazione di colonna 'Ultima modifica'.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U14",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"vai sul disco D\"\nPasso da fare adesso: aprire l'unità D: dal riquadro di navigazione",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(113,734) elemento albero \"Disco locale (D:)\"",
+    "(74,862) elemento albero \"Rete\"",
+    "(106,702) elemento albero \"Windows (C:)\"",
+    "(96,766) elemento albero \"Giochi (E:)\"",
+    "(114,830) elemento albero \"Disco locale (H:)\"",
+    "(113,798) elemento albero \"Disco locale (G:)\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "Voce Disco locale (D:).",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U15",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"aggiorna la cartella, non vedo il file nuovo\"\nPasso da fare adesso: ricaricare il contenuto della cartella",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(35,64) pulsante della barra dell'app \"Indietro\"",
+    "(661,112) pulsante \"Altre opzioni\"",
+    "(1856,112) pulsante della barra dell'app \"Dettagli\"",
+    "(179,64) pulsante della barra dell'app \"Aggiorna \"progetto-lab\" (F5)\"",
+    "(1889,16) pulsante \"Chiudi\"",
+    "nessuno adatto"
+   ],
+   "giusta": "D",
+   "perche": "Pulsante Aggiorna (F5).",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U16",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"progetto-lab - Esplora file\" (cartella D:\\progetto-lab)\nRichiesta dell'utente: \"rinomina il file note-1\"\nPasso da fare adesso: premere un pulsante \"Rinomina\" nella barra dei comandi",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(63,112) pulsante della barra dell'app \"Nuovo\"",
+    "(573,112) pulsante della barra dell'app \"Visualizza\"",
+    "(235,24) pulsante \"Chiudi scheda\"",
+    "(463,112) pulsante della barra dell'app \"Ordina\"",
+    "(1856,112) pulsante della barra dell'app \"Dettagli\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Rinomina fra le opzioni.",
+   "fonte": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U17",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"immagine.gif\" nell'app Foto\nRichiesta dell'utente: \"ingrandisci un po' l'immagine\"\nPasso da fare adesso: aumentare lo zoom di un passo",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1837,1016) pulsante \"Zoom avanti\"",
+    "(1892,1016) pulsante della barra dell'app \"Schermo intero\"",
+    "(1523,1016) pulsante della barra dell'app \"Ingrandisci per adattare\"",
+    "(1591,1016) casella combinata \"Selezione zoom\"",
+    "(1659,1016) pulsante \"Zoom indietro\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "Zoom avanti aumenta lo zoom di un passo.",
+   "fonte": "reale_foto.txt"
+  },
+  {
+   "id": "U18",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"immagine.gif\" nell'app Foto\nRichiesta dell'utente: \"stampami questa immagine\"\nPasso da fare adesso: aprire la stampa dell'immagine",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(184,24) pulsante della barra dell'app \"Elimina\"",
+    "(57,24) pulsante \"Modifica\"",
+    "(1717,24) pulsante \"Apri con\"",
+    "(272,24) pulsante della barra dell'app \"Condividi\"",
+    "(228,24) pulsante della barra dell'app \"Stampa\"",
+    "(952,1016) pulsante della barra dell'app \"Info sul file\"",
+    "nessuno adatto"
+   ],
+   "giusta": "E",
+   "perche": "Pulsante Stampa.",
+   "fonte": "reale_foto.txt"
+  },
+  {
+   "id": "U19",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"immagine.gif\" nell'app Foto\nRichiesta dell'utente: \"aprila con un altro programma\"\nPasso da fare adesso: scegliere un'altra applicazione per aprire l'immagine",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(272,24) pulsante della barra dell'app \"Condividi\"",
+    "(1717,24) pulsante \"Apri con\"",
+    "(318,24) pulsante \"Altre opzioni per Modifica barra degli strumenti\"",
+    "(68,1016) pulsante della barra dell'app \"Avvia presentazione\"",
+    "(57,24) pulsante \"Modifica\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Pulsante Apri con.",
+   "fonte": "reale_foto.txt"
+  },
+  {
+   "id": "U20",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"immagine.gif\" nell'app Foto\nRichiesta dell'utente: \"quanto pesa questo file e quando è stato creato?\"\nPasso da fare adesso: aprire le informazioni sul file",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(228,24) pulsante della barra dell'app \"Stampa\"",
+    "(1892,1016) pulsante della barra dell'app \"Schermo intero\"",
+    "(68,1016) pulsante della barra dell'app \"Avvia presentazione\"",
+    "(952,1016) pulsante della barra dell'app \"Info sul file\"",
+    "(28,1016) pulsante della barra dell'app \"Mostra sequenza\"",
+    "nessuno adatto"
+   ],
+   "giusta": "D",
+   "perche": "Info sul file.",
+   "fonte": "reale_foto.txt"
+  },
+  {
+   "id": "U21",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"immagine.gif\" nell'app Foto\nRichiesta dell'utente: \"ruota l'immagine di 90 gradi\"\nPasso da fare adesso: premere un pulsante \"Ruota\"",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(184,24) pulsante della barra dell'app \"Elimina\"",
+    "(272,24) pulsante della barra dell'app \"Condividi\"",
+    "(228,24) pulsante della barra dell'app \"Stampa\"",
+    "(57,24) pulsante \"Modifica\"",
+    "(1837,1016) pulsante \"Zoom avanti\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Ruota fra le opzioni.",
+   "fonte": "reale_foto.txt"
+  },
+  {
+   "id": "U22",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"calcola 7 per 8\"\nPasso da fare adesso: premere il tasto 7",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(130,400) pulsante \"Otto\"",
+    "(290,500) pulsante \"Più\"",
+    "(50,450) pulsante \"Quattro\"",
+    "(50,500) pulsante \"Uno\"",
+    "(50,400) pulsante \"Sette\"",
+    "(210,400) pulsante \"Nove\"",
+    "nessuno adatto"
+   ],
+   "giusta": "E",
+   "perche": "Tasto Sette.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U23",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"calcola 7 per 8\"\nPasso da fare adesso: premere il tasto della moltiplicazione (il 7 è già inserito)",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(290,450) pulsante \"Meno\"",
+    "(290,500) pulsante \"Più\"",
+    "(50,300) pulsante \"Percentuale\"",
+    "(290,350) pulsante \"Dividi per\"",
+    "(290,550) pulsante \"Uguale a\"",
+    "(290,400) pulsante \"Moltiplica per\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "Moltiplica per.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U24",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"calcola 7 per 8\"\nPasso da fare adesso: ottenere il risultato (7 × 8 è già inserito)",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(290,500) pulsante \"Più\"",
+    "(270,250) pulsante \"Memorizza\"",
+    "(290,300) pulsante \"Backspace\"",
+    "(290,550) pulsante \"Uguale a\"",
+    "(210,300) pulsante \"Cancella\"",
+    "nessuno adatto"
+   ],
+   "giusta": "D",
+   "perche": "Uguale a.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U25",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"ricomincia da zero\"\nPasso da fare adesso: azzerare l'intero calcolo con il tasto C",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(30,250) pulsante \"Cancella tutta la memoria\"",
+    "(130,300) pulsante \"Cancella voce\"",
+    "(290,300) pulsante \"Backspace\"",
+    "(210,300) pulsante \"Cancella\"",
+    "(50,550) pulsante \"Positivo negativo\"",
+    "nessuno adatto"
+   ],
+   "giusta": "D",
+   "perche": "C = Cancella; 'Cancella voce' e' CE, 'Cancella tutta la memoria' e' MC.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U26",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"fammi vedere i calcoli di prima\"\nPasso da fare adesso: aprire la cronologia dei calcoli",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(140,60) pulsante \"Mantieni in primo piano\"",
+    "(330,60) pulsante \"Apri cronologia\"",
+    "(340,16) pulsante \"Chiudi Calcolatrice\"",
+    "(24,60) pulsante \"Apri spostamento\"",
+    "(330,250) pulsante \"Apri memoria a comparsa\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Apri cronologia.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U27",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Calcolatrice\" (modalità Standard)\nRichiesta dell'utente: \"passa alla calcolatrice scientifica\"\nPasso da fare adesso: aprire il menu di navigazione da cui si sceglie la modalità",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(24,60) pulsante \"Apri spostamento\"",
+    "(140,60) pulsante \"Mantieni in primo piano\"",
+    "(330,60) pulsante \"Apri cronologia\"",
+    "(210,350) pulsante \"Radice quadrata\"",
+    "(330,250) pulsante \"Apri memoria a comparsa\"",
+    "nessuno adatto"
+   ],
+   "giusta": "A",
+   "perche": "'Apri spostamento' e' il menu di navigazione (hamburger) con le modalita'.",
+   "fonte": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U28",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Menu\": le icone nascoste dell'area di notifica sono aperte\nRichiesta dell'utente: \"apri il pannello NVIDIA\"\nPasso da fare adesso: aprire le impostazioni NVIDIA dalle icone nascoste",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1578,955) pulsante \"Periferiche\"",
+    "(1738,915) pulsante \"Impostazioni NVIDIA\"",
+    "(1738,955) pulsante \"Dispositivi Bluetooth\"",
+    "(1618,915) pulsante \"Overlay\"",
+    "(1618,955) pulsante \"Antivirus\"",
+    "(1658,915) pulsante \"Mouse\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Impostazioni NVIDIA.",
+   "fonte": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U29",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Menu\": le icone nascoste dell'area di notifica sono aperte\nRichiesta dell'utente: \"apri Discord\"\nPasso da fare adesso: aprire Discord dall'icona nascosta",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1618,995) pulsante \"Spotify\"",
+    "(1658,955) pulsante \"Google Chrome\"",
+    "(1698,955) pulsante \"Discord\"",
+    "(1658,995) pulsante \"Giochi - sincronizzazione in corso\"",
+    "(1578,915) pulsante \"WhatsApp\"",
+    "nessuno adatto"
+   ],
+   "giusta": "C",
+   "perche": "Icona Discord.",
+   "fonte": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U30",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Menu\": le icone nascoste dell'area di notifica sono aperte\nRichiesta dell'utente: \"controlla se Sicurezza di Windows segnala problemi\"\nPasso da fare adesso: aprire Sicurezza di Windows dall'area di notifica",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1578,995) pulsante \"Anticheat\"",
+    "(1698,995) pulsante \"Sicurezza di Windows - Nessuna azione necessaria. Sicurezza di Windows - Azioni consigliate.\"",
+    "(1578,955) pulsante \"Periferiche\"",
+    "(1618,955) pulsante \"Antivirus\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "L'icona di Sicurezza di Windows; 'Antivirus' e' un altro programma.",
+   "fonte": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U31",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Menu\": le icone nascoste dell'area di notifica sono aperte\nRichiesta dell'utente: \"apri OneDrive\"\nPasso da fare adesso: aprire OneDrive dalle icone nascoste",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1618,915) pulsante \"Overlay\"",
+    "(1698,915) pulsante \"Musica\"",
+    "(1658,915) pulsante \"Mouse\"",
+    "(1578,915) pulsante \"WhatsApp\"",
+    "(1578,955) pulsante \"Periferiche\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "OneDrive non e' fra le opzioni.",
+   "fonte": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U32",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Pagina web - Google Chrome\" (l'albero mostra solo la barra delle applicazioni)\nRichiesta dell'utente: \"aprimi Esplora file\"\nPasso da fare adesso: aprire Esplora file dalla barra delle applicazioni",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(985,1056) pulsante \"Microsoft Teams bloccato\"",
+    "(941,1056) pulsante \"Visualizzazione attività\"",
+    "(1029,1056) pulsante \"Esplora file bloccato\"",
+    "(1073,1056) pulsante \"Google Chrome bloccato\"",
+    "(672,1056) pulsante \"Start\"",
+    "(807,1056) pulsante \"Cerca\"",
+    "nessuno adatto"
+   ],
+   "giusta": "C",
+   "perche": "Icona di Esplora file sulla barra.",
+   "fonte": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U33",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Pagina web - Google Chrome\" (l'albero mostra solo la barra delle applicazioni)\nRichiesta dell'utente: \"torna su Spotify\"\nPasso da fare adesso: portare in primo piano la finestra di Spotify già aperta",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1914,1056) pulsante \"Mostra Desktop\"",
+    "(1161,1056) pulsante \"Spotify - 1 finestra in esecuzione\"",
+    "(1117,1056) pulsante \"Profilo - Chrome - 1 finestra in esecuzione\"",
+    "(1249,1056) pulsante \"Visual Studio Code - 1 finestra in esecuzione\"",
+    "(1205,1056) pulsante \"Discord - 1 finestra in esecuzione\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Pulsante di Spotify sulla barra.",
+   "fonte": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U34",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Pagina web - Google Chrome\" (l'albero mostra solo la barra delle applicazioni)\nRichiesta dell'utente: \"fammi vedere il desktop\"\nPasso da fare adesso: ridurre a icona tutte le finestre e mostrare il desktop",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(1658,1056) pulsante \"Mostra icone nascoste\"",
+    "(1914,1056) pulsante \"Mostra Desktop\"",
+    "(1792,1056) pulsante \"Volume Cuffie (Casa): 88%\"",
+    "(672,1056) pulsante \"Start\"",
+    "(941,1056) pulsante \"Visualizzazione attività\"",
+    "nessuno adatto"
+   ],
+   "giusta": "B",
+   "perche": "Mostra Desktop.",
+   "fonte": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U35",
+   "categoria": "elemento_ui",
+   "stato": "Finestra in primo piano: \"Pagina web - Google Chrome\" (l'albero mostra solo la barra delle applicazioni)\nRichiesta dell'utente: \"clicca su Accedi nella pagina che ho aperto\"\nPasso da fare adesso: cliccare il link \"Accedi\" dentro la pagina web",
+   "domanda": "Quale elemento va cliccato per il passo da fare adesso?",
+   "opzioni": [
+    "(672,1056) pulsante \"Start\"",
+    "(1073,1056) pulsante \"Google Chrome bloccato\"",
+    "(82,1056) pulsante \"Widget 23°C Soleggiato\"",
+    "(807,1056) pulsante \"Cerca\"",
+    "(1117,1056) pulsante \"Profilo - Chrome - 1 finestra in esecuzione\"",
+    "nessuno adatto"
+   ],
+   "giusta": "F",
+   "perche": "Il contenuto della pagina non e' nell'albero: nessun elemento adatto.",
+   "fonte": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "P01",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: leggere l'articolo sui prezzi dell'energia\nURL: https://www.quotidiano-esempio.it/economia/energia-prezzi-in-calo\nTitolo: \"Energia, prezzi in calo per il terzo mese - Quotidiano Esempio\"\nTesto visibile (inizio):\nEconomia | Energia, prezzi in calo per il terzo mese. Le bollette di luce e gas scendono ancora a settembre: secondo l'autorità di regolazione il calo medio è del 4,2% rispetto ad agosto, trainato dal prezzo all'ingrosso del gas. Le famiglie in tutela vedranno l'effetto dalla prossima fattura. [...] Piè di pagina: Chi siamo | Pubblicità | Informativa cookie | Privacy\nElementi interattivi: link \"Home\", link \"Economia\", link \"Informativa cookie\", link \"Privacy\", pulsante \"Condividi\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "A",
+   "perche": "Articolo intero leggibile; 'Informativa cookie' e' solo un link a pie' di pagina, nessun banner."
+  },
+  {
+   "id": "P02",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: trovare la larghezza dello stretto di Hormuz\nURL: https://it.enciclopedia-esempio.org/wiki/Stretto_di_Hormuz\nTitolo: \"Stretto di Hormuz - Enciclopedia Esempio\"\nTesto visibile (inizio):\nStretto di Hormuz. Da Enciclopedia Esempio, l'enciclopedia libera. Lo stretto di Hormuz è un braccio di mare che collega il golfo di Oman al golfo Persico. Nel punto più stretto misura circa 39 km. Indice: 1 Geografia 2 Storia 3 Importanza economica 4 Note\nElementi interattivi: link \"Modifica\", link \"Cronologia\", casella di ricerca \"Cerca\", link \"Geografia\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "A",
+   "perche": "Voce enciclopedica completa e leggibile."
+  },
+  {
+   "id": "P03",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: controllare il prezzo delle cuffie\nURL: https://www.negozio-esempio.it/p/cuffie-wireless-x200\nTitolo: \"Cuffie wireless X200 - Negozio Esempio\"\nTesto visibile (inizio):\nCuffie wireless X200. 4,5 su 5 stelle (1.284 recensioni). Prezzo: 79,90 EUR. Disponibilità immediata, consegna gratuita entro giovedì. Colore: nero. Descrizione: autonomia 30 ore, cancellazione del rumore.\nElementi interattivi: link \"Accedi\" (in alto a destra), link \"Carrello\", pulsante \"Aggiungi al carrello\", pulsante \"Acquista ora\", menu \"Colore\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "A",
+   "perche": "Scheda prodotto con prezzo visibile; 'Accedi' e' solo un link in testata, nessun modulo che blocca."
+  },
+  {
+   "id": "P04",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: cercare ricette di pasta al forno\nURL: https://www.cerca-esempio.it/search?q=ricetta+pasta+al+forno\nTitolo: \"ricetta pasta al forno - Cerca Esempio\"\nTesto visibile (inizio):\nCirca 2.450.000 risultati. 1. Pasta al forno classica - ricette-esempio.it: la ricetta della nonna con ragù e besciamella. 2. Pasta al forno veloce in 30 minuti - cucina-esempio.it. 3. Pasta al forno vegetariana - blog-esempio.it. 4. Video: pasta al forno filante. 5. Pasta al forno napoletana.\nElementi interattivi: casella di ricerca \"Cerca\", 5 link ai risultati, link \"Pagina successiva\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "A",
+   "perche": "Pagina di risultati completa."
+  },
+  {
+   "id": "P05",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: leggere la discussione sul router che si disconnette\nURL: https://forum.tecnologia-esempio.it/t/router-si-disconnette-ogni-sera/48213\nTitolo: \"Router si disconnette ogni sera - Forum Tecnologia Esempio\"\nTesto visibile (inizio):\nRouter si disconnette ogni sera. Messaggio di marco_77: da una settimana alle 21 circa il router perde la linea per due minuti. Risposta di tecnico_luca: controlla il firmware e disattiva il risparmio energetico del modem. Risposta di marco_77: aggiornato, sembra risolto. Grazie! Accedi per rispondere a questa discussione.\nElementi interattivi: link \"Accedi per rispondere\", link \"Discussione precedente\", link \"Discussione successiva\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "A",
+   "perche": "La discussione e' leggibile; l'accesso serve solo per rispondere, non per leggere."
+  },
+  {
+   "id": "P06",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: leggere l'articolo sul nuovo stadio\nURL: https://www.giornale-esempio.it/sport/nuovo-stadio-progetto\nTitolo: \"Nuovo stadio, presentato il progetto - Giornale Esempio\"\nTesto visibile (inizio):\nIl tuo consenso conta. Noi e i nostri 142 partner utilizziamo cookie e tecnologie simili per memorizzare e accedere a informazioni sul dispositivo, per annunci e contenuti personalizzati. Puoi accettare, rifiutare o personalizzare le tue scelte. [il testo dell'articolo sotto è coperto]\nElementi interattivi: pulsante \"Accetta e chiudi\", pulsante \"Rifiuta\", pulsante \"Personalizza\" (dentro una finestra sovrapposta)",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "B",
+   "perche": "Finestra di consenso che copre l'articolo."
+  },
+  {
+   "id": "P07",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: leggere la notizia sulla missione spaziale\nURL: https://www.news-example.com/science/moon-mission-update\nTitolo: \"Moon mission update - News Example\"\nTesto visibile (inizio):\nWe value your privacy. We and our partners store and/or access information on a device, such as cookies, and process personal data for personalised ads and content. You can accept or manage your choices by clicking below.\nElementi interattivi: pulsante \"Accept all\", pulsante \"Manage options\", pulsante \"Reject all\" (finestra modale)",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "B",
+   "perche": "Banner di consenso in inglese, modale."
+  },
+  {
+   "id": "P08",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire il servizio di mappe\nURL: https://consent.servizi-esempio.com/ml?continue=https://mappe.servizi-esempio.com\nTitolo: \"Prima di continuare\"\nTesto visibile (inizio):\nPrima di continuare. Utilizziamo cookie e dati per fornire e gestire i servizi, monitorare le interruzioni e proteggerci da spam e frodi. Se accetti, useremo cookie e dati anche per sviluppare nuovi servizi e mostrare annunci personalizzati.\nElementi interattivi: pulsante \"Rifiuta tutto\", pulsante \"Accetta tutto\", link \"Altre opzioni\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "B",
+   "perche": "Pagina intermedia di consenso prima del servizio."
+  },
+  {
+   "id": "P09",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: leggere la ricetta del tiramisù\nURL: https://www.ricette-esempio.it/dolci/tiramisu-classico\nTitolo: \"Tiramisù classico - Ricette Esempio\"\nTesto visibile (inizio):\nTiramisù classico. Ingredienti per 6 persone: 500 g di mascarpone, 4 uova, [...] Questo sito usa cookie tecnici e, con il tuo consenso, cookie di profilazione. Chiudendo il banner con la X continui senza accettare. La ricetta è oscurata finché non scegli.\nElementi interattivi: pulsante \"Accetta\", pulsante \"Continua senza accettare\", pulsante \"X\" (banner a tutta larghezza in primo piano)",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "B",
+   "perche": "Il banner cookie in primo piano oscura la ricetta."
+  },
+  {
+   "id": "P10",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire la posta per leggere l'ultima email\nURL: https://accounts.servizi-esempio.com/signin/identifier\nTitolo: \"Accedi - Account Servizi Esempio\"\nTesto visibile (inizio):\nAccedi. Utilizza il tuo account Servizi Esempio. Indirizzo email o numero di telefono. Hai dimenticato l'indirizzo email? Non si tratta del tuo computer? Usa la modalità ospite.\nElementi interattivi: campo \"Indirizzo email o numero di telefono\", pulsante \"Avanti\", link \"Crea un account\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "C",
+   "perche": "Primo passo di accesso (solo email) su un dominio di account."
+  },
+  {
+   "id": "P11",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: controllare la casella di posta\nURL: https://webmail.provider-esempio.it/\nTitolo: \"Webmail Provider Esempio - Login\"\nTesto visibile (inizio):\nWebmail. Nome utente. Password. Ricordami su questo computer. Password dimenticata?\nElementi interattivi: campo \"Nome utente\", campo password \"Password\", casella \"Ricordami\", pulsante \"Entra\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "C",
+   "perche": "Modulo con utente e password prima della posta."
+  },
+  {
+   "id": "P12",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire il portale aziendale delle ferie\nURL: https://intranet.azienda-esempio.it/ferie/richieste\nTitolo: \"Sessione scaduta\"\nTesto visibile (inizio):\nLa tua sessione è scaduta per inattività. Effettua di nuovo l'accesso per continuare.\nElementi interattivi: campo \"Matricola\", campo password \"Password\", pulsante \"Accedi\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "C",
+   "perche": "Sessione scaduta: il portale chiede di nuovo le credenziali."
+  },
+  {
+   "id": "P13",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: vedere il post condiviso dall'amico\nURL: https://www.social-esempio.com/p/C7xk2LmQ\nTitolo: \"Social Esempio\"\nTesto visibile (inizio):\nAccedi a Social Esempio per vedere foto e video dei tuoi amici. [il contenuto del post non è visibile dietro la finestra]\nElementi interattivi: finestra \"Accedi\" con campo \"Email o nome utente\", campo password \"Password\", pulsante \"Accedi\", link \"Iscriviti\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "C",
+   "perche": "Il post e' nascosto dietro una finestra di accesso con password."
+  },
+  {
+   "id": "P14",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire il sito delle offerte\nURL: https://www.offerte-esempio.com/\nTitolo: \"Just a moment...\"\nTesto visibile (inizio):\nwww.offerte-esempio.com. Verifica di essere un essere umano completando l'azione qui sotto. www.offerte-esempio.com deve verificare la sicurezza della connessione prima di procedere.\nElementi interattivi: casella di controllo \"Verifica di essere un essere umano\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "D",
+   "perche": "Sfida Cloudflare ('Just a moment', verifica umana)."
+  },
+  {
+   "id": "P15",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: cercare gli orari dei treni\nURL: https://www.cerca-esempio.it/sorry/index?continue=/search%3Fq%3Dorari\nTitolo: \"Cerca Esempio\"\nTesto visibile (inizio):\nI nostri sistemi hanno rilevato traffico insolito proveniente dalla tua rete di computer. Questa pagina verifica che sia davvero tu a inviare le richieste e non un robot.\nElementi interattivi: casella di controllo \"Non sono un robot\", pulsante \"Invia\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "D",
+   "perche": "reCAPTCHA dopo traffico insolito."
+  },
+  {
+   "id": "P16",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: controllare lo stato dell'ordine\nURL: https://www.spedizioni-esempio.com/tracking/88213\nTitolo: \"Spedizioni Esempio - Verifica\"\nTesto visibile (inizio):\nPress & Hold to confirm you are a human (and not a bot). Reference ID 4f1c-88a2.\nElementi interattivi: pulsante \"Press & Hold\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "D",
+   "perche": "Sfida 'press and hold' anti-bot: e' un captcha."
+  },
+  {
+   "id": "P17",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: iscriversi alla newsletter del museo\nURL: https://www.museo-esempio.it/newsletter\nTitolo: \"Newsletter - Museo Esempio\"\nTesto visibile (inizio):\nPer continuare completa la verifica. Seleziona tutte le immagini con un autobus. Fai clic su verifica quando hai finito.\nElementi interattivi: griglia di 9 immagini, pulsante \"Verifica\", pulsante \"Ricarica sfida\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "D",
+   "perche": "Sfida hCaptcha a immagini."
+  },
+  {
+   "id": "P18",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire la pagina dei saldi\nURL: https://www.negozio-esempio.it/saldi-estate-2026\nTitolo: \"Pagina non trovata - Negozio Esempio\"\nTesto visibile (inizio):\n404. Ops! La pagina che cerchi non esiste o è stata spostata. Torna alla home o usa la ricerca.\nElementi interattivi: link \"Torna alla home\", casella di ricerca \"Cerca\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "E",
+   "perche": "Errore 404."
+  },
+  {
+   "id": "P19",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire il sito del comune\nURL: https://www.comune-esempio-inesistente.it/\nTitolo: \"www.comune-esempio-inesistente.it\"\nTesto visibile (inizio):\nImpossibile raggiungere il sito. Impossibile trovare l'indirizzo IP del server di www.comune-esempio-inesistente.it. ERR_NAME_NOT_RESOLVED\nElementi interattivi: pulsante \"Ricarica\", pulsante \"Dettagli\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "E",
+   "perche": "Sito irraggiungibile (DNS)."
+  },
+  {
+   "id": "P20",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: scaricare il modulo per il rimborso\nURL: https://servizi.ente-esempio.it/moduli/rimborso\nTitolo: \"502 Bad Gateway\"\nTesto visibile (inizio):\n502 Bad Gateway. nginx\nElementi interattivi: nessuno",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "E",
+   "perche": "Errore 502 del server."
+  },
+  {
+   "id": "P21",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire l'archivio dei documenti\nURL: https://docs.ufficio-esempio.it/archivio/2025/\nTitolo: \"403 Forbidden\"\nTesto visibile (inizio):\nForbidden. You don't have permission to access this resource. Apache Server at docs.ufficio-esempio.it Port 443\nElementi interattivi: nessuno",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "E",
+   "perche": "403: accesso negato dal server, senza modulo di login."
+  },
+  {
+   "id": "P22",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire la dashboard dei consumi\nURL: https://app.energia-esempio.it/dashboard\nTitolo: \"\"\nTesto visibile (inizio):\n(nessun testo)\nElementi interattivi: nessuno",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "F",
+   "perche": "Titolo e testo vuoti, nessun elemento: pagina bianca."
+  },
+  {
+   "id": "P23",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: aprire il calendario condiviso\nURL: https://calendario.servizi-esempio.com/r/week\nTitolo: \"Calendario\"\nTesto visibile (inizio):\nCaricamento...\nElementi interattivi: nessuno (solo un indicatore rotante al centro)",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "F",
+   "perche": "Solo indicatore di caricamento."
+  },
+  {
+   "id": "P24",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: confrontare i voli per Parigi\nURL: https://www.voli-esempio.it/risultati?da=MXP&a=CDG\nTitolo: \"Ricerca voli - Voli Esempio\"\nTesto visibile (inizio):\nStiamo cercando le offerte migliori per te... Attendere prego. 35%\nElementi interattivi: barra di avanzamento al 35%",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "F",
+   "perche": "Risultati ancora in caricamento, nessun contenuto utile."
+  },
+  {
+   "id": "P25",
+   "categoria": "stato_pagina",
+   "stato": "Compito in corso: seguire la diretta della partita\nURL: https://www.sport-esempio.it/diretta/partita-88\nTitolo: \"Sport Esempio\"\nTesto visibile (inizio):\nMenu | Accedi\n(area principale vuota: nessun testo sotto la testata)\nElementi interattivi: link \"Menu\", link \"Accedi\"",
+   "domanda": "In che stato è la pagina web aperta adesso?",
+   "opzioni": [
+    "ok: pagina caricata e utilizzabile, il contenuto si legge.",
+    "cookie: un banner o una finestra di consenso ai cookie copre la pagina.",
+    "login: la pagina chiede di accedere (utente o email e password) prima di mostrare il contenuto.",
+    "captcha: una verifica anti-robot blocca la pagina.",
+    "errore: pagina di errore (404, 500, 502, sito irraggiungibile, accesso negato).",
+    "vuota o in caricamento: ancora nessun contenuto utile, pagina bianca o solo indicatore di caricamento."
+   ],
+   "giusta": "F",
+   "perche": "Solo la testata; il contenuto principale non e' ancora arrivato."
+  }
+ ]
+}
