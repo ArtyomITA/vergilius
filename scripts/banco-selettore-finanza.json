@@ -1,0 +1,596 @@
+{
+ "versione": 1,
+ "creato": "2026-09-27",
+ "autore": "DATI, stanza 6 (cancello 2 del dominio finanza, ondata 2)",
+ "dominio": "finanza",
+ "modi": {
+  "osint": true,
+  "finanza": true
+ },
+ "operazioni": "operazioni-finanza.json",
+ "note": [
+  "Voci = ogni operazione di operazioni-finanza.json con domanda e domanda_alt (etichette = skill_attese, salvo oro_messaggio; ruolo decide la meta') + i messaggi scritti qui sotto, meno le voci in escluse.",
+  "Dominio finanza ha modi osint+finanza insieme (financial_mode eredita osint_mode in chat_routes.py): domini_ammessi = generale/general/file/osint/finanza, quindi l'oro puo' essere anche una skill OSINT (notizie-soggetto, mappa-mostra, ricerca-web-fuori-feed) se i suoi tool restano dentro il paniere Financial. --skill-dir D:\\vergilius-lab\\biblioteca-staging\\osint (oltre a biblioteca-skill\\finanza, caricata di default) serve per due motivi: 1) rendere candidabili le skill osint sopra; 2) usare la copia corretta di ricerca-web-fuori-feed (vedi banco-selettore-osint.json: tools senza web_search/web_fetch, altrimenti mai candidata anche qui, stesso bug).",
+  "Nomi di famiglia -> skill: 'confronto-titoli' e 'quotazione-titolo' vanno entrambi su 'quotazione-titolo' (la sua description copre esplicitamente 'o confronto fra piu' titoli'); 'panorama-mercati' -> 'mercati-generale'; 'notizie-azienda' -> 'notizie-soggetto' (osint); 'insider-mspr' -> 'insider-difesa'. 'mappa-mostra-finanza' e 'grafico-chart' non hanno una skill dedicata: la prima e' scomposta in due skill vere via oro_messaggio (F15/F16, sotto), la seconda resta senza mappa (nessuna skill di finanza/osint descrive esplicitamente di disegnare un grafico, e' solo un formato di risposta di REGOLE_FINANCE, non una situazione di skill selection) -> 'nessuna' finche' non esiste una skill con quella description. 'fuori-profilo-negativa' e 'negativa' restano senza mappa (zero skill attese).",
+  "ORO DAL SOLO MESSAGGIO: quotazione-titolo: prezzo ORA di un titolo/cripto NOMINATO o confronto fra piu' titoli nominati. conti-su-quotazioni: calcolo aritmetico con importi/prezzi GIA' dati dall'utente (guadagno, percentuale, cambio), mai una quotazione dal vivo. mercati-generale: quadro dei mercati o di un settore SENZA un titolo singolo nominato. notizie-soggetto: notizie/novita' su un'azienda/persona/organizzazione nominata. appalti-difesa: contratti/appalti/commesse militari vinti da un contractor. insider-difesa: MSPR o movimenti/vendite/acquisti degli interni (insider) di un'azienda. archivio-storico: fatto finanziario in una finestra di tempo PASSATA (mese scorso, due settimane fa), mai 'adesso'. mappa-mostra: azione sulla visualizzazione della mappa (mostra, centra, evidenzia, nascondi). ricerca-web-fuori-feed: domanda di sfondo (chi e', cosa produce, chi guida) che nessun feed finanziario copre.",
+  "oro_messaggio: F15 e F16 (skill_attese='mappa-mostra-finanza', un'etichetta sola che non esiste come skill) riscritte in ['appalti-difesa','mappa-mostra']: il messaggio chiede ESPLICITAMENTE sia i contratti/appalti di un'azienda sia di mostrarli/filtrarli sulla mappa, due situazioni distinte decidibili dal testo. F23 (skill_attese=['quotazione-titolo','panorama-mercati']) riscritta solo ['panorama-mercati']: il messaggio chiede il SETTORE difesa 'in generale', mai un titolo singolo nominato -> solo mercati-generale e' decidibile dal messaggio; quotazione-titolo nello skill_attese originale serve al cancello 3 (tool fin_mercati va bene comunque), non al cancello 2.",
+  "escluse: nessuna in questo dataset (tutte le altre operazioni sono decidibili dal solo messaggio).",
+  "Meta' dei messaggi scritti: dataset nuovo, nessun messaggio porta il campo meta: la meta' la decide sha256(id) mod 100.",
+  "27 set (LEAD): etichette riallineate ai nomi veri delle skill come nel file di operazioni del repository."
+ ],
+ "mappa_oro": {
+  "quotazione-titolo": "quotazione-titolo",
+  "confronto-titoli": "quotazione-titolo",
+  "conti-su-quotazioni": "conti-su-quotazioni",
+  "panorama-mercati": "mercati-generale",
+  "notizie-azienda": "notizie-soggetto",
+  "appalti-difesa": "appalti-difesa",
+  "insider-mspr": "insider-difesa",
+  "archivio-storico": "archivio-storico",
+  "ricerca-web-fuori-feed": "ricerca-web-fuori-feed",
+  "mappa-mostra": "mappa-mostra",
+  "insider-difesa": "insider-difesa",
+  "mercati-generale": "mercati-generale",
+  "osint/notizie-soggetto": "notizie-soggetto",
+  "osint/mappa-mostra": "mappa-mostra",
+  "osint/ricerca-web-fuori-feed": "ricerca-web-fuori-feed"
+ },
+ "etichette_extra": [
+  "chiacchiera",
+  "calcolo",
+  "conoscenza",
+  "meteo",
+  "promemoria",
+  "traduzione",
+  "mappa-mostra"
+ ],
+ "oro_messaggio": {
+  "F15": [
+   "appalti-difesa",
+   "mappa-mostra"
+  ],
+  "F16": [
+   "appalti-difesa",
+   "mappa-mostra"
+  ],
+  "F23": [
+   "mercati-generale"
+  ]
+ },
+ "messaggi": [
+  {
+   "id": "N01",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Ciao Vergilius, tutto bene?"
+  },
+  {
+   "id": "N02",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Perfetto, grazie mille!"
+  },
+  {
+   "id": "N03",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buongiorno, ci sei?"
+  },
+  {
+   "id": "N04",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa 27 per 14?"
+  },
+  {
+   "id": "N05",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto costerebbero 3 caffe' a 1,20 euro l'uno?"
+  },
+  {
+   "id": "N06",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Convertimi 50 dollari in euro al cambio di 0,91."
+  },
+  {
+   "id": "N07",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la capitale del Portogallo?"
+  },
+  {
+   "id": "N08",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che differenza c'e' tra clima e meteo?"
+  },
+  {
+   "id": "N09",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Chi ha scritto la Divina Commedia?"
+  },
+  {
+   "id": "N10",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fa oggi a Torino?"
+  },
+  {
+   "id": "N11",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Piovera' domani a Napoli?"
+  },
+  {
+   "id": "N12",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di chiamare il dentista venerdi'."
+  },
+  {
+   "id": "N13",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami tra un'ora di controllare la posta."
+  },
+  {
+   "id": "N14",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si dice 'buongiorno' in giapponese?"
+  },
+  {
+   "id": "N15",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Traducimi 'buonasera' in tedesco."
+  },
+  {
+   "id": "N16",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Raccontami una barzelletta."
+  },
+  {
+   "id": "N17",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Come ti chiami?"
+  },
+  {
+   "id": "N18",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Sei un'intelligenza artificiale?"
+  },
+  {
+   "id": "N19",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanti giorni mancano a Natale?"
+  },
+  {
+   "id": "N20",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che cos'e' il fuso orario UTC?"
+  },
+  {
+   "id": "N21",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la lingua ufficiale del Brasile?"
+  },
+  {
+   "id": "N22",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Fa freddo oggi fuori?"
+  },
+  {
+   "id": "N23",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Segnami un promemoria per pagare l'affitto il 27."
+  },
+  {
+   "id": "N24",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buonasera, come procede la giornata?"
+  },
+  {
+   "id": "N25",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa la radice quadrata di 225?"
+  },
+  {
+   "id": "N26",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Cos'e' un numero primo?"
+  },
+  {
+   "id": "N27",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Grazie per l'aiuto di prima."
+  },
+  {
+   "id": "N28",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di rinnovare il passaporto il mese prossimo."
+  },
+  {
+   "id": "N29",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fara' nel weekend?"
+  },
+  {
+   "id": "N30",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si scrive 'grazie' in russo?"
+  },
+  {
+   "id": "N31",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Mi consigli un buon libro di economia da leggere?"
+  },
+  {
+   "id": "N32",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Che film mi consigli stasera?"
+  },
+  {
+   "id": "N33",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa il 20% di 350?"
+  },
+  {
+   "id": "N34",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la valuta ufficiale del Giappone?"
+  },
+  {
+   "id": "N35",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di pagare la rata del mutuo il 5 del mese."
+  },
+  {
+   "id": "N36",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si dice 'investimento' in francese?"
+  },
+  {
+   "id": "N37",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fa oggi a Milano?"
+  },
+  {
+   "id": "N38",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Va bene, grazie per oggi."
+  },
+  {
+   "id": "D01",
+   "etichette": [
+    "quotazione-titolo",
+    "osint/notizie-soggetto"
+   ],
+   "testo": "Come sta andando Leonardo in borsa, e ci sono notizie recenti che lo riguardano?"
+  },
+  {
+   "id": "D02",
+   "etichette": [
+    "appalti-difesa",
+    "insider-difesa"
+   ],
+   "testo": "Quali contratti ha vinto di recente Northrop Grumman, e cosa dice il suo MSPR ultimamente?"
+  },
+  {
+   "id": "D03",
+   "etichette": [
+    "mercati-generale",
+    "archivio-storico"
+   ],
+   "testo": "Come vanno i mercati in generale oggi, e cosa e' successo di rilevante il mese scorso a RTX?"
+  },
+  {
+   "id": "D04",
+   "etichette": [
+    "appalti-difesa",
+    "mappa-mostra"
+   ],
+   "testo": "Trovami gli appalti recenti di Lockheed Martin e mostrameli sulla mappa."
+  },
+  {
+   "id": "D05",
+   "etichette": [
+    "osint/notizie-soggetto",
+    "quotazione-titolo"
+   ],
+   "testo": "Novita' su BAE Systems, e quanto vale adesso la sua azione?"
+  },
+  {
+   "id": "D06",
+   "etichette": [
+    "osint/ricerca-web-fuori-feed",
+    "quotazione-titolo"
+   ],
+   "testo": "Chi e' l'attuale CFO di Palantir, e come sta andando il titolo in borsa?"
+  },
+  {
+   "id": "D07",
+   "etichette": [
+    "quotazione-titolo",
+    "appalti-difesa"
+   ],
+   "testo": "Confrontami Boeing e Airbus in borsa, e trovami gli appalti recenti vinti da Boeing."
+  },
+  {
+   "id": "D08",
+   "etichette": [
+    "archivio-storico",
+    "insider-difesa"
+   ],
+   "testo": "Rispetto al mese scorso, cosa e' successo a Thales, e ci sono movimenti insider recenti?"
+  },
+  {
+   "id": "D09",
+   "etichette": [
+    "conti-su-quotazioni",
+    "insider-difesa"
+   ],
+   "testo": "Ho 60 azioni RTX comprate a 95 dollari, ora quotano 101: quanto ho guadagnato, e cosa dice l'MSPR di RTX ultimamente?"
+  },
+  {
+   "id": "D10",
+   "etichette": [
+    "osint/notizie-soggetto",
+    "quotazione-titolo"
+   ],
+   "testo": "Quali sono le ultime notizie su General Dynamics, e quanto vale oggi la sua azione?"
+  },
+  {
+   "id": "D11",
+   "etichette": [
+    "archivio-storico",
+    "insider-difesa"
+   ],
+   "testo": "Ci sono stati picchi di prezzo per NOC nell'ultimo mese, e cosa dice il suo MSPR adesso?"
+  },
+  {
+   "id": "D12",
+   "etichette": [
+    "mercati-generale",
+    "quotazione-titolo"
+   ],
+   "testo": "Come sta andando oggi il settore difesa in generale, e quanto vale nello specifico l'azione Lockheed Martin?"
+  },
+  {
+   "id": "D13",
+   "etichette": [
+    "appalti-difesa",
+    "osint/ricerca-web-fuori-feed"
+   ],
+   "testo": "Trovami gli appalti vinti da Boeing di recente, e chi e' l'attuale CEO dell'azienda?"
+  },
+  {
+   "id": "D14",
+   "etichette": [
+    "mappa-mostra",
+    "appalti-difesa"
+   ],
+   "testo": "Sulla mappa mostrami i contratti recenti di RTX, e dimmi anche quali sono."
+  },
+  {
+   "id": "D15",
+   "etichette": [
+    "osint/notizie-soggetto",
+    "insider-difesa"
+   ],
+   "testo": "Novita' su Palantir, e ci sono movimenti insider sospetti?"
+  },
+  {
+   "id": "D16",
+   "etichette": [
+    "quotazione-titolo",
+    "osint/notizie-soggetto"
+   ],
+   "testo": "Confrontami Nvidia e AMD in borsa, e cercami le notizie recenti su Nvidia."
+  },
+  {
+   "id": "U01",
+   "etichette": [
+    "mercati-generale"
+   ],
+   "testo": "Che aria tira oggi sui mercati tech?"
+  },
+  {
+   "id": "U02",
+   "etichette": [
+    "mercati-generale"
+   ],
+   "testo": "Come sta andando la difesa in generale in borsa questa settimana?"
+  },
+  {
+   "id": "U03",
+   "etichette": [
+    "osint/ricerca-web-fuori-feed"
+   ],
+   "testo": "Chi e' l'attuale presidente del consiglio di amministrazione di Airbus?"
+  },
+  {
+   "id": "U04",
+   "etichette": [
+    "mappa-mostra"
+   ],
+   "testo": "Centra la mappa sugli appalti in corso in Europa."
+  },
+  {
+   "id": "U05",
+   "etichette": [
+    "mappa-mostra"
+   ],
+   "testo": "Nascondi dalla mappa tutto tranne i contratti recenti."
+  },
+  {
+   "id": "U06",
+   "etichette": [
+    "osint/notizie-soggetto"
+   ],
+   "testo": "Cosa si dice ultimamente su Leonardo SpA?"
+  },
+  {
+   "id": "U07",
+   "etichette": [
+    "insider-difesa"
+   ],
+   "testo": "Ci sono vendite sospette da parte dei dirigenti di GD?"
+  },
+  {
+   "id": "U08",
+   "etichette": [
+    "archivio-storico"
+   ],
+   "testo": "Cosa era successo al titolo BA due settimane fa?"
+  },
+  {
+   "id": "U09",
+   "etichette": [
+    "appalti-difesa"
+   ],
+   "testo": "Quali commesse militari recenti ha preso Raytheon (RTX)?"
+  },
+  {
+   "id": "U10",
+   "etichette": [
+    "quotazione-titolo"
+   ],
+   "testo": "Quanto vale adesso Microsoft in borsa?"
+  },
+  {
+   "id": "U11",
+   "etichette": [
+    "conti-su-quotazioni"
+   ],
+   "testo": "Se ho comprato 80 azioni a 12,50 euro e ora valgono 15,30, quanto ho guadagnato in totale?"
+  },
+  {
+   "id": "U12",
+   "etichette": [
+    "conti-su-quotazioni"
+   ],
+   "testo": "Convertimi 3200 euro in dollari al cambio di 1,09."
+  },
+  {
+   "id": "U13",
+   "etichette": [
+    "quotazione-titolo"
+   ],
+   "testo": "Come sta quotando Tesla in questo momento?"
+  },
+  {
+   "id": "U14",
+   "etichette": [
+    "osint/ricerca-web-fuori-feed"
+   ],
+   "testo": "Cosa produce esattamente l'azienda Leidos?"
+  },
+  {
+   "id": "U15",
+   "etichette": [
+    "osint/notizie-soggetto"
+   ],
+   "testo": "Novita' recenti riguardo la Rheinmetall?"
+  },
+  {
+   "id": "U16",
+   "etichette": [
+    "insider-difesa"
+   ],
+   "testo": "Cosa dice l'ultimo report MSPR su PLTR?"
+  },
+  {
+   "id": "U17",
+   "etichette": [
+    "mercati-generale"
+   ],
+   "testo": "Le criptovalute come stanno andando oggi?"
+  },
+  {
+   "id": "U18",
+   "etichette": [
+    "archivio-storico"
+   ],
+   "testo": "Ci sono stati eventi finanziari rilevanti su GD tre settimane fa?"
+  },
+  {
+   "id": "U19",
+   "etichette": [
+    "appalti-difesa"
+   ],
+   "testo": "Trovami gli appalti della difesa vinti da General Dynamics negli ultimi mesi."
+  },
+  {
+   "id": "U20",
+   "etichette": [
+    "mappa-mostra"
+   ],
+   "testo": "Evidenziami sulla mappa solo gli appalti attivi, il resto nascondilo."
+  }
+ ]
+}

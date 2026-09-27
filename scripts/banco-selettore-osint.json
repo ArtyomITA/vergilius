@@ -1,0 +1,529 @@
+{
+ "versione": 1,
+ "creato": "2026-09-27",
+ "autore": "DATI, stanza 6 (cancello 2 del dominio osint, ondata 2)",
+ "dominio": "osint",
+ "modi": {
+  "osint": true
+ },
+ "operazioni": "operazioni-osint.json",
+ "note": [
+  "Voci = ogni operazione di operazioni-osint.json con domanda e domanda_alt (etichette = skill_attese; ruolo decide la meta') + i messaggi scritti qui sotto, meno le voci in escluse. skill_attese usa i nomi di famiglia scelti da COLLAUDATORE: 'entita-cerca' -> skill 'cerca-entita', 'satellite-radar' -> skill 'satellite-e-radar', 'sorveglianza' -> skill 'sorveglianza-attiva'; le altre coincidono col nome della skill.",
+  "Oro = mappa_oro[etichetta]: nome della skill di D:\\assistenteeee\\biblioteca-skill\\osint, 14 skill mappate 1:1. BUG TROVATO col dry-run: ricerca-web-fuori-feed nella biblioteca vera ha tools:[osint_web, osint_notizie, web_search, web_fetch]; con web_search/web_fetch nel campo tools non e' MAI candidata dal selettore nel dominio osint (candidata() richiede tutti i tools dentro il paniere forzato del modo Intelligence, che non include web_search/web_fetch: 23 strumenti, 18 osint_*/fin_mercati + 4 sempre disponibili). Il passo 'senza profilo' della sua Procedure (che usa web_search/web_fetch) vale solo fuori da Intelligence/Financial, quindi mai in questo dominio: questo banco usa --skill-dir D:\\vergilius-lab\\biblioteca-staging\\osint, dove la copia locale ha tools:[osint_web, osint_notizie] (stesso nome = sostituisce la biblioteca per il dry-run). Fix da portare in repo: vedi Pitfalls di quella SKILL.md.",
+  "ORO DAL SOLO MESSAGGIO (il selettore vede solo il messaggio, non gli strumenti dell'operazione): una skill e' d'oro se il messaggio contiene la situazione della sua description. area-cosa-vola: cosa vola/naviga adesso su un'AREA (mare, stretto, paese, citta'), aerei o navi anche militari, ma senza chiedere un quadro 'situazione militare'. militare-zona: il messaggio nomina esplicitamente la situazione MILITARE di un'area (forze, allarmi, rischio futuro), non solo traffico aereo/navale. luogo-cosa-succede: 'cosa succede/sta succedendo' in o vicino un luogo, senza la parola militare. notizie-soggetto: notizie/novita' su un'azienda, persona o organizzazione nominata (mai su un luogo). rischio-paese: rischio geopolitico PREVISIONALE o classifica di regioni, mai un incidente in corso. cyber-minacce: malware, vulnerabilita' sfruttate, rischio informatico di un paese (parola 'cyber'/'informatic'/'malware'/'botnet'/'vulnerabilita''). recon-tecnico: indagine tecnica su un IP, dominio, CVE o sanzione GIA' nominato. mappa-mostra: azione sulla visualizzazione della mappa (mostra, centra, evidenzia, nascondi livelli). storico-mappa: stato PASSATO della mappa, snapshot/scatto/replay. cerca-entita: trovare la posizione o la scheda di un aereo/nave/persona/azienda NOMINATI. satellite-e-radar: analisi satellitare o radar SAR su un punto (incendio, passaggi, anomalia). sorveglianza-attiva: 'avvisami se'/'tieni d'occhio' un'entita' o un'area, sorveglianza continuativa. radio-sigint: scanner radio/SDR/frequenza/datalink vicino a un punto. ricerca-web-fuori-feed: una domanda di sfondo (chi e', cosa fa, background) che nessun feed live copre.",
+  "oro_messaggio: nessuno in questo dataset (tutte le operazioni sono decidibili dal solo messaggio con skill_attese cosi' come scritto da COLLAUDATORE, salvo O05 in escluse).",
+  "escluse: O05 ('cosa succede nel mondo in generale' / 'classifica di quello che conta di piu' nel mondo') e' ambigua dal solo messaggio: 'nel mondo' non e' 'un luogo' della description di luogo-cosa-succede, e domanda_alt usa la parola 'classifica' che e' anche il segnale testuale di rischio-paese. Skill_attese (luogo-cosa-succede, dedotto dalla tabella di instradamento vera) resta valido per il cancello 3, ma il cancello 2 non puo' deciderlo dal solo testo.",
+  "Meta' dei messaggi scritti: dataset nuovo, nessun messaggio porta il campo meta (tutti nuovi): la meta' la decide sha256(id) mod 100 (>=50 taratura, <50 verifica), stabile per costruzione.",
+  "27 set (LEAD): etichette riallineate ai nomi veri delle skill come nel file di operazioni del repository."
+ ],
+ "mappa_oro": {
+  "area-cosa-vola": "area-cosa-vola",
+  "luogo-cosa-succede": "luogo-cosa-succede",
+  "notizie-soggetto": "notizie-soggetto",
+  "militare-zona": "militare-zona",
+  "rischio-paese": "rischio-paese",
+  "mappa-mostra": "mappa-mostra",
+  "entita-cerca": "cerca-entita",
+  "cyber-minacce": "cyber-minacce",
+  "satellite-radar": "satellite-e-radar",
+  "storico-mappa": "storico-mappa",
+  "sorveglianza": "sorveglianza-attiva",
+  "radio-sigint": "radio-sigint",
+  "recon-tecnico": "recon-tecnico",
+  "ricerca-web-fuori-feed": "ricerca-web-fuori-feed",
+  "cerca-entita": "cerca-entita",
+  "satellite-e-radar": "satellite-e-radar",
+  "sorveglianza-attiva": "sorveglianza-attiva"
+ },
+ "etichette_extra": [
+  "chiacchiera",
+  "calcolo",
+  "conoscenza",
+  "meteo",
+  "promemoria",
+  "traduzione"
+ ],
+ "escluse": {
+  "O05": "'cosa succede nel mondo in generale' / 'classifica di quello che conta di piu' nel mondo': 'nel mondo' non e' un luogo (luogo-cosa-succede), 'classifica' e' anche il segnale di rischio-paese; non decidibile dal solo messaggio."
+ },
+ "messaggi": [
+  {
+   "id": "N01",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Ciao Vergilius, tutto bene?"
+  },
+  {
+   "id": "N02",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Perfetto, grazie mille!"
+  },
+  {
+   "id": "N03",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buongiorno, ci sei?"
+  },
+  {
+   "id": "N04",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa 27 per 14?"
+  },
+  {
+   "id": "N05",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto costerebbero 3 caffe' a 1,20 euro l'uno?"
+  },
+  {
+   "id": "N06",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Convertimi 50 dollari in euro al cambio di 0,91."
+  },
+  {
+   "id": "N07",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la capitale del Portogallo?"
+  },
+  {
+   "id": "N08",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che differenza c'e' tra clima e meteo?"
+  },
+  {
+   "id": "N09",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Chi ha scritto la Divina Commedia?"
+  },
+  {
+   "id": "N10",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fa oggi a Torino?"
+  },
+  {
+   "id": "N11",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Piovera' domani a Napoli?"
+  },
+  {
+   "id": "N12",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di chiamare il dentista venerdi'."
+  },
+  {
+   "id": "N13",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami tra un'ora di controllare la posta."
+  },
+  {
+   "id": "N14",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si dice 'buongiorno' in giapponese?"
+  },
+  {
+   "id": "N15",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Traducimi 'buonasera' in tedesco."
+  },
+  {
+   "id": "N16",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Raccontami una barzelletta."
+  },
+  {
+   "id": "N17",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Come ti chiami?"
+  },
+  {
+   "id": "N18",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Sei un'intelligenza artificiale?"
+  },
+  {
+   "id": "N19",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanti giorni mancano a Natale?"
+  },
+  {
+   "id": "N20",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che cos'e' il fuso orario UTC?"
+  },
+  {
+   "id": "N21",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la lingua ufficiale del Brasile?"
+  },
+  {
+   "id": "N22",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Fa freddo oggi fuori?"
+  },
+  {
+   "id": "N23",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Segnami un promemoria per pagare l'affitto il 27."
+  },
+  {
+   "id": "N24",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buonasera, come procede la giornata?"
+  },
+  {
+   "id": "N25",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa la radice quadrata di 225?"
+  },
+  {
+   "id": "N26",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Cos'e' un numero primo?"
+  },
+  {
+   "id": "N27",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Grazie per l'aiuto di prima."
+  },
+  {
+   "id": "N28",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di rinnovare il passaporto il mese prossimo."
+  },
+  {
+   "id": "N29",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fara' nel weekend?"
+  },
+  {
+   "id": "N30",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si scrive 'grazie' in russo?"
+  },
+  {
+   "id": "D01",
+   "etichette": [
+    "area-cosa-vola",
+    "mappa-mostra"
+   ],
+   "testo": "Cosa vola sopra il Mar Rosso adesso, e mostramelo anche sulla mappa?"
+  },
+  {
+   "id": "D02",
+   "etichette": [
+    "luogo-cosa-succede",
+    "mappa-mostra"
+   ],
+   "testo": "Cosa succede vicino a Tallinn in queste ore, e falla vedere sulla mappa centrata li'?"
+  },
+  {
+   "id": "D03",
+   "etichette": [
+    "militare-zona",
+    "mappa-mostra"
+   ],
+   "testo": "Qual e' la situazione militare in Romania, ed evidenziami sulla mappa le unita' navali?"
+  },
+  {
+   "id": "D04",
+   "etichette": [
+    "notizie-soggetto",
+    "rischio-paese"
+   ],
+   "testo": "Cercami le notizie recenti su Raytheon e dimmi anche se il rischio geopolitico della regione sta salendo."
+  },
+  {
+   "id": "D05",
+   "etichette": [
+    "cyber-minacce",
+    "recon-tecnico"
+   ],
+   "testo": "Ci sono minacce cyber legate a questo dominio, e fammi anche un controllo tecnico whois sull'IP che lo ospita?"
+  },
+  {
+   "id": "D06",
+   "etichette": [
+    "satellite-e-radar",
+    "mappa-mostra"
+   ],
+   "testo": "C'e' un incendio rilevabile dal satellite vicino a Smirne, e mostramelo sulla mappa?"
+  },
+  {
+   "id": "D07",
+   "etichette": [
+    "sorveglianza-attiva",
+    "mappa-mostra"
+   ],
+   "testo": "Tieni d'occhio la nave che sta uscendo dal porto di Odessa, e centrami la mappa su di lei."
+  },
+  {
+   "id": "D08",
+   "etichette": [
+    "cerca-entita",
+    "mappa-mostra"
+   ],
+   "testo": "Dov'e' adesso lo yacht Solaris, e mostramelo sulla mappa?"
+  },
+  {
+   "id": "D09",
+   "etichette": [
+    "storico-mappa",
+    "mappa-mostra"
+   ],
+   "testo": "Com'era la situazione sulla mappa tre ore fa, e centrala di nuovo su Kaliningrad adesso?"
+  },
+  {
+   "id": "D10",
+   "etichette": [
+    "rischio-paese",
+    "militare-zona"
+   ],
+   "testo": "Quanto sta salendo il rischio nel Corno d'Africa, e qual e' la situazione militare li' in questo momento?"
+  },
+  {
+   "id": "D11",
+   "etichette": [
+    "radio-sigint",
+    "recon-tecnico"
+   ],
+   "testo": "C'e' uno scanner radio ascoltabile vicino a Tirana, e fammi un controllo tecnico sul dominio del sito che lo trasmette?"
+  },
+  {
+   "id": "D12",
+   "etichette": [
+    "area-cosa-vola",
+    "sorveglianza-attiva"
+   ],
+   "testo": "Cosa vola sopra lo Stretto di Taiwan adesso, e avvisami se qualcosa decolla da li' nelle prossime ore?"
+  },
+  {
+   "id": "D13",
+   "etichette": [
+    "luogo-cosa-succede",
+    "notizie-soggetto"
+   ],
+   "testo": "Cosa succede vicino a Kherson adesso, e cercami anche le notizie recenti sull'azienda Antonov?"
+  },
+  {
+   "id": "D14",
+   "etichette": [
+    "cerca-entita",
+    "notizie-soggetto"
+   ],
+   "testo": "Trovami dove si trova ora la nave Ever Given, e cercami le notizie recenti che la riguardano."
+  },
+  {
+   "id": "D15",
+   "etichette": [
+    "satellite-e-radar",
+    "militare-zona"
+   ],
+   "testo": "C'e' un'anomalia rilevabile dal radar vicino allo Stretto di Hormuz, e qual e' la situazione militare in quella zona?"
+  },
+  {
+   "id": "D16",
+   "etichette": [
+    "satellite-e-radar",
+    "area-cosa-vola"
+   ],
+   "testo": "Quali satelliti passeranno sopra il Baltico nelle prossime ore, e cosa vola li' adesso?"
+  },
+  {
+   "id": "U01",
+   "etichette": [
+    "mappa-mostra"
+   ],
+   "testo": "Zooma sulla mappa sul Golfo Persico."
+  },
+  {
+   "id": "U02",
+   "etichette": [
+    "storico-mappa"
+   ],
+   "testo": "Fammi rivedere in replay lo snapshot di ieri sulla mappa."
+  },
+  {
+   "id": "U03",
+   "etichette": [
+    "cyber-minacce"
+   ],
+   "testo": "Sono state sfruttate vulnerabilita' informatiche di recente su larga scala?"
+  },
+  {
+   "id": "U04",
+   "etichette": [
+    "recon-tecnico"
+   ],
+   "testo": "Questo dominio e' associato a qualche sanzione o certificato sospetto?"
+  },
+  {
+   "id": "U05",
+   "etichette": [
+    "radio-sigint"
+   ],
+   "testo": "Quale frequenza radio pubblica posso ascoltare vicino a Cracovia?"
+  },
+  {
+   "id": "U06",
+   "etichette": [
+    "satellite-e-radar"
+   ],
+   "testo": "Quali satelliti sorvoleranno Taipei nelle prossime ore?"
+  },
+  {
+   "id": "U07",
+   "etichette": [
+    "sorveglianza-attiva"
+   ],
+   "testo": "Avvisami se una nave da guerra entra nel Golfo di Aden."
+  },
+  {
+   "id": "U08",
+   "etichette": [
+    "rischio-paese"
+   ],
+   "testo": "Dammi il dossier di rischio geopolitico per il Sahel occidentale."
+  },
+  {
+   "id": "U09",
+   "etichette": [
+    "militare-zona"
+   ],
+   "testo": "Qual e' la situazione militare intorno a Taiwan in questo momento?"
+  },
+  {
+   "id": "U10",
+   "etichette": [
+    "notizie-soggetto"
+   ],
+   "testo": "Ci sono novita' recenti riguardo Airbus Defence?"
+  },
+  {
+   "id": "U11",
+   "etichette": [
+    "luogo-cosa-succede"
+   ],
+   "testo": "Cosa sta succedendo adesso vicino al confine tra Armenia e Azerbaigian?"
+  },
+  {
+   "id": "U12",
+   "etichette": [
+    "area-cosa-vola"
+   ],
+   "testo": "Cosa naviga adesso nello Stretto di Malacca?"
+  },
+  {
+   "id": "U13",
+   "etichette": [
+    "cerca-entita"
+   ],
+   "testo": "Trovami la posizione attuale della portaerei USS Gerald Ford."
+  },
+  {
+   "id": "U14",
+   "etichette": [
+    "ricerca-web-fuori-feed"
+   ],
+   "testo": "Chi e' l'attuale segretario generale della NATO?"
+  },
+  {
+   "id": "U15",
+   "etichette": [
+    "mappa-mostra"
+   ],
+   "testo": "Evidenziami sulla mappa solo gli aerei militari, nascondi il resto."
+  },
+  {
+   "id": "U16",
+   "etichette": [
+    "notizie-soggetto"
+   ],
+   "testo": "Leggimi il testo del primo articolo sulle ultime notizie riguardo BAE Systems."
+  },
+  {
+   "id": "U17",
+   "etichette": [
+    "cyber-minacce"
+   ],
+   "testo": "Quanto e' a rischio informaticamente la Nigeria in questo momento?"
+  },
+  {
+   "id": "U18",
+   "etichette": [
+    "rischio-paese"
+   ],
+   "testo": "In quali regioni del mondo il rischio politico e' cresciuto di piu' questa settimana?"
+  },
+  {
+   "id": "U19",
+   "etichette": [
+    "recon-tecnico"
+   ],
+   "testo": "Controllami questa CVE, e' grave?"
+  },
+  {
+   "id": "U20",
+   "etichette": [
+    "militare-zona"
+   ],
+   "testo": "Fammi un quadro militare completo del Mar Cinese Meridionale."
+  }
+ ]
+}

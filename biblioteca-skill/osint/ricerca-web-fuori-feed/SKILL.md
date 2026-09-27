@@ -1,10 +1,10 @@
 ---
 name: ricerca-web-fuori-feed
 description: "Ricerca sul web aperto quando i feed della piattaforma non sanno rispondere."
-version: 1.0.0
+version: 1.0.1
 category: osint
 tags: [web, internet, online, biografia, wikipedia, sito, background]
-tools: [osint_web, osint_notizie, web_search, web_fetch]
+tools: [osint_web, osint_notizie]
 status: published
 confidence: 0.8
 source: user
@@ -17,9 +17,8 @@ owner: admin
 ## Procedure
 1. In Intelligence or Financial profile: osint_web {"query":"<3-6 English keywords>","quanti":5}; add "recenti":"week" for recent facts.
 2. To read one result in full: osint_notizie {"url":"<url from step 1>"}.
-3. Without a profile: web_search {"query":"<keywords>","time_filter":"week"}, then web_fetch {"url":"<one url>"}.
-4. Fallback: zero results -> one retry with simpler English keywords.
-5. Check: say the source is the open web and name the site; if still nothing, say the web does not cover it.
+3. Fallback: zero results -> one retry with simpler English keywords.
+4. Check: say the source is the open web and name the site; if still nothing, say the web does not cover it.
 
 ## Pitfalls
 - Never for live feeds already covered by another skill (flights, ships, alerts, prices).

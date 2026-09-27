@@ -57,3 +57,14 @@ approvano una per una e il modello non se le costruisce: entrano solo da qui, do
 ## Prove offline degli strumenti
 `odysseus\venv\Scripts\python.exe scripts\prova-banchi-skill-offline.py` (nessuna rete, nessuna GPU, mai
 `odysseus\data`: cartelle temporanee).
+
+## Famiglie e comandi del cancello 2 (27 set 2026)
+| famiglia | skill | comando (dalla radice) |
+|---|---|---|
+| browser | 3 | `odysseus\venv\Scripts\python.exe scripts\banco-selettore-skill.py --famiglia browser` |
+| osint (mappa, notizie, zone) | 14 | `... --famiglia osint` |
+| finanza | 6 | `... --famiglia finanza --skill-dir biblioteca-skill\osint` (i dati valgono coi profili Intelligence e Financial accesi insieme: notizie, mappa e web vengono dalle skill osint) |
+| pc | 8 | `... --famiglia pc --skill-dir biblioteca-skill\file` (le skill dei file sono sempre candidate, come in produzione) |
+| file | 5 | valutate dentro la famiglia pc |
+Gli schemi di Windows-MCP per il cancello 1 vengono da `scripts\schemi-windows-mcp.json` (fotografia di list_tools sul server
+vero, da rifare quando si aggiorna Windows-MCP).

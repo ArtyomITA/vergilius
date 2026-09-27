@@ -38,6 +38,15 @@ _carica("src.shadowbroker.schemi", "OSINT_TOOL_SCHEMAS")
 _carica("src.shadowbroker.schemi", "FINANCE_TOOL_SCHEMAS")
 _carica("src.agent_tools.calc_tools", "CALC_TOOL_SCHEMAS")
 _carica("src.tool_schemas", "FUNCTION_TOOL_SCHEMAS")
+# Windows-MCP gira in un suo processo (Python 3.14, altro venv): i suoi schemi non si importano. Si leggono dalla fotografia
+# presa con list_tools sul server vero (scripts/schemi-windows-mcp.json; rifarla quando si aggiorna Windows-MCP).
+try:
+    _foto = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "schemi-windows-mcp.json"), encoding="utf-8"))
+    for s in _foto.get("strumenti", []):
+        f = s.get("function", s)
+        SCHEMI.setdefault(f["name"], f.get("parameters") or {})
+except Exception as exc:  # fotografia assente: lo si dice, non si inventa
+    print(f"[avviso] schemi di Windows-MCP non caricati: {exc!r}")
 NOMI = set(SCHEMI)
 PREFISSI_VIETATI = ("browser", "osint", "fin-", "fin_", "web", "manage", "calcola", "mcp")
 

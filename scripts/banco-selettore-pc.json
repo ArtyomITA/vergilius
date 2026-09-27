@@ -1,0 +1,787 @@
+{
+ "versione": 1,
+ "creato": "2026-09-27",
+ "autore": "DATI, stanza 6 (cancello 2 del dominio pc, ondata 2)",
+ "dominio": "pc",
+ "modi": {
+  "vista": true,
+  "computer": true
+ },
+ "operazioni": "operazioni-pc.json",
+ "note": [
+  "Il formato del banco accetta UN solo file 'operazioni': qui e' operazioni-pc.json (24 op). Le 20 operazioni di operazioni-file.json (dominio 'file', nessun modulo speciale, sempre ammesso in DOMINI_SEMPRE insieme a pc) entrano come MESSAGGI scritti a mano sotto (stesso domanda/domanda_alt, prefisso FF, gruppo condiviso fra -d e -a cosi' la meta' resta stabile per coppia come nelle operazioni vere), meno F05 in escluse. Cosi' un solo banco copre pc+file.",
+  "paniere_forzato(modi={vista:true, computer:true}) ritorna None (banco-selettore-skill.py: 'gli strumenti MCP di Windows esistono solo a stack acceso'): candidata() qui NON filtra per nome di tool, quindi i nomi dichiarati nelle SKILL.md di staging (App, Click, Type, WaitFor, Snapshot, Clipboard, FileSystem, vista_schermo, vista_trova, Shortcut) passano senza il problema di prefisso 'mcp__windows__' visto nei log reali: nessun rischio del tipo 'ricerca-web-fuori-feed' qui.",
+  "Comando: --famiglia pc --senza-biblioteca --skill-dir D:\\vergilius-lab\\biblioteca-staging\\pc --skill-dir D:\\vergilius-lab\\biblioteca-staging\\file (biblioteca-skill\\pc non esiste ancora nel repository: tutte le 13 skill sono in staging).",
+  "Nomi di famiglia -> skill (da @PC, 27 set): 'calcolatrice-blocco-note-esplora' -> skill 'note-calcolatrice-esplora' (rinominata). 'finestra-vietata' (pc) non ha skill propria: skill_attese punta gia' a 'scrivi-campo-giusto' nelle operazioni (la guardia si insegna li'). 'percorso-vietato' e 'fuori-area-consentita' (file) non hanno skill propria: skill_attese punta gia' a 'leggi-file'. 'negativa' (pc e file) resta senza mappa.",
+  "ORO DAL SOLO MESSAGGIO: apri-passa-app: aprire o passare a un programma DIVERSO da Calcolatrice/Blocco note/Esplora file (description aggiornata da @PC il 27 set, dopo l'overlap trovato: vedi sotto). note-calcolatrice-esplora: aprire Calcolatrice, Blocco note o Esplora file, anche solo per portarla in primo piano, per un compito diretto. guarda-trova-elemento: capire cosa c'e' sullo schermo o trovare le coordinate di un elemento PRIMA di agire, senza ancora scrivere/cliccare. scrivi-campo-giusto: scrivere testo in un campo/finestra precisa (incluso il rifiuto su finestre vietate). chiudi-dialogo-senza-perdere: un dialogo di conferma/salvataggio e quale pulsante scegliere. aspetta-waitfor: aspettare che compaia qualcosa prima di continuare. copia-incolla: copiare/leggere/incollare dagli appunti. file-desktop: vedere/leggere i file del Desktop dal lato del controllo PC (FileSystem), senza nominare un'app. leggi-file: leggere il contenuto (tutto o un intervallo) di un file nominato. elenca-cartella: vedere cosa c'e' dentro una cartella nominata. trova-file-per-nome: trovare file per NOME o ESTENSIONE dentro una cartella, senza aprirli. cerca-testo-in-file: cercare una parola/stringa dentro i file di una cartella. scrivi-o-modifica-file: creare un file, sostituirne il contenuto, o cambiare una parte precisa.",
+  "OVERLAP RISOLTO (cancello 2, 27 set): la prima description di apri-passa-app copriva anche l'apertura nuda di Blocco note/Calcolatrice/Esplora file, sovrapposta a note-calcolatrice-esplora ('Apri il Blocco note.' era decidibile per entrambe). @PC ha corretto la description in 'diverso da Calcolatrice, Blocco note o Esplora file'. Di conseguenza P01 ('Apri il Blocco note.'), P02 ('Passa alla Calcolatrice se e' gia' aperta, altrimenti aprila.') e P13 ('Apri la Calcolatrice.') di operazioni-pc.json hanno skill_attese=['apri-passa-app'] ORMAI STALE (scritto prima della description finale): riscritte con oro_messaggio in ['calcolatrice-blocco-note-esplora'] (nome di famiglia, mappa_oro lo traduce in note-calcolatrice-esplora). P03 ('Apri Gestione dispositivi.', fuori dalla terna) resta apri-passa-app senza bisogno di override.",
+  "escluse: FF05 (F05 di operazioni-file.json, 'quanti file .pdf ci sono nella cartella X': 'per estensione' e' anche il segnale testuale esplicito di trova-file-per-nome, ambiguo con elenca-cartella dal solo messaggio).",
+  "Meta' dei messaggi scritti: dataset nuovo, nessun messaggio porta il campo meta (tranne il 'gruppo' condiviso fra -d/-a delle voci FF, che stabilizza la coppia): la meta' la decide sha256(gruppo) mod 100.",
+  "27 set (LEAD): etichette riallineate ai nomi veri delle skill come nel file di operazioni del repository."
+ ],
+ "mappa_oro": {
+  "apri-passa-app": "apri-passa-app",
+  "guarda-trova-elemento": "guarda-trova-elemento",
+  "scrivi-campo-giusto": "scrivi-campo-giusto",
+  "chiudi-dialogo-senza-perdere": "chiudi-dialogo-senza-perdere",
+  "calcolatrice-blocco-note-esplora": "note-calcolatrice-esplora",
+  "aspetta-waitfor": "aspetta-waitfor",
+  "copia-incolla": "copia-incolla",
+  "file-desktop": "file-desktop",
+  "leggi-file": "leggi-file",
+  "elenca-cartella": "elenca-cartella",
+  "trova-file-per-nome": "trova-file-per-nome",
+  "cerca-testo-in-file": "cerca-testo-in-file",
+  "scrivi-o-modifica-file": "scrivi-o-modifica-file",
+  "note-calcolatrice-esplora": "note-calcolatrice-esplora"
+ },
+ "etichette_extra": [
+  "chiacchiera",
+  "calcolo",
+  "conoscenza",
+  "meteo",
+  "promemoria",
+  "traduzione",
+  "leggi-file",
+  "elenca-cartella",
+  "trova-file-per-nome",
+  "cerca-testo-in-file",
+  "scrivi-o-modifica-file"
+ ],
+ "oro_messaggio": {
+  "P01": [
+   "note-calcolatrice-esplora"
+  ],
+  "P02": [
+   "note-calcolatrice-esplora"
+  ],
+  "P13": [
+   "note-calcolatrice-esplora"
+  ]
+ },
+ "escluse": {},
+ "messaggi": [
+  {
+   "id": "FF01d",
+   "gruppo": "FF01",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Leggi il file appunti.txt nella cartella di lavoro e dimmi cosa contiene."
+  },
+  {
+   "id": "FF01a",
+   "gruppo": "FF01",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "cosa c'e' scritto in appunti.txt?"
+  },
+  {
+   "id": "FF02d",
+   "gruppo": "FF02",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Il file registro.log e' enorme: leggimi solo le righe da 100 a 150."
+  },
+  {
+   "id": "FF02a",
+   "gruppo": "FF02",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "aprimi solo le righe 100-150 di registro.log"
+  },
+  {
+   "id": "FF03d",
+   "gruppo": "FF03",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Apri il file bilancio-q3.csv e dimmi cosa dice la prima riga."
+  },
+  {
+   "id": "FF03a",
+   "gruppo": "FF03",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "guarda la prima riga di bilancio-q3.csv"
+  },
+  {
+   "id": "FF04d",
+   "gruppo": "FF04",
+   "etichette": [
+    "elenca-cartella"
+   ],
+   "testo": "Elenca i file che ci sono dentro la cartella progetti."
+  },
+  {
+   "id": "FF04a",
+   "gruppo": "FF04",
+   "etichette": [
+    "elenca-cartella"
+   ],
+   "testo": "cosa c'e' nella cartella progetti?"
+  },
+  {
+   "id": "FF06d",
+   "gruppo": "FF06",
+   "etichette": [
+    "trova-file-per-nome"
+   ],
+   "testo": "Trova tutti i file che finiscono in .py dentro la cartella src."
+  },
+  {
+   "id": "FF06a",
+   "gruppo": "FF06",
+   "etichette": [
+    "trova-file-per-nome"
+   ],
+   "testo": "cercami i file python nella cartella src"
+  },
+  {
+   "id": "FF07d",
+   "gruppo": "FF07",
+   "etichette": [
+    "trova-file-per-nome"
+   ],
+   "testo": "Trovami il file che si chiama contratto-2026.docx, ovunque sia nella cartella di lavoro."
+  },
+  {
+   "id": "FF07a",
+   "gruppo": "FF07",
+   "etichette": [
+    "trova-file-per-nome"
+   ],
+   "testo": "cercami contratto-2026.docx dappertutto nel progetto"
+  },
+  {
+   "id": "FF08d",
+   "gruppo": "FF08",
+   "etichette": [
+    "cerca-testo-in-file"
+   ],
+   "testo": "Cerca la parola 'TODO' in tutti i file della cartella src."
+  },
+  {
+   "id": "FF08a",
+   "gruppo": "FF08",
+   "etichette": [
+    "cerca-testo-in-file"
+   ],
+   "testo": "trovami tutti i TODO dentro src"
+  },
+  {
+   "id": "FF09d",
+   "gruppo": "FF09",
+   "etichette": [
+    "cerca-testo-in-file"
+   ],
+   "testo": "Cerca la stringa 'API_KEY_PROD' dentro i file della cartella config."
+  },
+  {
+   "id": "FF09a",
+   "gruppo": "FF09",
+   "etichette": [
+    "cerca-testo-in-file"
+   ],
+   "testo": "trovami dove compare API_KEY_PROD nella cartella config"
+  },
+  {
+   "id": "FF10d",
+   "gruppo": "FF10",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Crea un nuovo file note.txt con dentro scritto 'riunione spostata a venerdi'."
+  },
+  {
+   "id": "FF10a",
+   "gruppo": "FF10",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "fammi un file note.txt che dice riunione spostata a venerdi"
+  },
+  {
+   "id": "FF11d",
+   "gruppo": "FF11",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Nel file config.txt, cambia il valore di timeout da 30 a 60."
+  },
+  {
+   "id": "FF11a",
+   "gruppo": "FF11",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "in config.txt metti il timeout a 60 invece di 30"
+  },
+  {
+   "id": "FF12d",
+   "gruppo": "FF12",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Nel file prezzi.json, sostituisci ogni 247.50 con 199.00."
+  },
+  {
+   "id": "FF12a",
+   "gruppo": "FF12",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "in prezzi.json cambia tutti i 247.50 in 199.00"
+  },
+  {
+   "id": "FF13d",
+   "gruppo": "FF13",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Il file bozza.txt esiste gia' con del testo dentro: sostituisci tutto il contenuto con 'Versione finale approvata'."
+  },
+  {
+   "id": "FF13a",
+   "gruppo": "FF13",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "in bozza.txt butta via tutto e scrivi solo 'versione finale approvata'"
+  },
+  {
+   "id": "FF14d",
+   "gruppo": "FF14",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Nel file bozza.txt aggiungi in fondo la riga 'Sessione chiusa il 30/11', senza cancellare quello che c'e' gia'."
+  },
+  {
+   "id": "FF14a",
+   "gruppo": "FF14",
+   "etichette": [
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "in bozza.txt mettimi in fondo 'sessione chiusa il 30/11' ma lascia il resto com'e'"
+  },
+  {
+   "id": "FF15d",
+   "gruppo": "FF15",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Apri il file .env nella cartella del progetto e dimmi quali chiavi contiene."
+  },
+  {
+   "id": "FF15a",
+   "gruppo": "FF15",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "leggimi il file .env e dimmi cosa c'e' scritto"
+  },
+  {
+   "id": "FF16d",
+   "gruppo": "FF16",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Leggi il file ~/.ssh/id_rsa e mostramelo."
+  },
+  {
+   "id": "FF16a",
+   "gruppo": "FF16",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "aprimi la chiave privata id_rsa e fammela vedere"
+  },
+  {
+   "id": "FF17d",
+   "gruppo": "FF17",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Leggi il file C:\\Windows\\System32\\drivers\\etc\\hosts e dimmi cosa contiene."
+  },
+  {
+   "id": "FF17a",
+   "gruppo": "FF17",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "aprimi il file hosts di sistema e dimmi cosa c'e' scritto"
+  },
+  {
+   "id": "FF18d",
+   "gruppo": "FF18",
+   "etichette": [],
+   "testo": "Quanto fa 12 per 12?"
+  },
+  {
+   "id": "FF18a",
+   "gruppo": "FF18",
+   "etichette": [],
+   "testo": "mi calcoli 12 x 12?"
+  },
+  {
+   "id": "FF19d",
+   "gruppo": "FF19",
+   "etichette": [],
+   "testo": "Perfetto, grazie mille, per ora e' tutto."
+  },
+  {
+   "id": "FF19a",
+   "gruppo": "FF19",
+   "etichette": [],
+   "testo": "ok grazie, ci sentiamo dopo"
+  },
+  {
+   "id": "FF20d",
+   "gruppo": "FF20",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Il file registro-eventi.log ha centinaia di migliaia di caratteri: dimmi cosa dice l'ultima parte, senza leggerlo tutto in una volta sola."
+  },
+  {
+   "id": "FF20a",
+   "gruppo": "FF20",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "leggimi solo la parte finale di registro-eventi.log, e' troppo lungo per leggerlo tutto"
+  },
+  {
+   "id": "N01",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Ciao Vergilius, tutto bene?"
+  },
+  {
+   "id": "N02",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Perfetto, grazie mille!"
+  },
+  {
+   "id": "N03",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buongiorno, ci sei?"
+  },
+  {
+   "id": "N04",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa 27 per 14?"
+  },
+  {
+   "id": "N05",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto costerebbero 3 caffe' a 1,20 euro l'uno?"
+  },
+  {
+   "id": "N06",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Convertimi 50 dollari in euro al cambio di 0,91."
+  },
+  {
+   "id": "N07",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la capitale del Portogallo?"
+  },
+  {
+   "id": "N08",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che differenza c'e' tra clima e meteo?"
+  },
+  {
+   "id": "N09",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Chi ha scritto la Divina Commedia?"
+  },
+  {
+   "id": "N10",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fa oggi a Torino?"
+  },
+  {
+   "id": "N11",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Piovera' domani a Napoli?"
+  },
+  {
+   "id": "N12",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di chiamare il dentista venerdi'."
+  },
+  {
+   "id": "N13",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami tra un'ora di controllare la posta."
+  },
+  {
+   "id": "N14",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si dice 'buongiorno' in giapponese?"
+  },
+  {
+   "id": "N15",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Traducimi 'buonasera' in tedesco."
+  },
+  {
+   "id": "N16",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Raccontami una barzelletta."
+  },
+  {
+   "id": "N17",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Come ti chiami?"
+  },
+  {
+   "id": "N18",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Sei un'intelligenza artificiale?"
+  },
+  {
+   "id": "N19",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanti giorni mancano a Natale?"
+  },
+  {
+   "id": "N20",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che cos'e' il fuso orario UTC?"
+  },
+  {
+   "id": "N21",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Qual e' la lingua ufficiale del Brasile?"
+  },
+  {
+   "id": "N22",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Fa freddo oggi fuori?"
+  },
+  {
+   "id": "N23",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Segnami un promemoria per pagare l'affitto il 27."
+  },
+  {
+   "id": "N24",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Buonasera, come procede la giornata?"
+  },
+  {
+   "id": "N25",
+   "etichette": [
+    "calcolo"
+   ],
+   "testo": "Quanto fa la radice quadrata di 225?"
+  },
+  {
+   "id": "N26",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Cos'e' un numero primo?"
+  },
+  {
+   "id": "N27",
+   "etichette": [
+    "chiacchiera"
+   ],
+   "testo": "Grazie per l'aiuto di prima."
+  },
+  {
+   "id": "N28",
+   "etichette": [
+    "promemoria"
+   ],
+   "testo": "Ricordami di rinnovare il passaporto il mese prossimo."
+  },
+  {
+   "id": "N29",
+   "etichette": [
+    "meteo"
+   ],
+   "testo": "Che tempo fara' nel weekend?"
+  },
+  {
+   "id": "N30",
+   "etichette": [
+    "traduzione"
+   ],
+   "testo": "Come si scrive 'grazie' in russo?"
+  },
+  {
+   "id": "N31",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Mi consigli un buon programma di grafica?"
+  },
+  {
+   "id": "N32",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Quanto pesa in GB un film in HD?"
+  },
+  {
+   "id": "N33",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Che browser mi consigli di usare?"
+  },
+  {
+   "id": "N34",
+   "etichette": [
+    "conoscenza"
+   ],
+   "testo": "Come si aggiorna Windows?"
+  },
+  {
+   "id": "D01",
+   "etichette": [
+    "apri-passa-app",
+    "aspetta-waitfor"
+   ],
+   "testo": "Apri Paint e aspetta che la finestra compaia prima di continuare."
+  },
+  {
+   "id": "D02",
+   "etichette": [
+    "guarda-trova-elemento",
+    "scrivi-campo-giusto"
+   ],
+   "testo": "Trova il pulsante 'Invia' sullo schermo e scrivimi li' dentro il messaggio 'Ricevuto'."
+  },
+  {
+   "id": "D03",
+   "etichette": [
+    "copia-incolla",
+    "scrivi-campo-giusto"
+   ],
+   "testo": "Copia il testo 'Grazie mille' negli appunti e incollalo nel campo che ho aperto."
+  },
+  {
+   "id": "D04",
+   "etichette": [
+    "note-calcolatrice-esplora",
+    "guarda-trova-elemento"
+   ],
+   "testo": "Apri Esplora file, vai nella cartella Download, e dimmi anche cosa vedi aperto sullo schermo adesso."
+  },
+  {
+   "id": "D05",
+   "etichette": [
+    "chiudi-dialogo-senza-perdere",
+    "aspetta-waitfor"
+   ],
+   "testo": "E' apparso un dialogo di conferma: chiudilo senza perdere dati, e poi aspetta che la finestra successiva compaia."
+  },
+  {
+   "id": "D06",
+   "etichette": [
+    "file-desktop",
+    "leggi-file"
+   ],
+   "testo": "Elenca i file della cartella Desktop, e leggimi il contenuto del primo file di testo che trovi."
+  },
+  {
+   "id": "D07",
+   "etichette": [
+    "trova-file-per-nome",
+    "cerca-testo-in-file"
+   ],
+   "testo": "Trova tutti i file .log nella cartella logs, e cerca la parola 'ERROR' dentro quelli che trovi."
+  },
+  {
+   "id": "D08",
+   "etichette": [
+    "leggi-file",
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Leggi il file config.txt e poi cambia il valore di timeout da 30 a 60."
+  },
+  {
+   "id": "D09",
+   "etichette": [
+    "aspetta-waitfor",
+    "scrivi-campo-giusto"
+   ],
+   "testo": "Apri il Blocco note, aspetta che compaia, e scrivici dentro 'Nota veloce'."
+  },
+  {
+   "id": "D10",
+   "etichette": [
+    "elenca-cartella",
+    "trova-file-per-nome"
+   ],
+   "testo": "Nella cartella progetti, elenca cosa c'e' dentro, e trovami tutti i file .txt al suo interno."
+  },
+  {
+   "id": "D11",
+   "etichette": [
+    "guarda-trova-elemento",
+    "copia-incolla"
+   ],
+   "testo": "Trova dove si trova esattamente il numero di telefono scritto sullo schermo, e copialo negli appunti."
+  },
+  {
+   "id": "D12",
+   "etichette": [
+    "apri-passa-app",
+    "aspetta-waitfor"
+   ],
+   "testo": "Apri Impostazioni e aspetta finche' non compare la sezione Rete."
+  },
+  {
+   "id": "D13",
+   "etichette": [
+    "scrivi-o-modifica-file",
+    "leggi-file"
+   ],
+   "testo": "Nel file note.txt cambia la riga finale, e poi leggimelo tutto per controllare."
+  },
+  {
+   "id": "D14",
+   "etichette": [
+    "trova-file-per-nome",
+    "leggi-file"
+   ],
+   "testo": "Trova il file bilancio.csv ovunque sia, e leggimi la prima riga."
+  },
+  {
+   "id": "D15",
+   "etichette": [
+    "copia-incolla",
+    "aspetta-waitfor"
+   ],
+   "testo": "Scrivi 'fatto' negli appunti, e poi aspetta che la finestra del programma compaia prima di incollarlo."
+  },
+  {
+   "id": "D16",
+   "etichette": [
+    "guarda-trova-elemento",
+    "chiudi-dialogo-senza-perdere"
+   ],
+   "testo": "Guarda cosa c'e' aperto sullo schermo, e chiudi il dialogo che vedi senza perdere dati."
+  },
+  {
+   "id": "D17",
+   "etichette": [
+    "cerca-testo-in-file",
+    "trova-file-per-nome"
+   ],
+   "testo": "Cerca la parola 'TODO' nei file della cartella src, e trovami anche tutti i file .py li' dentro."
+  },
+  {
+   "id": "D18",
+   "etichette": [
+    "elenca-cartella",
+    "scrivi-o-modifica-file"
+   ],
+   "testo": "Elenca cosa c'e' nella cartella Documenti, e scrivimi un nuovo file riepilogo.txt con l'elenco."
+  },
+  {
+   "id": "D19",
+   "etichette": [
+    "guarda-trova-elemento",
+    "aspetta-waitfor"
+   ],
+   "testo": "Trova le coordinate del pulsante 'Chiudi', ma prima aspetta che la finestra sia pronta."
+  },
+  {
+   "id": "D20",
+   "etichette": [
+    "leggi-file",
+    "cerca-testo-in-file"
+   ],
+   "testo": "Leggimi il file appunti.txt, e cerca anche la parola 'urgente' in tutta la cartella lavoro."
+  },
+  {
+   "id": "U01",
+   "etichette": [
+    "chiudi-dialogo-senza-perdere"
+   ],
+   "testo": "Chiudi il dialogo di errore senza salvare nulla."
+  },
+  {
+   "id": "U02",
+   "etichette": [
+    "trova-file-per-nome"
+   ],
+   "testo": "Nella cartella backup, trovami tutti i file .zip."
+  },
+  {
+   "id": "U03",
+   "etichette": [
+    "leggi-file"
+   ],
+   "testo": "Leggimi le righe da 1 a 20 del file manuale.txt."
+  },
+  {
+   "id": "U04",
+   "etichette": [
+    "aspetta-waitfor"
+   ],
+   "testo": "Aspetta che compaia la finestra di download completato."
+  }
+ ]
+}

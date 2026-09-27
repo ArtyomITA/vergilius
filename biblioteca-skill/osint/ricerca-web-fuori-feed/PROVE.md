@@ -11,3 +11,9 @@
 | gli esiti di osint_notizie NON contengono piu' "osint_testo" (verificato con test dedicato) | odysseus/tests/test_sb_percorsi_luoghi.py:493-502 (`test_niente_piu_osint_testo_negli_esiti`) | quindi il rischio e' solo nel testo delle regole che il modello legge, non negli esiti dei tool |
 
 Token: da misurare con verifica-skill.py.
+
+## Versione 1.0.1 (27 set 2026, stanza 6, cancello 2)
+- Tolti web_search e web_fetch da `tools:` e il passo "senza profilo". Con loro la skill non era MAI candidata nel dominio osint:
+  `candidata()` (odysseus/src/skill_selettore.py) richiede che tutti i `tools:` siano nel paniere forzato del modo Intelligence,
+  che non li contiene (provato da DATI con `scripts/banco-selettore-skill.py --famiglia osint --dry-run`: "skill mai candidata").
+  Fuori da Intelligence/Financial il selettore non usa il dominio osint, quindi quel passo non serviva mai.
