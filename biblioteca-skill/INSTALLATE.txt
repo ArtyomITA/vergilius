@@ -1,0 +1,3 @@
+# Skill della biblioteca da installare in Odysseus (una per riga, nome della cartella).
+# Una skill entra qui SOLO dopo il verdetto TIENI del banco A-B-B-A sulle operazioni di verifica
+# (scripts/banco-browser.py --ab NOME), registrato nel suo PROVE.md. Poi: scripts/installa-biblioteca.py
