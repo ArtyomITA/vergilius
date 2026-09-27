@@ -356,9 +356,14 @@ def prompt_system_one(mod: Modello, q: dict, pensiero: str, prefisso: str) -> st
     """Stessa forma della continuazione di llama.cpp (common_chat_params_init_lfm2, continue_final_message):
     generation prompt + <think> + ragionamento + </think> + contenuto."""
     base = mod.rendi(messaggi(q), add_generation_prompt=True)
-    if not base.endswith("<|im_start|>assistant\n<think>"):
-        raise SystemExit("il template non apre il turno con <think>: formato cambiato, controllare")
-    return base + pensiero + "</think>" + prefisso
+    if base.endswith("<|im_start|>assistant\n<think>"):
+        return base + pensiero + "</think>" + prefisso
+    if base.endswith("<|im_start|>assistant\n"):
+        # MiniCPM5 e simili (27 set 2026): il template apre il turno senza <think> e chiude il pensiero cosi'
+        # (forma del suo stesso template quando enable_thinking e' false o la storia ha un pensiero).
+        interno = ("\n" + pensiero.strip("\n") + "\n") if pensiero.strip() else "\n\n"
+        return base + "<think>" + interno + "</think>\n\n" + prefisso
+    raise SystemExit("il template non apre il turno assistente in un formato noto: controllare")
 
 
 def senza_bos(mod: Modello, testo: str) -> str:
@@ -375,10 +380,12 @@ def lettere_di(q: dict) -> str:
 
 # ------------------------------------------------------------------ rete (solo stdlib)
 class Server:
-    def __init__(self, base: str, modello: str, reg: Registro):
+    def __init__(self, base: str, modello: str, reg: Registro, diretto: bool = False):
         self.base = base.rstrip("/")
         self.modello = modello
-        self.up = f"{self.base}/upstream/{modello}"
+        # --diretto: un llama-server lanciato a mano (modelli candidati, 27 set 2026), senza llama-swap davanti.
+        self.diretto = diretto
+        self.up = self.base if diretto else f"{self.base}/upstream/{modello}"
         self.reg = reg
 
     def _http(self, url: str, dati=None, timeout: float = 600.0):
@@ -399,6 +406,9 @@ class Server:
             return {"_testo": testo[:300]}, dt_s
 
     def running(self):
+        if self.diretto:
+            self._http(f"{self.base}/health", timeout=10)
+            return {"running": [{"model": self.modello, "state": "ready"}]}
         return self._http(f"{self.base}/running", timeout=10)[0]
 
     def props(self):
@@ -811,6 +821,9 @@ def chiama_s1(srv: Server, mod: Modello, q: dict, args, forme_cache: dict, passa
 def chiama_ragiona(srv: Server, mod: Modello, q: dict, args, reg: Registro, posizione: str) -> dict:
     payload = {"model": srv.modello, "messages": messaggi(q), "max_tokens": args.max_tokens_ragiona,
                "id_slot": args.slot, "cache_prompt": True, "stream": False}
+    if srv.diretto:
+        # candidati col pensiero a comando (MiniCPM5): lo si accende, come LFM che pensa sempre
+        payload["chat_template_kwargs"] = {"enable_thinking": True}
     risp, lat = srv.chat(payload)
     scelta0 = (risp.get("choices") or [{}])[0]
     msg = scelta0.get("message") or {}
@@ -908,7 +921,7 @@ def dal_vivo(args, domande, sha_ds, mod: Modello) -> int:
                 if r.get("tipo") == "risposta":
                     fatti.add((r["braccio"], r["passata"], r["id"]))
         reg.riga(f"ripresa di {jsonl.name}: {len(fatti)} risposte gia' registrate")
-    srv = Server(args.base, args.modello, reg)
+    srv = Server(args.base, args.modello, reg, diretto=args.diretto)
     ordine = ordine_alternato(domande)
     if args.categoria:
         ordine = [q for q in ordine if q["categoria"] == args.categoria]
@@ -1006,6 +1019,7 @@ def main() -> int:
                     help="passate del braccio system_one, fra freddo, prefisso, ripetuta")
     ap.add_argument("--base", default="http://127.0.0.1:8012", help="indirizzo di llama-swap")
     ap.add_argument("--modello", default="lfm", help="profilo di llama-swap (mai lfm-uncensored)")
+    ap.add_argument("--diretto", action="store_true", help="--base e' un llama-server lanciato a mano, non llama-swap")
     ap.add_argument("--gguf", default=None, help="GGUF da cui leggere template e vocabolario (predefinito: config)")
     ap.add_argument("--slot", type=int, default=1, help="slot fisso del decisore (NON 3; 0 e' la chat)")
     ap.add_argument("--n-probs", type=int, default=50, help="quanti token piu' probabili chiedere al server")
