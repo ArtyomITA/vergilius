@@ -1,0 +1,607 @@
+{
+ "versione": 1,
+ "creato": "2026-09-27",
+ "autore": "COLLAUDATORE, stanza 5",
+ "dominio": "finanza",
+ "modulo": {
+  "vista_mode": "false",
+  "browser_mode": "false",
+  "computer_mode": "false",
+  "osint_mode": "false",
+  "financial_mode": "true"
+ },
+ "note": [
+  "Formato ripreso da scripts/operazioni-browser.json (stanza 3): stessa sintassi di banco-browser.py per tutti i campi di 'atteso'.",
+  "modulo: financial_mode=true fa ereditare osint_mode=true dentro chat_routes.py (righe ~1275-1276): il profilo Financial VINCE su Intelligence. Paniere Financial (bozza, tabella instradamento e chat_routes.py ~2667-2689): fin_mercati, fin_appalti, fin_insider, fin_archivio, osint_mappa, osint_notizie, osint_dettaglio, osint_web, piu' i quattro sempre presenti (calcola, manage_memory, ask_user, update_plan). NIENTE osint_militare, osint_zona, osint_geocode, osint_situazione, osint_allerte, osint_cerca, osint_recon, osint_rischio, osint_sorveglianza, osint_storico, osint_cyber, osint_radio, osint_satellite, osint_sar: tutti fuori dal paniere Financial, non solo i tre citati esplicitamente nella bozza.",
+  "campo 'sito' del formato browser omesso (nessuna pagina web sotto test); 'verifica' spiega la fonte del fatto stabile o il motivo del grounding.",
+  "campo 'grounding': true come nel file OSINT: ogni numero della risposta finale deve comparire negli esiti dei tool del turno (prezzi, MSPR, importi contratti, percentuali), altrimenti invenzione. Non serve per le operazioni di puro calcolo, dove i numeri sono dati dall'utente e il risultato e' deterministico: li' si usa testo_re sul risultato esatto.",
+  "segreto_re serve solo al controllo di contaminazione, mai a punteggio: scelto su entita' o importi mai citati in pipeline-osint-finanza.md ne' nelle description di schemi.py.",
+  "strumenti_vietati resta una regex sul NOME dello strumento. Per i divieti sui PARAMETRI (es. titolo che e' un settore, azione='livelli' invece di 'evidenzia') non esiste un campo negativo nel formato attuale: uso percorso_re in positivo sull'argomento corretto atteso e spiego il limite in 'verifica' quando il controllo automatico e' solo parziale (utile comunque per il banco del selettore e la revisione umana).",
+  "fin_appalti e fin_insider: il 'titolo' accetta SOLO RTX, LMT, NOC, GD, BA, PLTR (schemi.py + tabella parametri della bozza, 'controllato sul codice'); un altro titolo viene scartato in silenzio e l'esito torna la lista di tutti e sei, senza avviso esplicito nello schema. E' un fatto di codice stabile: usato per piu' operazioni di verifica con contractor fuori whitelist.",
+  "27 set: nomi di skill_attese allineati alle skill vere dal LEAD (entita-cerca->cerca-entita ecc.); le voci osint/... nel file finanza richiedono osint_mode acceso insieme a financial_mode per essere candidate."
+ ],
+ "operazioni": [
+  {
+   "id": "F01",
+   "famiglia": "quotazione-titolo",
+   "azioni": [
+    "fin_mercati"
+   ],
+   "verifica": "Leonardo e' l'esempio testuale della bozza skill 4 (When to Use): pubblico, sviluppo.",
+   "domanda": "Come sta andando in borsa Leonardo?",
+   "domanda_alt": "quanto vale adesso l'azione Leonardo?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "leonardo",
+    "astensione_ok": false,
+    "forma_re": "prezzo|quota|valuta|azione",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "quotazione-titolo"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F02",
+   "famiglia": "quotazione-titolo",
+   "azioni": [
+    "fin_mercati"
+   ],
+   "verifica": "AAPL/Apple e' l'esempio testuale della description dello schema fin_mercati: pubblico, sviluppo.",
+   "domanda": "Quanto vale adesso l'azione Apple?",
+   "domanda_alt": "come sta quotando AAPL in questo momento?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "apple|aapl",
+    "astensione_ok": false,
+    "forma_re": "prezzo|quota|valuta|azione",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "quotazione-titolo"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F03",
+   "famiglia": "confronto-titoli",
+   "azioni": [
+    "fin_mercati",
+    "fin_mercati"
+   ],
+   "verifica": "'confronta Nvidia e AMD' e' l'esempio testuale della bozza skill 4: pubblico, sviluppo. Una chiamata fin_mercati per titolo, nella stessa risposta.",
+   "domanda": "Confrontami Nvidia e AMD in borsa.",
+   "domanda_alt": "chi va meglio adesso fra Nvidia e AMD?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "nvidia",
+    "astensione_ok": false,
+    "forma_re": "confront|rispetto|contro|meglio|peggio",
+    "grounding": true
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "quotazione-titolo"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F04",
+   "famiglia": "conti-su-quotazioni",
+   "azioni": [
+    "calcola"
+   ],
+   "verifica": "Aritmetica esatta e deterministica, indipendente dal mercato del giorno: (3.89-3.42)*45=21.15; variazione_percento(3.42,3.89)=(3.89-3.42)/3.42*100=13.7426...%. Importi ed entita' mai citati nei materiali: segreto valido.",
+   "domanda": "Ho 45 azioni Intesa Sanpaolo comprate a 3,42 euro, ora quotano 3,89 euro: quanto ho guadagnato in euro e in percentuale?",
+   "domanda_alt": "45 azioni Intesa Sanpaolo, prezzo di carico 3,42, prezzo attuale 3,89: guadagno totale e percentuale?",
+   "atteso": {
+    "testo_re": [
+     "21[.,]15",
+     "13[.,]7"
+    ],
+    "strumenti_richiesti": [
+     "calcola"
+    ],
+    "strumenti_vietati": "^(osint_|browser_|web_search|web_fetch)",
+    "astensione_ok": false,
+    "forma_re": "\\d+[.,]\\d+\\s*%|percent",
+    "segreto_re": "21[.,]15|13[.,]7[0-9]?"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "conti-su-quotazioni"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F05",
+   "famiglia": "conti-su-quotazioni",
+   "azioni": [
+    "calcola"
+   ],
+   "verifica": "Aritmetica esatta indipendente dal mercato: 120*87,50=10500; 10500*1,08=11340. Numeri diversi da quelli della bozza skill 5 (30*25.41): sviluppo, nessun bisogno di segreto.",
+   "domanda": "Se 120 azioni valgono 87,50 euro l'una, quanto vale in totale la posizione, convertita in dollari con un cambio di 1,08?",
+   "domanda_alt": "120 azioni a 87,50 euro ciascuna, cambio euro-dollaro 1,08: valore totale in dollari?",
+   "atteso": {
+    "testo_re": [
+     "11[.,]?340|11340"
+    ],
+    "strumenti_richiesti": [
+     "calcola"
+    ],
+    "strumenti_vietati": "^(osint_|browser_|web_search|web_fetch)",
+    "astensione_ok": false,
+    "forma_re": "\\d[.,]?\\d*\\s*(dollar|usd|\\$)"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "conti-su-quotazioni"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F06",
+   "famiglia": "panorama-mercati",
+   "azioni": [
+    "fin_mercati"
+   ],
+   "verifica": "Domanda generale senza titolo: fin_mercati senza 'titolo' e' il quadro di mercato (watchlist difesa/tech/crypto + notizie + anomalia), come da description dello schema.",
+   "domanda": "Come vanno i mercati oggi in generale?",
+   "domanda_alt": "che aria tira sui mercati adesso?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "astensione_ok": false,
+    "forma_re": "mercat|listin|borsa",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "mercati-generale"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F07",
+   "famiglia": "notizie-azienda",
+   "azioni": [
+    "osint_notizie"
+   ],
+   "verifica": "Lockheed Martin: nome per esteso mai scritto cosi' nei materiali (solo il ticker LMT compare nella whitelist), ma non e' una trappola: sviluppo, luogo=osint_notizie con soggetto, mai luogo.",
+   "domanda": "Cercami le notizie recenti su Lockheed Martin.",
+   "domanda_alt": "novita' finanziarie riguardo Lockheed Martin?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_notizie"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "\"soggetto\"",
+    "astensione_ok": true,
+    "forma_re": "notizi|articol|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "osint/notizie-soggetto"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F08",
+   "famiglia": "notizie-azienda",
+   "azioni": [
+    "osint_notizie"
+   ],
+   "verifica": "Rolls-Royce Holdings non compare in nessun materiale letto: segreto valido. Controlla che 'soggetto' resti il nome dell'azienda e non finisca per errore in 'luogo' (trappola gia' nota della bozza, qui su un'entita' mai vista).",
+   "domanda": "Novita' recenti su Rolls-Royce Holdings?",
+   "domanda_alt": "cosa si dice ultimamente di Rolls-Royce Holdings?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_notizie"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "\"soggetto\"\\s*:\\s*\"[^\"]*rolls",
+    "astensione_ok": true,
+    "forma_re": "notizi|articol|nessun",
+    "grounding": true,
+    "segreto_re": "rolls[- ]royce"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "osint/notizie-soggetto"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F09",
+   "famiglia": "appalti-difesa",
+   "azioni": [
+    "fin_appalti"
+   ],
+   "verifica": "LMT e' uno dei sei ticker tracciati: sviluppo, contratto valido.",
+   "domanda": "Quali contratti militari recenti sono stati assegnati a Lockheed Martin (LMT)?",
+   "domanda_alt": "appalti della difesa vinti di recente da LMT?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_appalti"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "lmt",
+    "astensione_ok": true,
+    "forma_re": "contratt|appalt|milion|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "appalti-difesa"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F10",
+   "famiglia": "appalti-difesa",
+   "azioni": [
+    "fin_appalti"
+   ],
+   "verifica": "Airbus non e' fra i sei ticker tracciati (RTX, LMT, NOC, GD, BA, PLTR): il parametro titolo viene scartato in silenzio dal codice e l'esito torna la lista di tutti e sei, senza segnalarlo. La risposta onesta deve dirlo, non inventare contratti Airbus specifici. Nome mai citato nei materiali: segreto valido.",
+   "domanda": "Trovami gli appalti della difesa vinti da Airbus.",
+   "domanda_alt": "quali contratti militari ha preso Airbus ultimamente?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_appalti"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "airbus",
+    "astensione_ok": true,
+    "forma_re": "contratt|appalt|non (e'|è)|nessun",
+    "grounding": true,
+    "segreto_re": "airbus"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "appalti-difesa"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F11",
+   "famiglia": "insider-mspr",
+   "azioni": [
+    "fin_insider"
+   ],
+   "verifica": "Northrop Grumman (NOC) e' uno dei sei ticker tracciati: sviluppo.",
+   "domanda": "Cosa dice l'MSPR di Northrop Grumman ultimamente?",
+   "domanda_alt": "ci sono movimenti insider per Northrop Grumman (NOC)?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_insider"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "noc",
+    "astensione_ok": true,
+    "forma_re": "mspr|insider|dirigent|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "insider-difesa"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F12",
+   "famiglia": "insider-mspr",
+   "azioni": [
+    "fin_insider"
+   ],
+   "verifica": "Thales non e' fra i sei ticker tracciati: stessa trappola di F10 (scartato in silenzio, esce la lista di tutti e sei). Nome mai citato nei materiali: segreto valido.",
+   "domanda": "Ci sono movimenti insider sospetti per Thales?",
+   "domanda_alt": "cosa dice l'MSPR su Thales?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_insider"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "thales",
+    "astensione_ok": true,
+    "forma_re": "mspr|insider|non (e'|è)|nessun",
+    "grounding": true,
+    "segreto_re": "thales"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "insider-difesa"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F13",
+   "famiglia": "archivio-storico",
+   "azioni": [
+    "fin_archivio"
+   ],
+   "verifica": "'picchi' e RTX sono gia' negli esempi della description dello schema fin_archivio: pubblico, sviluppo.",
+   "domanda": "Nelle ultime due settimane ci sono stati picchi di prezzo per RTX?",
+   "domanda_alt": "RTX ha avuto movimenti di prezzo notevoli nelle ultime due settimane?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_archivio"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "rtx",
+    "astensione_ok": true,
+    "forma_re": "picc|prezz|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "archivio-storico"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F14",
+   "famiglia": "archivio-storico",
+   "azioni": [
+    "fin_archivio"
+   ],
+   "verifica": "'General Dynamics' per esteso non compare nei materiali (solo il ticker GD, dentro la whitelist): segreto valido. Finestra 'il mese scorso' -> fin_archivio, mai i tool live.",
+   "domanda": "Rispetto al mese scorso, cosa e' successo di rilevante a General Dynamics?",
+   "domanda_alt": "novita' del mese scorso su General Dynamics?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_archivio"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "gd|general dynamics",
+    "astensione_ok": true,
+    "forma_re": "success|novit|nessun",
+    "grounding": true,
+    "segreto_re": "general dynamics"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "archivio-storico"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F15",
+   "famiglia": "mappa-mostra-finanza",
+   "azioni": [
+    "fin_appalti",
+    "osint_mappa"
+   ],
+   "verifica": "Ricetta esplicita di REGOLE_FINANCE (schemi.py): dato prima, poi osint_mappa evidenzia con gli id del dato. GD e' un ticker valido: sviluppo.",
+   "domanda": "Trovami gli appalti recenti di General Dynamics e mostrameli sulla mappa.",
+   "domanda_alt": "appalti di GD, e falli vedere sulla mappa",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_appalti",
+     "osint_mappa"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "evidenzia",
+    "astensione_ok": true,
+    "forma_re": "mappa|mostr|evidenz|nessun",
+    "grounding": true
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "osint/mappa-mostra"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F16",
+   "famiglia": "mappa-mostra-finanza",
+   "azioni": [
+    "fin_appalti",
+    "osint_mappa"
+   ],
+   "verifica": "Trappola esplicita di REGOLE_FINANCE: 'nascondi tutto tranne X' in Financial si fa SEMPRE con evidenzia, mai con livelli (livelli spegnerebbe le fonti di voli/navi di cui zona/militare hanno bisogno). Boeing scelto come entita' fresca per questa prova puntuale: segreto valido. percorso_re positivo su 'evidenzia' basta a far fallire un turno che ha usato 'livelli' (non comparirebbe 'evidenzia' in nessuna chiamata).",
+   "domanda": "Sulla mappa nascondi tutto tranne i contratti di Boeing, e mostrameli.",
+   "domanda_alt": "fammi vedere solo i contratti di Boeing sulla mappa, il resto via",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_appalti",
+     "osint_mappa"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "evidenzia",
+    "astensione_ok": true,
+    "forma_re": "mappa|mostr|evidenz|nessun",
+    "grounding": true,
+    "segreto_re": "boeing"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "osint/mappa-mostra"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F17",
+   "famiglia": "ricerca-web-fuori-feed",
+   "azioni": [
+    "osint_web"
+   ],
+   "verifica": "Domanda di sfondo (chi e' il CEO) che nessun feed finanziario copre: stesso schema della bozza skill 8/REGOLE_FINANCE, con azienda diversa dagli esempi. Sviluppo.",
+   "domanda": "Chi e' l'attuale CEO di Palantir?",
+   "domanda_alt": "chi guida oggi Palantir come amministratore delegato?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_web"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "ceo|amministratore|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "osint/ricerca-web-fuori-feed"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F18",
+   "famiglia": "fuori-profilo-negativa",
+   "azioni": [],
+   "verifica": "Domanda in stile Mar Nero (cosa vola sopra un'area) chiesta pero' nel profilo Financial, dove osint_militare/osint_zona/osint_geocode e tutti gli altri osint_* di Intelligence non sono nel paniere (bozza, tabella instradamento: 'stessa domanda, Financial: nessuna chiamata, una frase che rimanda a Intelligence'). Corea del Sud scelta apposta al posto del Mar Nero (gia' pubblico) per non riusare il caso famoso: segreto valido.",
+   "domanda": "Cosa vola adesso sopra la Corea del Sud?",
+   "domanda_alt": "ci sono voli militari sulla Corea del Sud in questo momento?",
+   "atteso": {
+    "strumenti_vietati": "^osint_(militare|zona|geocode|situazione|allerte|cerca|recon|rischio|sorveglianza|storico|cyber|radio|satellite|sar)$",
+    "astensione_ok": true,
+    "forma_re": "intelligence|profilo|non (ho|posso)|non (e'|è) (disponibil|nel mio)",
+    "segreto_re": "corea del sud"
+   },
+   "giri_max": 2,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F19",
+   "famiglia": "grafico-chart",
+   "azioni": [
+    "fin_mercati"
+   ],
+   "verifica": "Contratto del grafico da REGOLE_FINANCE (schemi.py): blocco ```chart``` con type bar/line/pie, dati dai tool, mai inventati. Boeing e Lockheed Martin sono ticker gia' usati altrove in questo file: sviluppo.",
+   "domanda": "Fammi un grafico a barre che confronta il prezzo di Boeing e Lockheed Martin.",
+   "domanda_alt": "disegnami un grafico con i prezzi di Boeing e Lockheed Martin a confronto",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "percorso_re": "boeing|lockheed",
+    "astensione_ok": false,
+    "forma_re": "```chart",
+    "grounding": true
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "quotazione-titolo"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F20",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "'che tempo fa' e' l'esempio letterale di REGOLE_FINANCE per 'fuori tema, zero chiamate': gia' pubblico nello schema, sviluppo.",
+   "domanda": "Che tempo fa oggi a Milano?",
+   "domanda_alt": "e' prevista pioggia oggi a Milano?",
+   "atteso": {
+    "strumenti_vietati": "^osint_|^fin_|^browser_|^web_",
+    "astensione_ok": false,
+    "forma_re": "."
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F21",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "Definizione enciclopedica stabile, nessun tool live richiesto.",
+   "domanda": "Cosa vuol dire la sigla ETF?",
+   "domanda_alt": "ETF sta per cosa, in finanza?",
+   "atteso": {
+    "testo_re": [
+     "exchange[- ]traded fund"
+    ],
+    "strumenti_vietati": "^osint_|^fin_|^browser_|^web_",
+    "astensione_ok": false,
+    "forma_re": "fund|fondo",
+    "segreto_re": "exchange[- ]traded fund"
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "F22",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "Saluto di chiusura: nessuno strumento atteso.",
+   "domanda": "Grazie, e' tutto per ora.",
+   "domanda_alt": "perfetto grazie, a dopo",
+   "atteso": {
+    "testo_re": [
+     "."
+    ],
+    "strumenti_vietati": ".",
+    "astensione_ok": false,
+    "forma_re": "^$"
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "F23",
+   "famiglia": "quotazione-titolo",
+   "azioni": [
+    "fin_mercati"
+   ],
+   "verifica": "Trappola dalla tabella parametri della bozza: 'titolo e' UNA sola azienda, mai un settore o una lista'. 'la difesa in generale' e' un settore: il modo giusto e' fin_mercati SENZA titolo (il quadro generale include gia' la difesa). Controllo automatico solo parziale: percorso_re non puo' vietare titolo='difesa', solo verificare che fin_mercati sia stato chiamato; la correttezza del parametro va controllata a occhio in revisione.",
+   "domanda": "Come vanno oggi i titoli della difesa in generale?",
+   "domanda_alt": "il settore difesa in borsa come sta andando stamattina?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "fin_mercati"
+    ],
+    "strumenti_vietati": "^(osint_militare|osint_zona|osint_geocode|browser_|web_search|web_fetch)",
+    "astensione_ok": false,
+    "forma_re": "difesa",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "quotazione-titolo",
+    "mercati-generale"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  }
+ ]
+}

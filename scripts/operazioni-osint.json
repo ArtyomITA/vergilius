@@ -1,0 +1,768 @@
+{
+ "versione": 1,
+ "creato": "2026-09-27",
+ "autore": "COLLAUDATORE, stanza 5",
+ "dominio": "osint",
+ "modulo": {
+  "vista_mode": "false",
+  "browser_mode": "false",
+  "computer_mode": "false",
+  "osint_mode": "true",
+  "financial_mode": "false"
+ },
+ "note": [
+  "Formato ripreso da scripts/operazioni-browser.json (stanza 3). Stesse regole di banco-browser.py per testo_re/strumenti_richiesti/strumenti_vietati/stato_re/astensione_ok/forma_re/percorso_re/segreto_re/skill_attese/ruolo: vedi quel file per la sintassi esatta.",
+  "modulo: sostituisce, per TUTTE le operazioni di questo file, i soli campi indicati sopra di MODULO_BASE di banco-browser.py; il resto resta ereditato (mode=agent, plan_mode=false, allow_bash=false, use_rag=false, allow_web_search=false, background_learning=off). Profilo Intelligence: 18 osint_* + fin_mercati + calcola/manage_memory/ask_user/update_plan (chat_routes.py ~2667-2689).",
+  "campo 'sito' della bozza browser non si applica (nessuna pagina web sotto test): omesso. Il campo 'verifica' spiega la fonte del fatto stabile o il motivo del grounding al posto della sonda curl.",
+  "campo NUOVO 'grounding': true nell'atteso, gia' previsto e implementato in banco-browser.py:giudica ma inutilizzato dal file browser. Se vero, ogni numero della risposta finale deve comparire negli esiti dei tool (tool_output) del turno, altrimenti l'esito diventa invenzione. E' il modo per giudicare in automatico risposte su dati che cambiano ogni giorno (voli, navi, prezzi, notizie, MSPR, rischio) senza un testo_re fisso.",
+  "campo 'stabilita': 'fissa' = fatto stabile da codice o aritmetica (non cambia nel tempo, verificato leggendo il sorgente citato in 'verifica'); 'viva' (nuovo valore, non 'semi' del file browser: qui non e' un sito che puo' cambiare veste, e' un FEED che cambia ogni minuto) = l'esito si giudica con strumenti_richiesti/percorso_re/grounding, mai con testo_re sul valore del giorno.",
+  "segreto_re serve SOLO al controllo di contaminazione (verifica-skill.py --operazioni-verifica, banco-browser.py --contaminazione): non e' criterio di punteggio del turno. Scelto apposta su entita' fresche, mai citate nella bozza pipeline-osint-finanza.md ne' nelle description di schemi.py, cosi' una skill onesta non lo contiene mai per caso.",
+  "clic_vietati_re e sonda del formato browser non si usano qui (niente clic, niente pagina HTTP): omessi in ogni operazione.",
+  "strumenti_vietati resta una regex sul NOME dello strumento (mai sugli argomenti): per i divieti di parametro (es. titolo che e' un settore, azione sbagliata) uso percorso_re in positivo sull'argomento corretto atteso, non un divieto; lo dico nel campo 'verifica' quando il controllo automatico e' solo parziale.",
+  "famiglie scelte per coprire le famiglie di compito reali del DOSSIER (cosa vola/naviga, luogo-cosa-succede, notizie-soggetto, rischio di un paese, mappa, cercare un'entita', cyber, satellite) piu' quelle degli schemi non ancora coperte da nessuna bozza (radio, storico, sorveglianza, recon tecnico): lo SCRITTORE-OSINT decide quali famiglie diventano skill, questo file ne offre il materiale.",
+  "27 set: nomi di skill_attese allineati alle skill vere dal LEAD (entita-cerca->cerca-entita ecc.); le voci osint/... nel file finanza richiedono osint_mode acceso insieme a financial_mode per essere candidate."
+ ],
+ "operazioni": [
+  {
+   "id": "O01",
+   "famiglia": "area-cosa-vola",
+   "azioni": [
+    "osint_militare"
+   ],
+   "verifica": "dedotto dalla bozza skill 1 (Baltico e' uno dei nomi noti citati in Procedure step 1): esempio di lavoro gia' pubblico agli scrittori, usato qui come caso di sviluppo, non di verifica.",
+   "domanda": "Cosa vola sopra il Baltico in questo momento?",
+   "domanda_alt": "ci sono aerei militari adesso sopra il Mar Baltico?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_militare"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|calcola)",
+    "astensione_ok": true,
+    "forma_re": "aere|velivol|volo|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "area-cosa-vola"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O02",
+   "famiglia": "area-cosa-vola",
+   "azioni": [
+    "osint_militare"
+   ],
+   "verifica": "Crimea e' fra i nomi noti della bozza skill 1: sviluppo.",
+   "domanda": "Ci sono navi o aerei spia intorno alla Crimea adesso?",
+   "domanda_alt": "cosa si muove militarmente vicino alla Crimea in questo momento?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_militare"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "nav|aere|velivol|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "area-cosa-vola"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O03",
+   "famiglia": "area-cosa-vola",
+   "azioni": [
+    "osint_geocode",
+    "osint_militare"
+   ],
+   "verifica": "Gibilterra NON e' fra i nomi noti hardcoded della bozza (Odessa/Crimea/Hormuz/Baltico/Mar Nero/Bosforo): il nome pero' risolve bene su un geocoder vero (non e' un caso di luogo_non_riconosciuto). Percorso corretto: osint_geocode in inglese, poi osint_militare con lat,lng. Nome mai citato in pipeline-osint-finanza.md ne' in schemi.py: segreto valido.",
+   "domanda": "Cosa sorvola lo Stretto di Gibilterra proprio adesso?",
+   "domanda_alt": "che traffico aereo militare c'e' ora sullo Stretto di Gibilterra?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_geocode",
+     "osint_militare"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "gibraltar",
+    "astensione_ok": true,
+    "forma_re": "aere|velivol|volo|nessun",
+    "grounding": true,
+    "segreto_re": "gibilterra|gibraltar"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "area-cosa-vola"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O04",
+   "famiglia": "luogo-cosa-succede",
+   "azioni": [
+    "osint_zona"
+   ],
+   "verifica": "Odessa e' l'esempio del When to Use della bozza skill 2: sviluppo.",
+   "domanda": "Cosa sta succedendo a Odessa in queste ore?",
+   "domanda_alt": "novita' sulla situazione a Odessa adesso?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_zona"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "zona|vicino|intorno|layer|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "luogo-cosa-succede"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O05",
+   "famiglia": "luogo-cosa-succede",
+   "azioni": [
+    "osint_situazione"
+   ],
+   "verifica": "Domanda 'nel mondo' senza luogo: la tabella di instradamento della bozza dice esplicitamente osint_situazione per il mondo intero.",
+   "domanda": "Cosa sta succedendo nel mondo in generale in questo momento?",
+   "domanda_alt": "fammi una classifica di quello che conta di piu' adesso nel mondo",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_situazione"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|osint_zona)",
+    "astensione_ok": false,
+    "forma_re": "classific|grav|region|event",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "luogo-cosa-succede"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O06",
+   "famiglia": "luogo-cosa-succede",
+   "azioni": [
+    "osint_zona",
+    "osint_allerte"
+   ],
+   "verifica": "Kharkiv e' l'esempio del When to Use della bozza skill 2. Verifica il parametro corretto di osint_allerte: 'quante', non 'quanti' (trappola gia' in Pitfalls della bozza, ma qui si controlla che sia stata davvero implementata).",
+   "domanda": "Cosa succede vicino a Kharkiv, e ci sono allarmi attivi in zona?",
+   "domanda_alt": "situazione a Kharkiv adesso, con eventuali allerte nell'area",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_zona",
+     "osint_allerte"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "\"quante\"",
+    "astensione_ok": true,
+    "forma_re": "zona|allert|allarm|nessun",
+    "grounding": true
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "luogo-cosa-succede"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O07",
+   "famiglia": "notizie-soggetto",
+   "azioni": [
+    "osint_notizie"
+   ],
+   "verifica": "Boeing e' l'esempio testuale della description dello strumento osint_notizie in schemi.py: pubblico, sviluppo.",
+   "domanda": "Cercami le ultime notizie su Boeing.",
+   "domanda_alt": "novita' recenti riguardo Boeing?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_notizie"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "boeing",
+    "astensione_ok": true,
+    "forma_re": "notizi|articol|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "notizie-soggetto"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O08",
+   "famiglia": "notizie-soggetto",
+   "azioni": [
+    "osint_notizie",
+    "osint_notizie"
+   ],
+   "verifica": "Hanwha (gruppo industriale/difesa coreano) non compare in nessun materiale letto (bozza, schemi.py, DOSSIER): segreto valido. Verifica la catena in due passi: prima la ricerca per soggetto, poi la lettura del testo vero con id o url (mai un tool osint_testo, che non esiste piu').",
+   "domanda": "Cercami le notizie piu' recenti su Hanwha e fammi leggere il testo del primo articolo che trovi.",
+   "domanda_alt": "novita' su Hanwha? leggimi anche l'articolo principale per intero",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_notizie"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|osint_testo)",
+    "percorso_re": "\"id\"|\"url\"",
+    "astensione_ok": true,
+    "forma_re": "articol|notizi|nessun",
+    "grounding": true,
+    "segreto_re": "hanwha"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "notizie-soggetto"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O09",
+   "famiglia": "militare-zona",
+   "azioni": [
+    "osint_militare",
+    "osint_allerte"
+   ],
+   "verifica": "Polonia e' l'esempio del When to Use della bozza skill 7: sviluppo.",
+   "domanda": "Qual e' la situazione militare in Polonia, con eventuali allarmi attivi?",
+   "domanda_alt": "cosa si muove militarmente in Polonia adesso, e ci sono allerte?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_militare",
+     "osint_allerte"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "militar|forz|allert|nessun",
+    "grounding": true
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "militare-zona"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O10",
+   "famiglia": "militare-zona",
+   "azioni": [
+    "osint_geocode",
+    "osint_militare",
+    "osint_allerte"
+   ],
+   "verifica": "Cipro non compare in nessun materiale letto: segreto valido. Verifica che la catena completa della famiglia (geocode su nome sconosciuto -> militare -> allerte) sia davvero implementata insieme, non solo una delle due.",
+   "domanda": "Fammi un quadro militare completo della zona di Cipro, con eventuali allarmi attivi.",
+   "domanda_alt": "situazione militare intorno a Cipro adesso, con gli allarmi in corso",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_militare",
+     "osint_allerte"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "militar|allert|allarm|nessun",
+    "grounding": true,
+    "segreto_re": "cipro|cyprus"
+   },
+   "giri_max": 5,
+   "skill_attese": [
+    "militare-zona"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O11",
+   "famiglia": "rischio-paese",
+   "azioni": [
+    "osint_rischio"
+   ],
+   "verifica": "Sahel e' l'esempio del When to Use dello schema osint_rischio: pubblico, sviluppo.",
+   "domanda": "Quali sono le regioni dove sta salendo di piu' il rischio geopolitico adesso?",
+   "domanda_alt": "dammi una classifica delle zone piu' a rischio nel mondo",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_rischio"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|osint_allerte)",
+    "percorso_re": "classifica",
+    "astensione_ok": true,
+    "forma_re": "rischio|region|classific",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "rischio-paese"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O12",
+   "famiglia": "rischio-paese",
+   "azioni": [
+    "osint_rischio"
+   ],
+   "verifica": "Mozambico non compare in nessun materiale letto: segreto valido. osint_rischio dossier richiede GT_ANALYTICS_ENABLED lato ShadowBroker (bozza, tabella parametri): se il modulo non e' acceso l'esito e' un errore dichiarato, mai un punteggio inventato (astensione_ok true).",
+   "domanda": "Quanto e' salito il rischio in Mozambico secondo il modello, e perche'?",
+   "domanda_alt": "che dossier di rischio mi dai per il Mozambico?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_rischio"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "dossier",
+    "astensione_ok": true,
+    "forma_re": "rischio|region|dossier|nessun|error",
+    "grounding": true,
+    "segreto_re": "mozambic"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "rischio-paese"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O13",
+   "famiglia": "mappa-mostra",
+   "azioni": [
+    "osint_mappa"
+   ],
+   "verifica": "Preset 'conflitto' e' uno dei tre insiemi gia' definiti in PRESET_MAPPA (schemi.py): sviluppo.",
+   "domanda": "Mostrami sulla mappa la situazione di conflitto in corso.",
+   "domanda_alt": "fammi vedere sulla mappa fronti e voli militari del conflitto",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_mappa"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "conflitto",
+    "astensione_ok": false,
+    "forma_re": "mappa|mostr|conflitt"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "mappa-mostra"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O14",
+   "famiglia": "mappa-mostra",
+   "azioni": [
+    "osint_mappa"
+   ],
+   "verifica": "Bozza skill 6, Procedure passo 3: 'nascondi tutto tranne le navi' fuori dal profilo Financial si fa con azione=livelli, non evidenzia (la regola contraria vale solo per Financial). Sviluppo, gia' pubblico.",
+   "domanda": "Sulla mappa nascondi tutto tranne le navi.",
+   "domanda_alt": "fammi vedere solo le navi sulla mappa, il resto spegnilo",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_mappa"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "livelli",
+    "astensione_ok": false,
+    "forma_re": "mappa|nav|livell"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "mappa-mostra"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O15",
+   "famiglia": "mappa-mostra",
+   "azioni": [
+    "osint_mappa"
+   ],
+   "verifica": "Reykjavik non compare in nessun materiale letto: segreto valido. azione=centra e' sola vista, passa senza approvazione (DOSSIER, nota 8): l'esito deve essere immediato, non un'astensione.",
+   "domanda": "Centra la mappa su Reykjavik.",
+   "domanda_alt": "porta la visuale della mappa su Reykjavik",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_mappa"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "reykjavik",
+    "astensione_ok": false,
+    "forma_re": "centrat|mappa|reykjavik",
+    "segreto_re": "reykjavik"
+   },
+   "giri_max": 2,
+   "skill_attese": [
+    "mappa-mostra"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O16",
+   "famiglia": "entita-cerca",
+   "azioni": [
+    "osint_cerca"
+   ],
+   "verifica": "'dov'e' Air Force One' e' l'esempio testuale della description di osint_cerca in schemi.py: pubblico, sviluppo.",
+   "domanda": "Dov'e' adesso Air Force One?",
+   "domanda_alt": "sai dirmi la posizione attuale di Air Force One?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_cerca"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "air force",
+    "astensione_ok": true,
+    "forma_re": "posizion|trovat|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "cerca-entita"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O17",
+   "famiglia": "entita-cerca",
+   "azioni": [
+    "osint_cerca"
+   ],
+   "verifica": "Amadea (yacht sotto sanzione, caso pubblico ma mai citato nei materiali di questa stanza) non compare in bozza/schemi/DOSSIER: segreto valido. 'legami societari' deve tradursi nel parametro relazioni=true, non in un secondo giro a vuoto.",
+   "domanda": "Trovami dove si trova adesso lo yacht Amadea e chi sono i suoi legami societari.",
+   "domanda_alt": "posizione dello yacht Amadea e le sue relazioni societarie note",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_cerca"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "\"relazioni\":\\s*true",
+    "astensione_ok": true,
+    "forma_re": "yacht|nav|nessun",
+    "grounding": true,
+    "segreto_re": "amadea"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "cerca-entita"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O18",
+   "famiglia": "cyber-minacce",
+   "azioni": [
+    "osint_cyber"
+   ],
+   "verifica": "azione=malware (botnet C2) e' uno dei quattro valori enum dello schema osint_cyber: sviluppo.",
+   "domanda": "Quali indirizzi o domini malevoli (botnet) sono stati individuati di recente?",
+   "domanda_alt": "ci sono server di comando e controllo malevoli attivi ora?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_cyber"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|osint_recon)",
+    "percorso_re": "malware",
+    "astensione_ok": true,
+    "forma_re": "malevol|botnet|ip|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "cyber-minacce"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O19",
+   "famiglia": "cyber-minacce",
+   "azioni": [
+    "osint_cyber"
+   ],
+   "verifica": "Trappola di schema: osint_cyber non ha NESSUN parametro paese (solo 'azione'), a differenza di quanto ci si aspetterebbe. Bangladesh non compare in nessun materiale: segreto valido. Verifica che non venga inventato un parametro 'paese' inesistente e che la cifra per il Bangladesh, se data, venga letta dall'elenco restituito da azione=rischio_paese (grounding).",
+   "domanda": "Quanto e' a rischio informaticamente il Bangladesh in questo momento?",
+   "domanda_alt": "che livello di rischio cyber ha il Bangladesh secondo i feed?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_cyber"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "rischio_paese",
+    "astensione_ok": true,
+    "forma_re": "rischio|nessun|non (trovat|copert|present)",
+    "grounding": true,
+    "segreto_re": "bangladesh"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "cyber-minacce"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O20",
+   "famiglia": "satellite-radar",
+   "azioni": [
+    "osint_satellite"
+   ],
+   "verifica": "Kyiv e' un luogo gia' usato negli esempi della bozza skill 2: sviluppo. azione=passaggi e' uno dei due valori enum dello schema.",
+   "domanda": "Quali satelliti passeranno sopra Kyiv nelle prossime ore?",
+   "domanda_alt": "che satelliti sorvoleranno Kyiv oggi?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_satellite"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "passaggi",
+    "astensione_ok": true,
+    "forma_re": "satellit|passagg|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "satellite-e-radar"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O21",
+   "famiglia": "satellite-radar",
+   "azioni": [
+    "osint_satellite"
+   ],
+   "verifica": "Valparaiso (Cile) non compare in nessun materiale letto: segreto valido. azione=termico e' l'altro valore enum, per calore/incendi.",
+   "domanda": "C'e' un incendio rilevabile dal satellite vicino a Valparaiso, in Cile?",
+   "domanda_alt": "segnali termici o incendi vicino a Valparaiso adesso?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_satellite"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "termico",
+    "astensione_ok": true,
+    "forma_re": "incendi|calor|termic|nessun",
+    "grounding": true,
+    "segreto_re": "valparaiso"
+   },
+   "giri_max": 4,
+   "skill_attese": [
+    "satellite-e-radar"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O22",
+   "famiglia": "storico-mappa",
+   "azioni": [
+    "osint_storico"
+   ],
+   "verifica": "azione=cattura, 'salva lo stato adesso' e' l'esempio testuale della description dello schema osint_storico: sviluppo.",
+   "domanda": "Salva un istante della situazione attuale sulla mappa, cosi' posso confrontarla dopo.",
+   "domanda_alt": "fammi uno snapshot di come sta la mappa adesso",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_storico"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "cattura",
+    "astensione_ok": false,
+    "forma_re": "salvat|snapshot|istant|cattur"
+   },
+   "giri_max": 2,
+   "skill_attese": [
+    "storico-mappa"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O23",
+   "famiglia": "sorveglianza",
+   "azioni": [
+    "osint_sorveglianza"
+   ],
+   "verifica": "Kaliningrad e' gia' pubblico in bozza (elenco dei luoghi non risolti dal geocoder), qui usato come punto di una sorveglianza geofence, non come test di risoluzione: sviluppo. azione=aggiungi con luogo+raggio_km e' l'uso da schema.",
+   "domanda": "Avvisami se decolla un aereo militare da una base vicino a Kaliningrad.",
+   "domanda_alt": "tieni d'occhio i movimenti aerei militari intorno a Kaliningrad e avvisami",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_sorveglianza"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "aggiungi",
+    "astensione_ok": false,
+    "forma_re": "sorveglian|avvis|tengo d'occhio|attiv"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "sorveglianza-attiva"
+   ],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O24",
+   "famiglia": "radio-sigint",
+   "azioni": [
+    "osint_radio"
+   ],
+   "verifica": "Bratislava non compare in nessun materiale letto: segreto valido. azione=scanner e' uno dei tre valori enum dello schema osint_radio.",
+   "domanda": "C'e' uno scanner radio della polizia ascoltabile vicino a Bratislava?",
+   "domanda_alt": "quale frequenza radio pubblica posso ascoltare vicino a Bratislava?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_radio"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "percorso_re": "scanner",
+    "astensione_ok": true,
+    "forma_re": "scanner|radio|frequenz|nessun",
+    "grounding": true,
+    "segreto_re": "bratislava"
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "radio-sigint"
+   ],
+   "stabilita": "viva",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O25",
+   "famiglia": "recon-tecnico",
+   "azioni": [
+    "osint_recon"
+   ],
+   "verifica": "8.8.8.8 e' un IP pubblico neutro (DNS di Google), tipo=ip e' un valore enum dello schema osint_recon: sviluppo.",
+   "domanda": "Controlla se l'indirizzo IP 8.8.8.8 e' associato a minacce note.",
+   "domanda_alt": "fai un controllo tecnico sull'IP 8.8.8.8",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_recon"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch|osint_cyber)",
+    "percorso_re": "8\\.8\\.8\\.8",
+    "astensione_ok": true,
+    "forma_re": "ip|indirizz|minacc|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "recon-tecnico"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O26",
+   "famiglia": "ricerca-web-fuori-feed",
+   "azioni": [
+    "osint_web"
+   ],
+   "verifica": "Domanda di sfondo che nessun feed osint copre (ministro della difesa del Giappone): stesso schema della bozza skill 8, con paese diverso dall'esempio della bozza. Sviluppo.",
+   "domanda": "Chi e' l'attuale ministro della difesa del Giappone?",
+   "domanda_alt": "sai dirmi chi guida oggi il ministero della difesa giapponese?",
+   "atteso": {
+    "strumenti_richiesti": [
+     "osint_web"
+    ],
+    "strumenti_vietati": "^(fin_|browser_|web_search|web_fetch)",
+    "astensione_ok": true,
+    "forma_re": "ministr|difesa|nessun",
+    "grounding": true
+   },
+   "giri_max": 3,
+   "skill_attese": [
+    "ricerca-web-fuori-feed"
+   ],
+   "stabilita": "viva",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O27",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "Sigla enciclopedica stabile, nessun feed live coinvolto: verifica indipendente dal giorno.",
+   "domanda": "Cosa significa la sigla OSINT?",
+   "domanda_alt": "OSINT sta per cosa?",
+   "atteso": {
+    "testo_re": [
+     "open source intelligence"
+    ],
+    "strumenti_vietati": "^osint_|^fin_|^browser_|^web_",
+    "astensione_ok": false,
+    "forma_re": "intelligence",
+    "segreto_re": "open source intelligence"
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "verifica"
+  },
+  {
+   "id": "O28",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "Saluto di chiusura: nessuno strumento atteso.",
+   "domanda": "Grazie, per oggi ho finito.",
+   "domanda_alt": "ok perfetto, ci vediamo dopo",
+   "atteso": {
+    "testo_re": [
+     "."
+    ],
+    "strumenti_vietati": ".",
+    "astensione_ok": false,
+    "forma_re": "^$"
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  },
+  {
+   "id": "O29",
+   "famiglia": "negativa",
+   "azioni": [],
+   "verifica": "Fuori tema rispetto al profilo Intelligence: nessuna ricetta nei feed OSINT, zero chiamate attese.",
+   "domanda": "Mi consigli una ricetta per la pasta al pomodoro?",
+   "domanda_alt": "come si fa un buon sugo al pomodoro?",
+   "atteso": {
+    "strumenti_vietati": "^osint_|^fin_|^browser_|^web_",
+    "astensione_ok": false,
+    "forma_re": "."
+   },
+   "giri_max": 1,
+   "skill_attese": [],
+   "stabilita": "fissa",
+   "ruolo": "sviluppo"
+  }
+ ]
+}
