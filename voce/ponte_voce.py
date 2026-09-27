@@ -12,6 +12,7 @@ quindi restituire WAV va bene e ci risparmia una conversione.
 Avvio:  python ponte_voce.py       (porta 8013)
 """
 
+import asyncio
 import io
 import logging
 import os
@@ -492,6 +493,12 @@ async def trascrizione_in_diretta(ws: WebSocket):
         await ws.close()
         return
 
+    # La decodifica (e a leva accesa Smart Turn, 90-190 ms al campanello) gira
+    # in un thread: dentro il loop async fermerebbe anche lo streaming della
+    # sintesi dello stesso processo. Un lucchetto per microfono tiene i pezzi
+    # della sessione in fila, uno alla volta, nell'ordine in cui arrivano.
+    lucchetto = asyncio.Lock()
+
     try:
         while True:
             msg = await ws.receive()
@@ -502,7 +509,9 @@ async def trascrizione_in_diretta(ws: WebSocket):
             testo_ricevuto = msg.get("text")
             if testo_ricevuto is not None:
                 if testo_ricevuto.strip().lower() == "fine":
-                    await ws.send_json({"testo": sessione.finito(),
+                    async with lucchetto:
+                        finale = await asyncio.to_thread(sessione.finito)
+                    await ws.send_json({"testo": finale,
                                         "fine_turno": True, "chiuso": True})
                     break
                 continue
@@ -512,12 +521,14 @@ async def trascrizione_in_diretta(ws: WebSocket):
                 continue
 
             campioni = asr_streaming.da_pcm16(dati)
-            testo, cambiato, fine = sessione.aggiungi(campioni)
+            async with lucchetto:
+                testo, cambiato, fine = await asyncio.to_thread(sessione.aggiungi, campioni)
+                definitivo = sessione.chiudi_turno() if fine else None
 
             if fine:
                 # Il turno si chiude qui: si manda il testo definitivo e si
                 # riparte, cosi' chi ascolta puo' gia' inoltrarlo al modello.
-                await ws.send_json({"testo": sessione.chiudi_turno(),
+                await ws.send_json({"testo": definitivo,
                                     "fine_turno": True})
             elif cambiato:
                 await ws.send_json({"testo": testo, "fine_turno": False})

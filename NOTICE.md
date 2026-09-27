@@ -41,6 +41,7 @@ diverso basta sostituire la cartella del modello: il programma legge i parametri
 | Holo-3.1-0.8B | Hugging Face | vedi scheda modello | la vista (legge schermo e immagini) |
 | QwenPaw-Flash-9B heretic | Hugging Face | vedi scheda modello | alternativa facoltativa, uncensored, scelta dall'utente |
 | LFM2.5-2.6B-Uncensored (SC117) | Hugging Face | vedi scheda modello | alternativa facoltativa, uncensored, modificata da terzi (non release Liquid AI) |
+| Smart Turn v3.2 CPU (Pipecat / Daily) | [pipecat-ai/smart-turn-v3](https://huggingface.co/pipecat-ai/smart-turn-v3), codice: https://github.com/pipecat-ai/smart-turn | BSD-2-Clause | fine turno della voce dall'audio (`asr-models/smart-turn-v3.2-cpu.onnx`, sha256 verificato), usato da `voce/fine_turno.py` solo con la leva `ASR_SMART_TURN=1` |
 
 I modelli non sono inclusi nel repository e non sono coperti da questa licenza: ognuno
 ha la propria, che accetti scaricandoli con `scripts/scarica-modelli.py`.

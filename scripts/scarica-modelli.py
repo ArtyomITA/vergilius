@@ -23,6 +23,10 @@ Cosa scarica, e perché:
             così non toglie memoria video al cervello. Serve a leggere lo schermo
             e le immagini.
 
+  voce      Smart Turn v3.2 CPU (9 MB, licenza BSD-2) in asr-models/: capisce dalla
+            voce se hai finito di parlare. Resta spento finché non accendi la leva
+            ASR_SMART_TURN=1; il file si verifica con lo sha256 prima dell'uso.
+
   lfm-uncensored   LFM2.5-2.6B senza rifiuti (2,9 GB) — facoltativo, lo scegli tu.
             Stessa base del cervello predefinito, MODIFICATA DA TERZI (SC117, abliterazione):
             non e' un rilascio di Liquid AI e nessuno l'ha revisionato. Togliere i rifiuti
@@ -48,6 +52,7 @@ from pathlib import Path
 RADICE = Path(__file__).resolve().parent.parent
 MODELLI = RADICE / "models"
 VLM = MODELLI / "vlm"
+ASR = RADICE / "asr-models"
 
 # (chiave, repo Hugging Face, file nel repo, cartella locale, GB, a cosa serve)
 CATALOGO = [
@@ -59,6 +64,8 @@ CATALOGO = [
      VLM, "Holo-3.1-0.8B.Q6_K.gguf", 0.7, "la vista: legge schermo e immagini (CPU)"),
     ("occhi", "mradermacher/Holo-3.1-0.8B-GGUF", "Holo-3.1-0.8B.mmproj-f16.gguf",
      VLM, "Holo-3.1-0.8B.mmproj-f16.gguf", 0.2, "proiettore visivo, va con Holo"),
+    ("voce", "pipecat-ai/smart-turn-v3", "smart-turn-v3.2-cpu.onnx",
+     ASR, "smart-turn-v3.2-cpu.onnx", 0.009, "fine turno dalla voce, Smart Turn v3 (leva ASR_SMART_TURN)"),
     ("lfm-uncensored", "SC117/LFM2.5-2.6B-Uncensored-GGUF", "LFM2.5-2.6B-Uncensored-Q8_0.gguf",
      MODELLI, "LFM2.5-2.6B-Uncensored-Q8_0.gguf", 2.9, "LFM senza rifiuti, modificato da terzi (facoltativo)"),
     ("heretic", "mradermacher/QwenPaw-Flash-9B-heretic-i1-GGUF", "QwenPaw-Flash-9B-heretic.i1-Q4_K_M.gguf",
@@ -66,6 +73,34 @@ CATALOGO = [
 ]
 
 FACOLTATIVI = {"heretic", "lfm-uncensored"}
+
+# Hash atteso dei file che lo dichiarano: dopo il download si controlla, e un file
+# diverso si cancella (voce/fine_turno.py lo ricontrolla comunque al caricamento).
+SHA256 = {
+    "smart-turn-v3.2-cpu.onnx": "2bb026316b14a660486a75b1733cd3fbab8c2fd0314dc9af7be49f8cca967e4f",
+}
+
+
+def _sha_ok(destinazione: Path) -> bool:
+    atteso = SHA256.get(destinazione.name)
+    if not atteso:
+        return True
+    import hashlib
+
+    h = hashlib.sha256()
+    with open(destinazione, "rb") as f:
+        for pezzo in iter(lambda: f.read(1 << 20), b""):
+            h.update(pezzo)
+    if h.hexdigest() == atteso:
+        print("  sha256 verificato")
+        return True
+    print(f"  sha256 DIVERSO ({h.hexdigest()[:16]}...): file cancellato")
+    destinazione.unlink(missing_ok=True)
+    return False
+
+
+def _peso(gb: float) -> str:
+    return f"{gb * 1000:.0f} MB" if gb < 0.1 else f"{gb:.1f} GB"
 
 
 def presenti() -> dict:
@@ -80,7 +115,7 @@ def elenco() -> None:
         if chiave != gruppo:
             print(f"  [{chiave}]")
             gruppo = chiave
-        stato = "già presente" if locale in ci_sono else f"da scaricare, {gb:.1f} GB"
+        stato = "già presente" if locale in ci_sono else f"da scaricare, {_peso(gb)}"
         print(f"    {locale:44} {stato}")
         print(f"      {perche}")
     manca = sum(v[5] for v in CATALOGO if v[0] not in FACOLTATIVI and v[4] not in ci_sono)
@@ -131,8 +166,9 @@ def scarica(con_heretic: bool, con_lfm_uncensored: bool = False) -> int:
     for chiave, repo, remoto, cartella, locale, gb, perche in da_fare:
         destinazione = cartella / locale
         url = f"https://huggingface.co/{repo}/resolve/main/{remoto}?download=true"
-        print(f"[{chiave}] {locale} ({gb:.1f} GB) — {perche}")
+        print(f"[{chiave}] {locale} ({_peso(gb)}) - {perche}")
         ok = _scarica_aria(url, destinazione) or _scarica_hf(repo, remoto, destinazione)
+        ok = ok and _sha_ok(destinazione)
         if ok:
             mb = destinazione.stat().st_size / 1048576
             print(f"  fatto: {mb:,.0f} MB\n".replace(",", "."))

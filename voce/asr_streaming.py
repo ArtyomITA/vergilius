@@ -20,6 +20,8 @@ all'avvio del ponte.
 import logging
 import os
 import threading
+import time
+from collections import deque
 from typing import Optional
 
 import numpy as np
@@ -51,7 +53,35 @@ THREAD = int(os.getenv("ASR_THREAD", "2"))
 SILENZIO_FINE_TURNO = float(os.getenv("ASR_SILENZIO", "0.45"))
 SILENZIO_FINE_TURNO_LUNGO = float(os.getenv("ASR_SILENZIO_LUNGO", "1.2"))  # scelta del proprietario: meno tagli, +250 ms
 
+
+def _leva_float(nome: str, predefinito: float) -> float:
+    """Leva numerica: vuota o scritta male vale il predefinito (= oggi)."""
+    try:
+        return float(os.getenv(nome, "").strip() or predefinito)
+    except ValueError:
+        return predefinito
+
+
+# Smart Turn v3 (voce/fine_turno.py): al campanello ascolta anche COME finisce
+# la voce, non solo se il parziale ha il punto. Spento di default: si accende
+# solo coi numeri del banco (D:/vergilius-lab/ricerche/live/04-smart-turn-banco.md).
+# Regola a due soglie, il modello scavalca il testo solo quando e' sicuro:
+#   col punto    -> chiude, salvo p < BASSA (sicuro che non hai finito): aspetta
+#   senza punto  -> chiude subito se p >= ALTA, altrimenti aspetta fino ad ATTESA
+# Errore del modello, file assente o sha diverso -> regola di oggi.
+SMART_TURN = os.getenv("ASR_SMART_TURN", "0").strip().lower() in ("1", "true", "si", "on")
+SMART_TURN_ALTA = _leva_float("ASR_SMART_TURN_ALTA", 0.7)
+SMART_TURN_BASSA = _leva_float("ASR_SMART_TURN_BASSA", 0.2)
+# Silenzio totale (quello che conta sherpa) prima di chiudere un turno che il
+# modello giudica incompleto. Predefinito = soglia lunga di oggi.
+SMART_TURN_ATTESA = _leva_float("ASR_SMART_TURN_ATTESA", SILENZIO_FINE_TURNO_LUNGO)
+# Silenzio lasciato in fondo all'audio dato al modello (taglio per energia).
+SMART_TURN_CODA = _leva_float("ASR_SMART_TURN_CODA", 0.2)
+SMART_TURN_THREAD = max(1, int(_leva_float("ASR_SMART_TURN_THREAD", 1)))
+
 FREQUENZA = 16000
+# Audio del turno tenuto per Smart Turn: la sua finestra, 8 s.
+_CAMPIONI_TURNO = 8 * FREQUENZA
 
 # Un parziale che finisce con una di queste e' una frase finita.
 FINE_FRASE = (".", "?", "!", "…")
@@ -98,7 +128,20 @@ def carica():
             rule3_min_utterance_length=30.0,
         )
         logger.info("modello di trascrizione pronto")
+        if SMART_TURN:
+            # Si scalda qui (thread di scalda_asr nel ponte), non alla prima frase.
+            _smart_turn()
     return _riconoscitore
+
+
+def _smart_turn():
+    """Il predittore di Smart Turn, o None se non e' partito (regola di oggi)."""
+    try:
+        import fine_turno
+    except Exception as e:  # noqa: BLE001
+        logger.error("[fine-turno] Smart Turn SPENTO, modulo non importabile: %s", e)
+        return None
+    return fine_turno.carica(thread=SMART_TURN_THREAD)
 
 
 class Sessione:
@@ -119,10 +162,18 @@ class Sessione:
         # accumulato da allora, in secondi.
         self._candidato = None
         self._silenzio_dopo = 0.0
+        # Smart Turn: None a leva spenta o se il modello non e' partito. Solo a
+        # leva accesa si tiene l'audio del turno (al massimo gli ultimi 8 s).
+        self._smart = _smart_turn() if SMART_TURN else None
+        self._audio = deque()
+        self._audio_n = 0
+        self._attesa = SILENZIO_FINE_TURNO_LUNGO
 
     def aggiungi(self, campioni: np.ndarray):
         """Restituisce (testo, cambiato, fine_turno)."""
         self.stream.accept_waveform(FREQUENZA, campioni)
+        if self._smart is not None:
+            self._tieni_audio(campioni)
         while self.rec.is_ready(self.stream):
             self.rec.decode_stream(self.stream)
 
@@ -150,6 +201,9 @@ class Sessione:
             self._silenzio_dopo = 0.0
             return True
 
+        if self._smart is not None:
+            return self._fine_turno_smart(testo, durata_pezzo)
+
         if testo.rstrip().endswith(FINE_FRASE):
             self._candidato = None
             self._silenzio_dopo = 0.0
@@ -168,6 +222,74 @@ class Sessione:
             return True
         return False
 
+    # -- Smart Turn (solo a leva accesa) --------------------------------------
+
+    def _tieni_audio(self, campioni: np.ndarray):
+        """Accoda il pezzo e butta i pezzi piu' vecchi finche' ne restano 8 s."""
+        pezzo = np.array(campioni, dtype=np.float32, copy=True).reshape(-1)
+        self._audio.append(pezzo)
+        self._audio_n += len(pezzo)
+        while self._audio and self._audio_n - len(self._audio[0]) >= _CAMPIONI_TURNO:
+            self._audio_n -= len(self._audio.popleft())
+
+    def audio_turno(self) -> np.ndarray:
+        """Audio del turno in corso, al massimo gli ultimi 8 s."""
+        if not self._audio:
+            return np.zeros(0, dtype=np.float32)
+        return np.concatenate(list(self._audio))[-_CAMPIONI_TURNO:]
+
+    def _chiedi_smart(self):
+        """(p, ms, silenzio in coda) oppure (None, ms, silenzio) se il modello
+        fallisce: in quel caso decide la regola di oggi."""
+        import fine_turno
+
+        t0 = time.perf_counter()
+        silenzio = 0.0
+        try:
+            audio, silenzio = fine_turno.taglia_coda(self.audio_turno(), SMART_TURN_CODA)
+            p = self._smart.probabilita(audio)
+        except Exception as e:  # noqa: BLE001
+            logger.warning("[fine-turno] errore del modello, regola di oggi: %s: %s",
+                           type(e).__name__, e)
+            p = None
+        return p, (time.perf_counter() - t0) * 1000, silenzio
+
+    def _fine_turno_smart(self, testo: str, durata_pezzo: float) -> bool:
+        """Campanello suonato con del testo: una inferenza, poi la regola a due
+        soglie. Se il testo cambia (ha ripreso a parlare, o sherpa corregge)
+        il campanello e' nuovo e si chiede di nuovo; altrimenti si conta il
+        silenzio fino all'attesa decisa al campanello."""
+        if self._candidato != testo:
+            self._candidato = testo
+            self._silenzio_dopo = 0.0
+            punto = testo.rstrip().endswith(FINE_FRASE)
+            p, ms, silenzio = self._chiedi_smart()
+            if p is None:
+                chiude = punto
+                self._attesa = SILENZIO_FINE_TURNO_LUNGO
+                decisione = "oggi-chiude" if chiude else "oggi-aspetta"
+            else:
+                chiude = p >= (SMART_TURN_BASSA if punto else SMART_TURN_ALTA)
+                self._attesa = SMART_TURN_ATTESA
+                decisione = "chiude" if chiude else "aspetta"
+            logger.info("[fine-turno] p=%s ms=%.0f punto=%s decisione=%s silenzio=%.2f",
+                        "errore" if p is None else f"{p:.3f}", ms,
+                        "si" if punto else "no", decisione, silenzio)
+            if chiude:
+                self._candidato = None
+                self._silenzio_dopo = 0.0
+                return True
+            return False
+
+        self._silenzio_dopo += durata_pezzo
+        if self._silenzio_dopo >= (self._attesa - SILENZIO_FINE_TURNO):
+            logger.info("[fine-turno] chiude dopo l'attesa: silenzio=%.2f",
+                        SILENZIO_FINE_TURNO + self._silenzio_dopo)
+            self._candidato = None
+            self._silenzio_dopo = 0.0
+            return True
+        return False
+
     def chiudi_turno(self) -> str:
         """Chiude l'enunciato corrente e prepara il flusso per il prossimo,
         senza ricostruirlo: ricostruire lo stream perderebbe il riscaldamento
@@ -177,6 +299,8 @@ class Sessione:
         self._ultimo = ""
         self._candidato = None
         self._silenzio_dopo = 0.0
+        self._audio.clear()
+        self._audio_n = 0
         return testo
 
     def finito(self) -> str:
