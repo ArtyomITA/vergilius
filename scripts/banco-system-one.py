@@ -69,6 +69,7 @@ MISURE = Path(r"D:\vergilius-lab\ricerche\opt-1080\misure\system-one")
 CATEGORIE = {"strumento": 40, "elemento_ui": 35, "stato_pagina": 25}
 LETTERE = "ABCDEFGHI"
 NESSUNO_UI = "nessuno adatto"
+NESSUNO_UI_LINGUE = {NESSUNO_UI, "none fits"}  # dataset italiano e versione inglese (27 set 2026)
 SLOT_VIETATO = 3
 PREFILL_MISURATO = 1940.0  # tok/s del prefill LFM sulla 1080 (commento in llama-swap/config.yaml)
 
@@ -307,7 +308,7 @@ def valida(domande: list) -> list:
         if cat == "elemento_ui":
             if not (5 <= len(opz) <= 9):
                 errori.append(f"{qid}: elemento_ui vuole 4-8 righe + '{NESSUNO_UI}', trovate {len(opz)} opzioni")
-            if opz and opz[-1] != NESSUNO_UI:
+            if opz and opz[-1] not in NESSUNO_UI_LINGUE:
                 errori.append(f"{qid}: l'ultima opzione deve essere '{NESSUNO_UI}'")
             fonte = q.get("fonte")
             try:
@@ -648,7 +649,7 @@ def riepilogo(records: list) -> dict:
 # ------------------------------------------------------------------ dry-run
 def dry_run(args, domande, sha_ds, mod: Modello, reg: Registro) -> int:
     errori = valida(domande)
-    reg.riga(f"dataset {DATASET.name} sha={sha_ds}: {len(domande)} domande, "
+    reg.riga(f"dataset {Path(args.dataset).name if getattr(args, 'dataset', None) else DATASET.name} sha={sha_ds}: {len(domande)} domande, "
              + ", ".join(f"{c}={sum(q['categoria'] == c for q in domande)}" for c in CATEGORIE))
     for e in errori:
         reg.riga(f"ERRORE dataset: {e}")
@@ -1019,6 +1020,7 @@ def main() -> int:
                     help="passate del braccio system_one, fra freddo, prefisso, ripetuta")
     ap.add_argument("--base", default="http://127.0.0.1:8012", help="indirizzo di llama-swap")
     ap.add_argument("--modello", default="lfm", help="profilo di llama-swap (mai lfm-uncensored)")
+    ap.add_argument("--dataset", default=None, help="altro file di domande (es. banco-system-one-domande-en.json)")
     ap.add_argument("--diretto", action="store_true", help="--base e' un llama-server lanciato a mano, non llama-swap")
     ap.add_argument("--gguf", default=None, help="GGUF da cui leggere template e vocabolario (predefinito: config)")
     ap.add_argument("--slot", type=int, default=1, help="slot fisso del decisore (NON 3; 0 e' la chat)")
@@ -1045,7 +1047,7 @@ def main() -> int:
         raise SystemExit(f"passate sconosciute: {bad}")
     if args.slot == 0:
         print("attenzione: slot 0 e' quello della chat di Odysseus", flush=True)
-    domande, sha_ds = carica_dataset(DATASET)
+    domande, sha_ds = carica_dataset(Path(args.dataset) if args.dataset else DATASET)
     mod = Modello(args.gguf or gguf_da_config(args.modello))
     if args.dry_run:
         return dry_run(args, domande, sha_ds, mod, Registro(None, None))

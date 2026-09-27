@@ -1,0 +1,1692 @@
+{
+ "versione": "1-en",
+ "lingua": "en",
+ "descrizione": "Full English translation (27 Sep 2026) of banco-system-one-domande.json: same ids, options order and correct letters. UI labels as shown by English Windows 11. 'fonte' renamed 'fonte_it' (the fixtures are Italian).",
+ "domande": [
+  {
+   "id": "S01",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"How is Leonardo doing on the stock market right now?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Quotazione live di un titolo nominato: fin_mercati con titolo."
+  },
+  {
+   "id": "S02",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"How are the markets doing this morning?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Quadro dei mercati adesso, caso d'uso citato nella descrizione di fin_mercati."
+  },
+  {
+   "id": "S03",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What is AAPL trading at right now?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Prezzo attuale di un ticker: dato live di mercato, lo strumento dedicato vince sul web."
+  },
+  {
+   "id": "S04",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"Is the defense sector up or down today?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Watchlist difesa adesso ('come sta la difesa')."
+  },
+  {
+   "id": "S05",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"How much is bitcoin worth right now?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Prezzo cripto attuale, la watchlist di fin_mercati include le cripto."
+  },
+  {
+   "id": "S06",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"Are there stocks moving against their sector today?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Anomalia 'chi si muove contro il proprio settore' e' gia' calcolata da fin_mercati."
+  },
+  {
+   "id": "S07",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"Any financial news today?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "A",
+   "perche": "Notiziario finanziario generico di oggi: la descrizione di fin_mercati lo nomina ('notiziario finanziario', esempio 'novita' finanziarie' nello schema reale). Nessun luogo ne' soggetto, e la finanza in generale e' proprio quel notiziario: osint_notizie non aggiunge nulla (contrasto voluto con S13: luogo + tema preciso = B)."
+  },
+  {
+   "id": "S08",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Latest news on Ukraine?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un luogo: esempio letterale della descrizione di osint_notizie."
+  },
+  {
+   "id": "S09",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"Find me news about Boeing.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un'azienda: osint_notizie con soggetto (regola del profilo)."
+  },
+  {
+   "id": "S10",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"What happened in Gaza in the last three days?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Luogo preciso con finestra di giorni: notizie, non quadro globale."
+  },
+  {
+   "id": "S11",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Read me what that article about the port of Odessa says.\"\nTool results in this turn: osint_situazione listed the event id gdelt:7f21ab \"Explosion at the port of Odessa\" (title and source only, no text).",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Leggere il corpo di un articolo gia' visto: osint_notizie con l'id."
+  },
+  {
+   "id": "S12",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What news is there about OPEC this week?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Organizzazione come soggetto, finestra di una settimana."
+  },
+  {
+   "id": "S13",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Any updates on the protests in Georgia?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Notizie su un luogo e un tema."
+  },
+  {
+   "id": "S14",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"Can you find me the latest news about Elon Musk?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "B",
+   "perche": "Persona come soggetto: osint_notizie con soggetto."
+  },
+  {
+   "id": "S15",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Show me the Red Sea on the map.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "C",
+   "perche": "Richiesta esplicita di vedere un luogo sulla mappa: centra."
+  },
+  {
+   "id": "S16",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Center the map on Taiwan.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "C",
+   "perche": "Centratura esplicita."
+  },
+  {
+   "id": "S17",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Take the map to Kyiv and zoom in on the city.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "C",
+   "perche": "Centra con zoom su una citta'."
+  },
+  {
+   "id": "S18",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Show me where the Strait of Hormuz is.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "C",
+   "perche": "'Fammi vedere dove' su un luogo: la mappa, non le notizie."
+  },
+  {
+   "id": "S19",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Move the view to the Suez Canal.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "C",
+   "perche": "Spostare la vista della mappa su un luogo."
+  },
+  {
+   "id": "S20",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"What is happening in the world right now?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "D",
+   "perche": "'Cosa succede' globale: esempio letterale di osint_situazione."
+  },
+  {
+   "id": "S21",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Give me a ranking of today's most serious crises.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "D",
+   "perche": "Classifica globale: 'fammi una classifica'."
+  },
+  {
+   "id": "S22",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"How serious is the global situation this morning?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "D",
+   "perche": "'Quanto e' grave la situazione': livello di minaccia globale."
+  },
+  {
+   "id": "S23",
+   "categoria": "strumento",
+   "stato": "Active profile: Intelligence\nUser message: \"Give me the big picture: what matters most in the world today?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "D",
+   "perche": "Quadro globale in ordine di importanza."
+  },
+  {
+   "id": "S24",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Quick briefing: what are the most followed events of the last few hours worldwide?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "D",
+   "perche": "Eventi piu' coperti a livello mondiale, senza un luogo o un soggetto."
+  },
+  {
+   "id": "S25",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Who won the Italian Formula 1 Grand Prix last Sunday?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "E",
+   "perche": "Fatto sportivo recente: i feed OSINT e finanziari non lo coprono, basta una ricerca rapida."
+  },
+  {
+   "id": "S26",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What time does the Egyptian Museum in Turin open today?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "E",
+   "perche": "Fatto pratico da cercare sul web."
+  },
+  {
+   "id": "S27",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What is the phone number of the municipal pharmacy in Lodi?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "E",
+   "perche": "Dato di contatto: ricerca web."
+  },
+  {
+   "id": "S28",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What is the official website of the Municipality of Bergamo?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "E",
+   "perche": "Trovare un sito: ricerca web."
+  },
+  {
+   "id": "S29",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What is the latest stable version of Python released?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "E",
+   "perche": "Fatto attuale fuori dai feed della piattaforma."
+  },
+  {
+   "id": "S30",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"I have 37 shares at 184.23 euros each: how much are they worth in total?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "F",
+   "perche": "Numeri tutti dati dall'utente, moltiplicazione a piu' cifre."
+  },
+  {
+   "id": "S31",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"What is 17% of 2,348.50?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "F",
+   "perche": "Percentuale su numeri dati."
+  },
+  {
+   "id": "S32",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"By what percentage has it risen compared to yesterday?\"\nTool results in this turn: fin_mercati returned Leonardo price 41.20 EUR, previous close 39.87 EUR.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "F",
+   "perche": "I prezzi sono gia' nel contesto: serve solo la variazione percentuale esatta."
+  },
+  {
+   "id": "S33",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Convert 1,250 dollars to euros at the rate 0.9213.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "F",
+   "perche": "Conversione con un cambio dato dall'utente."
+  },
+  {
+   "id": "S34",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Give me the average of these times: 14.7 18.2 21.9 16.4 and 19.3 seconds.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "F",
+   "perche": "Media di numeri dati."
+  },
+  {
+   "id": "S35",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Hi! How are you?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Saluto: nessun dato da prendere."
+  },
+  {
+   "id": "S36",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"What is an ETF, in simple words?\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Spiegare un termine: fin_mercati non serve a questo, nessun dato live richiesto."
+  },
+  {
+   "id": "S37",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Thanks, that's perfect!\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Ringraziamento: nessuno strumento."
+  },
+  {
+   "id": "S38",
+   "categoria": "strumento",
+   "stato": "Active profile: Financial\nUser message: \"So NVIDIA is down today?\"\nTool results in this turn: fin_mercati returned NVDA 131.40 USD, -2.1% today.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Il dato e' gia' nel contesto e non serve aritmetica: si risponde."
+  },
+  {
+   "id": "S39",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Write me a short poem about autumn.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Scrittura creativa: nessun dato esterno."
+  },
+  {
+   "id": "S40",
+   "categoria": "strumento",
+   "stato": "Active profile: General\nUser message: \"Summarize in two lines what you just explained to me.\"\nTool results in this turn: none.",
+   "domanda": "Which read-only tool must be called NOW, before answering the user?",
+   "opzioni": [
+    "fin_mercati: markets now: watchlist prices (defense, big tech, crypto), financial newswire, anomalies; live quote of ONE named stock. CURRENT market data only, never to explain a term.",
+    "osint_notizie: news about a place, a subject (company, person, organization) or a topic within a window of days; reads the full text of an article given its url or the id of an event already seen.",
+    "osint_mappa (center action): moves the map the user is looking at onto a place, with zoom. View only.",
+    "osint_situazione: global picture of what matters in the world right now, ranked: threat level, most covered events, anomalies, regions at risk.",
+    "web_search: quick web search for a fact or a current event that the platform feeds do not have.",
+    "calcola: exact multi-digit arithmetic (totals, differences, percentages, conversions with a given rate, averages) on numbers already given by the user or by a result.",
+    "none: no tool in the list is needed now, answer directly."
+   ],
+   "giusta": "G",
+   "perche": "Riassunto della conversazione gia' presente."
+  },
+  {
+   "id": "U01",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"save this text as groceries.txt\"\nStep to do now: confirm the save: the name groceries.txt is already typed in the File name field",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(150,130) button \"New folder\"",
+    "(60,890) button \"Hide Folders\"",
+    "(700,890) combo box \"Encoding:\"",
+    "(60,130) button \"Organize\"",
+    "(880,890) button \"Save\"",
+    "(970,890) button \"Cancel\"",
+    "none fits"
+   ],
+   "giusta": "E",
+   "perche": "Il passo e' confermare: pulsante Salva.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U02",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"save the file in the Downloads folder\"\nStep to do now: open the Downloads folder from the navigation pane on the left",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(80,262) tree item \"Downloads (pinned)\"",
+    "(80,598) tree item \"Music\"",
+    "(80,234) tree item \"Desktop (pinned)\"",
+    "(880,890) button \"Save\"",
+    "(80,318) tree item \"Pictures (pinned)\"",
+    "(80,290) tree item \"Documents (pinned)\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "Unica voce Download fra le opzioni.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U03",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"forget it, don't save\"\nStep to do now: close the Save As window without saving, with the Cancel button",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(970,890) button \"Cancel\"",
+    "(60,130) button \"Organize\"",
+    "(880,890) button \"Save\"",
+    "(60,890) button \"Hide Folders\"",
+    "(150,130) button \"New folder\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "Il passo nomina Annulla.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U04",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"create a folder for receipts and save the file in it\"\nStep to do now: create a new folder in the current location",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(150,130) button \"New folder\"",
+    "(60,890) button \"Hide Folders\"",
+    "(60,130) button \"Organize\"",
+    "(130,60) menu item \"View\"",
+    "(880,890) button \"Save\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "Pulsante Nuova cartella.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U05",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"save it with ANSI encoding instead of UTF-8\"\nStep to do now: open the encoding list to choose another one",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1890,60) button \"Settings\"",
+    "(500,820) edit \"File name:\"",
+    "(500,850) combo box \"Save as type:\"",
+    "(880,890) button \"Save\"",
+    "(700,890) combo box \"Encoding:\"",
+    "none fits"
+   ],
+   "giusta": "E",
+   "perche": "La casella combinata Codifica.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U06",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"overwrite the shopping list file that is already there\"\nStep to do now: select the existing file \"shopping list\" in the list",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(560,460) list item \"reminders\"",
+    "(880,890) button \"Save\"",
+    "(560,544) list item \"monthly expenses\"",
+    "(560,516) list item \"deadlines\"",
+    "(500,820) edit \"File name:\"",
+    "(560,264) list item \"shopping list\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "La voce di elenco con quel nome.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U07",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"look in the documents for a file called recipes\"\nStep to do now: type the name in the folder's search box",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(500,820) edit \"File name:\"",
+    "(150,130) button \"New folder\"",
+    "(60,130) button \"Organize\"",
+    "(1000,90) edit \"Search Documents\"",
+    "(500,90) edit \"Address Bar\"",
+    "none fits"
+   ],
+   "giusta": "D",
+   "perche": "La casella di ricerca e' 'Cerca in Documenti'; la barra degli indirizzi naviga, non cerca.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U08",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"*Untitled - Notepad\", with the \"Save As\" window open (current folder: Documents)\nUser request: \"print this document\"\nStep to do now: press a \"Print\" button",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(970,890) button \"Cancel\"",
+    "(700,890) combo box \"Encoding:\"",
+    "(150,130) button \"New folder\"",
+    "(880,890) button \"Save\"",
+    "(60,130) button \"Organize\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Stampa fra le opzioni.",
+   "fonte_it": "ricostruito_blocco_note_salva_con_nome.txt"
+  },
+  {
+   "id": "U09",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"open the Downloads folder\"\nStep to do now: open Downloads from the navigation pane on the left",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(79,158) tree item \"Home\"",
+    "(90,318) tree item \"Downloads (pinned)\"",
+    "(92,350) tree item \"Documents (pinned)\"",
+    "(88,382) tree item \"Pictures (pinned)\"",
+    "(82,190) tree item \"Gallery\"",
+    "(92,510) tree item \"Screenshots\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Voce Download del riquadro.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U10",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"go back to the previous folder\"\nStep to do now: go back to the previous folder in the history",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(279,25) button \"Add new tab\"",
+    "(235,24) button \"Close tab\"",
+    "(35,64) app bar button \"Back\"",
+    "(179,64) app bar button \"Refresh \"project-lab\" (F5)\"",
+    "(131,64) app bar button \"Up to \"Local Disk (D:)\" (Alt + Up Arrow)\"",
+    "none fits"
+   ],
+   "giusta": "C",
+   "perche": "Indietro = cartella precedente nella cronologia; 'Fino a' sale al livello superiore.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U11",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"find the file service.err in this folder\"\nStep to do now: type the file name in the folder's search box",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(804,64) edit \"Address Bar\"",
+    "(63,112) app bar button \"New\"",
+    "(1654,64) edit \"Search project-lab\"",
+    "(573,112) app bar button \"View\"",
+    "(463,112) app bar button \"Sort\"",
+    "none fits"
+   ],
+   "giusta": "C",
+   "perche": "La casella di ricerca della cartella.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U12",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"open the log file for me\"\nStep to do now: open the text document \"log\" from the file list",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(537,963) list item \"log\"",
+    "(537,879) list item \"start\"",
+    "(537,823) list item \"tools\"",
+    "(537,935) list item \"service.out\"",
+    "(537,991) list item \"note-1\"",
+    "(537,907) list item \"service.err\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "La voce di elenco 'registro'.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U13",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"sort the files from the most recent\"\nStep to do now: click the header of the date modified column",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(360,148) split button \"Name\"",
+    "(568,148) split button \"Date modified\"",
+    "(800,148) split button \"Size\"",
+    "(700,148) split button \"Type\"",
+    "(573,112) app bar button \"View\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Intestazione di colonna 'Ultima modifica'.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U14",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"go to drive D\"\nStep to do now: open drive D: from the navigation pane",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(113,734) tree item \"Local Disk (D:)\"",
+    "(74,862) tree item \"Network\"",
+    "(106,702) tree item \"Windows (C:)\"",
+    "(96,766) tree item \"Games (E:)\"",
+    "(114,830) tree item \"Local Disk (H:)\"",
+    "(113,798) tree item \"Local Disk (G:)\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "Voce Disco locale (D:).",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U15",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"refresh the folder, I don't see the new file\"\nStep to do now: reload the contents of the folder",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(35,64) app bar button \"Back\"",
+    "(661,112) button \"See more\"",
+    "(1856,112) app bar button \"Details\"",
+    "(179,64) app bar button \"Refresh \"project-lab\" (F5)\"",
+    "(1889,16) button \"Close\"",
+    "none fits"
+   ],
+   "giusta": "D",
+   "perche": "Pulsante Aggiorna (F5).",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U16",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"project-lab - File Explorer\" (folder D:\\project-lab)\nUser request: \"rename the file note-1\"\nStep to do now: press a \"Rename\" button in the command bar",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(63,112) app bar button \"New\"",
+    "(573,112) app bar button \"View\"",
+    "(235,24) button \"Close tab\"",
+    "(463,112) app bar button \"Sort\"",
+    "(1856,112) app bar button \"Details\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Rinomina fra le opzioni.",
+   "fonte_it": "reale_esplora_file_pieno.txt"
+  },
+  {
+   "id": "U17",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"image.gif\" in the Photos app\nUser request: \"enlarge the image a bit\"\nStep to do now: increase the zoom by one step",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1837,1016) button \"Zoom in\"",
+    "(1892,1016) app bar button \"Full screen\"",
+    "(1523,1016) app bar button \"Zoom to fit\"",
+    "(1591,1016) combo box \"Zoom selection\"",
+    "(1659,1016) button \"Zoom out\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "Zoom avanti aumenta lo zoom di un passo.",
+   "fonte_it": "reale_foto.txt"
+  },
+  {
+   "id": "U18",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"image.gif\" in the Photos app\nUser request: \"print this image for me\"\nStep to do now: open printing for the image",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(184,24) app bar button \"Delete\"",
+    "(57,24) button \"Edit\"",
+    "(1717,24) button \"Open with\"",
+    "(272,24) app bar button \"Share\"",
+    "(228,24) app bar button \"Print\"",
+    "(952,1016) app bar button \"File info\"",
+    "none fits"
+   ],
+   "giusta": "E",
+   "perche": "Pulsante Stampa.",
+   "fonte_it": "reale_foto.txt"
+  },
+  {
+   "id": "U19",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"image.gif\" in the Photos app\nUser request: \"open it with another program\"\nStep to do now: choose another application to open the image",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(272,24) app bar button \"Share\"",
+    "(1717,24) button \"Open with\"",
+    "(318,24) button \"More options for Edit toolbar\"",
+    "(68,1016) app bar button \"Start slideshow\"",
+    "(57,24) button \"Edit\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Pulsante Apri con.",
+   "fonte_it": "reale_foto.txt"
+  },
+  {
+   "id": "U20",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"image.gif\" in the Photos app\nUser request: \"how big is this file and when was it created?\"\nStep to do now: open the file information",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(228,24) app bar button \"Print\"",
+    "(1892,1016) app bar button \"Full screen\"",
+    "(68,1016) app bar button \"Start slideshow\"",
+    "(952,1016) app bar button \"File info\"",
+    "(28,1016) app bar button \"Show filmstrip\"",
+    "none fits"
+   ],
+   "giusta": "D",
+   "perche": "Info sul file.",
+   "fonte_it": "reale_foto.txt"
+  },
+  {
+   "id": "U21",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"image.gif\" in the Photos app\nUser request: \"rotate the image by 90 degrees\"\nStep to do now: press a \"Rotate\" button",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(184,24) app bar button \"Delete\"",
+    "(272,24) app bar button \"Share\"",
+    "(228,24) app bar button \"Print\"",
+    "(57,24) button \"Edit\"",
+    "(1837,1016) button \"Zoom in\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "Nessun pulsante Ruota fra le opzioni.",
+   "fonte_it": "reale_foto.txt"
+  },
+  {
+   "id": "U22",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"calculate 7 times 8\"\nStep to do now: press the 7 key",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(130,400) button \"Eight\"",
+    "(290,500) button \"Plus\"",
+    "(50,450) button \"Four\"",
+    "(50,500) button \"One\"",
+    "(50,400) button \"Seven\"",
+    "(210,400) button \"Nine\"",
+    "none fits"
+   ],
+   "giusta": "E",
+   "perche": "Tasto Sette.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U23",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"calculate 7 times 8\"\nStep to do now: press the multiplication key (7 is already entered)",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(290,450) button \"Minus\"",
+    "(290,500) button \"Plus\"",
+    "(50,300) button \"Percent\"",
+    "(290,350) button \"Divide by\"",
+    "(290,550) button \"Equals\"",
+    "(290,400) button \"Multiply by\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "Moltiplica per.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U24",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"calculate 7 times 8\"\nStep to do now: get the result (7 × 8 is already entered)",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(290,500) button \"Plus\"",
+    "(270,250) button \"Memory store\"",
+    "(290,300) button \"Backspace\"",
+    "(290,550) button \"Equals\"",
+    "(210,300) button \"Clear\"",
+    "none fits"
+   ],
+   "giusta": "D",
+   "perche": "Uguale a.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U25",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"start over from zero\"\nStep to do now: reset the whole calculation with the C key",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(30,250) button \"Clear all memory\"",
+    "(130,300) button \"Clear entry\"",
+    "(290,300) button \"Backspace\"",
+    "(210,300) button \"Clear\"",
+    "(50,550) button \"Positive negative\"",
+    "none fits"
+   ],
+   "giusta": "D",
+   "perche": "C = Cancella; 'Cancella voce' e' CE, 'Cancella tutta la memoria' e' MC.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U26",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"show me the previous calculations\"\nStep to do now: open the calculation history",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(140,60) button \"Keep on top\"",
+    "(330,60) button \"Open history\"",
+    "(340,16) button \"Close Calculator\"",
+    "(24,60) button \"Open Navigation\"",
+    "(330,250) button \"Open memory flyout\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Apri cronologia.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U27",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Calculator\" (Standard mode)\nUser request: \"switch to the scientific calculator\"\nStep to do now: open the navigation menu where the mode is chosen",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(24,60) button \"Open Navigation\"",
+    "(140,60) button \"Keep on top\"",
+    "(330,60) button \"Open history\"",
+    "(210,350) button \"Square root\"",
+    "(330,250) button \"Open memory flyout\"",
+    "none fits"
+   ],
+   "giusta": "A",
+   "perche": "'Apri spostamento' e' il menu di navigazione (hamburger) con le modalita'.",
+   "fonte_it": "ricostruito_calcolatrice.txt"
+  },
+  {
+   "id": "U28",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Menu\": the hidden icons of the notification area are open\nUser request: \"open the NVIDIA panel\"\nStep to do now: open the NVIDIA settings from the hidden icons",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1578,955) button \"Peripherals\"",
+    "(1738,915) button \"NVIDIA Settings\"",
+    "(1738,955) button \"Bluetooth Devices\"",
+    "(1618,915) button \"Overlay\"",
+    "(1618,955) button \"Antivirus\"",
+    "(1658,915) button \"Mouse\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Impostazioni NVIDIA.",
+   "fonte_it": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U29",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Menu\": the hidden icons of the notification area are open\nUser request: \"open Discord\"\nStep to do now: open Discord from the hidden icon",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1618,995) button \"Spotify\"",
+    "(1658,955) button \"Google Chrome\"",
+    "(1698,955) button \"Discord\"",
+    "(1658,995) button \"Games - syncing\"",
+    "(1578,915) button \"WhatsApp\"",
+    "none fits"
+   ],
+   "giusta": "C",
+   "perche": "Icona Discord.",
+   "fonte_it": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U30",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Menu\": the hidden icons of the notification area are open\nUser request: \"check whether Windows Security reports problems\"\nStep to do now: open Windows Security from the notification area",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1578,995) button \"Anticheat\"",
+    "(1698,995) button \"Windows Security - No actions needed. Windows Security - Actions recommended.\"",
+    "(1578,955) button \"Peripherals\"",
+    "(1618,955) button \"Antivirus\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "L'icona di Sicurezza di Windows; 'Antivirus' e' un altro programma.",
+   "fonte_it": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U31",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Menu\": the hidden icons of the notification area are open\nUser request: \"open OneDrive\"\nStep to do now: open OneDrive from the hidden icons",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1618,915) button \"Overlay\"",
+    "(1698,915) button \"Music\"",
+    "(1658,915) button \"Mouse\"",
+    "(1578,915) button \"WhatsApp\"",
+    "(1578,955) button \"Peripherals\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "OneDrive non e' fra le opzioni.",
+   "fonte_it": "reale_menu_area_notifica.txt"
+  },
+  {
+   "id": "U32",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Web page - Google Chrome\" (the tree only shows the taskbar)\nUser request: \"open File Explorer for me\"\nStep to do now: open File Explorer from the taskbar",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(985,1056) button \"Microsoft Teams pinned\"",
+    "(941,1056) button \"Task View\"",
+    "(1029,1056) button \"File Explorer pinned\"",
+    "(1073,1056) button \"Google Chrome pinned\"",
+    "(672,1056) button \"Start\"",
+    "(807,1056) button \"Search\"",
+    "none fits"
+   ],
+   "giusta": "C",
+   "perche": "Icona di Esplora file sulla barra.",
+   "fonte_it": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U33",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Web page - Google Chrome\" (the tree only shows the taskbar)\nUser request: \"go back to Spotify\"\nStep to do now: bring the already open Spotify window to the foreground",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1914,1056) button \"Show Desktop\"",
+    "(1161,1056) button \"Spotify - 1 running window\"",
+    "(1117,1056) button \"Profile - Chrome - 1 running window\"",
+    "(1249,1056) button \"Visual Studio Code - 1 running window\"",
+    "(1205,1056) button \"Discord - 1 running window\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Pulsante di Spotify sulla barra.",
+   "fonte_it": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U34",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Web page - Google Chrome\" (the tree only shows the taskbar)\nUser request: \"show me the desktop\"\nStep to do now: minimize all windows and show the desktop",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(1658,1056) button \"Show hidden icons\"",
+    "(1914,1056) button \"Show Desktop\"",
+    "(1792,1056) button \"Headphones (Home) volume: 88%\"",
+    "(672,1056) button \"Start\"",
+    "(941,1056) button \"Task View\"",
+    "none fits"
+   ],
+   "giusta": "B",
+   "perche": "Mostra Desktop.",
+   "fonte_it": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "U35",
+   "categoria": "elemento_ui",
+   "stato": "Foreground window: \"Web page - Google Chrome\" (the tree only shows the taskbar)\nUser request: \"click Sign in on the page I opened\"\nStep to do now: click the \"Sign in\" link inside the web page",
+   "domanda": "Which element must be clicked for the step to do now?",
+   "opzioni": [
+    "(672,1056) button \"Start\"",
+    "(1073,1056) button \"Google Chrome pinned\"",
+    "(82,1056) button \"Widgets 23°C Sunny\"",
+    "(807,1056) button \"Search\"",
+    "(1117,1056) button \"Profile - Chrome - 1 running window\"",
+    "none fits"
+   ],
+   "giusta": "F",
+   "perche": "Il contenuto della pagina non e' nell'albero: nessun elemento adatto.",
+   "fonte_it": "reale_chrome_primo_piano.txt"
+  },
+  {
+   "id": "P01",
+   "categoria": "stato_pagina",
+   "stato": "Current task: read the article about energy prices\nURL: https://www.example-daily.com/economy/energy-prices-falling\nTitle: \"Energy, prices falling for the third month - Example Daily\"\nVisible text (start):\nEconomy | Energy, prices falling for the third month. Electricity and gas bills fall again in September: according to the regulator the average drop is 4.2% compared with August, driven by the wholesale gas price. Households on the regulated tariff will see the effect from the next bill. [...] Footer: About us | Advertising | Cookie notice | Privacy\nInteractive elements: link \"Home\", link \"Economy\", link \"Cookie notice\", link \"Privacy\", button \"Share\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "A",
+   "perche": "Articolo intero leggibile; 'Informativa cookie' e' solo un link a pie' di pagina, nessun banner."
+  },
+  {
+   "id": "P02",
+   "categoria": "stato_pagina",
+   "stato": "Current task: find the width of the Strait of Hormuz\nURL: https://en.example-encyclopedia.org/wiki/Strait_of_Hormuz\nTitle: \"Strait of Hormuz - Example Encyclopedia\"\nVisible text (start):\nStrait of Hormuz. From Example Encyclopedia, the free encyclopedia. The Strait of Hormuz is a strait connecting the Gulf of Oman with the Persian Gulf. At its narrowest point it is about 39 km wide. Contents: 1 Geography 2 History 3 Economic importance 4 Notes\nInteractive elements: link \"Edit\", link \"History\", search box \"Search\", link \"Geography\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "A",
+   "perche": "Voce enciclopedica completa e leggibile."
+  },
+  {
+   "id": "P03",
+   "categoria": "stato_pagina",
+   "stato": "Current task: check the price of the headphones\nURL: https://www.example-shop.com/p/wireless-headphones-x200\nTitle: \"Wireless headphones X200 - Example Shop\"\nVisible text (start):\nWireless headphones X200. 4.5 out of 5 stars (1,284 reviews). Price: 79.90 EUR. In stock, free delivery by Thursday. Color: black. Description: 30-hour battery life, noise cancelling.\nInteractive elements: link \"Sign in\" (top right), link \"Cart\", button \"Add to cart\", button \"Buy now\", menu \"Color\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "A",
+   "perche": "Scheda prodotto con prezzo visibile; 'Accedi' e' solo un link in testata, nessun modulo che blocca."
+  },
+  {
+   "id": "P04",
+   "categoria": "stato_pagina",
+   "stato": "Current task: search for baked pasta recipes\nURL: https://www.example-search.com/search?q=baked+pasta+recipe\nTitle: \"baked pasta recipe - Example Search\"\nVisible text (start):\nAbout 2,450,000 results. 1. Classic baked pasta - example-recipes.com: grandma's recipe with ragu and bechamel. 2. Quick baked pasta in 30 minutes - example-kitchen.com. 3. Vegetarian baked pasta - example-blog.com. 4. Video: cheesy baked pasta. 5. Neapolitan baked pasta.\nInteractive elements: search box \"Search\", 5 result links, link \"Next page\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "A",
+   "perche": "Pagina di risultati completa."
+  },
+  {
+   "id": "P05",
+   "categoria": "stato_pagina",
+   "stato": "Current task: read the thread about the router that disconnects\nURL: https://forum.example-tech.com/t/router-disconnects-every-evening/48213\nTitle: \"Router disconnects every evening - Example Tech Forum\"\nVisible text (start):\nRouter disconnects every evening. Post by marco_77: for a week, at about 9 pm, the router loses the line for two minutes. Reply by tech_luca: check the firmware and turn off the modem's power saving. Reply by marco_77: updated, seems fixed. Thanks! Sign in to reply to this thread.\nInteractive elements: link \"Sign in to reply\", link \"Previous thread\", link \"Next thread\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "A",
+   "perche": "La discussione e' leggibile; l'accesso serve solo per rispondere, non per leggere."
+  },
+  {
+   "id": "P06",
+   "categoria": "stato_pagina",
+   "stato": "Current task: read the article about the new stadium\nURL: https://www.example-news.com/sport/new-stadium-project\nTitle: \"New stadium, project presented - Example News\"\nVisible text (start):\nYour consent matters. We and our 142 partners use cookies and similar technologies to store and access information on your device, for personalised ads and content. You can accept, reject or customise your choices. [the article text below is covered]\nInteractive elements: button \"Accept and close\", button \"Reject\", button \"Customise\" (inside an overlay window)",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "B",
+   "perche": "Finestra di consenso che copre l'articolo."
+  },
+  {
+   "id": "P07",
+   "categoria": "stato_pagina",
+   "stato": "Current task: read the news about the space mission\nURL: https://www.news-example.com/science/moon-mission-update\nTitle: \"Moon mission update - News Example\"\nVisible text (start):\nWe value your privacy. We and our partners store and/or access information on a device, such as cookies, and process personal data for personalised ads and content. You can accept or manage your choices by clicking below.\nInteractive elements: button \"Accept all\", button \"Manage options\", button \"Reject all\" (modal window)",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "B",
+   "perche": "Banner di consenso in inglese, modale."
+  },
+  {
+   "id": "P08",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the maps service\nURL: https://consent.example-services.com/ml?continue=https://maps.example-services.com\nTitle: \"Before you continue\"\nVisible text (start):\nBefore you continue. We use cookies and data to deliver and maintain services, track outages and protect against spam and fraud. If you accept, we will also use cookies and data to develop new services and show personalised ads.\nInteractive elements: button \"Reject all\", button \"Accept all\", link \"More options\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "B",
+   "perche": "Pagina intermedia di consenso prima del servizio."
+  },
+  {
+   "id": "P09",
+   "categoria": "stato_pagina",
+   "stato": "Current task: read the tiramisu recipe\nURL: https://www.example-recipes.com/desserts/classic-tiramisu\nTitle: \"Classic tiramisu - Example Recipes\"\nVisible text (start):\nClassic tiramisu. Ingredients for 6 people: 500 g mascarpone, 4 eggs, [...] This site uses technical cookies and, with your consent, profiling cookies. Closing the banner with the X continues without accepting. The recipe is hidden until you choose.\nInteractive elements: button \"Accept\", button \"Continue without accepting\", button \"X\" (full-width banner in the foreground)",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "B",
+   "perche": "Il banner cookie in primo piano oscura la ricetta."
+  },
+  {
+   "id": "P10",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the mailbox to read the latest email\nURL: https://accounts.example-services.com/signin/identifier\nTitle: \"Sign in - Example Services Account\"\nVisible text (start):\nSign in. Use your Example Services account. Email or phone. Forgot email? Not your computer? Use guest mode.\nInteractive elements: field \"Email or phone\", button \"Next\", link \"Create account\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "C",
+   "perche": "Primo passo di accesso (solo email) su un dominio di account."
+  },
+  {
+   "id": "P11",
+   "categoria": "stato_pagina",
+   "stato": "Current task: check the inbox\nURL: https://webmail.example-provider.com/\nTitle: \"Example Provider Webmail - Login\"\nVisible text (start):\nWebmail. Username. Password. Remember me on this computer. Forgot password?\nInteractive elements: field \"Username\", password field \"Password\", checkbox \"Remember me\", button \"Log in\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "C",
+   "perche": "Modulo con utente e password prima della posta."
+  },
+  {
+   "id": "P12",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the company holiday portal\nURL: https://intranet.example-company.com/holidays/requests\nTitle: \"Session expired\"\nVisible text (start):\nYour session has expired due to inactivity. Please sign in again to continue.\nInteractive elements: field \"Employee ID\", password field \"Password\", button \"Sign in\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "C",
+   "perche": "Sessione scaduta: il portale chiede di nuovo le credenziali."
+  },
+  {
+   "id": "P13",
+   "categoria": "stato_pagina",
+   "stato": "Current task: see the post shared by a friend\nURL: https://www.example-social.com/p/C7xk2LmQ\nTitle: \"Example Social\"\nVisible text (start):\nLog in to Example Social to see photos and videos from your friends. [the post content is not visible behind the window]\nInteractive elements: window \"Log in\" with field \"Email or username\", password field \"Password\", button \"Log in\", link \"Sign up\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "C",
+   "perche": "Il post e' nascosto dietro una finestra di accesso con password."
+  },
+  {
+   "id": "P14",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the deals website\nURL: https://www.example-deals.com/\nTitle: \"Just a moment...\"\nVisible text (start):\nwww.example-deals.com. Verify you are human by completing the action below. www.example-deals.com needs to review the security of your connection before proceeding.\nInteractive elements: checkbox \"Verify you are human\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "D",
+   "perche": "Sfida Cloudflare ('Just a moment', verifica umana)."
+  },
+  {
+   "id": "P15",
+   "categoria": "stato_pagina",
+   "stato": "Current task: look up train times\nURL: https://www.example-search.com/sorry/index?continue=/search%3Fq%3Dtimetable\nTitle: \"Example Search\"\nVisible text (start):\nOur systems have detected unusual traffic from your computer network. This page checks that it's really you sending the requests, and not a robot.\nInteractive elements: checkbox \"I'm not a robot\", button \"Submit\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "D",
+   "perche": "reCAPTCHA dopo traffico insolito."
+  },
+  {
+   "id": "P16",
+   "categoria": "stato_pagina",
+   "stato": "Current task: check the order status\nURL: https://www.example-shipping.com/tracking/88213\nTitle: \"Example Shipping - Verification\"\nVisible text (start):\nPress & Hold to confirm you are a human (and not a bot). Reference ID 4f1c-88a2.\nInteractive elements: button \"Press & Hold\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "D",
+   "perche": "Sfida 'press and hold' anti-bot: e' un captcha."
+  },
+  {
+   "id": "P17",
+   "categoria": "stato_pagina",
+   "stato": "Current task: subscribe to the museum newsletter\nURL: https://www.example-museum.com/newsletter\nTitle: \"Newsletter - Example Museum\"\nVisible text (start):\nTo continue, complete the verification. Select all images with a bus. Click verify once there are none left.\nInteractive elements: grid of 9 images, button \"Verify\", button \"Get a new challenge\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "D",
+   "perche": "Sfida hCaptcha a immagini."
+  },
+  {
+   "id": "P18",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the sales page\nURL: https://www.example-shop.com/summer-sale-2026\nTitle: \"Page not found - Example Shop\"\nVisible text (start):\n404. Oops! The page you are looking for does not exist or has been moved. Go back to the home page or use the search.\nInteractive elements: link \"Back to home\", search box \"Search\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "E",
+   "perche": "Errore 404."
+  },
+  {
+   "id": "P19",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the town council website\nURL: https://www.example-nonexistent-town.com/\nTitle: \"www.example-nonexistent-town.com\"\nVisible text (start):\nThis site can't be reached. www.example-nonexistent-town.com's server IP address could not be found. ERR_NAME_NOT_RESOLVED\nInteractive elements: button \"Reload\", button \"Details\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "E",
+   "perche": "Sito irraggiungibile (DNS)."
+  },
+  {
+   "id": "P20",
+   "categoria": "stato_pagina",
+   "stato": "Current task: download the refund form\nURL: https://services.example-agency.com/forms/refund\nTitle: \"502 Bad Gateway\"\nVisible text (start):\n502 Bad Gateway. nginx\nInteractive elements: none",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "E",
+   "perche": "Errore 502 del server."
+  },
+  {
+   "id": "P21",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the document archive\nURL: https://docs.example-office.com/archive/2025/\nTitle: \"403 Forbidden\"\nVisible text (start):\nForbidden. You don't have permission to access this resource. Apache Server at docs.example-office.com Port 443\nInteractive elements: none",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "E",
+   "perche": "403: accesso negato dal server, senza modulo di login."
+  },
+  {
+   "id": "P22",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the energy usage dashboard\nURL: https://app.example-energy.com/dashboard\nTitle: \"\"\nVisible text (start):\n(no text)\nInteractive elements: none",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "F",
+   "perche": "Titolo e testo vuoti, nessun elemento: pagina bianca."
+  },
+  {
+   "id": "P23",
+   "categoria": "stato_pagina",
+   "stato": "Current task: open the shared calendar\nURL: https://calendar.example-services.com/r/week\nTitle: \"Calendar\"\nVisible text (start):\nLoading...\nInteractive elements: none (only a spinning indicator in the middle)",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "F",
+   "perche": "Solo indicatore di caricamento."
+  },
+  {
+   "id": "P24",
+   "categoria": "stato_pagina",
+   "stato": "Current task: compare flights to Paris\nURL: https://www.example-flights.com/results?from=MXP&to=CDG\nTitle: \"Flight search - Example Flights\"\nVisible text (start):\nWe are looking for the best deals for you... Please wait. 35%\nInteractive elements: progress bar at 35%",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "F",
+   "perche": "Risultati ancora in caricamento, nessun contenuto utile."
+  },
+  {
+   "id": "P25",
+   "categoria": "stato_pagina",
+   "stato": "Current task: follow the live coverage of the match\nURL: https://www.example-sport.com/live/match-88\nTitle: \"Example Sport\"\nVisible text (start):\nMenu | Sign in\n(main area empty: no text below the header)\nInteractive elements: link \"Menu\", link \"Sign in\"",
+   "domanda": "What state is the open web page in right now?",
+   "opzioni": [
+    "ok: page loaded and usable, the content can be read.",
+    "cookie: a cookie consent banner or window covers the page.",
+    "login: the page asks you to sign in (username or email and password) before showing the content.",
+    "captcha: an anti-robot check blocks the page.",
+    "error: error page (404, 500, 502, site unreachable, access denied).",
+    "empty or loading: no useful content yet, blank page or only a loading indicator."
+   ],
+   "giusta": "F",
+   "perche": "Solo la testata; il contenuto principale non e' ancora arrivato."
+  }
+ ]
+}
