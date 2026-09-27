@@ -35,7 +35,7 @@ def un_turno(opener, sessione, domanda):
     strumenti, testo, note = [], [], []
     r = _post_form(opener, "/api/chat_stream", {
         "message": domanda, "session": sessione, "mode": "agent", "plan_mode": "false",
-        "vista_mode": "true", "allow_bash": "false", "use_rag": "false", "allow_web_search": "false",
+        "background_learning": "off", "vista_mode": "true", "allow_bash": "false", "use_rag": "false", "allow_web_search": "false",
     })
     for grezza in r:
         riga = grezza.decode("utf-8", errors="replace").strip()

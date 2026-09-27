@@ -82,6 +82,7 @@ def un_turno(opener, sessione, domanda):
     r = _post_form(opener, "/api/chat_stream", {
         "message": domanda,
         "session": sessione,
+        "background_learning": "off",
         "mode": "agent",
         "plan_mode": "false",
         "osint_mode": "true",

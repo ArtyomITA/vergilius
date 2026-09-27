@@ -144,6 +144,8 @@ def un_turno(opener, sessione, domanda):
     testo_prima = ""
     r = _post_form(opener, "/api/chat_stream", {
         "message": domanda, "session": sessione, "mode": "agent", "plan_mode": "false",
+        # niente memorie/skill scritte nell'istanza vera (prompt invariato)
+        "background_learning": "off",
         "osint_mode": "true", "financial_mode": "true", "allow_bash": "false",
         "use_rag": "false", "allow_web_search": "false",
     })

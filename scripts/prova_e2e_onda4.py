@@ -179,6 +179,7 @@ def run_turn(opener, base: str, session_id: str, case: dict) -> dict:
     fields = {
         "message": case["prompt"],
         "session": session_id,
+        "background_learning": "off",
         "mode": case["mode"],
         "plan_mode": "false",
         "vista_mode": "false",
