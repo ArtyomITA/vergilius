@@ -15,11 +15,25 @@ Fasi:
   --confronta TAG_A TAG_B     verdetto per leve d'ambiente: blocchi girati con --scoperta --rip 1 e riavvio fra A e B
                         (A1, riavvio con leva, B1, B2, riavvio senza leva, A2 -> --confronta A1,A2 B1,B2 --bersagli .. --controlli ..).
   --scoperta --ab NOME  gruppo di rifinitura: le operazioni scelte x --rip con la skill iniettata (braccio B).
+  --ab-famiglia DOMINIO cancello 3 della biblioteca (emendamento del proprietario, 27 set): A-B-B-A (--cicli N) per
+                        FAMIGLIA. A = bench_skills=nessuna (zero skill, modo banco); B = NESSUN campo bench_skills: il
+                        selettore acceso sceglie fra le skill della famiglia installate per la prova
+                        (installa-biblioteca.py --prova-famiglia DOMINIO). Bersagli = operazioni di VERIFICA con
+                        skill_attese nella famiglia (etichette -> skill con mappa_oro di banco-selettore-DOMINIO.json);
+                        controlli = --n-controlli (3) operazioni di verifica senza skill della famiglia, prima le negative.
+                        Richiede ODYSSEUS_SKILL_SELETTORE=1 e ODYSSEUS_BENCH_SKILL_FIELD=1 nel server: un turno B senza
+                        evento skills_injected con origine "selettore" (o con un motivo da configurazione sbagliata)
+                        ferma il banco; lo ferma anche un selettore acceso ma MUTO (3 turni B di fila, o piu' del 20%
+                        dopo 6, con motivo tetto / nessuna decisione / errore / scartate...). Referto: verdetto TIENI del
+                        piano sulla famiglia + skill iniettate nei turni peggiorati (per togliere le colpevoli e
+                        ripetere); NON VALIDO (uscita 3, mai SCARTA) se nessun turno B sui bersagli ha iniettato skill.
+                        Per un dominio diverso da browser serve --ops con le sue operazioni.
 
 Uso (dalla radice del repo, stack acceso, PC libero: vista_mode accende Holo e gli strumenti del desktop):
   odysseus\venv\Scripts\python.exe <questo> --verifica
   odysseus\venv\Scripts\python.exe <questo> --scoperta --tag S0 [--solo A04,C16|--famiglia tabella] [--riprendi]
   odysseus\venv\Scripts\python.exe <questo> --ab browser/articolo-lungo-trova-dato --bersagli A04,A05,C11 --controlli A01,C02,N01 --tag AB1
+  odysseus\venv\Scripts\python.exe <questo> --ab-famiglia browser --tag F1 [--cicli 2] [--riprendi]
 Uscite (--out, default D:/vergilius-lab/ricerche/skill/banco-browser): banco-TAG.txt (riga per turno), banco-TAG.json
 (tutti i turni, incrementale), registro-TAG.jsonl (un errore per riga), candidati-TAG.md oppure verdetto-TAG.md.
 """
@@ -44,6 +58,8 @@ BASE = "http://127.0.0.1:7000"
 CREDENZIALI = r"d:\assistenteeee\scripts\.credenziali_odysseus"   # letto, mai stampato
 OPS_DEFAULT = Path(__file__).with_name("operazioni-browser.json")
 OUT_DEFAULT = Path("d:/vergilius-lab/ricerche/skill/banco-browser")
+BIBLIOTECA = Path(__file__).resolve().parents[1] / "biblioteca-skill"
+MANIFESTO_PROVA = BIBLIOTECA / ".prova-in-corso.json"   # scritto da installa-biblioteca.py --prova-famiglia
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36"
 
 # Campi fissi del modulo: modo browser, niente web search, niente scritture di memoria/skill.
@@ -137,7 +153,7 @@ def un_turno(opener, sessione, domanda, bench_skills=""):
     if bench_skills:
         campi["bench_skills"] = bench_skills
     tr = {"chiamate": [], "esiti": [], "testo": [], "pensiero": [], "eventi": [], "dedup": 0,
-          "metriche": {}, "skill_iniettate": None, "giri_step": 0}
+          "metriche": {}, "skill_iniettate": None, "evento_skill": None, "giri_step": 0}
     testo_prima = ""
     r = _post_form(opener, "/api/chat_stream", campi)
     for grezza in r:
@@ -164,6 +180,8 @@ def un_turno(opener, sessione, domanda, bench_skills=""):
             tr["esiti"].append({"tool": d.get("tool") or "?", "output": str(d.get("output") or ""), "exit_code": d.get("exit_code")})
         elif tipo == "skills_injected":
             tr["skill_iniettate"] = d.get("skills") if d.get("skills") is not None else (d.get("ids") or [])
+            # evento intero (origine, motivo, p, candidati, ms): serve al cancello 3 e al referto
+            tr["evento_skill"] = {k: d.get(k) for k in ("skills", "ids", "origine", "p", "candidati", "ms", "motivo", "scartate")}
         elif tipo == "metrics":
             tr["metriche"] = d.get("data") or {}
         elif tipo in EVENTI_ESAURITI:
@@ -415,6 +433,216 @@ def contaminazione(testo_skill, ops):
     return trovate
 
 
+# ---------------------------------------------------------------- cancello 3: A-B-B-A per famiglia
+# Motivi dell'evento skills_injected (src/skill_selettore.py, routes/chat_routes.py) che nel braccio B dicono
+# "configurazione sbagliata", non "il selettore ha deciso": il banco si ferma invece di misurare un B finto.
+MOTIVI_FERMI = ("nessun candidato", "modello non ammesso", "endpoint non locale", "skill spente dall'utente",
+                "nessun ciclo di eventi", "messaggio vuoto", "messaggio non testuale", "non agente", "ricerca",
+                "ripresa dopo approvazione", "piano", "confronto", "immagini", "strumenti bloccati",
+                "credenziale delegata", "incognito", "escluso")
+# Motivi in cui il selettore acceso NON ha deciso (voto assente, tetto, errore, skill scelte e poi scartate):
+# il turno B diventa uguale ad A. Uno ogni tanto e' normale; di fila o troppi = il banco non misura la famiglia
+# (slot inesistente, timeout sistematico, strumenti delle skill fuori dal paniere vero...).
+MOTIVI_MUTI = ("nessuna decisione", "tetto", "annullato", "scartate", "esito non valido", "modo guida")
+MUTI_DI_FILA_MAX, MUTI_QUOTA_MAX, MUTI_MIN_TURNI = 3, 0.20, 6
+LEVE_SERVER = ("servono ODYSSEUS_SKILL_SELETTORE=1 e ODYSSEUS_BENCH_SKILL_FIELD=1 nel server "
+               "(D:\\assistenteeee\\vergilius.env, lette all'avvio: riavviare lo stack)")
+
+
+def mappa_oro(percorso):
+    """Etichetta di skill_attese -> nome della skill della biblioteca (stessa mappa del banco del selettore)."""
+    if not Path(percorso).exists():
+        sys.exit(f"mappa etichette -> skill assente: {percorso} (--mappa)")
+    return dict(json.loads(Path(percorso).read_text(encoding="utf-8")).get("mappa_oro") or {})
+
+
+def oro_di(op, mappa):
+    return sorted({mappa[e] for e in (op.get("skill_attese") or []) if e in mappa})
+
+
+def skill_della_famiglia(dominio, manifesto):
+    """Nomi delle skill della famiglia installate per la prova (manifesto di installa-biblioteca.py --prova-famiglia:
+    copiate + gia' presenti identiche). Senza manifesto: le cartelle della biblioteca, con un avviso."""
+    if manifesto and Path(manifesto).exists():
+        m = json.loads(Path(manifesto).read_text(encoding="utf-8"))
+        if m.get("famiglia") != dominio:
+            sys.exit(f"il manifesto {manifesto} e' della famiglia {m.get('famiglia')!r}, non {dominio!r}: "
+                     "togli quella prova (installa-biblioteca.py --togli-prova) e installa questa")
+        nomi = {x["nome"] for x in m.get("copiate", [])} | {x["nome"] for x in m.get("gia_presenti", [])}
+        return sorted(nomi), f"manifesto {Path(manifesto).name}"
+    nomi = sorted(p.parent.name for p in (BIBLIOTECA / dominio).glob("*/SKILL.md"))
+    return nomi, f"biblioteca-skill/{dominio} (nessun manifesto: controlla che siano installate)"
+
+
+def piano_famiglia(ops, mappa, nomi, n_controlli):
+    """Bersagli = operazioni di VERIFICA con almeno una skill della famiglia fra le attese; controlli = operazioni
+    di verifica senza skill della famiglia, prima le negative (almeno una 'nessuna'), poi nell'ordine del file."""
+    ver = [o for o in ops if o.get("ruolo") == "verifica"]
+    bers = [o["id"] for o in ver if set(oro_di(o, mappa)) & set(nomi)]
+    senza = sorted((o for o in ver if not set(oro_di(o, mappa)) & set(nomi)), key=lambda o: bool(o["azioni"]))
+    return bers, [o["id"] for o in senza][:n_controlli]
+
+
+def controlla_turno_famiglia(braccio, tr, nomi):
+    """(motivo di arresto o None, avviso o None) per un turno del cancello 3."""
+    ev = tr.get("evento_skill")
+    if braccio == "A":
+        if ev is None:
+            return ("braccio A senza evento skills_injected: il campo bench_skills e' stato ignorato; " + LEVE_SERVER), None
+        if ev.get("origine") != "banco" or ev.get("skills"):
+            return (f"braccio A con origine {ev.get('origine')!r} e skill {ev.get('skills')}: bench_skills=nessuna "
+                    "non ha acceso il modo banco; " + LEVE_SERVER), None
+        return None, None
+    if ev is None:
+        return ("turno B senza evento skills_injected: il selettore e' spento; " + LEVE_SERVER), None
+    if ev.get("origine") != "selettore":
+        return (f"turno B con origine {ev.get('origine')!r} invece di 'selettore' (campo bench_skills mandato? "
+                "leva del selettore spenta?); " + LEVE_SERVER), None
+    motivo = str(ev.get("motivo") or "")
+    if motivo in MOTIVI_FERMI:
+        extra = (" (famiglia non installata? installa-biblioteca.py --prova-famiglia; owner o tools: fuori paniere?)"
+                 if motivo == "nessun candidato" else "")
+        return (f"turno B con motivo {motivo!r}: il selettore non ha potuto scegliere{extra}"), None
+    fuori = [s for s in (ev.get("skills") or []) if s not in nomi]
+    avviso = f"skill fuori dalla famiglia iniettate {fuori}: il verdetto le include" if fuori else None
+    if selettore_muto(ev):
+        avviso = ((avviso + "; ") if avviso else "") + f"selettore senza decisione ({motivo}): turno B senza skill"
+    paniere = [x for x in (ev.get("scartate") or [])
+               if "paniere" in str(x.get("motivo") if isinstance(x, dict) else x)]
+    if paniere:
+        avviso = ((avviso + "; ") if avviso else "") + f"skill scelte ma scartate: {paniere}"
+    return None, avviso
+
+
+def selettore_muto(ev):
+    """Turno B in cui il selettore acceso non ha deciso nulla (vedi MOTIVI_MUTI)."""
+    motivo = str((ev or {}).get("motivo") or "")
+    return motivo in MOTIVI_MUTI or motivo.startswith("errore")
+
+
+def controlla_muti(eventi_b):
+    """Motivo di arresto (o None) sugli eventi skills_injected dei turni B, in ordine, compreso quello nuovo:
+    MUTI_DI_FILA_MAX turni muti di fila, oppure piu' del MUTI_QUOTA_MAX dopo MUTI_MIN_TURNI turni B."""
+    eventi_b = [e for e in eventi_b if e is not None]
+    coda = 0
+    for ev in reversed(eventi_b):
+        if not selettore_muto(ev):
+            break
+        coda += 1
+    muti = [e for e in eventi_b if selettore_muto(e)]
+    motivi = dict(Counter(str(e.get("motivo")) for e in muti))
+    consiglio = ("il braccio B e' uguale ad A e il banco non misura la famiglia (tetto o slot del selettore, "
+                 "llama-swap, strumenti delle skill fuori dal paniere?). Dopo la correzione: banco NUOVO (--tag nuovo), "
+                 "non --riprendi (i turni B muti restano nel registro)")
+    if coda >= MUTI_DI_FILA_MAX:
+        return f"{coda} turni B di fila senza decisione del selettore {motivi}: {consiglio}"
+    if len(eventi_b) >= MUTI_MIN_TURNI and len(muti) / len(eventi_b) > MUTI_QUOTA_MAX:
+        return (f"{len(muti)} turni B su {len(eventi_b)} senza decisione del selettore {motivi} "
+                f"(oltre il {MUTI_QUOTA_MAX:.0%}): {consiglio}")
+    return None
+
+
+def referto_famiglia(dati, dominio, nomi, fonte, bersagli, controlli, curate, mappa, per_id, tag):
+    """Verdetto TIENI del piano sulla famiglia + iniezioni del braccio B + turni peggiorati con le skill iniettate.
+    NON VALIDO (mai SCARTA) se il braccio B non ha misurato le skill: nessuna iniezione sui bersagli, o troppi turni B
+    in cui il selettore non ha deciso."""
+    T = dati["turni"]
+    v = verdetto(T, bersagli, controlli, curate)
+    eventi_b = [t.get("evento_skill") for t in T if t["braccio"] == "B" and t.get("evento_skill") is not None]
+    iniezioni_bers = sum(len((t.get("evento_skill") or {}).get("skills") or t.get("skill_iniettate") or [])
+                         for t in T if t["braccio"] == "B" and t["op"] in bersagli)
+    non_valido = []
+    if not iniezioni_bers:
+        non_valido.append("nessun turno B sui bersagli ha iniettato skill: A e B hanno visto lo stesso prompt")
+    muti = [e for e in eventi_b if selettore_muto(e)]
+    if len(eventi_b) >= MUTI_MIN_TURNI and len(muti) / len(eventi_b) > MUTI_QUOTA_MAX:
+        non_valido.append(f"{len(muti)} turni B su {len(eventi_b)} senza decisione del selettore "
+                          f"{dict(Counter(str(e.get('motivo')) for e in muti))}")
+    if non_valido:
+        v["verdetto_se_valido"], v["verdetto"], v["non_valido"] = v["verdetto"], "NON VALIDO", non_valido
+    A = defaultdict(list)
+    for t in T:
+        if t["braccio"] == "A":
+            A[(t["op"], t["rip"])].append(t)
+    righe = [f"# Verdetto A-B-B-A della famiglia {dominio}, banco {tag}", "",
+             f"Skill della famiglia ({fonte}): {', '.join(nomi)}",
+             f"Bersagli (verifica): {', '.join(bersagli)}", f"Controlli: {', '.join(controlli)}", "",
+             "```", json.dumps(v, ensure_ascii=False, indent=1), "```", "",
+             "## Iniezioni del selettore nel braccio B", "",
+             "| operazione | oro | ciclo/blocco | skill iniettate (p) | motivo | esito B | riuscite A stesso ciclo |",
+             "|---|---|---|---|---|---|---|"]
+    per_skill = defaultdict(lambda: {"iniezioni": 0, "su_oro": 0, "fuori_oro": 0, "delta": 0.0,
+                                     "peggiorati": 0, "migliorati": 0, "gravi": 0, "invenzioni": 0})
+    peggiorati, motivi = [], Counter()
+    for t in T:
+        if t["braccio"] != "B":
+            continue
+        ev = t.get("evento_skill") or {}
+        sk = list(ev.get("skills") or t.get("skill_iniettate") or [])
+        pp = list(ev.get("p") or [])
+        motivi[ev.get("motivo") or ("skill" if sk else "-")] += 1
+        aa = A.get((t["op"], t["rip"]), [])
+        tasso_a = sum(x["riuscita"] for x in aa) / len(aa) if aa else None
+        oro = oro_di(per_id[t["op"]], mappa)
+        righe.append(f"| {t['op']} | {', '.join(oro) or 'nessuna'} | {t['rip']}/{t['blocco']} | "
+                     + (", ".join(f"{s} ({pp[i]:.2f})" if i < len(pp) else s for i, s in enumerate(sk)) or "-")
+                     + f" | {ev.get('motivo') or '-'} | {t['esito']} | "
+                     + (f"{sum(x['riuscita'] for x in aa)}/{len(aa)}" if aa else "-") + " |")
+        peggio = tasso_a is not None and ((not t["riuscita"] and tasso_a > 0)
+                                          or t["gravi"] > max(x["gravi"] for x in aa)
+                                          or (t["invenzione"] and not any(x["invenzione"] for x in aa)))
+        meglio = tasso_a is not None and t["riuscita"] and tasso_a < 1
+        if peggio:
+            peggiorati.append((t, sk, pp, aa))
+        for s in sk:
+            d = per_skill[s]
+            d["iniezioni"] += 1
+            d["su_oro" if s in oro else "fuori_oro"] += 1
+            d["delta"] += (float(t["riuscita"]) - tasso_a) if tasso_a is not None else 0.0
+            d["peggiorati"] += bool(peggio)
+            d["migliorati"] += bool(meglio)
+            d["gravi"] += t["gravi"]
+            d["invenzioni"] += bool(t["invenzione"])
+    righe += ["", f"Motivi del selettore nei turni B: {dict(motivi)}", "",
+              "## Turni peggiorati (B peggio di A sulla stessa operazione e nello stesso ciclo)", ""]
+    if not peggiorati:
+        righe.append("- nessuno")
+    for t, sk, pp, aa in peggiorati:
+        righe.append(f"- {t['op']} ciclo {t['rip']} blocco {t['blocco']}: B {t['esito']} (gravi {t['gravi']}, "
+                     f"etichette {','.join(x[:3] for x in t['etichette']) or '-'}), A {[x['esito'] for x in aa]}; "
+                     f"skill iniettate: {', '.join(sk) or 'NESSUNA (il peggioramento non viene da una skill)'}")
+    righe += ["", "## Skill della famiglia nel braccio B", "",
+              "| skill | iniezioni | su oro | fuori oro | delta riuscite contro A | turni peggiorati | migliorati | gravi | invenzioni |",
+              "|---|---|---|---|---|---|---|---|---|"]
+    for s in sorted(set(nomi) | set(per_skill)):
+        d = per_skill[s]
+        righe.append(f"| {s}{'' if s in nomi else ' (fuori famiglia)'} | {d['iniezioni']} | {d['su_oro']} | {d['fuori_oro']} | "
+                     f"{d['delta']:+.2f} | {d['peggiorati']} | {d['migliorati']} | {d['gravi']} | {d['invenzioni']} |")
+    sospette = sorted((s for s, d in per_skill.items() if d["peggiorati"] > d["migliorati"] or d["delta"] < 0 or d["gravi"]),
+                      key=lambda s: (per_skill[s]["delta"], -per_skill[s]["peggiorati"]))
+    mai = [s for s in nomi if not per_skill[s]["iniezioni"]]
+    righe += [""]
+    if v["verdetto"] == "NON VALIDO":
+        righe += ["**Verdetto NON VALIDO: il banco non ha misurato la famiglia** (non e' una bocciatura). "
+                  + "; ".join(non_valido) + ".",
+                  "", "Guarda i motivi del selettore qui sopra (tetto, nessuna decisione, errore, scartate, regola), "
+                  "correggi la causa (leve, slot e tetto del selettore, owner e tools: delle skill, cancello 2) e rifai "
+                  "il banco con un --tag nuovo. Nessuna skill da togliere per questo banco."]
+    elif v["verdetto"] == "TIENI":
+        righe += ["**La famiglia passa.** Da aggiungere a biblioteca-skill/INSTALLATE.txt (una per riga):", "",
+                  "```"] + list(nomi) + ["```", "",
+                  "Poi: `installa-biblioteca.py --togli-prova`, `installa-biblioteca.py` (installazione vera)."]
+    else:
+        righe += [f"**Verdetto {v['verdetto']}.** " + ("INCERTO: rigirare con --cicli 2. " if v["verdetto"] == "INCERTO" else "")
+                  + "Skill da togliere per prime (piu' peggioramenti, delta negativo o gravi): "
+                  + (", ".join(sospette) if sospette else "nessuna skill sospetta: il problema non viene da una skill iniettata"),
+                  "", "Si tolgono dalla prova (spostandole fuori dalla famiglia o dalla biblioteca), "
+                  "`installa-biblioteca.py --togli-prova`, `--prova-famiglia` di nuovo, e si ripete il banco."]
+    if mai:
+        righe += ["", f"Mai iniettate nel braccio B (nessuna prova ne' a favore ne' contro): {', '.join(mai)}"]
+    return v, righe
+
+
 # ---------------------------------------------------------------- fasi
 def fase_verifica(ops, solo=""):
     """Sonde HTTP sugli esiti fissi: se una sonda fallisce, l'operazione va sospesa o aggiornata PRIMA del banco."""
@@ -459,7 +687,9 @@ def esegui(a, ops, piano, tag, bench_skill=""):
     modello = scelto.get("default_model") or scelto.get("model") or "lfm"
     if "uncensored" in str(modello).lower():
         sys.exit("modello uncensored: vietato per il banco")
-    nota(f"banco {tag}: {len(piano)} turni, gia' fatti {len(fatti)}, modello {modello}, skill B={bench_skill or '-'}")
+    braccio_b = bench_skill or (f"selettore sulla famiglia {a.ab_famiglia} {a.nomi_famiglia}"
+                                if a.fase == "ab_famiglia" else "-")
+    nota(f"banco {tag}: {len(piano)} turni, gia' fatti {len(fatti)}, modello {modello}, skill B={braccio_b}")
     for n, (op_id, rip, braccio, blocco) in enumerate(piano, 1):
         if (op_id, rip, braccio, blocco) in fatti:
             continue
@@ -467,7 +697,11 @@ def esegui(a, ops, piano, tag, bench_skill=""):
         domanda = op["domanda_alt"] if (a.fase == "scoperta" and rip % 2 == 0 and op.get("domanda_alt")) else op["domanda"]
         # Braccio A dell'ABBA = bench_skills=nessuna (stesso modo banco: indice fuori, Jaccard spento, zero skill),
         # cosi' le braccia differiscono SOLO per il testo della skill (voto BIBLIOTECARIO #55). In scoperta A = nessun campo.
-        skill_b = bench_skill if braccio == "B" else ("nessuna" if (bench_skill and a.fase == "ab") else "")
+        # Cancello 3 (ab_famiglia): A = bench_skills=nessuna, B = nessun campo (decide il selettore acceso).
+        if a.fase == "ab_famiglia":
+            skill_b = "nessuna" if braccio == "A" else ""
+        else:
+            skill_b = bench_skill if braccio == "B" else ("nessuna" if (bench_skill and a.fase == "ab") else "")
         t0 = time.time()
         try:
             sess = nuova_sessione(opener, scelto.get("id") or "", modello, f"banco-{tag}-{op_id}-{braccio}{blocco}-{rip}")
@@ -478,7 +712,18 @@ def esegui(a, ops, piano, tag, bench_skill=""):
                                       "metriche": {}, "skill_iniettate": None, "giri_step": 0}, f"{type(ex).__name__}: {str(ex)[:200]}"
             time.sleep(5)
         sec = round(time.time() - t0, 1)
-        if skill_b and not errore:
+        if a.fase == "ab_famiglia" and not errore:
+            ferma, avviso = controlla_turno_famiglia(braccio, tr, a.nomi_famiglia)
+            if not ferma and braccio == "B":
+                # selettore acceso ma muto: si conta turno dopo turno (anche i turni gia' registrati in una ripresa)
+                ferma = controlla_muti([t.get("evento_skill") for t in dati["turni"] if t["braccio"] == "B"]
+                                       + [tr.get("evento_skill")])
+            if ferma:
+                nota(f"STOP: {op_id} {braccio}{blocco} r{rip}: {ferma}")
+                sys.exit(2)
+            if avviso:
+                nota(f"ATTENZIONE: {op_id} {braccio}{blocco} r{rip}: {avviso}")
+        elif skill_b and not errore:
             atteso_b = [] if skill_b == "nessuna" else [skill_b]
             vista = tr["skill_iniettate"]
             nomi_visti = [x.get("name") if isinstance(x, dict) else str(x) for x in (vista or [])]
@@ -492,7 +737,7 @@ def esegui(a, ops, piano, tag, bench_skill=""):
         turno = {"op": op_id, "famiglia": op["famiglia"], "rip": rip, "braccio": braccio, "blocco": blocco, "domanda": domanda,
                  "sessione": sess, "secondi": sec, "errore_http": errore, "strumenti": [c["tool"] for c in tr["chiamate"]],
                  "chiamate": tr["chiamate"], "testo": tr["testo"], "pensiero": tr["pensiero"], "eventi": tr["eventi"],
-                 "dedup": tr["dedup"], "skill_iniettate": tr["skill_iniettate"],
+                 "dedup": tr["dedup"], "skill_iniettate": tr["skill_iniettate"], "evento_skill": tr.get("evento_skill"),
                  "esiti_brevi": [{"tool": x["tool"], "exit": x["exit_code"], "testa": x["output"][:600]} for x in tr["esiti"]],
                  **g}
         dati["turni"].append(turno)
@@ -530,7 +775,53 @@ def riepilogo_scoperta(dati, ops, a, tag):
     print("\n".join(righe))
 
 
-def main():
+def fase_ab_famiglia(a, ops):
+    """Cancello 3: A-B-B-A per famiglia sulle operazioni di verifica."""
+    a.fase = "ab_famiglia"
+    dominio = a.ab_famiglia
+    if dominio != "browser" and a.ops.resolve() == OPS_DEFAULT.resolve():
+        sys.exit(f"--ab-famiglia {dominio} con le operazioni del browser: passa --ops con le operazioni di verifica "
+                 f"della famiglia (es. scripts\\operazioni-{dominio}.json)")
+    mappa = mappa_oro(a.mappa or Path(__file__).with_name(f"banco-selettore-{dominio}.json"))
+    nomi, fonte = skill_della_famiglia(dominio, a.manifesto)
+    if not nomi:
+        sys.exit(f"nessuna skill della famiglia {dominio}: installa-biblioteca.py --prova-famiglia {dominio}")
+    senza_oro = [n for n in nomi if n not in mappa.values()]
+    a.nomi_famiglia = nomi
+    a.slug_skill = set(a.slug_skill) | set(nomi)   # nome di skill chiamato come strumento = E06
+    per_id = {o["id"]: o for o in ops}
+    bers, ctrl = piano_famiglia(ops, mappa, nomi, a.n_controlli)
+    if a.bersagli:
+        bers = [x for x in a.bersagli.split(",") if x]
+    if a.controlli:
+        ctrl = [x for x in a.controlli.split(",") if x]
+    ignoti = [x for x in bers + ctrl if x not in per_id]
+    if ignoti:
+        sys.exit(f"operazioni sconosciute: {ignoti}")
+    if len(bers) < 3:
+        sys.exit(f"bersagli di verifica della famiglia {dominio}: {bers} (ne servono almeno 3)")
+    di_sviluppo = [x for x in bers if per_id[x].get("ruolo") != "verifica"]
+    if di_sviluppo and not a.forza:
+        sys.exit(f"bersagli di SVILUPPO {di_sviluppo}: il verdetto si calcola solo su operazioni di verifica (--forza per una prova)")
+    if not any(not per_id[x]["azioni"] or not oro_di(per_id[x], mappa) for x in ctrl):
+        print("attenzione: nessun controllo 'nessuna' (il piano ne vuole almeno uno)", flush=True)
+    print(f"famiglia {dominio}: skill {nomi} ({fonte}); bersagli {bers}; controlli {ctrl}"
+          + (f"; skill senza etichette in mappa_oro (mai bersaglio): {senza_oro}" if senza_oro else ""), flush=True)
+    piano = []
+    for ciclo in range(a.cicli):
+        for blocco, braccio in enumerate("ABBA"):
+            piano += [(op_id, ciclo + 1, braccio, blocco) for op_id in bers + ctrl]
+    dati = esegui(a, ops, piano, a.tag)
+    curate = [x for x in a.curate.split(",") if x]
+    v, righe = referto_famiglia(dati, dominio, nomi, fonte, bers, ctrl, curate, mappa, per_id, a.tag)
+    (a.out / f"verdetto-{a.tag}.md").write_text("\n".join(righe) + "\n", encoding="utf-8")
+    print("\n".join(righe))
+    if v["verdetto"] == "NON VALIDO":
+        sys.exit(3)
+    return v
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--ops", type=Path, default=OPS_DEFAULT)
     ap.add_argument("--out", type=Path, default=OUT_DEFAULT)
@@ -552,7 +843,16 @@ def main():
                     help="verdetto fra blocchi gia' girati (leve d'ambiente con riavvio): TAG_A e TAG_B separati da virgola")
     ap.add_argument("--forza", action="store_true", help="accetta bersagli di sviluppo in --ab (il verdetto resta marcato)")
     ap.add_argument("--skills-dir", type=Path, default=None, help="cartella delle skill: i loro nomi chiamati come strumenti = E06")
-    a = ap.parse_args()
+    ap.add_argument("--ab-famiglia", default="", metavar="DOMINIO",
+                    help="cancello 3: A-B-B-A della famiglia (A = bench_skills=nessuna, B = selettore acceso)")
+    ap.add_argument("--mappa", type=Path, default=None,
+                    help="JSON con mappa_oro etichetta -> skill (predefinito: banco-selettore-DOMINIO.json accanto)")
+    ap.add_argument("--manifesto", type=Path, default=MANIFESTO_PROVA,
+                    help="manifesto della prova di famiglia scritto da installa-biblioteca.py --prova-famiglia")
+    ap.add_argument("--n-controlli", type=int, default=3, help="--ab-famiglia: controlli scelti se --controlli manca")
+    a = ap.parse_args(argv)
+    a.fase = getattr(a, "fase", "")
+    a.nomi_famiglia = []
     tutto = json.loads(a.ops.read_text(encoding="utf-8"))
     ops = tutto["operazioni"]
     MODULO_FILE.update({k: str(v) for k, v in (tutto.get("modulo") or {}).items() if k != "background_learning"})
@@ -581,6 +881,10 @@ def main():
         v = verdetto(turni, bers, ctrl, [x for x in a.curate.split(",") if x])
         print(json.dumps(v, ensure_ascii=False, indent=1))
         return
+    if a.ab_famiglia:
+        if a.ab or a.scoperta:
+            sys.exit("--ab-famiglia non si combina con --ab ne' con --scoperta")
+        return fase_ab_famiglia(a, ops)
     if a.scoperta:
         a.fase = "scoperta"
         braccio = "B" if a.ab else "A"   # con --ab: gruppo di rifinitura (3 esecuzioni con la skill iniettata)

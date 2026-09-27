@@ -7,10 +7,17 @@ comparire nel testo della skill (cancello 1 dello sciame, stessa regola di banco
 Controlla ogni skill contro gli SCHEMI VERI degli strumenti (import in sola lettura dal repo) e
 conta i token con il vocabolario di LFM2.5 letto dal GGUF. Esce 1 se c'e' almeno un ERRORE.
 """
-import json, os, re, sys
+import atexit, json, os, re, shutil, sys, tempfile
+
+# Importare `services` apre il database di Odysseus e lo tocca (app.db): il controllo delle skill e' in sola
+# lettura, quindi gira su una cartella dati temporanea, cancellata alla fine (come banco-selettore-skill.py).
+if not os.environ.get("ODYSSEUS_DATA_DIR"):
+    _DATA_TEMPORANEA = tempfile.mkdtemp(prefix="verifica-skill-data-")
+    os.environ["ODYSSEUS_DATA_DIR"] = _DATA_TEMPORANEA
+    atexit.register(shutil.rmtree, _DATA_TEMPORANEA, ignore_errors=True)
 
 from pathlib import Path
-REPO = os.environ.get("VERGILIUS_ODYSSEUS_DIR") or str(Path(__file__).resolve().parents[1] / "odysseus")
+REPO =os.environ.get("VERGILIUS_ODYSSEUS_DIR") or str(Path(__file__).resolve().parents[1] / "odysseus")
 sys.path.insert(0, REPO)
 sys.stdout.reconfigure(encoding="utf-8")
 
