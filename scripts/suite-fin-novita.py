@@ -18,9 +18,24 @@ BASE = Path("d:/assistenteeee/odysseus")
 USCITA = Path("d:/vergilius-lab/ricerche/toolcall")
 URL = "http://127.0.0.1:8012/v1/chat/completions"
 
+
+def _modello_predefinito():
+    """Legge VERGILIUS_MODELLO da vergilius.env; ripiego 'lfm' se manca il file o la chiave."""
+    try:
+        for riga in Path("d:/assistenteeee/vergilius.env").read_text(encoding="utf-8").splitlines():
+            riga = riga.strip()
+            if riga.startswith("VERGILIUS_MODELLO="):
+                valore = riga.split("=", 1)[1].strip().strip('"').strip("'")
+                if valore:
+                    return valore
+    except OSError:
+        pass
+    return "lfm"
+
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--ripetizioni", type=int, default=12)
-ap.add_argument("--modello", type=str, default="ling")
+ap.add_argument("--modello", type=str, default=_modello_predefinito())
 args = ap.parse_args()
 
 spec = importlib.util.spec_from_file_location("modelli", BASE / "core/models.py")

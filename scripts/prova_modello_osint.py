@@ -16,11 +16,28 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from pathlib import Path
 
 sys.path.insert(0, r"d:\assistenteeee\odysseus")
 
 LLAMA = "http://127.0.0.1:8012/v1/chat/completions"
-MODELLO = sys.argv[1] if len(sys.argv) > 1 else "qwenpaw"
+
+
+def _modello_predefinito():
+    """Legge VERGILIUS_MODELLO da vergilius.env; ripiego 'lfm' se manca il file o la chiave."""
+    try:
+        for riga in Path("d:/assistenteeee/vergilius.env").read_text(encoding="utf-8").splitlines():
+            riga = riga.strip()
+            if riga.startswith("VERGILIUS_MODELLO="):
+                valore = riga.split("=", 1)[1].strip().strip('"').strip("'")
+                if valore:
+                    return valore
+    except OSError:
+        pass
+    return "lfm"
+
+
+MODELLO = sys.argv[1] if len(sys.argv) > 1 else _modello_predefinito()
 
 # (domanda, strumenti accettabili, strumenti che sarebbero uno sbaglio grave)
 CASI = [

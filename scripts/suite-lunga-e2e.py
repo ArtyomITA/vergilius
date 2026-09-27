@@ -78,7 +78,7 @@ def main():
     endpoints = A._get_json(opener, "/api/model-endpoints")
     lista = endpoints if isinstance(endpoints, list) else (endpoints.get("endpoints") or endpoints.get("items") or [])
     scelto = next((e for e in lista if isinstance(e, dict) and (e.get("is_default") or e.get("default"))), None) or lista[0]
-    modello = scelto.get("default_model") or scelto.get("model") or "ling"
+    modello = scelto.get("default_model") or scelto.get("model") or A._modello_predefinito()
     scen = [int(x) for x in a.scenari.split(",") if x.strip()]
     totale = len(scen) * a.turni
     nota(f"suite lunga {a.tag}: scenari {scen} x {a.turni} turni = {totale}, gia' fatti {len(fatti)}, modello {modello}")

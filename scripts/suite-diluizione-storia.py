@@ -22,6 +22,24 @@ MEMORIE = ("Memorie sull'utente:\n- The user speaks Italian.\n"
 SISTEMA = (REGOLE + "\n\nassistente di adrian chiamata mao\n\n<!-- avatar-emotions -->\n"
            "Inserisci UN tag emozione all'inizio di ogni risposta. Tag: [neutral] [joy] [anger]\n\n" + MEMORIE)
 
+
+def _modello_predefinito():
+    """Legge VERGILIUS_MODELLO da vergilius.env; ripiego 'lfm' se manca il file o la chiave."""
+    try:
+        for riga in Path("d:/assistenteeee/vergilius.env").read_text(encoding="utf-8").splitlines():
+            riga = riga.strip()
+            if riga.startswith("VERGILIUS_MODELLO="):
+                valore = riga.split("=", 1)[1].strip().strip('"').strip("'")
+                if valore:
+                    return valore
+    except OSError:
+        pass
+    return "lfm"
+
+
+MODELLO = _modello_predefinito()
+
+
 def _f(n, d, p, r):
     return {"type": "function", "function": {"name": n, "description": d,
             "parameters": {"type": "object", "properties": p, "required": r}}}
@@ -60,7 +78,7 @@ righe = list(c.execute(
 DOMANDA = righe[11][1]
 
 def sessione_con(k):
-    s = mm.Session(id='dil', name='d', endpoint_url='u', model='ling')
+    s = mm.Session(id='dil', name='d', endpoint_url='u', model=MODELLO)
     s.history = []
     for r, ct, md in righe[:11]:
         try:
@@ -80,7 +98,7 @@ for k in (0, 2, 4, 8):
     car = sum(len(x.get("content") or "") for x in storia)
     esiti = {"chiama": 0, "inventa": 0, "altro": 0, "errore": 0}
     for i in range(RIP):
-        corpo = {"model": "ling",
+        corpo = {"model": MODELLO,
                  "messages": [{"role": "system", "content": SISTEMA}] + storia +
                              [{"role": "user", "content": DOMANDA}],
                  "temperature": 0.25, "stream": False, "tools": STRUMENTI}

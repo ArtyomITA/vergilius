@@ -119,6 +119,20 @@ def gpu():
         return "?"
 
 
+def _modello_predefinito():
+    """Legge VERGILIUS_MODELLO da vergilius.env; ripiego 'lfm' se manca il file o la chiave."""
+    try:
+        for riga in Path("d:/assistenteeee/vergilius.env").read_text(encoding="utf-8").splitlines():
+            riga = riga.strip()
+            if riga.startswith("VERGILIUS_MODELLO="):
+                valore = riga.split("=", 1)[1].strip().strip('"').strip("'")
+                if valore:
+                    return valore
+    except OSError:
+        pass
+    return "lfm"
+
+
 def nuova_sessione(opener, endpoint_id, modello, nome):
     with _post_form(opener, "/api/session", {"name": nome, "endpoint_id": endpoint_id, "model": modello}, timeout=60) as r:
         sess = json.loads(r.read().decode())
@@ -211,7 +225,7 @@ def main():
     endpoints = _get_json(opener, "/api/model-endpoints")
     lista = endpoints if isinstance(endpoints, list) else (endpoints.get("endpoints") or endpoints.get("items") or [])
     scelto = next((e for e in lista if isinstance(e, dict) and (e.get("is_default") or e.get("default"))), None) or lista[0]
-    modello = scelto.get("default_model") or scelto.get("model") or "ling"
+    modello = scelto.get("default_model") or scelto.get("model") or _modello_predefinito()
     casi = [(i, p, d) for i, (p, d) in enumerate(CASI) if not a.solo or p == a.solo]
     totale = len(casi) * a.rip
     nota(f"suite {a.tag}: {len(casi)} casi x {a.rip} = {totale} turni, gia' fatti {len(fatti)}, modello {modello}")
