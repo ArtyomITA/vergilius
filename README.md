@@ -2,6 +2,8 @@
 
 **Un assistente che vive sul tuo computer, legge il mondo e non chiede il permesso a nessuno.**
 
+Di **Adrian Ciprian Iancu** · [GitHub](https://github.com/ArtyomITA) · [Hugging Face](https://huggingface.co/adriandj3) · [LinkedIn](https://www.linkedin.com/in/adrian-ciprian-iancu-a2a477391)
+
 Vergilius mette insieme tre cose che di solito stanno separate: un modello linguistico
 che gira sulla tua scheda video, una raccolta di fonti aperte per capire cosa sta
 succedendo nel mondo, e un'interfaccia che le tiene insieme. Nessuna chiave API verso
@@ -52,7 +54,7 @@ submodule (se l'hai dimenticato: `git submodule update --init`). In `llama-swap\
 sostituisci `<VERGILIUS>` con la cartella in cui hai clonato il progetto, e metti in
 `llama\` la release di llama.cpp per la tua scheda (su GPU NVIDIA vecchie: CUDA 12.4).
 
-Si apre una pagina con quattro profili — scegli quello che ti serve:
+Si apre una pagina con quattro profili. Scegli quello che ti serve:
 
 | profilo | cosa accende |
 |---|---|
@@ -85,8 +87,8 @@ login, e puoi cambiarla dalle impostazioni.
 Due progetti indipendenti, entrambi sotto licenza AGPL-3.0, che Vergilius integra e
 avvia insieme:
 
-- **[Odysseus](https://github.com/pewdiepie-archdaemon/odysseus)** — l'assistente
-- **[ShadowBroker](https://github.com/bigbodycobain/shadowbroker)** — l'intelligence
+- **[Odysseus](https://github.com/odysseus-dev/odysseus)**: l'assistente
+- **[ShadowBroker](https://github.com/bigbodycobain/shadowbroker)**: l'intelligence
 
 ---
 
@@ -94,11 +96,11 @@ avvia insieme:
 
 Due file, separati apposta:
 
-- **`vergilius.env`** — scelte che valgono su qualsiasi macchina: quanto può ragionare
+- **`vergilius.env`**: scelte che valgono su qualsiasi macchina: quanto può ragionare
   il modello prima di chiamare uno strumento, come viene riusata la cache della
   conversazione, le regole contro le risposte inventate. Ogni riga ha in commento la
   misura che la giustifica.
-- **`vergilius-hardware.env`** — scelte tarate su una GPU precisa (nel repository c'è
+- **`vergilius-hardware.env`**: scelte tarate su una GPU precisa (nel repository c'è
   il profilo di una GTX 1080). Se hai un'altra scheda, cancellalo: il programma funziona
   lo stesso, e quelle righe le ritari quando vuoi.
 
@@ -107,6 +109,16 @@ sulle schede Pascal, che llama.cpp tiene spenti per una regressione misurata nel
 un tipo di modello diverso. Sulla nostra architettura valgono il 40% di velocità in più,
 con risposte identiche carattere per carattere ([PR
 ggml-org/llama.cpp#27721](https://github.com/ggml-org/llama.cpp/pull/27721)).
+
+---
+
+## Ricerca nata da Vergilius
+
+Per far girare bene un assistente su una GTX 1080 ho dovuto misurare e scrivere parecchie cose. Quelle utili anche ad altri le ho pubblicate a parte, in inglese:
+
+- [minicpm5-kernel-pascal](https://github.com/ArtyomITA/minicpm5-kernel-pascal): MiniCPM5-2B da 33 a 83 token al secondo su Pascal, con kernel a uscita identica, più le note su cosa aiuta davvero su queste schede, sulle decisioni a un token e sull'addestramento completo in 8 GB.
+- [bonsai2-ternary-pascal](https://github.com/ArtyomITA/bonsai2-ternary-pascal): Ternary Bonsai 2 9B il 51% più veloce sulla stessa scheda, a logit identici, e il kit per allenarci sopra un LoRA.
+- [TernaryPilot v1](https://huggingface.co/adriandj3/TernaryPilot-v1-Computer-Browser-Use-LoRA): un LoRA per usare computer e browser con Ternary Bonsai, allenato sulla 1080.
 
 ---
 
